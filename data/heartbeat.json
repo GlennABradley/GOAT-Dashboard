@@ -1,0 +1,71 @@
+{
+  "schedule": [
+    {
+      "name": "The Commissioner",
+      "job": "commissioner",
+      "schedule": "Mon-Fri 8:55 AM ET",
+      "cron": "55 8 * * 1-5",
+      "icon": "\ud83d\udc54",
+      "desc": "Allocates capital between bots based on competition scores"
+    },
+    {
+      "name": "Equity Analyze",
+      "job": "equity_analyze",
+      "schedule": "Mon-Fri 9:00 AM ET",
+      "cron": "0 9 * * 1-5",
+      "icon": "\ud83d\udcc8",
+      "desc": "Runs equity bot analysis \u2014 screens, decides, executes or holds"
+    },
+    {
+      "name": "Crypto Analyze",
+      "job": "crypto_analyze",
+      "schedule": "Daily 9:00 AM ET",
+      "cron": "0 9 * * *",
+      "icon": "\u20bf",
+      "desc": "Runs crypto bot analysis \u2014 regime detection, signals, Claude decision"
+    },
+    {
+      "name": "Nightly Learning",
+      "job": "nightly_learning",
+      "schedule": "Daily 11:00 PM ET",
+      "cron": "0 23 * * *",
+      "icon": "\ud83e\udde0",
+      "desc": "9-step learning pipeline: shadow grading, meta learner, signal scorer, DA backfill"
+    },
+    {
+      "name": "Self-Optimizer v2",
+      "job": "self_optimizer",
+      "schedule": "Sunday 8:30 AM ET",
+      "cron": "30 8 * * 0",
+      "icon": "\u2699\ufe0f",
+      "desc": "Reviews trade history and surgically edits config params within safe bounds"
+    }
+  ],
+  "runs": {
+    "commissioner": {
+      "last_seen": "2026-04-01T08:55:10",
+      "status": "ok",
+      "date": "2026-04-01"
+    },
+    "equity_analyze": {
+      "last_seen": "2026-04-01T09:00:15",
+      "status": "ok",
+      "date": "2026-04-01"
+    },
+    "crypto_analyze": {
+      "last_seen": "2026-04-01T09:01:22",
+      "status": "ok",
+      "date": "2026-04-01"
+    },
+    "nightly_learning": {
+      "last_seen": "2026-04-01T23:00:07",
+      "status": "ok",
+      "date": "2026-04-01"
+    },
+    "self_optimizer": {
+      "last_seen": "2026-03-30T08:30:01",
+      "status": "ok",
+      "date": "2026-03-30"
+    }
+  }
+}

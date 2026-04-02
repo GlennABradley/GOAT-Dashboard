@@ -1,0 +1,43 @@
+{
+  "equity": {
+    "total": 2,
+    "wins": 2,
+    "losses": 0,
+    "win_rate": 1.0,
+    "avg_roi": 0.0047,
+    "best": {
+      "sym": "SLB",
+      "roi": 0.0053
+    },
+    "worst": {
+      "sym": "PCG",
+      "roi": 0.0041
+    },
+    "by_regime": {
+      "BULL_TREND": {
+        "trades": 2,
+        "wins": 2
+      }
+    },
+    "monthly": [
+      {
+        "month": "2026-03",
+        "trades": 2,
+        "wins": 2,
+        "pnl_pct": 0.0094
+      }
+    ]
+  },
+  "crypto": {
+    "total": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "avg_roi": null,
+    "best": null,
+    "worst": null,
+    "by_regime": {},
+    "monthly": []
+  },
+  "updated_at": "2026-04-01"
+}
