@@ -1,52 +1,82 @@
 [
   {
-    "timestamp": "2026-04-01T09:01:22",
-    "bot": "crypto",
-    "symbol": "ETH/USD",
+    "timestamp": "2026-04-02T15:06",
+    "symbol": null,
     "action": "HOLD",
-    "confidence": 0.71,
+    "confidence": 0.6,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
+  },
+  {
+    "timestamp": "2026-04-02T00:00",
+    "symbol": "SOL/USD",
+    "action": "BUY",
+    "confidence": 0.75,
     "regime": "ACCUMULATION_EXTREME_FEAR",
-    "reasoning": "Holding existing cycle position. Market remains in extreme fear (F&G 12). ETH holding entry support. No new entries \u2014 max positions reached.",
-    "da_verdict": "AGREE"
+    "bot": "crypto"
   },
   {
-    "timestamp": "2026-04-01T09:00:15",
-    "bot": "equity",
-    "symbol": "WATCHLIST",
+    "timestamp": "2026-04-01T09:00",
+    "symbol": "FAST",
+    "action": "BUY",
+    "confidence": 0.72,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
+  },
+  {
+    "timestamp": "2026-03-31T15:00",
+    "symbol": null,
     "action": "HOLD",
-    "confidence": 0.65,
-    "regime": "NEUTRAL",
-    "reasoning": "Macro uncertainty elevated. Tariff news creating volatility. No clean setups meeting 70% confidence threshold. Standing by.",
-    "da_verdict": "AGREE"
+    "confidence": 0.0,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
   },
   {
-    "timestamp": "2026-03-31T09:01:11",
-    "bot": "crypto",
-    "symbol": "ETH/USD",
+    "timestamp": "2026-03-31T09:01",
+    "symbol": null,
     "action": "HOLD",
-    "confidence": 0.73,
-    "regime": "ACCUMULATION_EXTREME_FEAR",
-    "reasoning": "Cycle position maintained. BTC holding 200MA support. F&G 13 \u2014 extreme fear zone. Patience warranted.",
-    "da_verdict": "AGREE"
+    "confidence": 0.6,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
   },
   {
-    "timestamp": "2026-03-28T09:02:44",
-    "bot": "crypto",
+    "timestamp": "2026-03-30T15:00",
+    "symbol": null,
+    "action": "HOLD",
+    "confidence": 0.6,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
+  },
+  {
+    "timestamp": "2026-03-28T18:00",
     "symbol": "DOT/USD",
     "action": "BUY",
-    "confidence": 0.76,
+    "confidence": 0.75,
     "regime": "ACCUMULATION_EXTREME_FEAR",
-    "reasoning": "DOT showing relative strength. F&G 12 (extreme fear). BTC 200MA support intact. Halving cycle position initiated at attractive entry.",
-    "da_verdict": "APPROVE"
+    "bot": "crypto"
   },
   {
-    "timestamp": "2026-03-27T09:01:55",
-    "bot": "crypto",
+    "timestamp": "2026-03-28T00:00",
+    "symbol": "DOT/USD",
+    "action": "BUY",
+    "confidence": 0.75,
+    "regime": "ACCUMULATION_EXTREME_FEAR",
+    "bot": "crypto"
+  },
+  {
+    "timestamp": "2026-03-27T18:00",
     "symbol": "ETH/USD",
     "action": "BUY",
-    "confidence": 0.79,
+    "confidence": 0.75,
     "regime": "ACCUMULATION_EXTREME_FEAR",
-    "reasoning": "ETH cycle position initiated. F&G 13 extreme fear \u2014 historically optimal accumulation zone. Target $2,800 (39% upside). Stop below $2,075.",
-    "da_verdict": "APPROVE"
+    "bot": "crypto"
+  },
+  {
+    "timestamp": "2026-03-27T10:00",
+    "symbol": "ETH/USD",
+    "action": "BUY",
+    "confidence": 0.75,
+    "regime": "ACCUMULATION_EXTREME_FEAR",
+    "bot": "crypto"
   }
 ]

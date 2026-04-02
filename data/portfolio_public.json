@@ -1,11 +1,13 @@
 {
-  "position_count": 2,
+  "position_count": 1,
   "symbols": [
-    "DOT/USD",
-    "ETH/USD"
+    "DOT/USD"
   ],
-  "last_updated": "2026-04-01",
   "regimes": [
     "ACCUMULATION_EXTREME_FEAR"
-  ]
+  ],
+  "strategies": [
+    "cycle"
+  ],
+  "last_updated": "2026-04-02"
 }

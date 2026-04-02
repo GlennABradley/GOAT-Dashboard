@@ -1,1 +1,17 @@
-{"deployed": "2026-04-02T01:54:00Z", "status": "live"}
+{
+  "last_push": "2026-04-02T19:10:51.100703",
+  "pushed_files": [
+    "portfolio_public.json",
+    "system_health.json",
+    "shadow_summary.json",
+    "decisions_recent.json",
+    "competition_ledger.json",
+    "multi_timeframe.json",
+    "cross_asset.json",
+    "live_readiness.json",
+    "performance_attribution.json",
+    "tribunal_accuracy.json",
+    "portfolio_private.json"
+  ],
+  "system": "Sovereign v2"
+}
