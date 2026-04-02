@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GOAT — Private Dashboard</title>
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--accent:#22d3ee;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--text:#e2e8f0;--muted:#64748b;--font:'SF Mono','Fira Code',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px}
+#auth{display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column}
+.acard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px;width:320px;text-align:center}
+.atitle{font-size:24px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.asub{color:var(--muted);font-size:12px;margin-bottom:24px}
+input[type=password]{width:100%;padding:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:8px;font-family:var(--font);font-size:14px;margin-bottom:12px}
+input[type=password]:focus{outline:none;border-color:var(--accent)}
+button.ubtn{width:100%;padding:12px;background:var(--accent);color:#0a0e17;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:var(--font)}
+#aerr{color:var(--red);font-size:11px;margin-top:8px;min-height:16px}
+#main{display:none}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);background:#080c14}
+.logo{font-size:20px;font-weight:700;color:var(--accent)}
+.bp{background:#451a03;color:var(--yellow);border:1px solid #92400e;border-radius:20px;padding:3px 10px;font-size:10px;margin-left:10px}
+.grid{display:grid;gap:14px;padding:18px}
+.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g4,.g3,.g2{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.card-title{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.big{font-size:24px;font-weight:700}.sub{font-size:11px;color:var(--muted);margin-top:4px}
+table{width:100%;border-collapse:collapse}
+th{color:var(--muted);font-size:10px;text-transform:uppercase;padding:8px 6px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:9px 6px;border-bottom:1px solid var(--border);font-size:12px}tr:last-child td{border-bottom:none}
+.win{color:var(--green)}.loss{color:var(--red)}.neutral{color:var(--muted)}
+.pos-card{background:#080c14;border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px}
+.pos-sym{font-size:16px;font-weight:700;color:var(--accent)}
+.pos-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}
+.pl{font-size:10px;color:var(--muted)}.pv{font-size:13px;font-weight:600}
+.crow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px}
+.crow:last-child{border-bottom:none}
+footer{text-align:center;padding:16px;color:var(--muted);font-size:10px;border-top:1px solid var(--border)}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div id="auth">
+  <div class="acard">
+    <div class="atitle">⚡ GOAT</div>
+    <div class="asub">Private Dashboard — Authorized Access Only</div>
+    <input type="password" id="pw" placeholder="Enter passphrase" onkeydown="if(event.key==='Enter')unlock()"/>
+    <button class="ubtn" onclick="unlock()">Unlock</button>
+    <div id="aerr"></div>
+  </div>
+</div>
+
+<div id="main">
+  <header>
+    <div class="logo">⚡ GOAT Private Dashboard <span class="bp">🔒 PRIVATE</span></div>
+    <div id="ts" style="color:var(--muted);font-size:11px">Loading…</div>
+  </header>
+
+  <div class="grid g4">
+    <div class="card"><div class="card-title">Portfolio Value</div><div class="big" id="tot-val">—</div><div class="sub">Paper Trading</div></div>
+    <div class="card"><div class="card-title">Available Cash</div><div class="big" id="cash">—</div><div class="sub">Deployable</div></div>
+    <div class="card"><div class="card-title">Today P&amp;L</div><div class="big" id="pnl">—</div><div class="sub" id="pnl-pct"></div></div>
+    <div class="card"><div class="card-title">Capital Split</div><div class="big" id="split">—</div><div class="sub" id="split-date">Commissioner ruling</div></div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card"><div class="card-title">Open Positions (Full Detail)</div><div id="pos-full"><div class="neutral">Loading…</div></div></div>
+    <div class="card">
+      <div class="card-title">Competition Ledger</div>
+      <table><thead><tr><th>Bot</th><th>Trades</th><th>Win%</th><th>Avg ROI</th><th>Sharpe</th><th>Score</th></tr></thead>
+      <tbody id="ledger-tb"></tbody></table>
+      <div style="margin-top:12px"><div class="card-title">Commissioner History</div><div id="comm-hist"></div></div>
+    </div>
+  </div>
+
+  <div class="grid g3">
+    <div class="card"><div class="card-title">Shadow System</div>
+      <table><thead><tr><th>Variant</th><th>Trades</th><th>Win%</th><th>Max DD</th></tr></thead>
+      <tbody id="shad-tb"></tbody></table>
+    </div>
+    <div class="card"><div class="card-title">Meta-Learned Edge (Crypto)</div><div id="meta-full" style="font-size:11px;line-height:1.8"></div></div>
+    <div class="card"><div class="card-title">System Health</div><div id="health-full"></div></div>
+  </div>
+
+  <footer>GOAT System · Paper Trading · <a href="../index.html">← Public Dashboard</a> · <a href="https://github.com/GlennABradley/GOAT" target="_blank">Code (Private)</a></footer>
+</div>
+
+<script>
+// SHA1 of 'goat2026' — change this to your own password hash
+// Generate: echo -n "newpassword" | shasum
+const HASH='b66e24fb3d64b8f43e3fb0efac3af08c6c4f3c12';
+async function sha1(s){const b=await crypto.subtle.digest('SHA-1',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+async function unlock(){const h=await sha1(document.getElementById('pw').value);
+  if(h===HASH){sessionStorage.setItem('ga','1');document.getElementById('auth').style.display='none';document.getElementById('main').style.display='block';loadDash();}
+  else{document.getElementById('aerr').textContent='❌ Incorrect passphrase';setTimeout(()=>document.getElementById('aerr').textContent='',3000);}}
+if(sessionStorage.getItem('ga')==='1'){document.getElementById('auth').style.display='none';document.getElementById('main').style.display='block';}
+
+const B='../data/';
+async function fj(f){try{const r=await fetch(B+f+'?t='+Date.now());return r.ok?r.json():null}catch{return null}}
+function f$(n){return n!=null?'$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}):'—'}
+function fp(n){return n!=null?(n*100).toFixed(1)+'%':'—'}
+
+async function loadDash(){
+  const[L,H,S,P,M,PP]=await Promise.all([fj('competition_ledger.json'),fj('system_health.json'),fj('shadow_summary.json'),fj('portfolio_public.json'),fj('meta_learnings.json'),fj('portfolio_private.json')]);
+  document.getElementById('ts').textContent='Updated: '+new Date().toLocaleTimeString();
+  if(PP){const cash=PP.cash||0;const sod=PP.start_of_day_value||0;let pv=0;
+    const pos=PP.positions||{};Object.values(pos).forEach(p=>pv+=(p.qty||0)*(p.entry_price||0));
+    const tot=cash+pv;const pnl=tot-sod;const pp=sod>0?pnl/sod:0;
+    document.getElementById('tot-val').textContent=f$(tot);
+    document.getElementById('cash').textContent=f$(cash);
+    document.getElementById('pnl').textContent=f$(pnl);
+    document.getElementById('pnl').className='big '+(pnl>=0?'win':'loss');
+    document.getElementById('pnl-pct').textContent=fp(Math.abs(pp))+(pnl>=0?' ▲':' ▼');
+    document.getElementById('pos-full').innerHTML=Object.keys(pos).length?
+      Object.entries(pos).map(([sym,p])=>`<div class="pos-card"><div class="pos-sym">${sym}</div><div style="font-size:10px;color:var(--muted)">${p.entry_regime||''} · ${p.trade_type||''} · Tier ${p.tier||'?'}</div><div class="pos-grid"><div><div class="pl">Qty</div><div class="pv">${Number(p.qty).toFixed(4)}</div></div><div><div class="pl">Entry</div><div class="pv">${f$(p.entry_price)}</div></div><div><div class="pl">Value</div><div class="pv">${f$(p.qty*p.entry_price)}</div></div><div><div class="pl">Stop</div><div class="pv loss">${f$(p.stop_loss)}</div></div><div><div class="pl">Target</div><div class="pv win">${f$(p.target)}</div></div><div><div class="pl">F&G Entry</div><div class="pv">${p.entry_fg??'—'}</div></div></div></div>`).join('')
+      :'<div class="neutral">No open positions</div>';}
+  if(L){const c=L.competition||{};
+    document.getElementById('ledger-tb').innerHTML=['equity','crypto'].map(b=>{const d=L[b]||{};const sc=c[b+'_score']||0;
+      return`<tr><td style="font-weight:700;color:var(--accent)">${b.toUpperCase()}</td><td>${d.total_trades??0}</td><td class="${(d.win_rate||0)>0.5?'win':'loss'}">${d.win_rate!=null?(d.win_rate*100).toFixed(0)+'%':'—'}</td><td>${d.avg_roi!=null?(d.avg_roi*100).toFixed(2)+'%':'—'}</td><td>${d.sharpe_proxy!=null?d.sharpe_proxy.toFixed(2):'—'}</td><td style="font-weight:700;color:var(--yellow)">${Math.round(sc)}</td></tr>`;}).join('');
+    const hist=(L.commissioner_decisions||[]).slice(-5).reverse();
+    document.getElementById('comm-hist').innerHTML=hist.map(d=>`<div class="crow"><span class="neutral">${d.date}</span><span>EQ:<b>${(d.equity_weight*100).toFixed(0)}%</b></span><span>CR:<b>${(d.crypto_weight*100).toFixed(0)}%</b></span><span class="win">${d.leader}</span></div>`).join('')||'<div class="neutral">No history</div>';
+    if(hist.length){document.getElementById('split').textContent=`${(hist[0].equity_weight*100).toFixed(0)}/${(hist[0].crypto_weight*100).toFixed(0)}`;document.getElementById('split-date').textContent=hist[0].date;}}
+  if(S){document.getElementById('shad-tb').innerHTML=Object.entries(S).map(([n,d])=>{const wr=(d.win_rate||0)*100;return`<tr><td style="font-weight:600">${n}</td><td>${d.total_trades||0}</td><td class="${wr>=60?'win':wr>=50?'neutral':'loss'}">${wr.toFixed(0)}%</td><td class="loss">-${((d.max_drawdown||0)*100).toFixed(1)}%</td></tr>`;}).join('')||'<tr><td colspan="4" class="neutral">No data yet</td></tr>';}
+  if(M){const cc=(M.crypto||[]).slice(0,6);document.getElementById('meta-full').innerHTML=cc.length?cc.map(c=>`<div style="margin-bottom:8px;padding:8px;background:#0a0e17;border-radius:6px;border-left:3px solid var(--green)"><span class="win" style="font-weight:700">${(c.win_rate*100).toFixed(0)}% WR</span><span class="neutral"> n=${c.sample_size} · avg ${(c.avg_pnl*100).toFixed(1)}%</span><br><span style="font-size:10px">${c.combo_str}</span></div>`).join(''):'<div class="neutral">Building pattern library…</div>';}
+  if(H){const sc={HEALTHY:'var(--green)',DEGRADED:'var(--yellow)',HALTED:'var(--red)',RECOVERING:'#fb923c'};
+    document.getElementById('health-full').innerHTML=`<div style="font-size:20px;font-weight:700;color:${sc[H.state]||'var(--green)'};margin-bottom:10px">${H.status_emoji} ${H.state}</div><div style="font-size:11px;color:var(--muted);margin-bottom:8px">Position multiplier: <span style="color:var(--text)">${((H.position_multiplier||1)*100).toFixed(0)}%</span></div>`+(H.issues||[]).length?H.issues.map(i=>`<div style="color:var(--yellow);font-size:11px;margin-bottom:4px">⚠️ ${i}</div>`).join(''):'<div style="color:var(--green);font-size:11px">✅ All systems nominal</div>';}
+}
+if(sessionStorage.getItem('ga')==='1')loadDash();
+setInterval(()=>{if(sessionStorage.getItem('ga')==='1')loadDash();},5*60*1000);
+</script>
+</body>
+</html>

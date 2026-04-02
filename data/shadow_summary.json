@@ -1,0 +1,17 @@
+{
+  "AGGRESSIVE": {
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 0
+  },
+  "CONSERVATIVE": {
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 0
+  },
+  "EXPERIMENTAL": {
+    "total_trades": 0,
+    "win_rate": 0,
+    "max_drawdown": 0
+  }
+}

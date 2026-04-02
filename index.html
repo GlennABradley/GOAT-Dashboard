@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GOAT System — Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--accent:#22d3ee;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--text:#e2e8f0;--muted:#64748b;--font:'SF Mono','Fira Code',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border);background:#080c14}
+.logo{font-size:22px;font-weight:700;color:var(--accent);letter-spacing:2px}
+.logo span{color:var(--muted);font-size:12px;margin-left:8px}
+.grid{display:grid;gap:14px;padding:18px}
+.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g4,.g3,.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.g4,.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.card-title{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.big{font-size:26px;font-weight:700}.sub{font-size:11px;color:var(--muted);margin-top:4px}
+.status-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.s-HEALTHY{background:#052e16;color:var(--green);border:1px solid #166534}
+.s-DEGRADED{background:#451a03;color:var(--yellow);border:1px solid #92400e}
+.s-HALTED{background:#450a0a;color:var(--red);border:1px solid #991b1b}
+.s-RECOVERING{background:#1c1917;color:#fb923c;border:1px solid #9a3412}
+.pulse{width:8px;height:8px;border-radius:50%;animation:pulse 2s infinite}
+.pg{background:var(--green)}.py{background:var(--yellow)}.pr{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.bar-track{flex:1;height:10px;background:var(--border);border-radius:5px;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px;transition:width 1s ease}
+.bar-eq{background:linear-gradient(90deg,#6366f1,#818cf8)}.bar-cr{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.bot-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bot-label{width:65px;font-size:11px;font-weight:600;color:var(--muted)}
+.bar-score{font-size:12px;font-weight:700;min-width:36px;text-align:right}
+table{width:100%;border-collapse:collapse}
+th{color:var(--muted);font-size:10px;text-transform:uppercase;padding:8px 6px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:9px 6px;border-bottom:1px solid var(--border);font-size:12px}
+tr:last-child td{border-bottom:none}
+.win{color:var(--green)}.loss{color:var(--red)}.neutral{color:var(--muted)}
+.regime-pill{display:inline-block;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;background:#052e16;color:var(--green);border:1px solid #166534}
+footer{text-align:center;padding:16px;color:var(--muted);font-size:10px;border-top:1px solid var(--border)}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">⚡ GOAT <span>Autonomous Trading System</span></div>
+  <div id="ts" style="color:var(--muted);font-size:11px">Loading…</div>
+</header>
+
+<div class="grid g4">
+  <div class="card"><div class="card-title">System Status</div><div id="hbadge"></div><div class="sub" id="hissue"></div></div>
+  <div class="card"><div class="card-title">Open Positions</div><div class="big" id="pos-count">—</div><div class="sub" id="pos-syms"></div></div>
+  <div class="card"><div class="card-title">Bot Leader</div><div class="big" id="leader" style="color:var(--accent)">—</div><div class="sub" id="ledge"></div></div>
+  <div class="card"><div class="card-title">Current Regime</div><div id="regime-pill"><span class="regime-pill">—</span></div></div>
+</div>
+
+<div class="grid g2">
+  <div class="card">
+    <div class="card-title">Bot Competition</div>
+    <div style="margin-top:10px">
+      <div class="bot-row"><div class="bot-label">EQUITY</div><div class="bar-track"><div class="bar-fill bar-eq" id="eq-bar" style="width:0%"></div></div><div class="bar-score" id="eq-score">0</div></div>
+      <div class="bot-row"><div class="bot-label">CRYPTO</div><div class="bar-track"><div class="bar-fill bar-cr" id="cr-bar" style="width:0%"></div></div><div class="bar-score" id="cr-score">0</div></div>
+    </div>
+    <div class="sub">Better stats = more capital allocation (Commissioner ruling)</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Equity Bot Stats</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+      <div><div class="sub">Win Rate</div><div style="font-size:20px;font-weight:700" id="eq-wr">—</div></div>
+      <div><div class="sub">Trades</div><div style="font-size:20px;font-weight:700" id="eq-trades">—</div></div>
+      <div><div class="sub">Streak</div><div style="font-size:20px;font-weight:700" id="eq-streak">—</div></div>
+      <div><div class="sub">Sharpe</div><div style="font-size:20px;font-weight:700" id="eq-sharpe">—</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid g3">
+  <div class="card"><div class="card-title">Shadow System</div>
+    <table><thead><tr><th>Variant</th><th>Trades</th><th>Win%</th><th>Max DD</th></tr></thead>
+    <tbody id="shadow-tb"><tr><td colspan="4" class="neutral" style="text-align:center">Initializing…</td></tr></tbody></table>
+  </div>
+  <div class="card"><div class="card-title">Active Positions</div><div id="pos-list"><div class="neutral">Loading…</div></div></div>
+  <div class="card"><div class="card-title">Meta-Learned Edge</div><div id="meta-ctx" style="font-size:11px;line-height:1.8">Loading…</div></div>
+</div>
+
+<footer>GOAT System · Paper Trading · Not Financial Advice · <a href="https://github.com/GlennABradley/GOAT-Dashboard" target="_blank">Dashboard Repo</a> · <a href="private/index.html">Private Dashboard →</a></footer>
+
+<script>
+const B='./data/';
+async function fj(f){try{const r=await fetch(B+f+'?t='+Date.now());return r.ok?r.json():null}catch{return null}}
+async function load(){
+  const[L,H,S,P,M]=await Promise.all([fj('competition_ledger.json'),fj('system_health.json'),fj('shadow_summary.json'),fj('portfolio_public.json'),fj('meta_learnings.json')]);
+  document.getElementById('ts').textContent='Updated: '+new Date().toLocaleTimeString();
+  if(H){const st=H.state||'HEALTHY';const pc={HEALTHY:'g',DEGRADED:'y',HALTED:'r',RECOVERING:'y'}[st]||'g';
+    document.getElementById('hbadge').innerHTML=`<span class="status-badge s-${st}"><span class="pulse p${pc}"></span>${H.status_emoji||'🟢'} ${st}</span>`;
+    document.getElementById('hissue').textContent=(H.issues||[]).length?(H.issues[0]):'All systems nominal';}
+  if(L){const c=L.competition||{};const mx=Math.max(c.equity_score||0,c.crypto_score||0,1);
+    document.getElementById('eq-score').textContent=Math.round(c.equity_score||0);
+    document.getElementById('cr-score').textContent=Math.round(c.crypto_score||0);
+    document.getElementById('eq-bar').style.width=((c.equity_score||0)/mx*100)+'%';
+    document.getElementById('cr-bar').style.width=((c.crypto_score||0)/mx*100)+'%';
+    document.getElementById('leader').textContent=c.leader||'—';
+    document.getElementById('ledge').textContent=c.edge||'';
+    const eq=L.equity||{};
+    document.getElementById('eq-wr').textContent=eq.win_rate!=null?(eq.win_rate*100).toFixed(0)+'%':'—';
+    document.getElementById('eq-trades').textContent=eq.total_trades??'—';
+    document.getElementById('eq-streak').textContent=(eq.current_streak&&eq.streak_type)?eq.current_streak+' '+eq.streak_type:'—';
+    document.getElementById('eq-sharpe').textContent=eq.sharpe_proxy!=null?eq.sharpe_proxy.toFixed(2):'—';}
+  if(P){document.getElementById('pos-count').textContent=P.position_count||0;
+    document.getElementById('pos-syms').textContent=(P.symbols||[]).join(', ')||'None';
+    const regime=(P.regimes||[])[0]||'UNKNOWN';
+    document.getElementById('regime-pill').innerHTML=`<span class="regime-pill">${regime.replace(/_/g,' ')}</span>`;
+    document.getElementById('pos-list').innerHTML=(P.symbols||[]).length?
+      (P.symbols.map(s=>`<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border)"><div style="font-weight:700;color:var(--accent)">${s}</div><div class="win">CYCLE · ${regime.split('_')[0]}</div></div>`).join(''))
+      :'<div class="neutral" style="padding:8px 0">No open positions</div>';}
+  if(S){const rows=Object.entries(S).map(([n,d])=>{const wr=(d.win_rate||0)*100;return`<tr><td style="font-weight:600">${n}</td><td>${d.total_trades||0}</td><td class="${wr>=60?'win':wr>=50?'neutral':'loss'}">${wr.toFixed(0)}%</td><td class="loss">-${((d.max_drawdown||0)*100).toFixed(1)}%</td></tr>`;}).join('');
+    document.getElementById('shadow-tb').innerHTML=rows||'<tr><td colspan="4" class="neutral">No data yet</td></tr>';}
+  if(M){const cc=(M.crypto||[]).slice(0,4);document.getElementById('meta-ctx').innerHTML=cc.length?
+    cc.map(c=>`<div style="margin-bottom:8px;padding:6px;background:#0a0e17;border-radius:6px;border-left:2px solid var(--green)"><span class="win" style="font-weight:700">${(c.win_rate*100).toFixed(0)}% WR</span><span class="neutral"> · n=${c.sample_size}</span><br><span style="font-size:10px">${c.combo_str}</span></div>`).join('')
+    :'<div class="neutral">Building edge library… need 5+ trades per pattern.</div>';}
+}
+load();setInterval(load,5*60*1000);
+</script>
+</body>
+</html>

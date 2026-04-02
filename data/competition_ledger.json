@@ -1,0 +1,75 @@
+{
+  "last_updated": "2026-04-01T08:55:10.493203",
+  "equity": {
+    "total_trades": 2,
+    "wins": 2,
+    "losses": 0,
+    "win_rate": 1.0,
+    "avg_roi": 0.47,
+    "best_trade": {
+      "symbol": "SLB",
+      "roi": 0.53
+    },
+    "worst_trade": {
+      "symbol": "PCG",
+      "roi": 0.41
+    },
+    "current_streak": 2,
+    "streak_type": "WIN",
+    "last_30d_trades": 2,
+    "last_30d_win_rate": 1.0,
+    "sharpe_proxy": 5.54
+  },
+  "crypto": {
+    "total_trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "avg_roi": null,
+    "best_trade": null,
+    "worst_trade": null,
+    "current_streak": 0,
+    "streak_type": null,
+    "last_30d_trades": 0,
+    "last_30d_win_rate": null,
+    "sharpe_proxy": null
+  },
+  "competition": {
+    "leader": "EQUITY",
+    "equity_score": 104.7,
+    "crypto_score": 0,
+    "edge": "Equity GOAT leads: 105 vs 0"
+  },
+  "commissioner_decisions": [
+    {
+      "date": "2026-03-26",
+      "equity_weight": 0.7,
+      "crypto_weight": 0.3,
+      "leader": "EQUITY"
+    },
+    {
+      "date": "2026-03-27",
+      "equity_weight": 0.7,
+      "crypto_weight": 0.3,
+      "leader": "EQUITY"
+    },
+    {
+      "date": "2026-03-30",
+      "equity_weight": 0.7,
+      "crypto_weight": 0.3,
+      "leader": "EQUITY"
+    },
+    {
+      "date": "2026-03-31",
+      "equity_weight": 0.3,
+      "crypto_weight": 0.7,
+      "leader": "EQUITY"
+    },
+    {
+      "date": "2026-04-01",
+      "equity_weight": 0.75,
+      "crypto_weight": 0.25,
+      "leader": "EQUITY"
+    }
+  ]
+}
