@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-04-02",
+  "weights": {
+    "BEAR": 2.0,
+    "QUANT": 1.0,
+    "RISK": 1.0,
+    "REGIME": 1.0
+  },
+  "judges": {
+    "BEAR": {
+      "approvals": 0,
+      "rejections": 0,
+      "correct": 0,
+      "total_graded": 0,
+      "accuracy": 0.0,
+      "weight": 2.0
+    },
+    "QUANT": {
+      "approvals": 0,
+      "rejections": 0,
+      "correct": 0,
+      "total_graded": 0,
+      "accuracy": 0.0,
+      "weight": 1.0
+    },
+    "RISK": {
+      "approvals": 0,
+      "rejections": 0,
+      "correct": 0,
+      "total_graded": 0,
+      "accuracy": 0.0,
+      "weight": 1.0
+    },
+    "REGIME": {
+      "approvals": 0,
+      "rejections": 0,
+      "correct": 0,
+      "total_graded": 0,
+      "accuracy": 0.0,
+      "weight": 1.0
+    }
+  }
+}

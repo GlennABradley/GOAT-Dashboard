@@ -1,0 +1,9 @@
+{
+  "signal": "NEUTRAL",
+  "urgency": "LOW",
+  "btc_2h_change": -0.0008,
+  "btc_1h_change": -0.0004,
+  "btc_dominance": null,
+  "action": "No cross-asset signal",
+  "checked_at": "2026-04-02T18:33:10.860005"
+}

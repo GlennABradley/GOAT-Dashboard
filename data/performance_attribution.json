@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-04-02",
+  "total_trades": 1,
+  "tribunal": {
+    "tribunal_vetoes": 0,
+    "tribunal_approvals": 0,
+    "live_win_rate": 1.0,
+    "live_total_trades": 1,
+    "tribunal_veto_rate": 0.0,
+    "insight": "Tribunal vetoed 0 trades. Live win rate: 100%"
+  },
+  "regime_performance": {
+    "by_regime": {
+      "ACCUMULATION_EXTREME_FEAR": {
+        "win_rate": 1.0,
+        "avg_pnl": 2.11,
+        "n": 1
+      }
+    },
+    "best_regime": "ACCUMULATION_EXTREME_FEAR",
+    "best_win_rate": 1.0
+  },
+  "kelly_performance": {
+    "small": {
+      "win_rate": 1.0,
+      "n": 1
+    }
+  },
+  "top_insight": "Best regime: ACCUMULATION_EXTREME_FEAR | Tribunal veto rate: 0% | Total trades: 1"
+}
