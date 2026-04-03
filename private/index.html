@@ -207,7 +207,16 @@ footer{border-top:1px solid var(--border);padding:16px 28px;display:flex;justify
 
 <div class="sec">Open positions — full detail</div>
 <div class="grid g2">
-  <div id="pos-detail"><div class="loading">Loading positions…</div></div>
+  <div>
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px">
+      <span style="width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block"></span>CRYPTO POSITIONS
+    </div>
+    <div id="pos-detail"><div class="loading">Loading positions…</div></div>
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--violet);text-transform:uppercase;margin-top:14px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
+      <span style="width:8px;height:8px;border-radius:50%;background:var(--violet);display:inline-block"></span>EQUITY POSITIONS
+    </div>
+    <div id="pos-detail-equity"><div class="loading">Loading equity…</div></div>
+  </div>
   <div class="card">
     <div class="ct">Competition ledger</div>
     <div style="margin-top:8px">
@@ -369,6 +378,50 @@ function renderTicker() {
   document.getElementById('mv-fg').style.color = fg.color;
 }
 
+// ── Shared position card renderer ──────────────────────────────────────────
+function renderPosCard(sym, p, prices, f, botType) {
+  const isEquity = botType === 'equity';
+  const liveP  = isEquity
+    ? (p.entry_price || 0)                     // equity: no live price from CoinGecko
+    : ((prices[sym] || {}).usd || p.entry_price);
+  const qty    = p.qty || p.shares || 0;
+  const unrl   = (liveP && p.entry_price) ? ((liveP - p.entry_price) / p.entry_price * 100) : null;
+  const pv     = qty * (liveP || p.entry_price || 0);
+  const col    = unrl != null && unrl >= 0 ? 'var(--green)' : 'var(--red)';
+  const bar    = Math.min(100, Math.max(0, (unrl || 0) + 50));
+  const accentColor = isEquity ? 'var(--violet)' : 'var(--iris)';
+  const tagBg  = isEquity ? 'var(--vbg)' : 'rgba(129,140,248,.12)';
+  const tagBdr = isEquity ? 'rgba(124,58,237,.3)' : 'rgba(129,140,248,.3)';
+  const tagTxt = isEquity ? 'var(--violet)' : 'var(--iris)';
+  const regime = p.entry_regime || '—';
+  const fg     = p.entry_fg != null ? ' · F&G ' + p.entry_fg : '';
+  const qtyLabel = isEquity ? 'Shares' : 'Qty';
+  const qtyFmt   = isEquity ? Number(qty).toFixed(4) : Number(qty).toFixed(4);
+  const liveLabel = isEquity ? 'Entry' : 'Live';
+  const liveTxt   = liveP ? f.dollar(liveP) : '—';
+
+  return `<div class="pos-card" style="border-color:${accentColor}40">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+      <div>
+        <div class="pos-sym" style="color:${accentColor}">${sym}</div>
+        <div class="cs">${regime}${fg}</div>
+      </div>
+      <span class="pos-tag" style="background:${tagBg};color:${tagTxt};border-color:${tagBdr}">${(p.trade_type || 'SWING').toUpperCase()}</span>
+    </div>
+    <div class="pos-stats">
+      <div class="ps"><div class="pl">${qtyLabel}</div><div class="pv">${qtyFmt}</div></div>
+      <div class="ps"><div class="pl">Entry</div><div class="pv">${f.dollar(p.entry_price)}</div></div>
+      <div class="ps"><div class="pl">${liveLabel}</div><div class="pv" style="color:${accentColor}">${liveTxt}</div></div>
+      <div class="ps"><div class="pl">Value</div><div class="pv go">${f.dollar(pv)}</div></div>
+      <div class="ps"><div class="pl">Stop</div><div class="pv re">${p.stop_loss ? f.dollar(p.stop_loss) : '—'}</div></div>
+      <div class="ps"><div class="pl">Target</div><div class="pv gr">${p.target ? f.dollar(p.target) : '—'}</div></div>
+    </div>
+    <div class="pnl-bar"><div class="pnl-fill" style="width:${bar}%;background:${col}"></div></div>
+    ${unrl != null ? `<div style="text-align:right;margin-top:4px;font-size:11px;font-family:var(--fm);color:${col}">Unrealized: ${unrl >= 0 ? '+' : ''}${unrl.toFixed(2)}%</div>` : ''}
+    ${isEquity ? `<div style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-top:4px;text-align:right">Live price updates at next push</div>` : ''}
+  </div>`;
+}
+
 function renderAll(data) {
   const S = Sovereign; const f = S.fmt;
 
@@ -400,35 +453,18 @@ function renderAll(data) {
   document.getElementById('pos-val').textContent  = f.dollar(posVal);
   document.getElementById('pos-pct').textContent  = allTotal > 0 ? (posVal/allTotal*100).toFixed(1) + '% of portfolio' : '—';
 
-  // Positions detail
+  // ── Positions: Crypto ────────────────────────────────────────────────
   const syms = Object.keys(positions);
   document.getElementById('pos-detail').innerHTML = syms.length
-    ? syms.map(sym => {
-        const p = positions[sym];
-        const liveP = prices[sym]?.usd || p.entry_price;
-        const unrl = liveP ? ((liveP - p.entry_price) / p.entry_price * 100) : null;
-        const pv   = (p.qty || 0) * (liveP || p.entry_price || 0);
-        const col  = unrl != null && unrl >= 0 ? 'var(--green)' : 'var(--red)';
-        const bar  = Math.min(100, Math.max(0, (unrl || 0) + 50));
-        return `<div class="pos-card">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
-            <div><div class="pos-sym">${sym}</div>
-            <div class="cs">${p.entry_regime || '—'} · F&G ${p.entry_fg || '—'} at entry</div></div>
-            <span class="pos-tag">${(p.trade_type || 'CYCLE').toUpperCase()}</span>
-          </div>
-          <div class="pos-stats">
-            <div class="ps"><div class="pl">Qty</div><div class="pv">${Number(p.qty).toFixed(4)}</div></div>
-            <div class="ps"><div class="pl">Entry</div><div class="pv">${f.dollar(p.entry_price)}</div></div>
-            <div class="ps"><div class="pl">Live</div><div class="pv ir">${liveP ? f.dollar(liveP) : '—'}</div></div>
-            <div class="ps"><div class="pl">Value</div><div class="pv go">${f.dollar(pv)}</div></div>
-            <div class="ps"><div class="pl">Stop</div><div class="pv re">${f.dollar(p.stop_loss)}</div></div>
-            <div class="ps"><div class="pl">Target</div><div class="pv gr">${f.dollar(p.target)}</div></div>
-          </div>
-          <div class="pnl-bar"><div class="pnl-fill" style="width:${bar}%;background:${col}"></div></div>
-          ${unrl != null ? `<div style="text-align:right;margin-top:4px;font-size:11px;font-family:var(--fm);color:${col}">Unrealized: ${unrl >= 0 ? '+' : ''}${unrl.toFixed(2)}%</div>` : ''}
-        </div>`;
-      }).join('')
-    : '<div class="loading">No open positions</div>';
+    ? syms.map(sym => renderPosCard(sym, positions[sym], prices, f, 'crypto')).join('')
+    : '<div class="loading">No open crypto positions</div>';
+
+  // ── Positions: Equity ────────────────────────────────────────────────
+  const equityPos = S.get('portfolio_private.equity_positions', {});
+  const eqSyms = Object.keys(equityPos);
+  document.getElementById('pos-detail-equity').innerHTML = eqSyms.length
+    ? eqSyms.map(sym => renderPosCard(sym, equityPos[sym], {}, f, 'equity')).join('')
+    : '<div class="loading">No open equity positions</div>';
 
   // Competition
   const eqScore = S.get('competition_ledger.competition.equity_score', 0);
@@ -553,12 +589,24 @@ function renderAll(data) {
       const acc  = (info.accuracy || 0.5) * 100;
       const n    = info.total_graded || 0;
       const wt   = (weights[name] || 1.0).toFixed(2);
-      const col  = n >= 5 ? (acc >= 65 ? 'var(--green)' : acc >= 50 ? 'var(--amber)' : 'var(--red)') : 'var(--ghost)';
-      return `<div class="mrow">
-        <span style="font-size:11px;color:var(--silver)">${name}</span>
-        <div style="text-align:right">
-          <div style="font-size:12px;font-weight:700;color:${col};font-family:var(--fm)">${n >= 5 ? acc.toFixed(0) + '% acc' : 'No data yet'}</div>
-          <div style="font-size:10px;color:var(--ghost);font-family:var(--fm)">weight ${wt}</div>
+      const col  = n < 1 ? 'var(--ghost)' : (acc >= 65 ? 'var(--green)' : acc >= 50 ? 'var(--amber)' : 'var(--red)');
+      const barW = Math.round(acc);
+      const appr = info.approvals || 0;
+      const rej  = info.rejections || 0;
+      return `<div style="margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-size:12px;font-weight:700;color:var(--white);font-family:var(--fm)">${name}</span>
+          <div style="text-align:right">
+            <span style="font-size:14px;font-weight:800;color:${col};font-family:var(--fd)">${n < 1 ? '—' : acc.toFixed(0) + '%'}</span>
+            <span style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-left:4px">wt ${wt}</span>
+          </div>
+        </div>
+        <div style="height:4px;background:var(--border);border-radius:2px;margin-bottom:3px;overflow:hidden">
+          <div style="height:100%;width:${n<1?0:barW}%;background:${col};border-radius:2px;transition:width 1.2s ease"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between">
+          <span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${n} graded · ✅${appr} ❌${rej}</span>
+          <span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${n < 1 ? 'Accumulating data…' : (n < 5 ? 'Early sample' : 'Calibrated')}</span>
         </div>
       </div>`;
     }).join('');
