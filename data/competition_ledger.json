@@ -1,24 +1,24 @@
 {
-  "last_updated": "2026-04-02T08:55:10.446480",
+  "last_updated": "2026-04-02T23:00:11.079019",
   "equity": {
-    "total_trades": 2,
+    "total_trades": 3,
     "wins": 2,
-    "losses": 0,
-    "win_rate": 1.0,
-    "avg_roi": 0.47,
+    "losses": 1,
+    "win_rate": 0.667,
+    "avg_roi": 0.17,
     "best_trade": {
       "symbol": "SLB",
       "roi": 0.53
     },
     "worst_trade": {
-      "symbol": "PCG",
-      "roi": 0.41
+      "symbol": "FAST",
+      "roi": -0.43
     },
-    "current_streak": 2,
-    "streak_type": "WIN",
-    "last_30d_trades": 2,
-    "last_30d_win_rate": 1.0,
-    "sharpe_proxy": 5.54
+    "current_streak": 1,
+    "streak_type": "LOSS",
+    "last_30d_trades": 3,
+    "last_30d_win_rate": 0.667,
+    "sharpe_proxy": 0.33
   },
   "crypto": {
     "total_trades": 1,
@@ -42,9 +42,9 @@
   },
   "competition": {
     "leader": "CRYPTO",
-    "equity_score": 104.7,
+    "equity_score": 68.4,
     "crypto_score": 121.1,
-    "edge": "Crypto GOAT leads: 121 vs 105"
+    "edge": "Crypto GOAT leads: 121 vs 68"
   },
   "commissioner_decisions": [
     {
