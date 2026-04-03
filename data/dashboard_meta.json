@@ -1,5 +1,5 @@
 {
-  "last_push": "2026-04-03T18:10:24.628031",
+  "last_push": "2026-04-03T19:03:53.148400",
   "schema_version": 3,
   "files": [
     "portfolio_public.json",
@@ -13,6 +13,7 @@
     "cross_asset.json",
     "live_readiness.json",
     "performance_attribution.json",
-    "tribunal_accuracy.json"
+    "tribunal_accuracy.json",
+    "backtest_latest.json"
   ]
 }
