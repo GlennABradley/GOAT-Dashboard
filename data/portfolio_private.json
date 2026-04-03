@@ -1,5 +1,5 @@
 {
-  "cash": 95650.41,
+  "cash": 95650.38,
   "start_of_day_value": 96858.88093901941,
   "positions": {
     "DOT/USD": {
@@ -15,12 +15,26 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0
+    },
+    "SOL/USD": {
+      "symbol": "SOL/USD",
+      "qty": 4.063066245,
+      "entry_price": 80.7942,
+      "entry_date": "2026-04-03",
+      "trade_type": "swing",
+      "stop_loss": null,
+      "target": null,
+      "entry_regime": null,
+      "entry_fg": null,
+      "tier": 1,
+      "tp1_hit": false,
+      "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-03T00:54:32.014100",
+  "last_updated": "2026-04-03T06:05:01.101051",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-03T00:54:32.014105"
+    "generated_at": "2026-04-03T06:05:01.101063"
   },
   "equity_cash": 95650.41,
   "equity_positions": {}
