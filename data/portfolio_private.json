@@ -31,10 +31,10 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-03T19:03:53.135852",
+  "last_updated": "2026-04-03T19:05:25.566958",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-03T19:03:53.135857"
+    "generated_at": "2026-04-03T19:05:25.566964"
   },
   "equity_cash": 95650.38,
   "equity_positions": {
