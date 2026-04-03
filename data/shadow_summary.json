@@ -1,7 +1,7 @@
 {
   "AGGRESSIVE": {
-    "total_trades": 0,
-    "win_rate": 0.0,
+    "total_trades": 11,
+    "win_rate": 0.727,
     "max_drawdown": 0.0
   },
   "CONSERVATIVE": {
@@ -10,12 +10,12 @@
     "max_drawdown": 0.0
   },
   "EXPERIMENTAL": {
-    "total_trades": 0,
-    "win_rate": 0.0,
+    "total_trades": 11,
+    "win_rate": 0.727,
     "max_drawdown": 0.0
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-03T00:05:01.154091"
+    "generated_at": "2026-04-03T00:31:39.289520"
   }
 }

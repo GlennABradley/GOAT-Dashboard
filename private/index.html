@@ -368,28 +368,33 @@ function renderTicker() {
 function renderAll(data) {
   const S = Sovereign; const f = S.fmt;
 
-  // P&L panel
-  const cash     = S.get('portfolio_private.cash', 0);
-  const sod      = S.get('portfolio_private.start_of_day_value', cash);
+  // P&L panel — crypto + equity combined
+  const cash      = S.get('portfolio_private.cash', 0);
+  const eqCash    = S.get('portfolio_private.equity_cash', 0);
+  const sod       = S.get('portfolio_private.start_of_day_value', cash) || cash;
   const positions = S.get('portfolio_private.positions', {});
-  const prices   = S.prices();
+  const prices    = S.prices();
+
+  // Calculate live position value (uses p.symbol injected by Python)
   let posVal = 0;
   Object.values(positions).forEach(p => {
     const sym   = p.symbol || '';
-    const liveP = prices[sym]?.usd || p.entry_price || 0;
+    const liveP = (prices[sym] || {}).usd || p.entry_price || 0;
     posVal += (p.qty || 0) * liveP;
   });
-  const total = cash + posVal;
-  const pnl   = total - sod;
-  const pnlPct = sod > 0 ? pnl / sod : 0;
-  document.getElementById('tot-val').textContent = f.dollar(total);
+
+  const cryptoTotal = cash + posVal;
+  const allTotal    = cryptoTotal + eqCash;  // combined portfolio
+  const pnl         = cryptoTotal - sod;
+  const pnlPct      = sod > 0 ? pnl / sod : 0;
+  document.getElementById('tot-val').textContent  = f.dollar(allTotal);
   document.getElementById('cash-val').textContent = f.dollar(cash);
   const pnlEl = document.getElementById('pnl-val');
-  pnlEl.textContent = f.dollar(pnl);
-  pnlEl.style.color = pnl >= 0 ? 'var(--green)' : 'var(--red)';
-  document.getElementById('pnl-pct').textContent = f.pct(pnlPct * 100) + ' vs SOD';
-  document.getElementById('pos-val').textContent = f.dollar(posVal);
-  document.getElementById('pos-pct').textContent = total > 0 ? (posVal/total*100).toFixed(1) + '% of portfolio' : '—';
+  pnlEl.textContent  = f.dollar(pnl);
+  pnlEl.style.color  = pnl >= 0 ? 'var(--green)' : 'var(--red)';
+  document.getElementById('pnl-pct').textContent  = f.pct(pnlPct * 100) + ' vs SOD';
+  document.getElementById('pos-val').textContent  = f.dollar(posVal);
+  document.getElementById('pos-pct').textContent  = allTotal > 0 ? (posVal/allTotal*100).toFixed(1) + '% of portfolio' : '—';
 
   // Positions detail
   const syms = Object.keys(positions);

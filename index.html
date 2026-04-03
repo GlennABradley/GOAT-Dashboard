@@ -403,34 +403,34 @@ function renderAll(data) {
   document.getElementById('health-issue').textContent = issues.length ? issues[0] : 'All systems nominal';
   document.getElementById('health-mult').textContent = Math.round(mult * 100) + '%';
 
-  // Competition
-  const leader = S.get('competition.competition.leader', '—');
-  const eqScore = S.get('competition.competition.equity_score', 0);
-  const crScore = S.get('competition.competition.crypto_score', 0);
+  // Competition (key: competition_ledger)
+  const leader = S.get('competition_ledger.competition.leader', '—');
+  const eqScore = S.get('competition_ledger.competition.equity_score', 0);
+  const crScore = S.get('competition_ledger.competition.crypto_score', 0);
   const mx = Math.max(eqScore, crScore, 1);
   document.getElementById('eq-bar').style.width = (eqScore / mx * 100) + '%';
   document.getElementById('cr-bar').style.width = (crScore / mx * 100) + '%';
   document.getElementById('eq-score').textContent = Math.round(eqScore);
   document.getElementById('cr-score').textContent = Math.round(crScore);
   document.getElementById('leader-name').textContent = leader;
-  document.getElementById('leader-edge').textContent = S.get('competition.competition.edge', '—');
+  document.getElementById('leader-edge').textContent = S.get('competition_ledger.competition.edge', '—');
 
-  const eqWR = S.get('competition.equity.win_rate', 0);
-  const eqT  = S.get('competition.equity.total_trades', 0);
-  const wins = S.get('competition.equity.wins', 0);
-  const losses = S.get('competition.equity.losses', 0);
+  const eqWR = S.get('competition_ledger.equity.win_rate', 0);
+  const eqT  = S.get('competition_ledger.equity.total_trades', 0);
+  const wins = S.get('competition_ledger.equity.wins', 0);
+  const losses = S.get('competition_ledger.equity.losses', 0);
   document.getElementById('eq-wr').textContent     = f.pct0(eqWR);
   document.getElementById('eq-trades').textContent = eqT;
-  const sk = S.get('competition.equity.current_streak', 0);
-  const st = S.get('competition.equity.streak_type', '—');
+  const sk = S.get('competition_ledger.equity.current_streak', 0);
+  const st = S.get('competition_ledger.equity.streak_type', '—');
   document.getElementById('eq-streak').textContent = sk ? sk + ' ' + st : '—';
-  document.getElementById('eq-sharpe').textContent = f.round(S.get('competition.equity.sharpe_proxy', 0));
+  document.getElementById('eq-sharpe').textContent = f.round(S.get('competition_ledger.equity.sharpe_proxy', 0));
 
   // Win/Loss chart
   if (wins || losses) initWLChart(wins, losses);
 
   // Commissioner
-  const hist = S.get('competition.commissioner_decisions', []);
+  const hist = S.get('competition_ledger.commissioner_decisions', []);
   const latest = hist[hist.length - 1];
   if (latest) {
     document.getElementById('sp-eq').textContent = Math.round(latest.equity_weight * 100);
@@ -445,7 +445,7 @@ function renderAll(data) {
     </div>`
   ).join('');
 
-  // Portfolio
+  // Portfolio — use competition_ledger regime as proxy
   const syms   = S.get('portfolio_public.symbols', []);
   const regime = (S.get('portfolio_public.regimes', ['—'])[0] || '—').replace(/_/g,' ');
   document.getElementById('pos-count').textContent = syms.length || S.get('portfolio_public.position_count', 0);
