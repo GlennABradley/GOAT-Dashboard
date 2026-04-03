@@ -17,28 +17,11 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-03T00:31:39.288198",
+  "last_updated": "2026-04-03T00:54:32.014100",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-03T00:31:39.288203"
+    "generated_at": "2026-04-03T00:54:32.014105"
   },
   "equity_cash": 95650.41,
-  "equity_positions": {
-    "CME": {
-      "ticker": "CME",
-      "shares": 10.2999,
-      "entry_price": 298.159022,
-      "entry_date": "2026-03-27",
-      "trade_type": "swing",
-      "stop_loss": 293.83,
-      "target": 315.0,
-      "entry_vix": 29.64,
-      "entry_regime": "BEAR_HIGH_VOL",
-      "tp1_hit": false,
-      "shares_sold": 0,
-      "invalidation_signal": null,
-      "symbol": "CME"
-    }
-  },
-  "total_portfolio": 191300.82
+  "equity_positions": {}
 }

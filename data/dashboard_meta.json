@@ -1,6 +1,7 @@
 {
-  "last_push": "2026-04-03T00:31:39.296338",
-  "pushed_files": [
+  "last_push": "2026-04-03T00:54:32.022822",
+  "schema_version": 3,
+  "files": [
     "portfolio_public.json",
     "portfolio_private.json",
     "system_health.json",
@@ -13,7 +14,5 @@
     "live_readiness.json",
     "performance_attribution.json",
     "tribunal_accuracy.json"
-  ],
-  "system": "Sovereign v2",
-  "schema_version": 2
+  ]
 }
