@@ -5,5 +5,9 @@
   "btc_1h_change": -0.0004,
   "btc_dominance": null,
   "action": "No cross-asset signal",
-  "checked_at": "2026-04-02T18:33:10.860005"
+  "checked_at": "2026-04-02T18:33:10.860005",
+  "_meta": {
+    "schema_version": 2,
+    "generated_at": "2026-04-03T00:03:06.486343"
+  }
 }

@@ -1,17 +1,18 @@
 {
-  "last_push": "2026-04-02T23:00:11.124626",
+  "last_push": "2026-04-03T00:03:06.492737",
   "pushed_files": [
     "portfolio_public.json",
+    "portfolio_private.json",
     "system_health.json",
     "shadow_summary.json",
+    "multi_timeframe.json",
     "decisions_recent.json",
     "competition_ledger.json",
-    "multi_timeframe.json",
     "cross_asset.json",
     "live_readiness.json",
     "performance_attribution.json",
-    "tribunal_accuracy.json",
-    "portfolio_private.json"
+    "tribunal_accuracy.json"
   ],
-  "system": "Sovereign v2"
+  "system": "Sovereign v2",
+  "schema_version": 2
 }

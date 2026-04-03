@@ -3,5 +3,9 @@
   "status_emoji": "\ud83d\udfe2",
   "position_multiplier": 1.0,
   "issues": [],
-  "checked_at": "2026-04-02T23:00:11.111373"
+  "checked_at": "2026-04-03T00:03:06.484993",
+  "_meta": {
+    "schema_version": 2,
+    "generated_at": "2026-04-03T00:03:06.484997"
+  }
 }
