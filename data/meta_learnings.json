@@ -18,23 +18,23 @@
       "combo_str": "REGIME_ACCUMULATION",
       "win_rate": 1.0,
       "sample_size": 7,
-      "avg_pnl": 1.2243
+      "avg_pnl": 1.2203
     },
     {
       "combo_str": "HIGH_CONFIDENCE",
       "win_rate": 1.0,
       "sample_size": 7,
-      "avg_pnl": 1.2243
+      "avg_pnl": 1.2203
     },
     {
       "combo_str": "REGIME_ACCUMULATION + HIGH_CONFIDENCE",
       "win_rate": 1.0,
       "sample_size": 7,
-      "avg_pnl": 1.2243
+      "avg_pnl": 1.2203
     }
   ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-06T08:55:24.164526"
+    "generated_at": "2026-04-06T10:05:01.126197"
   }
 }
