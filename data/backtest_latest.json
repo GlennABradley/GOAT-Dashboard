@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T19:04:36.727237",
+  "generated_at": "2026-04-06T08:43:30.203907",
   "config": {
     "lookback_days": 365,
     "train_window_days": 90,
@@ -15,7 +15,7 @@
     "tp1_pct": 0.05,
     "tp2_pct": 0.1,
     "min_confidence": 0.7,
-    "mc_simulations": 300,
+    "mc_simulations": 500,
     "mc_block_size": 10
   },
   "symbols": {
@@ -24,62 +24,62 @@
       "bot": "crypto",
       "windows_run": 9,
       "oos_summary": {
-        "total_trades": 8,
-        "win_rate": 0.375,
-        "avg_sharpe": -0.643,
-        "max_drawdown": 0.61
+        "total_trades": 10,
+        "win_rate": 0.1,
+        "avg_sharpe": -2.489,
+        "max_drawdown": 1.0
       },
       "is_summary": {
-        "total_trades": 16,
-        "win_rate": 0.625
+        "total_trades": 24,
+        "win_rate": 0.458
       },
-      "degradation_ratio": 0.4,
+      "degradation_ratio": 0.782,
       "curve_fit_risk": "HIGH",
       "windows": [
         {
           "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-05-27",
-          "test_start": "2025-05-28",
-          "test_end": "2025-07-26",
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
           "in_sample": {
-            "total_trades": 2,
+            "total_trades": 3,
             "wins": 2,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 4.08,
-            "avg_loss_pct": 0,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 3.27,
+            "avg_loss_pct": 0.0,
             "profit_factor": Infinity,
-            "sharpe": 3.296,
-            "max_drawdown": 0.27,
-            "calmar": -313.904,
-            "total_return": -84.75,
-            "final_capital": 15245.97,
+            "sharpe": 2.941,
+            "max_drawdown": 0.28,
+            "calmar": -302.779,
+            "total_return": -84.78,
+            "final_capital": 15221.79,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 1.0,
-                "avg_roi": 4.08,
-                "n": 2
+                "win_rate": 0.6666666666666666,
+                "avg_roi": 2.18,
+                "n": 3
               }
             }
           },
           "out_of_sample": {
             "total_trades": 1,
-            "wins": 0,
-            "losses": 1,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -1.12,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 0.53,
+            "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": -1.017,
-            "max_drawdown": 0.19,
-            "calmar": -447.455,
-            "total_return": -85.02,
-            "final_capital": 14983.46,
+            "sharpe": 0.43,
+            "max_drawdown": 0.2,
+            "calmar": -424.961,
+            "total_return": -84.99,
+            "final_capital": 15007.79,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -1.12,
+                "win_rate": 1.0,
+                "avg_roi": 0.53,
                 "n": 1
               }
             }
@@ -87,28 +87,28 @@
         },
         {
           "window": 2,
-          "train_start": "2025-03-29",
-          "train_end": "2025-06-26",
-          "test_start": "2025-06-27",
-          "test_end": "2025-08-25",
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
           "in_sample": {
-            "total_trades": 1,
-            "wins": 1,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 0.48,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 0.095,
-            "max_drawdown": 0.98,
-            "calmar": -86.727,
-            "total_return": -84.99,
-            "final_capital": 15007.1,
+            "total_trades": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 1.45,
+            "avg_loss_pct": -7.39,
+            "profit_factor": 0.39,
+            "sharpe": -0.325,
+            "max_drawdown": 1.02,
+            "calmar": -83.358,
+            "total_return": -85.02,
+            "final_capital": 14975.1,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 1.0,
-                "avg_roi": 0.48,
-                "n": 1
+                "win_rate": 0.6666666666666666,
+                "avg_roi": -1.5,
+                "n": 3
               }
             }
           },
@@ -118,17 +118,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -6.27,
-            "profit_factor": Infinity,
-            "sharpe": -2.504,
-            "max_drawdown": 0.61,
-            "calmar": -139.495,
-            "total_return": -85.09,
-            "final_capital": 14907.83,
+            "avg_loss_pct": -3.7,
+            "profit_factor": 0.0,
+            "sharpe": -2.337,
+            "max_drawdown": 0.57,
+            "calmar": -149.218,
+            "total_return": -85.05,
+            "final_capital": 14945.55,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -6.27,
+                "avg_roi": -3.7,
                 "n": 1
               }
             }
@@ -136,27 +136,27 @@
         },
         {
           "window": 3,
-          "train_start": "2025-04-28",
-          "train_end": "2025-07-26",
-          "test_start": "2025-07-27",
-          "test_end": "2025-09-24",
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
           "in_sample": {
             "total_trades": 2,
             "wins": 2,
             "losses": 0,
             "win_rate": 1.0,
-            "avg_win_pct": 2.9,
+            "avg_win_pct": 3.03,
             "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": 2.085,
-            "max_drawdown": 0.36,
-            "calmar": -235.743,
+            "sharpe": 2.429,
+            "max_drawdown": 0.25,
+            "calmar": -339.483,
             "total_return": -84.87,
-            "final_capital": 15132.69,
+            "final_capital": 15129.28,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 1.0,
-                "avg_roi": 2.9,
+                "avg_roi": 3.03,
                 "n": 2
               }
             }
@@ -167,17 +167,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -1.83,
-            "profit_factor": Infinity,
-            "sharpe": -1.442,
-            "max_drawdown": 0.43,
-            "calmar": -197.737,
-            "total_return": -85.03,
-            "final_capital": 14973.05,
+            "avg_loss_pct": -6.91,
+            "profit_factor": 0.0,
+            "sharpe": -3.852,
+            "max_drawdown": 0.68,
+            "calmar": -125.149,
+            "total_return": -85.1,
+            "final_capital": 14898.5,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -1.83,
+                "avg_roi": -6.91,
                 "n": 1
               }
             }
@@ -185,91 +185,27 @@
         },
         {
           "window": 4,
-          "train_start": "2025-05-28",
-          "train_end": "2025-08-25",
-          "test_start": "2025-08-26",
-          "test_end": "2025-10-24",
-          "in_sample": {
-            "total_trades": 1,
-            "wins": 0,
-            "losses": 1,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -7.68,
-            "profit_factor": Infinity,
-            "sharpe": -1.469,
-            "max_drawdown": 1.08,
-            "calmar": -78.808,
-            "total_return": -85.11,
-            "final_capital": 14887.05,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -7.68,
-                "n": 1
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
-          }
-        },
-        {
-          "window": 5,
-          "train_start": "2025-06-27",
-          "train_end": "2025-09-24",
-          "test_start": "2025-09-25",
-          "test_end": "2025-11-23",
-          "in_sample": {
-            "total_trades": 3,
-            "wins": 2,
-            "losses": 1,
-            "win_rate": 0.667,
-            "avg_win_pct": 1.06,
-            "avg_loss_pct": -6.27,
-            "profit_factor": 0.34,
-            "sharpe": -0.348,
-            "max_drawdown": 0.65,
-            "calmar": -130.8,
-            "total_return": -85.02,
-            "final_capital": 14979.76,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": -1.38,
-                "n": 3
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
-          }
-        },
-        {
-          "window": 6,
-          "train_start": "2025-07-27",
-          "train_end": "2025-10-24",
-          "test_start": "2025-10-25",
-          "test_end": "2025-12-23",
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
           "in_sample": {
             "total_trades": 2,
-            "wins": 0,
-            "losses": 2,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -3.52,
-            "profit_factor": Infinity,
-            "sharpe": -0.843,
-            "max_drawdown": 1.08,
-            "calmar": -78.759,
-            "total_return": -85.06,
-            "final_capital": 14939.92,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 0.45,
+            "avg_loss_pct": -6.2,
+            "profit_factor": 0.07,
+            "sharpe": -0.644,
+            "max_drawdown": 0.81,
+            "calmar": -104.996,
+            "total_return": -85.05,
+            "final_capital": 14953.15,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -3.52,
+                "win_rate": 0.5,
+                "avg_roi": -2.87,
                 "n": 2
               }
             }
@@ -280,17 +216,115 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -1.36,
-            "profit_factor": Infinity,
-            "sharpe": -2.841,
-            "max_drawdown": 0.14,
-            "calmar": -607.289,
-            "total_return": -85.02,
-            "final_capital": 14979.56,
+            "avg_loss_pct": -0.31,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.03,
+            "calmar": -2833.484,
+            "total_return": -85.0,
+            "final_capital": 14995.47,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -0.31,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 5,
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.333,
+            "avg_win_pct": 0.95,
+            "avg_loss_pct": -4.66,
+            "profit_factor": 0.1,
+            "sharpe": -1.401,
+            "max_drawdown": 0.75,
+            "calmar": -113.443,
+            "total_return": -85.08,
+            "final_capital": 14917.72,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -2.79,
+                "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": 0.0,
+            "profit_factor": 0.0,
+            "sharpe": 0,
+            "max_drawdown": 0.0,
+            "calmar": 0,
+            "total_return": -85.0,
+            "final_capital": 15000.0,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -1.36,
+                "avg_roi": 0.0,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 6,
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
+          "in_sample": {
+            "total_trades": 5,
+            "wins": 1,
+            "losses": 4,
+            "win_rate": 0.2,
+            "avg_win_pct": 5.08,
+            "avg_loss_pct": -5.63,
+            "profit_factor": 0.23,
+            "sharpe": -2.623,
+            "max_drawdown": 1.53,
+            "calmar": -55.695,
+            "total_return": -85.21,
+            "final_capital": 14786.17,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.2,
+                "avg_roi": -3.49,
+                "n": 5
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -1.49,
+            "profit_factor": 0.0,
+            "sharpe": -2.887,
+            "max_drawdown": 0.16,
+            "calmar": -531.39,
+            "total_return": -85.02,
+            "final_capital": 14977.65,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -1.49,
                 "n": 1
               }
             }
@@ -298,18 +332,18 @@
         },
         {
           "window": 7,
-          "train_start": "2025-08-26",
-          "train_end": "2025-11-23",
-          "test_start": "2025-11-24",
-          "test_end": "2026-01-22",
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
           "in_sample": {
-            "total_trades": 1,
+            "total_trades": 2,
             "wins": 0,
-            "losses": 1,
+            "losses": 2,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -6.92,
-            "profit_factor": Infinity,
+            "avg_loss_pct": -3.46,
+            "profit_factor": 0.0,
             "sharpe": -2.7,
             "max_drawdown": 0.68,
             "calmar": -125.15,
@@ -320,26 +354,31 @@
                 "win_rate": 0.0,
                 "avg_roi": -6.92,
                 "n": 1
+              },
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": 0.0,
+                "n": 1
               }
             }
           },
           "out_of_sample": {
             "total_trades": 1,
-            "wins": 1,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 1.3,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 2.742,
-            "max_drawdown": 0.0,
-            "calmar": 0,
-            "total_return": -84.98,
-            "final_capital": 15019.56,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -1.97,
+            "profit_factor": 0.0,
+            "sharpe": -1.574,
+            "max_drawdown": 0.33,
+            "calmar": -257.665,
+            "total_return": -85.03,
+            "final_capital": 14970.47,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 1.3,
+                "win_rate": 0.0,
+                "avg_roi": -1.97,
                 "n": 1
               }
             }
@@ -347,27 +386,27 @@
         },
         {
           "window": 8,
-          "train_start": "2025-09-25",
-          "train_end": "2025-12-23",
-          "test_start": "2025-12-24",
-          "test_end": "2026-02-21",
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
           "in_sample": {
             "total_trades": 1,
             "wins": 0,
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -3.43,
-            "profit_factor": Infinity,
-            "sharpe": -0.613,
+            "avg_loss_pct": -3.55,
+            "profit_factor": 0.0,
+            "sharpe": -0.635,
             "max_drawdown": 0.89,
-            "calmar": -95.563,
+            "calmar": -95.566,
             "total_return": -85.05,
-            "final_capital": 14948.56,
+            "final_capital": 14946.69,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -3.43,
+                "avg_roi": -3.55,
                 "n": 1
               }
             }
@@ -378,17 +417,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -1.14,
-            "profit_factor": Infinity,
-            "sharpe": -0.941,
-            "max_drawdown": 0.35,
-            "calmar": -242.906,
-            "total_return": -85.02,
-            "final_capital": 14982.94,
+            "avg_loss_pct": -6.06,
+            "profit_factor": 0.0,
+            "sharpe": -2.87,
+            "max_drawdown": 0.61,
+            "calmar": -139.493,
+            "total_return": -85.09,
+            "final_capital": 14909.3,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -1.14,
+                "avg_roi": -6.06,
                 "n": 1
               }
             }
@@ -396,58 +435,57 @@
         },
         {
           "window": 9,
-          "train_start": "2025-10-25",
-          "train_end": "2026-01-22",
-          "test_start": "2026-01-23",
-          "test_end": "2026-03-23",
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
           "in_sample": {
             "total_trades": 3,
-            "wins": 3,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 1.29,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 2.722,
-            "max_drawdown": 0.24,
-            "calmar": -353.568,
-            "total_return": -84.86,
-            "final_capital": 15143.79,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 1.28,
+            "avg_loss_pct": -1.97,
+            "profit_factor": 1.3,
+            "sharpe": 1.63,
+            "max_drawdown": 0.44,
+            "calmar": -192.968,
+            "total_return": -84.91,
+            "final_capital": 15094.29,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 1.29,
+                "win_rate": 0.6666666666666666,
+                "avg_roi": 0.2,
                 "n": 3
               }
             }
           },
           "out_of_sample": {
             "total_trades": 2,
-            "wins": 2,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 0.73,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 1.505,
-            "max_drawdown": 0.55,
-            "calmar": -154.436,
-            "total_return": -84.94,
-            "final_capital": 15060.28,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -5.02,
+            "profit_factor": 0.0,
+            "sharpe": -4.282,
+            "max_drawdown": 1.0,
+            "calmar": -85.15,
+            "total_return": -85.15,
+            "final_capital": 14849.67,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 0.73,
+                "win_rate": 0.0,
+                "avg_roi": -5.02,
                 "n": 2
               }
             }
           }
         }
       ],
-      "generated_at": "2026-04-03T19:04:36.854860",
+      "generated_at": "2026-04-06T08:43:31.764749",
       "monte_carlo": {
-        "error": "Not enough trades for Monte Carlo",
-        "n_trades": 8
+        "skipped": true
       }
     },
     "ETH/USD": {
@@ -456,40 +494,40 @@
       "windows_run": 9,
       "oos_summary": {
         "total_trades": 10,
-        "win_rate": 0.4,
-        "avg_sharpe": -0.573,
+        "win_rate": 0.3,
+        "avg_sharpe": -1.104,
         "max_drawdown": 1.21
       },
       "is_summary": {
-        "total_trades": 39,
-        "win_rate": 0.487
+        "total_trades": 38,
+        "win_rate": 0.5
       },
-      "degradation_ratio": 0.179,
-      "curve_fit_risk": "MEDIUM",
+      "degradation_ratio": 0.4,
+      "curve_fit_risk": "HIGH",
       "windows": [
         {
           "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-05-27",
-          "test_start": "2025-05-28",
-          "test_end": "2025-07-26",
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
           "in_sample": {
             "total_trades": 5,
-            "wins": 4,
-            "losses": 1,
-            "win_rate": 0.8,
-            "avg_win_pct": 5.29,
-            "avg_loss_pct": -0.19,
-            "profit_factor": 109.15,
-            "sharpe": 3.401,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "avg_win_pct": 6.19,
+            "avg_loss_pct": -0.1,
+            "profit_factor": 89.23,
+            "sharpe": 3.222,
             "max_drawdown": 0.43,
-            "calmar": -196.269,
-            "total_return": -84.4,
-            "final_capital": 15604.51,
+            "calmar": -196.338,
+            "total_return": -84.43,
+            "final_capital": 15574.78,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.8,
-                "avg_roi": 4.2,
+                "win_rate": 0.6,
+                "avg_roi": 3.67,
                 "n": 5
               }
             }
@@ -499,18 +537,18 @@
             "wins": 1,
             "losses": 0,
             "win_rate": 1.0,
-            "avg_win_pct": 3.81,
+            "avg_win_pct": 0.9,
             "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": 3.542,
-            "max_drawdown": 0.19,
-            "calmar": -446.759,
-            "total_return": -84.88,
-            "final_capital": 15115.7,
+            "sharpe": 0.401,
+            "max_drawdown": 0.35,
+            "calmar": -242.819,
+            "total_return": -84.99,
+            "final_capital": 15013.29,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 1.0,
-                "avg_roi": 3.81,
+                "avg_roi": 0.9,
                 "n": 1
               }
             }
@@ -518,28 +556,28 @@
         },
         {
           "window": 2,
-          "train_start": "2025-03-29",
-          "train_end": "2025-06-26",
-          "test_start": "2025-06-27",
-          "test_end": "2025-08-25",
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
           "in_sample": {
-            "total_trades": 6,
+            "total_trades": 5,
             "wins": 2,
-            "losses": 4,
-            "win_rate": 0.333,
-            "avg_win_pct": 3.09,
-            "avg_loss_pct": -4.05,
-            "profit_factor": 0.38,
-            "sharpe": -0.466,
+            "losses": 3,
+            "win_rate": 0.4,
+            "avg_win_pct": 4.57,
+            "avg_loss_pct": -5.54,
+            "profit_factor": 0.55,
+            "sharpe": -0.491,
             "max_drawdown": 1.53,
-            "calmar": -55.589,
+            "calmar": -55.591,
             "total_return": -85.05,
-            "final_capital": 14948.72,
+            "final_capital": 14945.21,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.3333333333333333,
-                "avg_roi": -1.67,
-                "n": 6
+                "win_rate": 0.4,
+                "avg_roi": -1.5,
+                "n": 5
               }
             }
           },
@@ -548,18 +586,18 @@
             "wins": 1,
             "losses": 2,
             "win_rate": 0.333,
-            "avg_win_pct": 5.73,
-            "avg_loss_pct": -8.2,
-            "profit_factor": 0.35,
-            "sharpe": -0.859,
-            "max_drawdown": 1.07,
-            "calmar": -79.515,
-            "total_return": -85.08,
-            "final_capital": 14919.02,
+            "avg_win_pct": 9.3,
+            "avg_loss_pct": -5.23,
+            "profit_factor": 0.89,
+            "sharpe": 0.303,
+            "max_drawdown": 0.92,
+            "calmar": -92.37,
+            "total_return": -84.98,
+            "final_capital": 15019.53,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.3333333333333333,
-                "avg_roi": -3.56,
+                "avg_roi": -0.39,
                 "n": 3
               }
             }
@@ -567,27 +605,27 @@
         },
         {
           "window": 3,
-          "train_start": "2025-04-28",
-          "train_end": "2025-07-26",
-          "test_start": "2025-07-27",
-          "test_end": "2025-09-24",
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
           "in_sample": {
             "total_trades": 4,
-            "wins": 3,
-            "losses": 1,
-            "win_rate": 0.75,
-            "avg_win_pct": 6.06,
-            "avg_loss_pct": -8.38,
-            "profit_factor": 2.17,
-            "sharpe": 2.98,
-            "max_drawdown": 0.81,
-            "calmar": -104.582,
-            "total_return": -84.71,
-            "final_capital": 15288.95,
+            "wins": 4,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 5.07,
+            "avg_loss_pct": 0,
+            "profit_factor": Infinity,
+            "sharpe": 5.015,
+            "max_drawdown": 0.33,
+            "calmar": -256.265,
+            "total_return": -84.57,
+            "final_capital": 15432.42,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.75,
-                "avg_roi": 2.45,
+                "win_rate": 1.0,
+                "avg_roi": 5.07,
                 "n": 4
               }
             }
@@ -598,17 +636,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -7.16,
-            "profit_factor": Infinity,
-            "sharpe": -2.824,
-            "max_drawdown": 0.84,
-            "calmar": -101.316,
-            "total_return": -85.11,
-            "final_capital": 14894.81,
+            "avg_loss_pct": -8.43,
+            "profit_factor": 0.0,
+            "sharpe": -3.59,
+            "max_drawdown": 0.83,
+            "calmar": -102.559,
+            "total_return": -85.12,
+            "final_capital": 14876.04,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -7.16,
+                "avg_roi": -8.43,
                 "n": 1
               }
             }
@@ -616,140 +654,179 @@
         },
         {
           "window": 4,
-          "train_start": "2025-05-28",
-          "train_end": "2025-08-25",
-          "test_start": "2025-08-26",
-          "test_end": "2025-10-24",
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
           "in_sample": {
             "total_trades": 8,
-            "wins": 4,
-            "losses": 4,
-            "win_rate": 0.5,
-            "avg_win_pct": 6.6,
-            "avg_loss_pct": -7.74,
-            "profit_factor": 0.85,
-            "sharpe": 1.027,
+            "wins": 3,
+            "losses": 5,
+            "win_rate": 0.375,
+            "avg_win_pct": 6.89,
+            "avg_loss_pct": -6.46,
+            "profit_factor": 0.64,
+            "sharpe": 0.077,
             "max_drawdown": 1.61,
-            "calmar": -52.69,
-            "total_return": -84.83,
-            "final_capital": 15168.89,
+            "calmar": -52.789,
+            "total_return": -84.99,
+            "final_capital": 15009.57,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.5,
-                "avg_roi": -0.57,
+                "win_rate": 0.375,
+                "avg_roi": -1.45,
                 "n": 8
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -0.91,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.09,
+            "calmar": -944.593,
+            "total_return": -85.01,
+            "final_capital": 14986.61,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -0.91,
+                "n": 1
+              }
+            }
           }
         },
         {
           "window": 5,
-          "train_start": "2025-06-27",
-          "train_end": "2025-09-24",
-          "test_start": "2025-09-25",
-          "test_end": "2025-11-23",
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
           "in_sample": {
-            "total_trades": 5,
+            "total_trades": 4,
             "wins": 2,
-            "losses": 3,
-            "win_rate": 0.4,
-            "avg_win_pct": 3.59,
-            "avg_loss_pct": -7.54,
-            "profit_factor": 0.32,
-            "sharpe": -0.585,
+            "losses": 2,
+            "win_rate": 0.5,
+            "avg_win_pct": 5.38,
+            "avg_loss_pct": -7.33,
+            "profit_factor": 0.73,
+            "sharpe": 0.415,
             "max_drawdown": 1.34,
-            "calmar": -63.494,
-            "total_return": -85.08,
-            "final_capital": 14918.16,
+            "calmar": -63.401,
+            "total_return": -84.96,
+            "final_capital": 15043.0,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.4,
-                "avg_roi": -3.09,
-                "n": 5
+                "win_rate": 0.5,
+                "avg_roi": -0.97,
+                "n": 4
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
+            "total_trades": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 2.54,
+            "avg_loss_pct": 0,
+            "profit_factor": Infinity,
+            "sharpe": 2.73,
+            "max_drawdown": 0.0,
+            "calmar": 0,
+            "total_return": -84.96,
+            "final_capital": 15035.67,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 1.0,
+                "avg_roi": 2.54,
+                "n": 1
+              }
+            }
           }
         },
         {
           "window": 6,
-          "train_start": "2025-07-27",
-          "train_end": "2025-10-24",
-          "test_start": "2025-10-25",
-          "test_end": "2025-12-23",
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
           "in_sample": {
-            "total_trades": 3,
+            "total_trades": 4,
             "wins": 1,
-            "losses": 2,
-            "win_rate": 0.333,
+            "losses": 3,
+            "win_rate": 0.25,
             "avg_win_pct": 5.58,
-            "avg_loss_pct": -10.41,
-            "profit_factor": 0.27,
-            "sharpe": -1.488,
-            "max_drawdown": 1.5,
-            "calmar": -56.785,
-            "total_return": -85.18,
-            "final_capital": 14821.89,
+            "avg_loss_pct": -7.67,
+            "profit_factor": 0.24,
+            "sharpe": -1.778,
+            "max_drawdown": 1.59,
+            "calmar": -53.591,
+            "total_return": -85.21,
+            "final_capital": 14790.01,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.3333333333333333,
-                "avg_roi": -5.08,
-                "n": 3
+                "win_rate": 0.25,
+                "avg_roi": -4.36,
+                "n": 4
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
+            "total_trades": 1,
             "wins": 0,
-            "losses": 2,
+            "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -3.99,
-            "profit_factor": Infinity,
-            "sharpe": -3.664,
-            "max_drawdown": 0.8,
-            "calmar": -106.4,
-            "total_return": -85.12,
-            "final_capital": 14880.38,
+            "avg_loss_pct": -1.75,
+            "profit_factor": 0.0,
+            "sharpe": -1.866,
+            "max_drawdown": 0.34,
+            "calmar": -250.077,
+            "total_return": -85.03,
+            "final_capital": 14973.69,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -3.99,
-                "n": 2
+                "avg_roi": -1.75,
+                "n": 1
               }
             }
           }
         },
         {
           "window": 7,
-          "train_start": "2025-08-26",
-          "train_end": "2025-11-23",
-          "test_start": "2025-11-24",
-          "test_end": "2026-01-22",
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
           "in_sample": {
-            "total_trades": 1,
-            "wins": 0,
+            "total_trades": 2,
+            "wins": 1,
             "losses": 1,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
+            "win_rate": 0.5,
+            "avg_win_pct": 2.54,
             "avg_loss_pct": -6.12,
-            "profit_factor": Infinity,
-            "sharpe": -3.012,
+            "profit_factor": 0.42,
+            "sharpe": -1.558,
             "max_drawdown": 0.6,
-            "calmar": -141.817,
-            "total_return": -85.09,
-            "final_capital": 14909.98,
+            "calmar": -141.758,
+            "total_return": -85.05,
+            "final_capital": 14945.43,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
                 "avg_roi": -6.12,
+                "n": 1
+              },
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 1.0,
+                "avg_roi": 2.54,
                 "n": 1
               }
             }
@@ -761,27 +838,27 @@
         },
         {
           "window": 8,
-          "train_start": "2025-09-25",
-          "train_end": "2025-12-23",
-          "test_start": "2025-12-24",
-          "test_end": "2026-02-21",
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
           "in_sample": {
             "total_trades": 4,
             "wins": 2,
             "losses": 2,
             "win_rate": 0.5,
             "avg_win_pct": 0.97,
-            "avg_loss_pct": -4.82,
-            "profit_factor": 0.2,
-            "sharpe": 0.085,
-            "max_drawdown": 1.35,
-            "calmar": -62.957,
-            "total_return": -84.99,
-            "final_capital": 15008.22,
+            "avg_loss_pct": -5.45,
+            "profit_factor": 0.18,
+            "sharpe": -0.079,
+            "max_drawdown": 1.55,
+            "calmar": -54.846,
+            "total_return": -85.01,
+            "final_capital": 14989.24,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.5,
-                "avg_roi": -1.93,
+                "avg_roi": -2.24,
                 "n": 4
               }
             }
@@ -793,150 +870,28 @@
         },
         {
           "window": 9,
-          "train_start": "2025-10-25",
-          "train_end": "2026-01-22",
-          "test_start": "2026-01-23",
-          "test_end": "2026-03-23",
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
           "in_sample": {
-            "total_trades": 3,
+            "total_trades": 2,
             "wins": 1,
-            "losses": 2,
-            "win_rate": 0.333,
+            "losses": 1,
+            "win_rate": 0.5,
             "avg_win_pct": 5.34,
-            "avg_loss_pct": -4.93,
-            "profit_factor": 0.54,
-            "sharpe": 0.341,
-            "max_drawdown": 1.0,
-            "calmar": -84.97,
-            "total_return": -84.97,
-            "final_capital": 15030.45,
+            "avg_loss_pct": -2.38,
+            "profit_factor": 2.24,
+            "sharpe": 1.767,
+            "max_drawdown": 0.67,
+            "calmar": -126.651,
+            "total_return": -84.86,
+            "final_capital": 15143.86,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.3333333333333333,
-                "avg_roi": -1.51,
-                "n": 3
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 3,
-            "wins": 2,
-            "losses": 1,
-            "win_rate": 0.667,
-            "avg_win_pct": 3.16,
-            "avg_loss_pct": -7.79,
-            "profit_factor": 0.81,
-            "sharpe": 0.94,
-            "max_drawdown": 1.21,
-            "calmar": -70.192,
-            "total_return": -84.93,
-            "final_capital": 15067.41,
-            "regime_stats": {
-              "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": -0.49,
-                "n": 3
-              }
-            }
-          }
-        }
-      ],
-      "generated_at": "2026-04-03T19:04:36.924636",
-      "monte_carlo": {
-        "error": "Not enough trades for Monte Carlo",
-        "n_trades": 10
-      }
-    },
-    "SOL/USD": {
-      "symbol": "SOL/USD",
-      "bot": "crypto",
-      "windows_run": 9,
-      "oos_summary": {
-        "total_trades": 13,
-        "win_rate": 0.462,
-        "avg_sharpe": -0.353,
-        "max_drawdown": 1.06
-      },
-      "is_summary": {
-        "total_trades": 38,
-        "win_rate": 0.526
-      },
-      "degradation_ratio": 0.123,
-      "curve_fit_risk": "MEDIUM",
-      "windows": [
-        {
-          "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-05-27",
-          "test_start": "2025-05-28",
-          "test_end": "2025-07-26",
-          "in_sample": {
-            "total_trades": 4,
-            "wins": 4,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 2.03,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 2.298,
-            "max_drawdown": 0.43,
-            "calmar": -197.088,
-            "total_return": -84.75,
-            "final_capital": 15252.05,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 1.0,
-                "avg_roi": 2.03,
-                "n": 4
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 3,
-            "wins": 2,
-            "losses": 1,
-            "win_rate": 0.667,
-            "avg_win_pct": 3.51,
-            "avg_loss_pct": -7.86,
-            "profit_factor": 0.89,
-            "sharpe": 1.005,
-            "max_drawdown": 0.77,
-            "calmar": -110.3,
-            "total_return": -84.93,
-            "final_capital": 15068.98,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": -0.28,
-                "n": 3
-              }
-            }
-          }
-        },
-        {
-          "window": 2,
-          "train_start": "2025-03-29",
-          "train_end": "2025-06-26",
-          "test_start": "2025-06-27",
-          "test_end": "2025-08-25",
-          "in_sample": {
-            "total_trades": 3,
-            "wins": 0,
-            "losses": 3,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -8.54,
-            "profit_factor": Infinity,
-            "sharpe": -3.696,
-            "max_drawdown": 2.54,
-            "calmar": -33.599,
-            "total_return": -85.34,
-            "final_capital": 14659.54,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -8.54,
-                "n": 3
+                "win_rate": 0.5,
+                "avg_roi": 1.48,
+                "n": 2
               }
             }
           },
@@ -946,66 +901,187 @@
             "losses": 2,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -3.64,
-            "profit_factor": Infinity,
-            "sharpe": -0.754,
-            "max_drawdown": 1.02,
-            "calmar": -83.385,
-            "total_return": -85.05,
-            "final_capital": 14946.79,
+            "avg_loss_pct": -5.92,
+            "profit_factor": 0.0,
+            "sharpe": -3.163,
+            "max_drawdown": 1.21,
+            "calmar": -70.394,
+            "total_return": -85.18,
+            "final_capital": 14822.85,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -5.92,
+                "n": 2
+              }
+            }
+          }
+        }
+      ],
+      "generated_at": "2026-04-06T08:43:32.218426",
+      "monte_carlo": {
+        "skipped": true
+      }
+    },
+    "SOL/USD": {
+      "symbol": "SOL/USD",
+      "bot": "crypto",
+      "windows_run": 9,
+      "oos_summary": {
+        "total_trades": 14,
+        "win_rate": 0.286,
+        "avg_sharpe": -1.188,
+        "max_drawdown": 2.12
+      },
+      "is_summary": {
+        "total_trades": 41,
+        "win_rate": 0.488
+      },
+      "degradation_ratio": 0.414,
+      "curve_fit_risk": "HIGH",
+      "windows": [
+        {
+          "window": 1,
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 3,
+            "losses": 1,
+            "win_rate": 0.75,
+            "avg_win_pct": 2.56,
+            "avg_loss_pct": -11.25,
+            "profit_factor": 0.68,
+            "sharpe": 0.861,
+            "max_drawdown": 1.1,
+            "calmar": -77.18,
+            "total_return": -84.9,
+            "final_capital": 15102.24,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -3.64,
+                "win_rate": 0.75,
+                "avg_roi": -0.9,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 6.65,
+            "avg_loss_pct": -4.33,
+            "profit_factor": 1.54,
+            "sharpe": 1.619,
+            "max_drawdown": 0.41,
+            "calmar": -207.086,
+            "total_return": -84.91,
+            "final_capital": 15094.8,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.5,
+                "avg_roi": 1.16,
                 "n": 2
               }
             }
           }
         },
         {
-          "window": 3,
-          "train_start": "2025-04-28",
-          "train_end": "2025-07-26",
-          "test_start": "2025-07-27",
-          "test_end": "2025-09-24",
+          "window": 2,
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
           "in_sample": {
             "total_trades": 4,
-            "wins": 3,
-            "losses": 1,
-            "win_rate": 0.75,
-            "avg_win_pct": 4.87,
-            "avg_loss_pct": -7.86,
-            "profit_factor": 1.86,
-            "sharpe": 1.937,
-            "max_drawdown": 0.77,
-            "calmar": -110.096,
-            "total_return": -84.77,
-            "final_capital": 15225.73,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "avg_win_pct": 1.67,
+            "avg_loss_pct": -8.5,
+            "profit_factor": 0.07,
+            "sharpe": -3.674,
+            "max_drawdown": 2.42,
+            "calmar": -35.25,
+            "total_return": -85.3,
+            "final_capital": 14696.07,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.75,
-                "avg_roi": 1.68,
+                "win_rate": 0.25,
+                "avg_roi": -5.96,
                 "n": 4
               }
             }
           },
           "out_of_sample": {
             "total_trades": 3,
-            "wins": 1,
-            "losses": 2,
-            "win_rate": 0.333,
-            "avg_win_pct": 0.9,
-            "avg_loss_pct": -4.44,
-            "profit_factor": 0.1,
-            "sharpe": -1.614,
-            "max_drawdown": 1.06,
-            "calmar": -80.261,
-            "total_return": -85.08,
-            "final_capital": 14923.78,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 2.95,
+            "avg_loss_pct": -6.66,
+            "profit_factor": 0.89,
+            "sharpe": 1.209,
+            "max_drawdown": 0.73,
+            "calmar": -116.336,
+            "total_return": -84.93,
+            "final_capital": 15074.4,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.3333333333333333,
-                "avg_roi": -2.66,
+                "win_rate": 0.6666666666666666,
+                "avg_roi": -0.25,
+                "n": 3
+              }
+            }
+          }
+        },
+        {
+          "window": 3,
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "avg_win_pct": 6.67,
+            "avg_loss_pct": -4.28,
+            "profit_factor": 1.56,
+            "sharpe": 1.664,
+            "max_drawdown": 0.83,
+            "calmar": -102.169,
+            "total_return": -84.8,
+            "final_capital": 15199.36,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.5,
+                "avg_roi": 1.19,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -7.27,
+            "profit_factor": 0.0,
+            "sharpe": -4.802,
+            "max_drawdown": 2.12,
+            "calmar": -40.244,
+            "total_return": -85.32,
+            "final_capital": 14682.49,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -7.27,
                 "n": 3
               }
             }
@@ -1013,59 +1089,27 @@
         },
         {
           "window": 4,
-          "train_start": "2025-05-28",
-          "train_end": "2025-08-25",
-          "test_start": "2025-08-26",
-          "test_end": "2025-10-24",
-          "in_sample": {
-            "total_trades": 7,
-            "wins": 3,
-            "losses": 4,
-            "win_rate": 0.429,
-            "avg_win_pct": 6.04,
-            "avg_loss_pct": -6.82,
-            "profit_factor": 0.66,
-            "sharpe": 0.573,
-            "max_drawdown": 1.72,
-            "calmar": -49.364,
-            "total_return": -84.91,
-            "final_capital": 15094.43,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.42857142857142855,
-                "avg_roi": -1.31,
-                "n": 7
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
-          }
-        },
-        {
-          "window": 5,
-          "train_start": "2025-06-27",
-          "train_end": "2025-09-24",
-          "test_start": "2025-09-25",
-          "test_end": "2025-11-23",
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
           "in_sample": {
             "total_trades": 8,
             "wins": 4,
             "losses": 4,
             "win_rate": 0.5,
-            "avg_win_pct": 2.23,
-            "avg_loss_pct": -3.79,
-            "profit_factor": 0.59,
-            "sharpe": 0.714,
-            "max_drawdown": 1.21,
-            "calmar": -70.167,
-            "total_return": -84.9,
-            "final_capital": 15097.46,
+            "avg_win_pct": 5.53,
+            "avg_loss_pct": -5.74,
+            "profit_factor": 0.96,
+            "sharpe": 1.537,
+            "max_drawdown": 1.23,
+            "calmar": -68.897,
+            "total_return": -84.74,
+            "final_capital": 15256.42,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.5,
-                "avg_roi": -0.78,
+                "avg_roi": -0.11,
                 "n": 8
               }
             }
@@ -1076,17 +1120,66 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -2.11,
+            "avg_loss_pct": -0.64,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.05,
+            "calmar": -1700.164,
+            "total_return": -85.01,
+            "final_capital": 14991.79,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -0.64,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 5,
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
+          "in_sample": {
+            "total_trades": 9,
+            "wins": 5,
+            "losses": 4,
+            "win_rate": 0.556,
+            "avg_win_pct": 2.02,
+            "avg_loss_pct": -6.12,
+            "profit_factor": 0.41,
+            "sharpe": -0.126,
+            "max_drawdown": 2.16,
+            "calmar": -39.362,
+            "total_return": -85.02,
+            "final_capital": 14978.98,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.5555555555555556,
+                "avg_roi": -1.6,
+                "n": 9
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 3.56,
+            "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": -1.174,
+            "sharpe": 2.274,
             "max_drawdown": 0.37,
-            "calmar": -229.801,
-            "total_return": -85.03,
-            "final_capital": 14973.74,
+            "calmar": -229.49,
+            "total_return": -84.91,
+            "final_capital": 15088.68,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.0,
-                "avg_roi": -2.11,
+                "win_rate": 1.0,
+                "avg_roi": 3.56,
                 "n": 1
               }
             }
@@ -1094,27 +1187,27 @@
         },
         {
           "window": 6,
-          "train_start": "2025-07-27",
-          "train_end": "2025-10-24",
-          "test_start": "2025-10-25",
-          "test_end": "2025-12-23",
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
           "in_sample": {
             "total_trades": 5,
-            "wins": 2,
-            "losses": 3,
-            "win_rate": 0.4,
-            "avg_win_pct": 4.04,
-            "avg_loss_pct": -12.33,
-            "profit_factor": 0.22,
-            "sharpe": -2.08,
-            "max_drawdown": 2.81,
-            "calmar": -30.371,
-            "total_return": -85.34,
-            "final_capital": 14658.75,
+            "wins": 1,
+            "losses": 4,
+            "win_rate": 0.2,
+            "avg_win_pct": 7.18,
+            "avg_loss_pct": -10.15,
+            "profit_factor": 0.18,
+            "sharpe": -2.77,
+            "max_drawdown": 2.97,
+            "calmar": -28.77,
+            "total_return": -85.45,
+            "final_capital": 14554.29,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.4,
-                "avg_roi": -5.78,
+                "win_rate": 0.2,
+                "avg_roi": -6.69,
                 "n": 5
               }
             }
@@ -1126,23 +1219,23 @@
         },
         {
           "window": 7,
-          "train_start": "2025-08-26",
-          "train_end": "2025-11-23",
-          "test_start": "2025-11-24",
-          "test_end": "2026-01-22",
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
           "in_sample": {
             "total_trades": 2,
-            "wins": 0,
-            "losses": 2,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -4.9,
-            "profit_factor": Infinity,
-            "sharpe": -2.701,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 3.56,
+            "avg_loss_pct": -7.7,
+            "profit_factor": 0.46,
+            "sharpe": -0.153,
             "max_drawdown": 1.02,
-            "calmar": -83.455,
-            "total_return": -85.12,
-            "final_capital": 14875.64,
+            "calmar": -83.343,
+            "total_return": -85.01,
+            "final_capital": 14989.83,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
@@ -1150,29 +1243,29 @@
                 "n": 1
               },
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.0,
-                "avg_roi": -2.11,
+                "win_rate": 1.0,
+                "avg_roi": 3.56,
                 "n": 1
               }
             }
           },
           "out_of_sample": {
             "total_trades": 1,
-            "wins": 1,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 2.05,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 1.704,
-            "max_drawdown": 0.09,
-            "calmar": -944.102,
-            "total_return": -84.97,
-            "final_capital": 15030.82,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -5.51,
+            "profit_factor": 0.0,
+            "sharpe": -1.907,
+            "max_drawdown": 0.84,
+            "calmar": -101.289,
+            "total_return": -85.08,
+            "final_capital": 14917.27,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 2.05,
+                "win_rate": 0.0,
+                "avg_roi": -5.51,
                 "n": 1
               }
             }
@@ -1180,10 +1273,10 @@
         },
         {
           "window": 8,
-          "train_start": "2025-09-25",
-          "train_end": "2025-12-23",
-          "test_start": "2025-12-24",
-          "test_end": "2026-02-21",
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
           "in_sample": {
             "total_trades": 2,
             "wins": 1,
@@ -1211,17 +1304,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -7.48,
-            "profit_factor": Infinity,
-            "sharpe": -3.855,
-            "max_drawdown": 0.56,
-            "calmar": -151.937,
-            "total_return": -85.08,
-            "final_capital": 14915.3,
+            "avg_loss_pct": -9.6,
+            "profit_factor": 0.0,
+            "sharpe": -2.913,
+            "max_drawdown": 0.75,
+            "calmar": -113.477,
+            "total_return": -85.11,
+            "final_capital": 14892.53,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -7.48,
+                "avg_roi": -9.6,
                 "n": 1
               }
             }
@@ -1229,79 +1322,57 @@
         },
         {
           "window": 9,
-          "train_start": "2025-10-25",
-          "train_end": "2026-01-22",
-          "test_start": "2026-01-23",
-          "test_end": "2026-03-23",
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
           "in_sample": {
             "total_trades": 3,
-            "wins": 3,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 2.98,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 3.65,
-            "max_drawdown": 0.32,
-            "calmar": -264.865,
-            "total_return": -84.76,
-            "final_capital": 15243.08,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 3.44,
+            "avg_loss_pct": -5.51,
+            "profit_factor": 1.25,
+            "sharpe": 1.502,
+            "max_drawdown": 0.87,
+            "calmar": -97.554,
+            "total_return": -84.87,
+            "final_capital": 15127.93,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 2.98,
+                "win_rate": 0.6666666666666666,
+                "avg_roi": 0.45,
                 "n": 3
               }
             }
           },
           "out_of_sample": {
             "total_trades": 2,
-            "wins": 2,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 1.98,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 2.22,
-            "max_drawdown": 0.66,
-            "calmar": -128.593,
-            "total_return": -84.87,
-            "final_capital": 15128.94,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -4.95,
+            "profit_factor": 0.0,
+            "sharpe": -2.444,
+            "max_drawdown": 1.02,
+            "calmar": -83.479,
+            "total_return": -85.15,
+            "final_capital": 14851.75,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 1.98,
+                "win_rate": 0.0,
+                "avg_roi": -4.95,
                 "n": 2
               }
             }
           }
         }
       ],
-      "generated_at": "2026-04-03T19:04:39.415438",
+      "generated_at": "2026-04-06T08:43:32.713223",
       "monte_carlo": {
-        "n_simulations": 300,
-        "n_trades_base": 13,
-        "final_capital": {
-          "p10": 64520.29,
-          "p25": 69307.75,
-          "median": 72184.34,
-          "p75": 77043.99,
-          "p90": 79047.1,
-          "mean": 72647.32
-        },
-        "max_drawdown": {
-          "p10": 23.64,
-          "p50": 29.64,
-          "p90": 36.43,
-          "worst": 37.67
-        },
-        "sharpe": {
-          "p10": -4.033,
-          "median": -2.822,
-          "p90": -2.013
-        },
-        "probability_of_profit": 0.0,
-        "probability_ruin_20pct": 1.0
+        "skipped": true
       }
     },
     "DOT/USD": {
@@ -1309,91 +1380,140 @@
       "bot": "crypto",
       "windows_run": 9,
       "oos_summary": {
-        "total_trades": 13,
-        "win_rate": 0.308,
-        "avg_sharpe": -0.378,
-        "max_drawdown": 1.1
+        "total_trades": 15,
+        "win_rate": 0.2,
+        "avg_sharpe": -2.382,
+        "max_drawdown": 1.45
       },
       "is_summary": {
-        "total_trades": 40,
-        "win_rate": 0.375
+        "total_trades": 44,
+        "win_rate": 0.318
       },
-      "degradation_ratio": 0.179,
-      "curve_fit_risk": "MEDIUM",
+      "degradation_ratio": 0.371,
+      "curve_fit_risk": "HIGH",
       "windows": [
         {
           "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-05-27",
-          "test_start": "2025-05-28",
-          "test_end": "2025-07-26",
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
           "in_sample": {
             "total_trades": 7,
             "wins": 3,
             "losses": 4,
             "win_rate": 0.429,
             "avg_win_pct": 4.35,
-            "avg_loss_pct": -4.97,
-            "profit_factor": 0.66,
-            "sharpe": 0.848,
-            "max_drawdown": 1.29,
-            "calmar": -65.786,
-            "total_return": -84.86,
-            "final_capital": 15136.21,
+            "avg_loss_pct": -7.66,
+            "profit_factor": 0.43,
+            "sharpe": 0.029,
+            "max_drawdown": 2.17,
+            "calmar": -39.17,
+            "total_return": -85.0,
+            "final_capital": 15001.45,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.42857142857142855,
-                "avg_roi": -0.97,
+                "avg_roi": -2.51,
                 "n": 7
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
-            "wins": 1,
-            "losses": 1,
-            "win_rate": 0.5,
-            "avg_win_pct": 3.12,
-            "avg_loss_pct": -1.77,
-            "profit_factor": 1.76,
-            "sharpe": 1.066,
-            "max_drawdown": 0.49,
-            "calmar": -173.379,
-            "total_return": -84.96,
-            "final_capital": 15044.32,
+            "total_trades": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.0,
+            "profit_factor": 0.0,
+            "sharpe": -1.585,
+            "max_drawdown": 0.85,
+            "calmar": -100.103,
+            "total_return": -85.09,
+            "final_capital": 14912.11,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.5,
-                "avg_roi": 0.67,
-                "n": 2
+                "win_rate": 0.0,
+                "avg_roi": -3.0,
+                "n": 3
               }
             }
           }
         },
         {
           "window": 2,
-          "train_start": "2025-03-29",
-          "train_end": "2025-06-26",
-          "test_start": "2025-06-27",
-          "test_end": "2025-08-25",
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
           "in_sample": {
             "total_trades": 3,
             "wins": 0,
             "losses": 3,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -8.71,
-            "profit_factor": Infinity,
-            "sharpe": -3.57,
-            "max_drawdown": 2.41,
-            "calmar": -35.407,
-            "total_return": -85.33,
-            "final_capital": 14669.33,
+            "avg_loss_pct": -5.62,
+            "profit_factor": 0.0,
+            "sharpe": -2.788,
+            "max_drawdown": 1.65,
+            "calmar": -51.64,
+            "total_return": -85.21,
+            "final_capital": 14794.02,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -8.71,
+                "avg_roi": -5.62,
                 "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 4.28,
+            "avg_loss_pct": -11.6,
+            "profit_factor": 0.74,
+            "sharpe": 0.424,
+            "max_drawdown": 1.01,
+            "calmar": -84.13,
+            "total_return": -84.97,
+            "final_capital": 15028.53,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.6666666666666666,
+                "avg_roi": -1.01,
+                "n": 3
+              }
+            }
+          }
+        },
+        {
+          "window": 3,
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
+          "in_sample": {
+            "total_trades": 6,
+            "wins": 2,
+            "losses": 4,
+            "win_rate": 0.333,
+            "avg_win_pct": 6.03,
+            "avg_loss_pct": -4.11,
+            "profit_factor": 0.73,
+            "sharpe": 0.771,
+            "max_drawdown": 1.14,
+            "calmar": -74.483,
+            "total_return": -84.91,
+            "final_capital": 15089.82,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -0.73,
+                "n": 6
               }
             }
           },
@@ -1403,66 +1523,17 @@
             "losses": 2,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -4.1,
-            "profit_factor": Infinity,
-            "sharpe": -0.954,
-            "max_drawdown": 0.92,
-            "calmar": -92.457,
-            "total_return": -85.06,
-            "final_capital": 14939.72,
+            "avg_loss_pct": -6.53,
+            "profit_factor": 0.0,
+            "sharpe": -3.876,
+            "max_drawdown": 1.45,
+            "calmar": -58.75,
+            "total_return": -85.19,
+            "final_capital": 14812.01,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -4.1,
-                "n": 2
-              }
-            }
-          }
-        },
-        {
-          "window": 3,
-          "train_start": "2025-04-28",
-          "train_end": "2025-07-26",
-          "test_start": "2025-07-27",
-          "test_end": "2025-09-24",
-          "in_sample": {
-            "total_trades": 5,
-            "wins": 3,
-            "losses": 2,
-            "win_rate": 0.6,
-            "avg_win_pct": 5.06,
-            "avg_loss_pct": -7.9,
-            "profit_factor": 0.96,
-            "sharpe": 0.855,
-            "max_drawdown": 1.14,
-            "calmar": -74.476,
-            "total_return": -84.9,
-            "final_capital": 15097.68,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.6,
-                "avg_roi": -0.12,
-                "n": 5
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 2,
-            "wins": 1,
-            "losses": 1,
-            "win_rate": 0.5,
-            "avg_win_pct": 1.42,
-            "avg_loss_pct": -1.04,
-            "profit_factor": 1.36,
-            "sharpe": 1.646,
-            "max_drawdown": 0.45,
-            "calmar": -188.775,
-            "total_return": -84.95,
-            "final_capital": 15051.28,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.5,
-                "avg_roi": 0.19,
+                "avg_roi": -6.53,
                 "n": 2
               }
             }
@@ -1470,60 +1541,28 @@
         },
         {
           "window": 4,
-          "train_start": "2025-05-28",
-          "train_end": "2025-08-25",
-          "test_start": "2025-08-26",
-          "test_end": "2025-10-24",
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
           "in_sample": {
-            "total_trades": 7,
-            "wins": 1,
+            "total_trades": 8,
+            "wins": 2,
             "losses": 6,
-            "win_rate": 0.143,
-            "avg_win_pct": 0.01,
-            "avg_loss_pct": -4.3,
-            "profit_factor": 0.0,
-            "sharpe": -1.185,
-            "max_drawdown": 1.92,
-            "calmar": -44.351,
-            "total_return": -85.15,
-            "final_capital": 14845.52,
+            "win_rate": 0.25,
+            "avg_win_pct": 1.19,
+            "avg_loss_pct": -5.4,
+            "profit_factor": 0.07,
+            "sharpe": -1.838,
+            "max_drawdown": 2.27,
+            "calmar": -37.556,
+            "total_return": -85.25,
+            "final_capital": 14747.92,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.14285714285714285,
-                "avg_roi": -3.69,
-                "n": 7
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
-          }
-        },
-        {
-          "window": 5,
-          "train_start": "2025-06-27",
-          "train_end": "2025-09-24",
-          "test_start": "2025-09-25",
-          "test_end": "2025-11-23",
-          "in_sample": {
-            "total_trades": 7,
-            "wins": 3,
-            "losses": 4,
-            "win_rate": 0.429,
-            "avg_win_pct": 2.44,
-            "avg_loss_pct": -5.83,
-            "profit_factor": 0.31,
-            "sharpe": -0.902,
-            "max_drawdown": 1.03,
-            "calmar": -82.634,
-            "total_return": -85.11,
-            "final_capital": 14886.83,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.42857142857142855,
-                "avg_roi": -2.28,
-                "n": 7
+                "win_rate": 0.25,
+                "avg_roi": -3.75,
+                "n": 8
               }
             }
           },
@@ -1533,46 +1572,95 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -11.89,
-            "profit_factor": Infinity,
-            "sharpe": -3.002,
-            "max_drawdown": 1.06,
-            "calmar": -80.305,
-            "total_return": -85.12,
-            "final_capital": 14876.93,
+            "avg_loss_pct": -1.75,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.15,
+            "calmar": -566.818,
+            "total_return": -85.02,
+            "final_capital": 14977.32,
             "regime_stats": {
-              "ACCUMULATION_EXTREME_FEAR": {
+              "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -11.89,
+                "avg_roi": -1.75,
                 "n": 1
               }
             }
           }
         },
         {
-          "window": 6,
-          "train_start": "2025-07-27",
-          "train_end": "2025-10-24",
-          "test_start": "2025-10-25",
-          "test_end": "2025-12-23",
+          "window": 5,
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
           "in_sample": {
-            "total_trades": 3,
-            "wins": 2,
-            "losses": 1,
-            "win_rate": 0.667,
-            "avg_win_pct": 1.32,
-            "avg_loss_pct": -7.12,
-            "profit_factor": 0.37,
-            "sharpe": 0.211,
-            "max_drawdown": 0.89,
-            "calmar": -95.485,
-            "total_return": -84.98,
-            "final_capital": 15018.5,
+            "total_trades": 7,
+            "wins": 3,
+            "losses": 4,
+            "win_rate": 0.429,
+            "avg_win_pct": 4.32,
+            "avg_loss_pct": -7.18,
+            "profit_factor": 0.45,
+            "sharpe": -0.605,
+            "max_drawdown": 1.67,
+            "calmar": -50.948,
+            "total_return": -85.08,
+            "final_capital": 14916.77,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": -1.49,
-                "n": 3
+                "win_rate": 0.42857142857142855,
+                "avg_roi": -2.25,
+                "n": 7
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 3.93,
+            "avg_loss_pct": -11.89,
+            "profit_factor": 0.33,
+            "sharpe": -1.665,
+            "max_drawdown": 1.06,
+            "calmar": -80.263,
+            "total_return": -85.08,
+            "final_capital": 14921.74,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.5,
+                "avg_roi": -3.98,
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "window": 6,
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "avg_win_pct": 5.21,
+            "avg_loss_pct": -13.78,
+            "profit_factor": 0.13,
+            "sharpe": -2.142,
+            "max_drawdown": 3.2,
+            "calmar": -26.712,
+            "total_return": -85.48,
+            "final_capital": 14520.03,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.25,
+                "avg_roi": -9.03,
+                "n": 4
               }
             }
           },
@@ -1583,23 +1671,23 @@
         },
         {
           "window": 7,
-          "train_start": "2025-08-26",
-          "train_end": "2025-11-23",
-          "test_start": "2025-11-24",
-          "test_end": "2026-01-22",
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
           "in_sample": {
-            "total_trades": 2,
-            "wins": 0,
+            "total_trades": 3,
+            "wins": 1,
             "losses": 2,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
+            "win_rate": 0.333,
+            "avg_win_pct": 0.22,
             "avg_loss_pct": -11.0,
-            "profit_factor": Infinity,
-            "sharpe": -3.503,
-            "max_drawdown": 1.69,
-            "calmar": -50.446,
+            "profit_factor": 0.01,
+            "sharpe": -3.361,
+            "max_drawdown": 1.84,
+            "calmar": -46.332,
             "total_return": -85.25,
-            "final_capital": 14746.79,
+            "final_capital": 14749.36,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
@@ -1607,29 +1695,29 @@
                 "n": 1
               },
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.0,
-                "avg_roi": -11.89,
-                "n": 1
+                "win_rate": 0.5,
+                "avg_roi": -5.84,
+                "n": 2
               }
             }
           },
           "out_of_sample": {
             "total_trades": 1,
-            "wins": 1,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 1.45,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 1.19,
-            "max_drawdown": 0.13,
-            "calmar": -653.679,
-            "total_return": -84.98,
-            "final_capital": 15021.71,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.97,
+            "profit_factor": 0.0,
+            "sharpe": -1.577,
+            "max_drawdown": 0.67,
+            "calmar": -126.954,
+            "total_return": -85.06,
+            "final_capital": 14940.5,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 1.45,
+                "win_rate": 0.0,
+                "avg_roi": -3.97,
                 "n": 1
               }
             }
@@ -1637,128 +1725,106 @@
         },
         {
           "window": 8,
-          "train_start": "2025-09-25",
-          "train_end": "2025-12-23",
-          "test_start": "2025-12-24",
-          "test_end": "2026-02-21",
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
           "in_sample": {
             "total_trades": 2,
             "wins": 0,
             "losses": 2,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -12.28,
-            "profit_factor": Infinity,
-            "sharpe": -3.641,
-            "max_drawdown": 2.06,
-            "calmar": -41.395,
-            "total_return": -85.27,
-            "final_capital": 14725.85,
+            "avg_loss_pct": -10.66,
+            "profit_factor": 0.0,
+            "sharpe": -2.925,
+            "max_drawdown": 1.77,
+            "calmar": -48.153,
+            "total_return": -85.23,
+            "final_capital": 14769.44,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -12.28,
+                "avg_roi": -10.66,
                 "n": 2
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
+            "total_trades": 1,
             "wins": 0,
-            "losses": 2,
+            "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -3.88,
-            "profit_factor": Infinity,
-            "sharpe": -3.488,
+            "avg_loss_pct": -6.82,
+            "profit_factor": 0.0,
+            "sharpe": -2.239,
             "max_drawdown": 0.72,
-            "calmar": -118.205,
-            "total_return": -85.11,
-            "final_capital": 14892.42,
+            "calmar": -118.18,
+            "total_return": -85.09,
+            "final_capital": 14910.49,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -3.88,
-                "n": 2
+                "avg_roi": -6.82,
+                "n": 1
               }
             }
           }
         },
         {
           "window": 9,
-          "train_start": "2025-10-25",
-          "train_end": "2026-01-22",
-          "test_start": "2026-01-23",
-          "test_end": "2026-03-23",
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
           "in_sample": {
             "total_trades": 4,
-            "wins": 3,
-            "losses": 1,
-            "win_rate": 0.75,
-            "avg_win_pct": 2.47,
-            "avg_loss_pct": -6.51,
-            "profit_factor": 1.14,
-            "sharpe": 1.217,
-            "max_drawdown": 0.65,
-            "calmar": -130.548,
-            "total_return": -84.86,
-            "final_capital": 15143.78,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "avg_win_pct": 2.98,
+            "avg_loss_pct": -5.24,
+            "profit_factor": 0.57,
+            "sharpe": 0.501,
+            "max_drawdown": 0.79,
+            "calmar": -107.517,
+            "total_return": -84.94,
+            "final_capital": 15061.91,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.75,
-                "avg_roi": 0.22,
+                "win_rate": 0.5,
+                "avg_roi": -1.13,
                 "n": 4
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 3,
-            "wins": 1,
+            "total_trades": 2,
+            "wins": 0,
             "losses": 2,
-            "win_rate": 0.333,
-            "avg_win_pct": 8.04,
-            "avg_loss_pct": -5.25,
-            "profit_factor": 0.77,
-            "sharpe": 0.898,
-            "max_drawdown": 1.1,
-            "calmar": -77.199,
-            "total_return": -84.92,
-            "final_capital": 15081.38,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -7.25,
+            "profit_factor": 0.0,
+            "sharpe": -5.996,
+            "max_drawdown": 1.44,
+            "calmar": -59.178,
+            "total_return": -85.22,
+            "final_capital": 14783.27,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.3333333333333333,
-                "avg_roi": -0.82,
-                "n": 3
+                "win_rate": 0.0,
+                "avg_roi": -7.25,
+                "n": 2
               }
             }
           }
         }
       ],
-      "generated_at": "2026-04-03T19:04:45.233592",
+      "generated_at": "2026-04-06T08:43:33.116206",
       "monte_carlo": {
-        "n_simulations": 300,
-        "n_trades_base": 13,
-        "final_capital": {
-          "p10": 70496.97,
-          "p25": 72023.32,
-          "median": 74321.46,
-          "p75": 75459.66,
-          "p90": 77867.44,
-          "mean": 74123.3
-        },
-        "max_drawdown": {
-          "p10": 25.11,
-          "p50": 26.91,
-          "p90": 31.13,
-          "worst": 32.35
-        },
-        "sharpe": {
-          "p10": -2.773,
-          "median": -2.181,
-          "p90": -1.749
-        },
-        "probability_of_profit": 0.0,
-        "probability_ruin_20pct": 1.0
+        "skipped": true
       }
     },
     "AVAX/USD": {
@@ -1766,111 +1832,111 @@
       "bot": "crypto",
       "windows_run": 9,
       "oos_summary": {
-        "total_trades": 12,
-        "win_rate": 0.417,
-        "avg_sharpe": -0.001,
-        "max_drawdown": 1.14
+        "total_trades": 13,
+        "win_rate": 0.231,
+        "avg_sharpe": -1.716,
+        "max_drawdown": 1.86
       },
       "is_summary": {
-        "total_trades": 42,
-        "win_rate": 0.476
+        "total_trades": 43,
+        "win_rate": 0.442
       },
-      "degradation_ratio": 0.125,
-      "curve_fit_risk": "MEDIUM",
+      "degradation_ratio": 0.478,
+      "curve_fit_risk": "HIGH",
       "windows": [
         {
           "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-05-27",
-          "test_start": "2025-05-28",
-          "test_end": "2025-07-26",
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
           "in_sample": {
             "total_trades": 6,
-            "wins": 4,
-            "losses": 2,
-            "win_rate": 0.667,
-            "avg_win_pct": 4.89,
-            "avg_loss_pct": -6.83,
-            "profit_factor": 1.43,
-            "sharpe": 1.772,
+            "wins": 3,
+            "losses": 3,
+            "win_rate": 0.5,
+            "avg_win_pct": 6.03,
+            "avg_loss_pct": -8.13,
+            "profit_factor": 0.74,
+            "sharpe": 1.034,
             "max_drawdown": 0.94,
-            "calmar": -90.145,
-            "total_return": -84.74,
-            "final_capital": 15264.0,
+            "calmar": -90.257,
+            "total_return": -84.84,
+            "final_capital": 15158.65,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": 0.99,
+                "win_rate": 0.5,
+                "avg_roi": -1.05,
                 "n": 6
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
-            "wins": 2,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 1.46,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 2.412,
-            "max_drawdown": 0.39,
-            "calmar": -217.69,
-            "total_return": -84.9,
-            "final_capital": 15100.8,
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -2.87,
+            "profit_factor": 0.0,
+            "sharpe": -0.648,
+            "max_drawdown": 0.8,
+            "calmar": -106.299,
+            "total_return": -85.04,
+            "final_capital": 14960.86,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 1.0,
-                "avg_roi": 1.46,
-                "n": 2
+                "win_rate": 0.0,
+                "avg_roi": -2.87,
+                "n": 1
               }
             }
           }
         },
         {
           "window": 2,
-          "train_start": "2025-03-29",
-          "train_end": "2025-06-26",
-          "test_start": "2025-06-27",
-          "test_end": "2025-08-25",
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
           "in_sample": {
             "total_trades": 4,
-            "wins": 0,
-            "losses": 4,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -5.86,
-            "profit_factor": Infinity,
-            "sharpe": -2.32,
-            "max_drawdown": 1.93,
-            "calmar": -44.148,
-            "total_return": -85.21,
-            "final_capital": 14794.92,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "avg_win_pct": 2.83,
+            "avg_loss_pct": -6.05,
+            "profit_factor": 0.16,
+            "sharpe": -1.252,
+            "max_drawdown": 1.91,
+            "calmar": -44.562,
+            "total_return": -85.11,
+            "final_capital": 14885.99,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -5.86,
+                "win_rate": 0.25,
+                "avg_roi": -3.83,
                 "n": 4
               }
             }
           },
           "out_of_sample": {
             "total_trades": 3,
-            "wins": 1,
-            "losses": 2,
-            "win_rate": 0.333,
-            "avg_win_pct": 5.95,
-            "avg_loss_pct": -8.63,
-            "profit_factor": 0.34,
-            "sharpe": -1.169,
-            "max_drawdown": 1.14,
-            "calmar": -74.64,
-            "total_return": -85.09,
-            "final_capital": 14910.72,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 4.44,
+            "avg_loss_pct": -9.12,
+            "profit_factor": 0.97,
+            "sharpe": 0.66,
+            "max_drawdown": 0.65,
+            "calmar": -130.706,
+            "total_return": -84.96,
+            "final_capital": 15041.04,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.3333333333333333,
-                "avg_roi": -3.77,
+                "win_rate": 0.6666666666666666,
+                "avg_roi": -0.08,
                 "n": 3
               }
             }
@@ -1878,141 +1944,126 @@
         },
         {
           "window": 3,
-          "train_start": "2025-04-28",
-          "train_end": "2025-07-26",
-          "test_start": "2025-07-27",
-          "test_end": "2025-09-24",
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
           "in_sample": {
             "total_trades": 5,
             "wins": 4,
             "losses": 1,
             "win_rate": 0.8,
-            "avg_win_pct": 4.29,
+            "avg_win_pct": 3.98,
             "avg_loss_pct": -6.15,
-            "profit_factor": 2.79,
-            "sharpe": 3.035,
+            "profit_factor": 2.59,
+            "sharpe": 2.864,
             "max_drawdown": 1.03,
-            "calmar": -82.197,
-            "total_return": -84.66,
-            "final_capital": 15336.75,
+            "calmar": -82.211,
+            "total_return": -84.68,
+            "final_capital": 15322.7,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.8,
-                "avg_roi": 2.21,
+                "avg_roi": 1.96,
                 "n": 5
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
-            "wins": 1,
-            "losses": 1,
-            "win_rate": 0.5,
-            "avg_win_pct": 9.03,
-            "avg_loss_pct": -4.21,
-            "profit_factor": 2.14,
-            "sharpe": 2.296,
-            "max_drawdown": 0.38,
-            "calmar": -223.362,
-            "total_return": -84.88,
-            "final_capital": 15122.34,
+            "total_trades": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -7.44,
+            "profit_factor": 0.0,
+            "sharpe": -4.781,
+            "max_drawdown": 1.86,
+            "calmar": -45.849,
+            "total_return": -85.28,
+            "final_capital": 14721.55,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.5,
-                "avg_roi": 2.41,
-                "n": 2
+                "win_rate": 0.0,
+                "avg_roi": -7.44,
+                "n": 3
               }
             }
           }
         },
         {
           "window": 4,
-          "train_start": "2025-05-28",
-          "train_end": "2025-08-25",
-          "test_start": "2025-08-26",
-          "test_end": "2025-10-24",
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
           "in_sample": {
-            "total_trades": 9,
-            "wins": 5,
+            "total_trades": 8,
+            "wins": 4,
             "losses": 4,
-            "win_rate": 0.556,
-            "avg_win_pct": 3.66,
-            "avg_loss_pct": -4.28,
-            "profit_factor": 1.07,
-            "sharpe": 2.042,
-            "max_drawdown": 0.73,
-            "calmar": -116.052,
-            "total_return": -84.72,
-            "final_capital": 15281.85,
+            "win_rate": 0.5,
+            "avg_win_pct": 2.88,
+            "avg_loss_pct": -8.22,
+            "profit_factor": 0.35,
+            "sharpe": -0.979,
+            "max_drawdown": 1.84,
+            "calmar": -46.28,
+            "total_return": -85.16,
+            "final_capital": 14844.34,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.5555555555555556,
-                "avg_roi": 0.13,
-                "n": 9
+                "win_rate": 0.5,
+                "avg_roi": -2.67,
+                "n": 8
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -2.44,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.19,
+            "calmar": -447.522,
+            "total_return": -85.03,
+            "final_capital": 14970.82,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -2.44,
+                "n": 1
+              }
+            }
           }
         },
         {
           "window": 5,
-          "train_start": "2025-06-27",
-          "train_end": "2025-09-24",
-          "test_start": "2025-09-25",
-          "test_end": "2025-11-23",
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
           "in_sample": {
             "total_trades": 6,
             "wins": 3,
             "losses": 3,
             "win_rate": 0.5,
             "avg_win_pct": 9.06,
-            "avg_loss_pct": -7.16,
-            "profit_factor": 1.27,
-            "sharpe": 1.507,
-            "max_drawdown": 1.14,
-            "calmar": -74.373,
-            "total_return": -84.78,
-            "final_capital": 15215.31,
+            "avg_loss_pct": -8.44,
+            "profit_factor": 1.07,
+            "sharpe": 1.034,
+            "max_drawdown": 1.43,
+            "calmar": -59.331,
+            "total_return": -84.84,
+            "final_capital": 15157.17,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.5,
-                "avg_roi": 0.95,
+                "avg_roi": 0.31,
                 "n": 6
-              }
-            }
-          },
-          "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
-          }
-        },
-        {
-          "window": 6,
-          "train_start": "2025-07-27",
-          "train_end": "2025-10-24",
-          "test_start": "2025-10-25",
-          "test_end": "2025-12-23",
-          "in_sample": {
-            "total_trades": 4,
-            "wins": 1,
-            "losses": 3,
-            "win_rate": 0.25,
-            "avg_win_pct": 9.03,
-            "avg_loss_pct": -15.05,
-            "profit_factor": 0.2,
-            "sharpe": -1.754,
-            "max_drawdown": 3.44,
-            "calmar": -24.809,
-            "total_return": -85.34,
-            "final_capital": 14657.38,
-            "regime_stats": {
-              "BULL_TREND": {
-                "win_rate": 0.25,
-                "avg_roi": -9.03,
-                "n": 4
               }
             }
           },
@@ -2023,7 +2074,7 @@
             "win_rate": 0.0,
             "avg_win_pct": 0,
             "avg_loss_pct": 0.0,
-            "profit_factor": Infinity,
+            "profit_factor": 0.0,
             "sharpe": 0,
             "max_drawdown": 0.0,
             "calmar": 0,
@@ -2039,19 +2090,68 @@
           }
         },
         {
-          "window": 7,
-          "train_start": "2025-08-26",
-          "train_end": "2025-11-23",
-          "test_start": "2025-11-24",
-          "test_end": "2026-01-22",
+          "window": 6,
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
           "in_sample": {
-            "total_trades": 1,
+            "total_trades": 5,
             "wins": 0,
-            "losses": 1,
+            "losses": 5,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -6.44,
+            "avg_loss_pct": -10.74,
+            "profit_factor": 0.0,
+            "sharpe": -3.414,
+            "max_drawdown": 4.05,
+            "calmar": -21.138,
+            "total_return": -85.61,
+            "final_capital": 14392.56,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -10.74,
+                "n": 5
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 1.34,
+            "avg_loss_pct": 0,
             "profit_factor": Infinity,
+            "sharpe": 1.499,
+            "max_drawdown": 0.08,
+            "calmar": -1062.249,
+            "total_return": -84.98,
+            "final_capital": 15020.12,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 1.0,
+                "avg_roi": 1.34,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 7,
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.22,
+            "profit_factor": 0.0,
             "sharpe": -2.644,
             "max_drawdown": 0.51,
             "calmar": -166.817,
@@ -2061,6 +2161,11 @@
               "BULL_TREND": {
                 "win_rate": 0.0,
                 "avg_roi": -6.44,
+                "n": 1
+              },
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": 0.0,
                 "n": 1
               }
             }
@@ -2072,59 +2177,59 @@
         },
         {
           "window": 8,
-          "train_start": "2025-09-25",
-          "train_end": "2025-12-23",
-          "test_start": "2025-12-24",
-          "test_end": "2026-02-21",
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
           "in_sample": {
             "total_trades": 4,
-            "wins": 0,
-            "losses": 4,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -5.79,
-            "profit_factor": Infinity,
-            "sharpe": -4.078,
-            "max_drawdown": 2.35,
-            "calmar": -36.317,
-            "total_return": -85.34,
-            "final_capital": 14655.4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "avg_win_pct": 1.34,
+            "avg_loss_pct": -7.72,
+            "profit_factor": 0.06,
+            "sharpe": -3.746,
+            "max_drawdown": 2.43,
+            "calmar": -35.113,
+            "total_return": -85.32,
+            "final_capital": 14675.06,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.0,
-                "avg_roi": -5.79,
+                "win_rate": 0.25,
+                "avg_roi": -5.45,
                 "n": 4
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
+            "total_trades": 1,
             "wins": 0,
-            "losses": 2,
+            "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -4.09,
-            "profit_factor": Infinity,
-            "sharpe": -4.711,
-            "max_drawdown": 0.82,
-            "calmar": -103.808,
-            "total_return": -85.12,
-            "final_capital": 14877.44,
+            "avg_loss_pct": -10.0,
+            "profit_factor": 0.0,
+            "sharpe": -3.361,
+            "max_drawdown": 0.97,
+            "calmar": -87.779,
+            "total_return": -85.15,
+            "final_capital": 14854.37,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -4.09,
-                "n": 2
+                "avg_roi": -10.0,
+                "n": 1
               }
             }
           }
         },
         {
           "window": 9,
-          "train_start": "2025-10-25",
-          "train_end": "2026-01-22",
-          "test_start": "2026-01-23",
-          "test_end": "2026-03-23",
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
           "in_sample": {
             "total_trades": 3,
             "wins": 3,
@@ -2148,52 +2253,30 @@
           },
           "out_of_sample": {
             "total_trades": 2,
-            "wins": 1,
-            "losses": 1,
-            "win_rate": 0.5,
-            "avg_win_pct": 0.82,
-            "avg_loss_pct": -0.23,
-            "profit_factor": 3.54,
-            "sharpe": 1.167,
-            "max_drawdown": 0.89,
-            "calmar": -95.429,
-            "total_return": -84.93,
-            "final_capital": 15068.17,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -5.99,
+            "profit_factor": 0.0,
+            "sharpe": -2.837,
+            "max_drawdown": 1.28,
+            "calmar": -66.546,
+            "total_return": -85.18,
+            "final_capital": 14820.76,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.5,
-                "avg_roi": 0.29,
+                "win_rate": 0.0,
+                "avg_roi": -5.99,
                 "n": 2
               }
             }
           }
         }
       ],
-      "generated_at": "2026-04-03T19:04:46.686174",
+      "generated_at": "2026-04-06T08:43:33.681696",
       "monte_carlo": {
-        "n_simulations": 300,
-        "n_trades_base": 12,
-        "final_capital": {
-          "p10": 82747.22,
-          "p25": 84683.05,
-          "median": 89481.54,
-          "p75": 91885.01,
-          "p90": 94034.61,
-          "mean": 88593.83
-        },
-        "max_drawdown": {
-          "p10": 19.8,
-          "p50": 19.8,
-          "p90": 22.36,
-          "worst": 22.36
-        },
-        "sharpe": {
-          "p10": -1.03,
-          "median": -0.658,
-          "p90": -0.284
-        },
-        "probability_of_profit": 0.0,
-        "probability_ruin_20pct": 0.33
+        "skipped": true
       }
     },
     "LINK/USD": {
@@ -2201,140 +2284,140 @@
       "bot": "crypto",
       "windows_run": 9,
       "oos_summary": {
-        "total_trades": 12,
-        "win_rate": 0.417,
-        "avg_sharpe": -0.756,
-        "max_drawdown": 1.64
+        "total_trades": 13,
+        "win_rate": 0.154,
+        "avg_sharpe": -1.657,
+        "max_drawdown": 1.23
       },
       "is_summary": {
         "total_trades": 41,
-        "win_rate": 0.439
+        "win_rate": 0.39
       },
-      "degradation_ratio": 0.051,
-      "curve_fit_risk": "LOW",
+      "degradation_ratio": 0.606,
+      "curve_fit_risk": "HIGH",
       "windows": [
         {
           "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-05-27",
-          "test_start": "2025-05-28",
-          "test_end": "2025-07-26",
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
           "in_sample": {
             "total_trades": 6,
-            "wins": 3,
-            "losses": 3,
-            "win_rate": 0.5,
-            "avg_win_pct": 4.09,
-            "avg_loss_pct": -2.27,
-            "profit_factor": 1.8,
-            "sharpe": 2.057,
-            "max_drawdown": 0.82,
-            "calmar": -103.29,
-            "total_return": -84.7,
-            "final_capital": 15302.14,
+            "wins": 2,
+            "losses": 4,
+            "win_rate": 0.333,
+            "avg_win_pct": 4.31,
+            "avg_loss_pct": -4.08,
+            "profit_factor": 0.53,
+            "sharpe": 1.097,
+            "max_drawdown": 0.91,
+            "calmar": -93.222,
+            "total_return": -84.83,
+            "final_capital": 15167.6,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.5,
-                "avg_roi": 0.91,
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -1.28,
                 "n": 6
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
-            "wins": 2,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 1.65,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 2.121,
-            "max_drawdown": 0.4,
-            "calmar": -212.272,
-            "total_return": -84.91,
-            "final_capital": 15091.19,
+            "total_trades": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -2.64,
+            "profit_factor": 0.0,
+            "sharpe": -1.628,
+            "max_drawdown": 0.86,
+            "calmar": -98.933,
+            "total_return": -85.08,
+            "final_capital": 14917.34,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 1.0,
-                "avg_roi": 1.65,
-                "n": 2
+                "win_rate": 0.0,
+                "avg_roi": -2.64,
+                "n": 3
               }
             }
           }
         },
         {
           "window": 2,
-          "train_start": "2025-03-29",
-          "train_end": "2025-06-26",
-          "test_start": "2025-06-27",
-          "test_end": "2025-08-25",
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
           "in_sample": {
-            "total_trades": 4,
-            "wins": 0,
-            "losses": 4,
-            "win_rate": 0.0,
-            "avg_win_pct": 0,
-            "avg_loss_pct": -5.85,
-            "profit_factor": Infinity,
-            "sharpe": -3.295,
-            "max_drawdown": 2.02,
-            "calmar": -42.204,
-            "total_return": -85.25,
-            "final_capital": 14748.36,
+            "total_trades": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.333,
+            "avg_win_pct": 2.36,
+            "avg_loss_pct": -7.9,
+            "profit_factor": 0.15,
+            "sharpe": -2.253,
+            "max_drawdown": 1.8,
+            "calmar": -47.316,
+            "total_return": -85.17,
+            "final_capital": 14832.07,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.0,
-                "avg_roi": -5.85,
-                "n": 4
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -4.48,
+                "n": 3
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 4,
-            "wins": 1,
-            "losses": 3,
-            "win_rate": 0.25,
-            "avg_win_pct": 6.7,
-            "avg_loss_pct": -9.08,
-            "profit_factor": 0.25,
-            "sharpe": -1.412,
-            "max_drawdown": 1.64,
-            "calmar": -51.895,
-            "total_return": -85.11,
-            "final_capital": 14892.34,
+            "total_trades": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 4.63,
+            "avg_loss_pct": -2.8,
+            "profit_factor": 3.3,
+            "sharpe": 2.537,
+            "max_drawdown": 0.51,
+            "calmar": -166.392,
+            "total_return": -84.86,
+            "final_capital": 15140.23,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.25,
-                "avg_roi": -5.13,
-                "n": 4
+                "win_rate": 0.6666666666666666,
+                "avg_roi": 2.15,
+                "n": 3
               }
             }
           }
         },
         {
           "window": 3,
-          "train_start": "2025-04-28",
-          "train_end": "2025-07-26",
-          "test_start": "2025-07-27",
-          "test_end": "2025-09-24",
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
           "in_sample": {
-            "total_trades": 4,
-            "wins": 4,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 5.49,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 4.713,
+            "total_trades": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "avg_win_pct": 6.92,
+            "avg_loss_pct": -0.2,
+            "profit_factor": 50.98,
+            "sharpe": 4.589,
             "max_drawdown": 0.46,
-            "calmar": -183.841,
-            "total_return": -84.57,
-            "final_capital": 15433.09,
+            "calmar": -183.81,
+            "total_return": -84.55,
+            "final_capital": 15447.52,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 1.0,
-                "avg_roi": 5.49,
-                "n": 4
+                "win_rate": 0.6,
+                "avg_roi": 4.07,
+                "n": 5
               }
             }
           },
@@ -2344,17 +2427,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -8.16,
-            "profit_factor": Infinity,
-            "sharpe": -2.471,
-            "max_drawdown": 1.23,
-            "calmar": -69.203,
-            "total_return": -85.12,
-            "final_capital": 14880.04,
+            "avg_loss_pct": -6.67,
+            "profit_factor": 0.0,
+            "sharpe": -3.51,
+            "max_drawdown": 0.65,
+            "calmar": -130.92,
+            "total_return": -85.1,
+            "final_capital": 14901.98,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -8.16,
+                "avg_roi": -6.67,
                 "n": 1
               }
             }
@@ -2362,131 +2445,165 @@
         },
         {
           "window": 4,
-          "train_start": "2025-05-28",
-          "train_end": "2025-08-25",
-          "test_start": "2025-08-26",
-          "test_end": "2025-10-24",
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
           "in_sample": {
-            "total_trades": 10,
-            "wins": 6,
-            "losses": 4,
-            "win_rate": 0.6,
-            "avg_win_pct": 4.15,
-            "avg_loss_pct": -9.22,
-            "profit_factor": 0.68,
-            "sharpe": 1.522,
-            "max_drawdown": 1.64,
-            "calmar": -51.669,
-            "total_return": -84.74,
-            "final_capital": 15263.28,
+            "total_trades": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.455,
+            "avg_win_pct": 5.44,
+            "avg_loss_pct": -7.47,
+            "profit_factor": 0.61,
+            "sharpe": 0.579,
+            "max_drawdown": 1.77,
+            "calmar": -47.967,
+            "total_return": -84.9,
+            "final_capital": 15099.15,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.6,
-                "avg_roi": -1.2,
-                "n": 10
+                "win_rate": 0.45454545454545453,
+                "avg_roi": -1.6,
+                "n": 11
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -1.74,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.13,
+            "calmar": -654.0,
+            "total_return": -85.02,
+            "final_capital": 14980.0,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -1.74,
+                "n": 1
+              }
+            }
           }
         },
         {
           "window": 5,
-          "train_start": "2025-06-27",
-          "train_end": "2025-09-24",
-          "test_start": "2025-09-25",
-          "test_end": "2025-11-23",
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
           "in_sample": {
-            "total_trades": 7,
+            "total_trades": 5,
             "wins": 2,
-            "losses": 5,
-            "win_rate": 0.286,
-            "avg_win_pct": 4.04,
-            "avg_loss_pct": -8.65,
-            "profit_factor": 0.19,
-            "sharpe": -1.833,
-            "max_drawdown": 2.53,
-            "calmar": -33.693,
-            "total_return": -85.24,
-            "final_capital": 14756.55,
+            "losses": 3,
+            "win_rate": 0.4,
+            "avg_win_pct": 3.72,
+            "avg_loss_pct": -6.28,
+            "profit_factor": 0.4,
+            "sharpe": -0.194,
+            "max_drawdown": 1.28,
+            "calmar": -66.424,
+            "total_return": -85.02,
+            "final_capital": 14976.78,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.2857142857142857,
-                "avg_roi": -5.02,
-                "n": 7
+                "win_rate": 0.4,
+                "avg_roi": -2.28,
+                "n": 5
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 0,
-            "error": "No trades completed"
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": 0.0,
+            "profit_factor": 0.0,
+            "sharpe": 0,
+            "max_drawdown": 0.0,
+            "calmar": 0,
+            "total_return": -85.0,
+            "final_capital": 15000.0,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": 0.0,
+                "n": 1
+              }
+            }
           }
         },
         {
           "window": 6,
-          "train_start": "2025-07-27",
-          "train_end": "2025-10-24",
-          "test_start": "2025-10-25",
-          "test_end": "2025-12-23",
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
           "in_sample": {
-            "total_trades": 2,
+            "total_trades": 3,
             "wins": 0,
-            "losses": 2,
+            "losses": 3,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -15.66,
-            "profit_factor": Infinity,
-            "sharpe": -2.443,
-            "max_drawdown": 3.47,
-            "calmar": -24.628,
+            "avg_loss_pct": -10.52,
+            "profit_factor": 0.0,
+            "sharpe": -2.531,
+            "max_drawdown": 3.04,
+            "calmar": -28.11,
             "total_return": -85.46,
-            "final_capital": 14542.47,
+            "final_capital": 14544.5,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -15.66,
-                "n": 2
+                "avg_roi": -10.52,
+                "n": 3
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 2,
+            "total_trades": 1,
             "wins": 0,
-            "losses": 2,
+            "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -4.14,
-            "profit_factor": Infinity,
-            "sharpe": -3.285,
-            "max_drawdown": 0.82,
-            "calmar": -103.809,
-            "total_return": -85.12,
-            "final_capital": 14876.98,
+            "avg_loss_pct": -2.05,
+            "profit_factor": 0.0,
+            "sharpe": -1.772,
+            "max_drawdown": 0.42,
+            "calmar": -202.454,
+            "total_return": -85.03,
+            "final_capital": 14969.24,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -4.14,
-                "n": 2
+                "avg_roi": -2.05,
+                "n": 1
               }
             }
           }
         },
         {
           "window": 7,
-          "train_start": "2025-08-26",
-          "train_end": "2025-11-23",
-          "test_start": "2025-11-24",
-          "test_end": "2026-01-22",
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
           "in_sample": {
-            "total_trades": 1,
+            "total_trades": 2,
             "wins": 0,
-            "losses": 1,
+            "losses": 2,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -9.36,
-            "profit_factor": Infinity,
+            "avg_loss_pct": -4.68,
+            "profit_factor": 0.0,
             "sharpe": -2.338,
             "max_drawdown": 0.72,
             "calmar": -118.205,
@@ -2496,6 +2613,11 @@
               "BULL_TREND": {
                 "win_rate": 0.0,
                 "avg_roi": -9.36,
+                "n": 1
+              },
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": 0.0,
                 "n": 1
               }
             }
@@ -2507,27 +2629,27 @@
         },
         {
           "window": 8,
-          "train_start": "2025-09-25",
-          "train_end": "2025-12-23",
-          "test_start": "2025-12-24",
-          "test_end": "2026-02-21",
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
           "in_sample": {
             "total_trades": 4,
             "wins": 1,
             "losses": 3,
             "win_rate": 0.25,
             "avg_win_pct": 0.36,
-            "avg_loss_pct": -6.05,
+            "avg_loss_pct": -6.62,
             "profit_factor": 0.02,
-            "sharpe": -1.814,
-            "max_drawdown": 1.34,
-            "calmar": -63.583,
-            "total_return": -85.2,
-            "final_capital": 14799.38,
+            "sharpe": -2.023,
+            "max_drawdown": 1.6,
+            "calmar": -53.266,
+            "total_return": -85.23,
+            "final_capital": 14774.28,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.25,
-                "avg_roi": -4.45,
+                "avg_roi": -4.87,
                 "n": 4
               }
             }
@@ -2538,17 +2660,17 @@
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -2.34,
-            "profit_factor": Infinity,
-            "sharpe": -0.934,
-            "max_drawdown": 0.52,
-            "calmar": -163.522,
-            "total_return": -85.03,
-            "final_capital": 14968.38,
+            "avg_loss_pct": -6.59,
+            "profit_factor": 0.0,
+            "sharpe": -2.212,
+            "max_drawdown": 0.75,
+            "calmar": -113.451,
+            "total_return": -85.09,
+            "final_capital": 14912.1,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
                 "win_rate": 0.0,
-                "avg_roi": -2.34,
+                "avg_roi": -6.59,
                 "n": 1
               }
             }
@@ -2556,79 +2678,905 @@
         },
         {
           "window": 9,
-          "train_start": "2025-10-25",
-          "train_end": "2026-01-22",
-          "test_start": "2026-01-23",
-          "test_end": "2026-03-23",
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
           "in_sample": {
-            "total_trades": 3,
+            "total_trades": 2,
             "wins": 2,
-            "losses": 1,
-            "win_rate": 0.667,
+            "losses": 0,
+            "win_rate": 1.0,
             "avg_win_pct": 3.37,
-            "avg_loss_pct": -7.92,
-            "profit_factor": 0.85,
-            "sharpe": 0.848,
-            "max_drawdown": 1.08,
-            "calmar": -78.625,
-            "total_return": -84.92,
-            "final_capital": 15084.68,
+            "avg_loss_pct": 0,
+            "profit_factor": Infinity,
+            "sharpe": 2.316,
+            "max_drawdown": 0.42,
+            "calmar": -201.895,
+            "total_return": -84.8,
+            "final_capital": 15204.0,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": -0.39,
-                "n": 3
+                "win_rate": 1.0,
+                "avg_roi": 3.37,
+                "n": 2
               }
             }
           },
           "out_of_sample": {
             "total_trades": 2,
-            "wins": 2,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 0.48,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 1.448,
-            "max_drawdown": 0.78,
-            "calmar": -108.875,
-            "total_return": -84.92,
-            "final_capital": 15077.16,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -4.91,
+            "profit_factor": 0.0,
+            "sharpe": -2.474,
+            "max_drawdown": 1.23,
+            "calmar": -69.225,
+            "total_return": -85.15,
+            "final_capital": 14853.02,
             "regime_stats": {
               "ACCUMULATION_EXTREME_FEAR": {
-                "win_rate": 1.0,
-                "avg_roi": 0.48,
+                "win_rate": 0.0,
+                "avg_roi": -4.91,
                 "n": 2
               }
             }
           }
         }
       ],
-      "generated_at": "2026-04-03T19:04:48.275171",
+      "generated_at": "2026-04-06T08:43:34.242324",
       "monte_carlo": {
-        "n_simulations": 300,
-        "n_trades_base": 12,
-        "final_capital": {
-          "p10": 65490.3,
-          "p25": 66252.88,
-          "median": 69753.81,
-          "p75": 72376.44,
-          "p90": 74071.77,
-          "mean": 69789.27
+        "skipped": true
+      }
+    },
+    "ADA/USD": {
+      "symbol": "ADA/USD",
+      "bot": "crypto",
+      "windows_run": 9,
+      "oos_summary": {
+        "total_trades": 11,
+        "win_rate": 0.091,
+        "avg_sharpe": -1.897,
+        "max_drawdown": 1.18
+      },
+      "is_summary": {
+        "total_trades": 32,
+        "win_rate": 0.438
+      },
+      "degradation_ratio": 0.792,
+      "curve_fit_risk": "HIGH",
+      "windows": [
+        {
+          "window": 1,
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
+          "in_sample": {
+            "total_trades": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "avg_win_pct": 2.93,
+            "avg_loss_pct": -4.36,
+            "profit_factor": 1.01,
+            "sharpe": 1.719,
+            "max_drawdown": 0.84,
+            "calmar": -100.886,
+            "total_return": -84.74,
+            "final_capital": 15256.16,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.6,
+                "avg_roi": 0.01,
+                "n": 5
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -2.67,
+            "profit_factor": 0.0,
+            "sharpe": -0.668,
+            "max_drawdown": 0.58,
+            "calmar": -146.595,
+            "total_return": -85.02,
+            "final_capital": 14975.0,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -2.67,
+                "n": 2
+              }
+            }
+          }
         },
-        "max_drawdown": {
-          "p10": 38.06,
-          "p50": 38.06,
-          "p90": 39.91,
-          "worst": 39.91
+        {
+          "window": 2,
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -7.6,
+            "profit_factor": 0.0,
+            "sharpe": -2.665,
+            "max_drawdown": 1.59,
+            "calmar": -53.579,
+            "total_return": -85.19,
+            "final_capital": 14809.07,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -7.6,
+                "n": 2
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.333,
+            "avg_win_pct": 5.02,
+            "avg_loss_pct": -4.65,
+            "profit_factor": 0.54,
+            "sharpe": 0.205,
+            "max_drawdown": 0.61,
+            "calmar": -139.328,
+            "total_return": -84.99,
+            "final_capital": 15009.72,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -1.43,
+                "n": 3
+              }
+            }
+          }
         },
-        "sharpe": {
-          "p10": -2.493,
-          "median": -2.348,
-          "p90": -1.737
+        {
+          "window": 3,
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 3,
+            "losses": 1,
+            "win_rate": 0.75,
+            "avg_win_pct": 7.08,
+            "avg_loss_pct": -4.14,
+            "profit_factor": 5.13,
+            "sharpe": 4.121,
+            "max_drawdown": 0.39,
+            "calmar": -217.016,
+            "total_return": -84.64,
+            "final_capital": 15363.67,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.75,
+                "avg_roi": 4.27,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -10.76,
+            "profit_factor": 0.0,
+            "sharpe": -3.7,
+            "max_drawdown": 1.05,
+            "calmar": -81.103,
+            "total_return": -85.16,
+            "final_capital": 14841.77,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -10.76,
+                "n": 1
+              }
+            }
+          }
         },
-        "probability_of_profit": 0.0,
-        "probability_ruin_20pct": 1.0
+        {
+          "window": 4,
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
+          "in_sample": {
+            "total_trades": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "avg_win_pct": 3.35,
+            "avg_loss_pct": -4.98,
+            "profit_factor": 0.67,
+            "sharpe": 1.356,
+            "max_drawdown": 1.07,
+            "calmar": -79.294,
+            "total_return": -84.84,
+            "final_capital": 15155.21,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.5,
+                "avg_roi": -0.81,
+                "n": 8
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        },
+        {
+          "window": 5,
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
+          "in_sample": {
+            "total_trades": 5,
+            "wins": 2,
+            "losses": 3,
+            "win_rate": 0.4,
+            "avg_win_pct": 5.15,
+            "avg_loss_pct": -7.44,
+            "profit_factor": 0.46,
+            "sharpe": -0.431,
+            "max_drawdown": 1.14,
+            "calmar": -74.606,
+            "total_return": -85.05,
+            "final_capital": 14948.62,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.4,
+                "avg_roi": -2.4,
+                "n": 5
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        },
+        {
+          "window": 6,
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -18.04,
+            "profit_factor": 0.0,
+            "sharpe": -2.865,
+            "max_drawdown": 3.51,
+            "calmar": -24.367,
+            "total_return": -85.53,
+            "final_capital": 14473.54,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -18.04,
+                "n": 2
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        },
+        {
+          "window": 7,
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
+          "in_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.35,
+            "profit_factor": 0.0,
+            "sharpe": -1.14,
+            "max_drawdown": 0.77,
+            "calmar": -110.455,
+            "total_return": -85.05,
+            "final_capital": 14949.82,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -3.35,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 8,
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -6.33,
+            "profit_factor": 0.0,
+            "sharpe": -1.269,
+            "max_drawdown": 1.68,
+            "calmar": -50.677,
+            "total_return": -85.14,
+            "final_capital": 14861.83,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -6.33,
+                "n": 2
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.46,
+            "profit_factor": 0.0,
+            "sharpe": -2.401,
+            "max_drawdown": 0.74,
+            "calmar": -114.991,
+            "total_return": -85.09,
+            "final_capital": 14906.86,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -3.46,
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "window": 9,
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "avg_win_pct": 0.88,
+            "avg_loss_pct": -6.51,
+            "profit_factor": 0.13,
+            "sharpe": -0.415,
+            "max_drawdown": 1.08,
+            "calmar": -78.752,
+            "total_return": -85.05,
+            "final_capital": 14948.14,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.5,
+                "avg_roi": -2.82,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -5.9,
+            "profit_factor": 0.0,
+            "sharpe": -3.676,
+            "max_drawdown": 1.18,
+            "calmar": -72.183,
+            "total_return": -85.18,
+            "final_capital": 14823.52,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -5.9,
+                "n": 2
+              }
+            }
+          }
+        }
+      ],
+      "generated_at": "2026-04-06T08:43:34.773692",
+      "monte_carlo": {
+        "skipped": true
+      }
+    },
+    "XRP/USD": {
+      "symbol": "XRP/USD",
+      "bot": "crypto",
+      "windows_run": 9,
+      "oos_summary": {
+        "total_trades": 12,
+        "win_rate": 0.083,
+        "avg_sharpe": -2.338,
+        "max_drawdown": 1.33
+      },
+      "is_summary": {
+        "total_trades": 32,
+        "win_rate": 0.25
+      },
+      "degradation_ratio": 0.667,
+      "curve_fit_risk": "HIGH",
+      "windows": [
+        {
+          "window": 1,
+          "train_start": "2025-03-02",
+          "train_end": "2025-05-30",
+          "test_start": "2025-05-31",
+          "test_end": "2025-07-29",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.667,
+            "avg_win_pct": 3.04,
+            "avg_loss_pct": -10.18,
+            "profit_factor": 0.6,
+            "sharpe": 0.388,
+            "max_drawdown": 1.34,
+            "calmar": -63.398,
+            "total_return": -84.95,
+            "final_capital": 15046.59,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.6666666666666666,
+                "avg_roi": -1.37,
+                "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -4.21,
+            "profit_factor": 0.0,
+            "sharpe": -1.821,
+            "max_drawdown": 0.94,
+            "calmar": -90.535,
+            "total_return": -85.1,
+            "final_capital": 14897.34,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -4.21,
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "window": 2,
+          "train_start": "2025-04-01",
+          "train_end": "2025-06-29",
+          "test_start": "2025-06-30",
+          "test_end": "2025-08-28",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.333,
+            "avg_win_pct": 0.74,
+            "avg_loss_pct": -6.43,
+            "profit_factor": 0.06,
+            "sharpe": -2.067,
+            "max_drawdown": 1.64,
+            "calmar": -51.929,
+            "total_return": -85.16,
+            "final_capital": 14837.18,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -4.04,
+                "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -4.24,
+            "profit_factor": 0.0,
+            "sharpe": -3.838,
+            "max_drawdown": 0.78,
+            "calmar": -109.123,
+            "total_return": -85.12,
+            "final_capital": 14883.72,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -4.24,
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "window": 3,
+          "train_start": "2025-05-01",
+          "train_end": "2025-07-29",
+          "test_start": "2025-07-30",
+          "test_end": "2025-09-27",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "avg_win_pct": 6.86,
+            "avg_loss_pct": -4.68,
+            "profit_factor": 1.47,
+            "sharpe": 1.424,
+            "max_drawdown": 1.08,
+            "calmar": -78.549,
+            "total_return": -84.83,
+            "final_capital": 15167.06,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.5,
+                "avg_roi": 1.09,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -6.8,
+            "profit_factor": 0.0,
+            "sharpe": -4.461,
+            "max_drawdown": 1.33,
+            "calmar": -64.06,
+            "total_return": -85.2,
+            "final_capital": 14800.74,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -6.8,
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "window": 4,
+          "train_start": "2025-05-31",
+          "train_end": "2025-08-28",
+          "test_start": "2025-08-29",
+          "test_end": "2025-10-27",
+          "in_sample": {
+            "total_trades": 7,
+            "wins": 1,
+            "losses": 6,
+            "win_rate": 0.143,
+            "avg_win_pct": 6.25,
+            "avg_loss_pct": -6.99,
+            "profit_factor": 0.15,
+            "sharpe": -2.637,
+            "max_drawdown": 2.6,
+            "calmar": -32.829,
+            "total_return": -85.36,
+            "final_capital": 14643.39,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.14285714285714285,
+                "avg_roi": -5.1,
+                "n": 7
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -0.4,
+            "profit_factor": 0.0,
+            "sharpe": -2.542,
+            "max_drawdown": 0.04,
+            "calmar": -2125.146,
+            "total_return": -85.01,
+            "final_capital": 14994.16,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -0.4,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 5,
+          "train_start": "2025-06-30",
+          "train_end": "2025-09-27",
+          "test_start": "2025-09-28",
+          "test_end": "2025-11-26",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 0,
+            "losses": 4,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -5.02,
+            "profit_factor": 0.0,
+            "sharpe": -2.911,
+            "max_drawdown": 1.59,
+            "calmar": -53.609,
+            "total_return": -85.24,
+            "final_capital": 14761.81,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -5.02,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 4.35,
+            "avg_loss_pct": 0,
+            "profit_factor": Infinity,
+            "sharpe": 2.517,
+            "max_drawdown": 0.06,
+            "calmar": -1414.616,
+            "total_return": -84.88,
+            "final_capital": 15123.05,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 1.0,
+                "avg_roi": 4.35,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 6,
+          "train_start": "2025-07-30",
+          "train_end": "2025-10-27",
+          "test_start": "2025-10-28",
+          "test_end": "2025-12-26",
+          "in_sample": {
+            "total_trades": 4,
+            "wins": 0,
+            "losses": 4,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -8.49,
+            "profit_factor": 0.0,
+            "sharpe": -3.597,
+            "max_drawdown": 3.3,
+            "calmar": -25.907,
+            "total_return": -85.49,
+            "final_capital": 14505.38,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -8.49,
+                "n": 4
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        },
+        {
+          "window": 7,
+          "train_start": "2025-08-29",
+          "train_end": "2025-11-26",
+          "test_start": "2025-11-27",
+          "test_end": "2026-01-25",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 4.35,
+            "avg_loss_pct": -7.77,
+            "profit_factor": 0.56,
+            "sharpe": 0.114,
+            "max_drawdown": 0.76,
+            "calmar": -111.832,
+            "total_return": -84.99,
+            "final_capital": 15007.95,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -7.77,
+                "n": 1
+              },
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 1.0,
+                "avg_roi": 4.35,
+                "n": 1
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -2.99,
+            "profit_factor": 0.0,
+            "sharpe": -1.41,
+            "max_drawdown": 0.59,
+            "calmar": -144.144,
+            "total_return": -85.04,
+            "final_capital": 14955.1,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -2.99,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 8,
+          "train_start": "2025-09-28",
+          "train_end": "2025-12-26",
+          "test_start": "2025-12-27",
+          "test_end": "2026-02-24",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.58,
+            "profit_factor": 0.0,
+            "sharpe": -0.496,
+            "max_drawdown": 1.12,
+            "calmar": -75.934,
+            "total_return": -85.05,
+            "final_capital": 14954.27,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -3.58,
+                "n": 2
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -8.35,
+            "profit_factor": 0.0,
+            "sharpe": -3.787,
+            "max_drawdown": 0.68,
+            "calmar": -125.138,
+            "total_return": -85.09,
+            "final_capital": 14906.22,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -8.35,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 9,
+          "train_start": "2025-10-28",
+          "train_end": "2026-01-25",
+          "test_start": "2026-01-26",
+          "test_end": "2026-03-26",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.333,
+            "avg_win_pct": 6.56,
+            "avg_loss_pct": -7.64,
+            "profit_factor": 0.43,
+            "sharpe": -0.689,
+            "max_drawdown": 1.88,
+            "calmar": -45.249,
+            "total_return": -85.07,
+            "final_capital": 14931.56,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -2.91,
+                "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -4.58,
+            "profit_factor": 0.0,
+            "sharpe": -3.363,
+            "max_drawdown": 0.91,
+            "calmar": -93.557,
+            "total_return": -85.14,
+            "final_capital": 14862.77,
+            "regime_stats": {
+              "ACCUMULATION_EXTREME_FEAR": {
+                "win_rate": 0.0,
+                "avg_roi": -4.58,
+                "n": 2
+              }
+            }
+          }
+        }
+      ],
+      "generated_at": "2026-04-06T08:43:35.319407",
+      "monte_carlo": {
+        "skipped": true
       }
     },
     "CME": {
@@ -2636,10 +3584,10 @@
       "bot": "equity",
       "windows_run": 5,
       "oos_summary": {
-        "total_trades": 3,
+        "total_trades": 2,
         "win_rate": 1.0,
-        "avg_sharpe": 3.977,
-        "max_drawdown": 0.24
+        "avg_sharpe": 3.176,
+        "max_drawdown": 0.29
       },
       "is_summary": {
         "total_trades": 8,
@@ -2650,28 +3598,28 @@
       "windows": [
         {
           "window": 1,
-          "train_start": "2025-02-27",
-          "train_end": "2025-07-08",
-          "test_start": "2025-07-09",
-          "test_end": "2025-10-01",
+          "train_start": "2025-03-03",
+          "train_end": "2025-07-10",
+          "test_start": "2025-07-11",
+          "test_end": "2025-10-03",
           "in_sample": {
-            "total_trades": 3,
+            "total_trades": 2,
             "wins": 2,
-            "losses": 1,
-            "win_rate": 0.667,
-            "avg_win_pct": 0.72,
-            "avg_loss_pct": -6.36,
-            "profit_factor": 0.23,
-            "sharpe": -0.564,
-            "max_drawdown": 0.64,
-            "calmar": -23.731,
-            "total_return": -15.19,
-            "final_capital": 84812.24,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 1.01,
+            "avg_loss_pct": 0,
+            "profit_factor": Infinity,
+            "sharpe": 1.438,
+            "max_drawdown": 0.54,
+            "calmar": -27.057,
+            "total_return": -14.61,
+            "final_capital": 85389.01,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.6666666666666666,
-                "avg_roi": -1.64,
-                "n": 3
+                "win_rate": 1.0,
+                "avg_roi": 1.01,
+                "n": 2
               }
             }
           },
@@ -2680,18 +3628,18 @@
             "wins": 1,
             "losses": 0,
             "win_rate": 1.0,
-            "avg_win_pct": 0.53,
+            "avg_win_pct": 0.09,
             "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": 0.515,
-            "max_drawdown": 0.24,
-            "calmar": -62.311,
-            "total_return": -14.95,
-            "final_capital": 85045.32,
+            "sharpe": 0.09,
+            "max_drawdown": 0.29,
+            "calmar": -51.698,
+            "total_return": -14.99,
+            "final_capital": 85007.72,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 1.0,
-                "avg_roi": 0.53,
+                "avg_roi": 0.09,
                 "n": 1
               }
             }
@@ -2699,27 +3647,27 @@
         },
         {
           "window": 2,
-          "train_start": "2025-04-10",
-          "train_end": "2025-08-19",
-          "test_start": "2025-08-20",
-          "test_end": "2025-11-12",
+          "train_start": "2025-04-14",
+          "train_end": "2025-08-21",
+          "test_start": "2025-08-22",
+          "test_end": "2025-11-14",
           "in_sample": {
             "total_trades": 1,
             "wins": 0,
             "losses": 1,
             "win_rate": 0.0,
             "avg_win_pct": 0,
-            "avg_loss_pct": -1.19,
-            "profit_factor": Infinity,
-            "sharpe": -0.326,
+            "avg_loss_pct": -0.52,
+            "profit_factor": 0.0,
+            "sharpe": -0.137,
             "max_drawdown": 0.6,
-            "calmar": -25.169,
-            "total_return": -15.1,
-            "final_capital": 84898.84,
+            "calmar": -25.074,
+            "total_return": -15.04,
+            "final_capital": 84955.45,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.0,
-                "avg_roi": -1.19,
+                "avg_roi": -0.52,
                 "n": 1
               }
             }
@@ -2729,18 +3677,18 @@
             "wins": 1,
             "losses": 0,
             "win_rate": 1.0,
-            "avg_win_pct": 3.17,
+            "avg_win_pct": 3.95,
             "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": 5.14,
-            "max_drawdown": 0.05,
-            "calmar": -290.203,
-            "total_return": -14.51,
-            "final_capital": 85489.84,
+            "sharpe": 6.262,
+            "max_drawdown": 0.0,
+            "calmar": 0,
+            "total_return": -14.43,
+            "final_capital": 85572.12,
             "regime_stats": {
               "NEUTRAL": {
                 "win_rate": 1.0,
-                "avg_roi": 3.17,
+                "avg_roi": 3.95,
                 "n": 1
               }
             }
@@ -2748,28 +3696,28 @@
         },
         {
           "window": 3,
-          "train_start": "2025-05-23",
-          "train_end": "2025-10-01",
-          "test_start": "2025-10-02",
-          "test_end": "2025-12-26",
+          "train_start": "2025-05-28",
+          "train_end": "2025-10-03",
+          "test_start": "2025-10-06",
+          "test_end": "2025-12-30",
           "in_sample": {
-            "total_trades": 2,
+            "total_trades": 3,
             "wins": 1,
-            "losses": 1,
-            "win_rate": 0.5,
+            "losses": 2,
+            "win_rate": 0.333,
             "avg_win_pct": 1.35,
-            "avg_loss_pct": -6.9,
-            "profit_factor": 0.2,
-            "sharpe": -0.944,
+            "avg_loss_pct": -3.73,
+            "profit_factor": 0.18,
+            "sharpe": -1.132,
             "max_drawdown": 0.84,
-            "calmar": -18.159,
-            "total_return": -15.25,
-            "final_capital": 84746.58,
+            "calmar": -18.217,
+            "total_return": -15.3,
+            "final_capital": 84698.11,
             "regime_stats": {
               "BULL_TREND": {
-                "win_rate": 0.5,
-                "avg_roi": -2.77,
-                "n": 2
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -2.04,
+                "n": 3
               }
             }
           },
@@ -2780,76 +3728,59 @@
         },
         {
           "window": 4,
-          "train_start": "2025-07-09",
-          "train_end": "2025-11-12",
-          "test_start": "2025-11-13",
-          "test_end": "2026-02-10",
+          "train_start": "2025-07-11",
+          "train_end": "2025-11-14",
+          "test_start": "2025-11-17",
+          "test_end": "2026-02-12",
           "in_sample": {
             "total_trades": 1,
             "wins": 1,
             "losses": 0,
             "win_rate": 1.0,
-            "avg_win_pct": 2.87,
+            "avg_win_pct": 3.9,
             "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": 1.698,
+            "sharpe": 1.998,
             "max_drawdown": 0.4,
-            "calmar": -36.312,
-            "total_return": -14.52,
-            "final_capital": 85475.1,
+            "calmar": -36.093,
+            "total_return": -14.44,
+            "final_capital": 85562.85,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 1.0,
-                "avg_roi": 2.87,
+                "avg_roi": 3.9,
                 "n": 1
               }
             }
           },
           "out_of_sample": {
-            "total_trades": 1,
-            "wins": 1,
-            "losses": 0,
-            "win_rate": 1.0,
-            "avg_win_pct": 3.62,
-            "avg_loss_pct": 0,
-            "profit_factor": Infinity,
-            "sharpe": 6.275,
-            "max_drawdown": 0.02,
-            "calmar": -733.539,
-            "total_return": -14.67,
-            "final_capital": 85329.21,
-            "regime_stats": {
-              "BEAR_HIGH_VOL": {
-                "win_rate": 1.0,
-                "avg_roi": 3.62,
-                "n": 1
-              }
-            }
+            "total_trades": 0,
+            "error": "No trades completed"
           }
         },
         {
           "window": 5,
-          "train_start": "2025-08-20",
-          "train_end": "2025-12-26",
-          "test_start": "2025-12-29",
-          "test_end": "2026-03-25",
+          "train_start": "2025-08-22",
+          "train_end": "2025-12-30",
+          "test_start": "2025-12-31",
+          "test_end": "2026-03-27",
           "in_sample": {
             "total_trades": 1,
             "wins": 1,
             "losses": 0,
             "win_rate": 1.0,
-            "avg_win_pct": 1.43,
+            "avg_win_pct": 1.27,
             "avg_loss_pct": 0,
             "profit_factor": Infinity,
-            "sharpe": 2.022,
-            "max_drawdown": 0.28,
-            "calmar": -52.351,
+            "sharpe": 2.115,
+            "max_drawdown": 0.27,
+            "calmar": -54.281,
             "total_return": -14.66,
-            "final_capital": 85341.76,
+            "final_capital": 85344.14,
             "regime_stats": {
               "NEUTRAL": {
                 "win_rate": 1.0,
-                "avg_roi": 1.43,
+                "avg_roi": 1.27,
                 "n": 1
               }
             }
@@ -2860,17 +3791,248 @@
           }
         }
       ],
-      "generated_at": "2026-04-03T19:04:48.324000",
+      "generated_at": "2026-04-06T08:43:35.755849",
       "monte_carlo": {
-        "error": "Not enough trades for Monte Carlo",
-        "n_trades": 3
+        "skipped": true
+      }
+    },
+    "PANW": {
+      "symbol": "PANW",
+      "bot": "equity",
+      "windows_run": 5,
+      "oos_summary": {
+        "total_trades": 3,
+        "win_rate": 0.0,
+        "avg_sharpe": -1.699,
+        "max_drawdown": 0.66
+      },
+      "is_summary": {
+        "total_trades": 13,
+        "win_rate": 0.462
+      },
+      "degradation_ratio": 1.0,
+      "curve_fit_risk": "HIGH",
+      "windows": [
+        {
+          "window": 1,
+          "train_start": "2025-03-03",
+          "train_end": "2025-07-10",
+          "test_start": "2025-07-11",
+          "test_end": "2025-10-03",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 1.45,
+            "avg_loss_pct": -2.49,
+            "profit_factor": 0.58,
+            "sharpe": 0.25,
+            "max_drawdown": 0.71,
+            "calmar": -20.939,
+            "total_return": -14.87,
+            "final_capital": 85133.66,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.5,
+                "avg_roi": -0.52,
+                "n": 2
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -0.48,
+            "profit_factor": 0.0,
+            "sharpe": -0.326,
+            "max_drawdown": 0.36,
+            "calmar": -41.779,
+            "total_return": -15.04,
+            "final_capital": 84959.58,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.0,
+                "avg_roi": -0.48,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 2,
+          "train_start": "2025-04-14",
+          "train_end": "2025-08-21",
+          "test_start": "2025-08-22",
+          "test_end": "2025-11-14",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.333,
+            "avg_win_pct": 2.26,
+            "avg_loss_pct": -7.07,
+            "profit_factor": 0.16,
+            "sharpe": -1.355,
+            "max_drawdown": 1.69,
+            "calmar": -9.345,
+            "total_return": -15.79,
+            "final_capital": 84207.33,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 0.3333333333333333,
+                "avg_roi": -3.96,
+                "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -3.3,
+            "profit_factor": 0.0,
+            "sharpe": -3.072,
+            "max_drawdown": 0.66,
+            "calmar": -23.577,
+            "total_return": -15.56,
+            "final_capital": 84439.36,
+            "regime_stats": {
+              "NEUTRAL": {
+                "win_rate": 0.0,
+                "avg_roi": -6.6,
+                "n": 1
+              },
+              "BEAR_HIGH_VOL": {
+                "win_rate": 0.0,
+                "avg_roi": 0.0,
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "window": 3,
+          "train_start": "2025-05-28",
+          "train_end": "2025-10-03",
+          "test_start": "2025-10-06",
+          "test_end": "2025-12-30",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 3,
+            "losses": 0,
+            "win_rate": 1.0,
+            "avg_win_pct": 3.38,
+            "avg_loss_pct": 0,
+            "profit_factor": Infinity,
+            "sharpe": 4.625,
+            "max_drawdown": 0.19,
+            "calmar": -71.995,
+            "total_return": -13.68,
+            "final_capital": 86320.9,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 1.0,
+                "avg_roi": 3.38,
+                "n": 3
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        },
+        {
+          "window": 4,
+          "train_start": "2025-07-11",
+          "train_end": "2025-11-14",
+          "test_start": "2025-11-17",
+          "test_end": "2026-02-12",
+          "in_sample": {
+            "total_trades": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "avg_win_pct": 1.2,
+            "avg_loss_pct": -2.9,
+            "profit_factor": 0.41,
+            "sharpe": 0.51,
+            "max_drawdown": 0.59,
+            "calmar": -25.083,
+            "total_return": -14.8,
+            "final_capital": 85201.03,
+            "regime_stats": {
+              "BULL_TREND": {
+                "win_rate": 1.0,
+                "avg_roi": 1.2,
+                "n": 1
+              },
+              "BEAR_HIGH_VOL": {
+                "win_rate": 0.0,
+                "avg_roi": -2.9,
+                "n": 1
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        },
+        {
+          "window": 5,
+          "train_start": "2025-08-22",
+          "train_end": "2025-12-30",
+          "test_start": "2025-12-31",
+          "test_end": "2026-03-27",
+          "in_sample": {
+            "total_trades": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "avg_win_pct": 0,
+            "avg_loss_pct": -6.64,
+            "profit_factor": 0.0,
+            "sharpe": -3.663,
+            "max_drawdown": 1.56,
+            "calmar": -10.407,
+            "total_return": -16.24,
+            "final_capital": 83764.88,
+            "regime_stats": {
+              "NEUTRAL": {
+                "win_rate": 0.0,
+                "avg_roi": -6.6,
+                "n": 1
+              },
+              "BEAR_HIGH_VOL": {
+                "win_rate": 0.0,
+                "avg_roi": -6.67,
+                "n": 2
+              }
+            }
+          },
+          "out_of_sample": {
+            "total_trades": 0,
+            "error": "No trades completed"
+          }
+        }
+      ],
+      "generated_at": "2026-04-06T08:43:36.129458",
+      "monte_carlo": {
+        "skipped": true
       }
     }
   },
   "overall": {
-    "symbols_tested": 7,
-    "avg_oos_win_rate": 0.483,
-    "avg_sharpe": 0.182,
+    "symbols_tested": 10,
+    "avg_oos_win_rate": 0.244,
+    "avg_sharpe": -1.329,
     "worst_curve_fit_risk": "HIGH"
   }
 }
