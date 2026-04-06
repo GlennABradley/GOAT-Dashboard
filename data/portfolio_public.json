@@ -5,16 +5,16 @@
     "SOL/USD"
   ],
   "regimes": [
-    "ACCUMULATION_EXTREME_FEAR",
-    null
+    null,
+    "ACCUMULATION_EXTREME_FEAR"
   ],
   "strategies": [
-    "cycle",
-    "swing"
+    "swing",
+    "cycle"
   ],
   "last_updated": "2026-04-06",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-06T08:24:28.391679"
+    "generated_at": "2026-04-06T08:36:06.713173"
   }
 }
