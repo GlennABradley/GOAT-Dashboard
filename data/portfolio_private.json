@@ -1,5 +1,5 @@
 {
-  "cash": 79947.67,
+  "cash": 90998.96,
   "start_of_day_value": 81465.58961570256,
   "positions": {
     "DOT/USD": {
@@ -15,49 +15,18 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0
-    },
-    "SOL/USD": {
-      "symbol": "SOL/USD",
-      "qty": 4.063066245,
-      "entry_price": 80.7942,
-      "entry_date": "2026-04-03",
-      "trade_type": "swing",
-      "stop_loss": 80.874994,
-      "target": 120.0,
-      "entry_regime": null,
-      "entry_fg": null,
-      "tier": 1,
-      "tp1_hit": false,
-      "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-07T10:05:03.090489",
+  "last_updated": "2026-04-07T18:05:05.390003",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T10:05:03.090517"
+    "generated_at": "2026-04-07T18:05:05.390029"
   },
-  "equity_cash": 87611.22,
-  "equity_pos_value": 11110.17,
-  "crypto_pos_value": 1576.67,
-  "combined_value": 92634.51,
+  "equity_cash": 90998.96,
+  "equity_pos_value": 8417.75,
+  "crypto_pos_value": 1248.4,
+  "combined_value": 100665.11,
   "equity_positions": {
-    "CME": {
-      "ticker": "CME",
-      "shares": 10.2999,
-      "entry_price": 298.159022,
-      "entry_date": "2026-03-27",
-      "trade_type": "swing",
-      "stop_loss": 293.83,
-      "target": 315.0,
-      "entry_vix": 29.64,
-      "entry_regime": "BEAR_HIGH_VOL",
-      "tp1_hit": false,
-      "shares_sold": 0,
-      "invalidation_signal": null,
-      "symbol": "CME",
-      "qty": 10.2999,
-      "live_price": 298.159022
-    },
     "PANW": {
       "ticker": "PANW",
       "shares": 49.5541,
@@ -73,13 +42,13 @@
       "invalidation_signal": "PANW breaks below $155 or RS drops below 5x SPY",
       "symbol": "PANW",
       "qty": 49.5541,
-      "live_price": 162.230043
+      "live_price": 169.87
     }
   },
   "portfolio_snapshots": [
     {
       "date": "2026-04-07",
-      "value": 92634.51,
+      "value": 100665.11,
       "sod": 81465.59
     }
   ]

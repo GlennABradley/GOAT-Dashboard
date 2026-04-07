@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-07T15:00",
+    "symbol": "NFLX",
+    "action": "SKIP",
+    "confidence": 0.65,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-07T09:06",
     "symbol": "ODFL",
     "action": "BUY",
@@ -38,14 +46,6 @@
     "confidence": 0.75,
     "regime": "ACCUMULATION_EXTREME_FEAR",
     "bot": "crypto"
-  },
-  {
-    "timestamp": "2026-04-01T09:00",
-    "symbol": "FAST",
-    "action": "BUY",
-    "confidence": 0.72,
-    "regime": "BEAR_HIGH_VOL",
-    "bot": "equity"
   },
   {
     "timestamp": "2026-03-28T18:00",
