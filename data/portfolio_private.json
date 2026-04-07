@@ -31,12 +31,12 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-06T10:05:01.119648",
+  "last_updated": "2026-04-07T07:07:19.915591",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-06T10:05:01.119664"
+    "generated_at": "2026-04-07T07:07:19.915596"
   },
-  "equity_cash": 95650.38,
+  "equity_cash": 87611.22,
   "equity_positions": {
     "CME": {
       "ticker": "CME",
@@ -53,6 +53,22 @@
       "invalidation_signal": null,
       "symbol": "CME",
       "qty": 10.2999
+    },
+    "PANW": {
+      "ticker": "PANW",
+      "shares": 49.5541,
+      "entry_price": 162.230043,
+      "entry_date": "2026-04-06",
+      "trade_type": "swing",
+      "stop_loss": 156.74,
+      "target": 175.0,
+      "entry_vix": null,
+      "entry_regime": "BEAR_HIGH_VOL",
+      "tp1_hit": false,
+      "shares_sold": 0,
+      "invalidation_signal": "PANW breaks below $155 or RS drops below 5x SPY",
+      "symbol": "PANW",
+      "qty": 49.5541
     }
   }
 }
