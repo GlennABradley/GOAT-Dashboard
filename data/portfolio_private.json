@@ -31,12 +31,15 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-07T07:07:19.915591",
+  "last_updated": "2026-04-07T07:24:36.712176",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T07:07:19.915596"
+    "generated_at": "2026-04-07T07:24:36.712190"
   },
   "equity_cash": 87611.22,
+  "equity_pos_value": 11203.53,
+  "crypto_pos_value": 1576.67,
+  "combined_value": 100391.42,
   "equity_positions": {
     "CME": {
       "ticker": "CME",
@@ -52,7 +55,8 @@
       "shares_sold": 0,
       "invalidation_signal": null,
       "symbol": "CME",
-      "qty": 10.2999
+      "qty": 10.2999,
+      "live_price": 308.57
     },
     "PANW": {
       "ticker": "PANW",
@@ -68,7 +72,15 @@
       "shares_sold": 0,
       "invalidation_signal": "PANW breaks below $155 or RS drops below 5x SPY",
       "symbol": "PANW",
-      "qty": 49.5541
+      "qty": 49.5541,
+      "live_price": 161.95
     }
-  }
+  },
+  "portfolio_snapshots": [
+    {
+      "date": "2026-04-07",
+      "value": 100391.42,
+      "sod": 97260.53
+    }
+  ]
 }

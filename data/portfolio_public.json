@@ -1,20 +1,23 @@
 {
-  "position_count": 2,
+  "position_count": 4,
   "symbols": [
     "DOT/USD",
-    "SOL/USD"
+    "SOL/USD",
+    "CME",
+    "PANW"
   ],
   "regimes": [
     null,
-    "ACCUMULATION_EXTREME_FEAR"
+    "ACCUMULATION_EXTREME_FEAR",
+    "BEAR_HIGH_VOL"
   ],
   "strategies": [
-    "cycle",
-    "swing"
+    "swing",
+    "cycle"
   ],
   "last_updated": "2026-04-07",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T07:07:19.915271"
+    "generated_at": "2026-04-07T07:24:33.951725"
   }
 }
