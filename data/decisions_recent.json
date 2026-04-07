@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-07T09:06",
+    "symbol": "ODFL",
+    "action": "BUY",
+    "confidence": 0.75,
+    "regime": "BEAR_HIGH_VOL",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-06T08:28",
     "symbol": "PANW",
     "action": "BUY",
@@ -36,14 +44,6 @@
     "symbol": "FAST",
     "action": "BUY",
     "confidence": 0.72,
-    "regime": "BEAR_HIGH_VOL",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-03-31T15:00",
-    "symbol": null,
-    "action": "HOLD",
-    "confidence": 0.0,
     "regime": "BEAR_HIGH_VOL",
     "bot": "equity"
   },
