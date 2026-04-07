@@ -1,6 +1,6 @@
 {
   "cash": 90998.96,
-  "start_of_day_value": 81465.58961570256,
+  "start_of_day_value": 98777.49682103,
   "positions": {
     "DOT/USD": {
       "symbol": "DOT/USD",
@@ -17,10 +17,10 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-07T18:05:05.390003",
+  "last_updated": "2026-04-07T19:31:28.062462",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T18:05:05.390029"
+    "generated_at": "2026-04-07T19:31:28.062477"
   },
   "equity_cash": 90998.96,
   "equity_pos_value": 8417.75,
@@ -49,7 +49,7 @@
     {
       "date": "2026-04-07",
       "value": 100665.11,
-      "sod": 81465.59
+      "sod": 98777.5
     }
   ]
 }
