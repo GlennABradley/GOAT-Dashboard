@@ -1,50 +1,50 @@
 {
-  "last_updated": "2026-04-07T08:55:12.704119",
+  "last_updated": "2026-04-07T19:32:13.298564",
   "equity": {
-    "total_trades": 3,
+    "total_trades": 4,
     "wins": 2,
-    "losses": 1,
-    "win_rate": 0.667,
-    "sharpe_proxy": 0.33,
-    "current_streak": 1,
+    "losses": 2,
+    "win_rate": 0.5,
+    "sharpe_proxy": -0.3,
+    "current_streak": 2,
     "streak_type": "LOSS",
-    "avg_roi": 0.17,
+    "avg_roi": -0.328,
     "best_trade": {
       "symbol": "SLB",
       "roi": 0.53
     },
     "worst_trade": {
-      "symbol": "FAST",
-      "roi": -0.43
+      "symbol": "ODFL",
+      "roi": -1.82
     },
-    "last_30d_trades": 3,
-    "last_30d_win_rate": 0.667
+    "last_30d_trades": 4,
+    "last_30d_win_rate": 0.5
   },
   "crypto": {
-    "total_trades": 1,
+    "total_trades": 2,
     "wins": 1,
-    "losses": 0,
-    "win_rate": 1.0,
-    "sharpe_proxy": 2.11,
-    "avg_roi": 2.11,
+    "losses": 1,
+    "win_rate": 0.5,
+    "sharpe_proxy": -0.01,
+    "avg_roi": -0.02,
     "best_trade": {
       "symbol": "ETH/USD",
       "roi": 2.11
     },
     "worst_trade": {
-      "symbol": "ETH/USD",
-      "roi": 2.11
+      "symbol": "SOL/USD",
+      "roi": -2.15
     },
     "current_streak": 1,
-    "streak_type": "WIN",
-    "last_30d_trades": 1,
-    "last_30d_win_rate": 1.0
+    "streak_type": "LOSS",
+    "last_30d_trades": 2,
+    "last_30d_win_rate": 0.5
   },
   "competition": {
     "leader": "CRYPTO",
-    "equity_score": 68.4,
-    "crypto_score": 121.1,
-    "edge": "Crypto GOAT leads: 121 vs 68"
+    "equity_score": 46.72,
+    "crypto_score": 49.8,
+    "edge": "Crypto GOAT leads: 50 vs 47"
   },
   "commissioner_decisions": [
     {
@@ -116,6 +116,6 @@
   ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T19:31:28.066903"
+    "generated_at": "2026-04-07T19:32:13.747754"
   }
 }
