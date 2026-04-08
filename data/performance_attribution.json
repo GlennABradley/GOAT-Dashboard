@@ -2,12 +2,12 @@
   "generated_at": "2026-04-07",
   "total_trades": 2,
   "tribunal": {
-    "tribunal_vetoes": 3,
-    "tribunal_approvals": 9,
+    "tribunal_vetoes": 4,
+    "tribunal_approvals": 10,
     "live_win_rate": 0.5,
     "live_total_trades": 2,
-    "tribunal_veto_rate": 0.25,
-    "insight": "Tribunal vetoed 3 trades. Live win rate: 50%"
+    "tribunal_veto_rate": 0.286,
+    "insight": "Tribunal vetoed 4 trades. Live win rate: 50%"
   },
   "regime_performance": {
     "best_regime": "ACCUMULATION_EXTREME_FEAR",
@@ -28,7 +28,7 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T20:23:49.234506"
+    "generated_at": "2026-04-07T23:00:13.042071"
   },
-  "top_insight": "Best regime: ACCUMULATION_EXTREME_FEAR | Tribunal veto rate: 25% | Total trades: 2"
+  "top_insight": "Best regime: ACCUMULATION_EXTREME_FEAR | Tribunal veto rate: 29% | Total trades: 2"
 }

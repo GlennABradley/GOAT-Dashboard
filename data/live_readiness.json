@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-04-07T19:32:13.306014",
+  "checked_at": "2026-04-07T23:00:11.904293",
   "gates_passed": 2,
   "gates_total": 7,
   "all_pass": false,
@@ -36,7 +36,7 @@
       "pass": true
     },
     "tribunal_veto_rate": {
-      "value": 0.25,
+      "value": 0.286,
       "required": 0.4,
       "pass": true
     }
@@ -52,6 +52,6 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T20:23:49.234335"
+    "generated_at": "2026-04-07T23:00:13.041706"
   }
 }
