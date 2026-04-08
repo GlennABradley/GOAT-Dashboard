@@ -122,7 +122,14 @@ tr:hover td{background:rgba(255,255,255,.012)}
 footer{border-top:1px solid var(--border);padding:16px 28px;display:flex;justify-content:space-between;align-items:center;margin-top:28px}
 .ft-links{display:flex;gap:20px}.ft-links a{font-size:11px;color:var(--ghost);text-decoration:none;transition:color .2s}
 .ft-links a:hover{color:var(--iris)}
-.loading{color:var(--ghost);font-size:12px;font-family:var(--fm);padding:16px;text-align:center}
+.order-scroll{max-height:320px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
+.order-scroll::-webkit-scrollbar{width:4px}
+.order-scroll::-webkit-scrollbar-track{background:transparent}
+.order-scroll::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.otag-win{color:var(--green);background:var(--grbg);border:1px solid rgba(16,185,129,.25);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700}
+.otag-loss{color:var(--red);background:var(--rbg);border:1px solid rgba(239,68,68,.25);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700}
+.otag-eq{color:var(--violet);background:var(--vbg);border:1px solid rgba(124,58,237,.25);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700}
+.otag-cr{color:var(--gold);background:var(--gbg);border:1px solid rgba(201,168,76,.25);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700}
 </style>
 
 
@@ -316,6 +323,34 @@ footer{border-top:1px solid var(--border);padding:16px 28px;display:flex;justify
   <div class="card">
     <div class="ct">Tribunal judge accuracy</div>
     <div id="tribunal-panel"><div class="loading">Loading…</div></div>
+  </div>
+</div>
+
+<div class="sec">Closed trade history</div>
+<div class="card" style="padding:0">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px 10px">
+    <div>
+      <span style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--ghost);text-transform:uppercase">All Closed Trades — Both Bots</span>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center" id="trade-summary-badges"></div>
+  </div>
+  <div class="order-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th><th>Symbol</th><th>Bot</th>
+          <th>Entry</th><th>Exit</th><th>P&L</th><th>Return</th>
+          <th>Hold</th><th>Regime</th><th>Result</th>
+        </tr>
+      </thead>
+      <tbody id="order-history-tb">
+        <tr><td colspan="10" class="loading">Loading trade history…</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="padding:10px 18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+    <span style="font-size:10px;color:var(--ghost);font-family:var(--fm)" id="order-count">—</span>
+    <span style="font-size:10px;color:var(--ghost);font-family:var(--fm)">Scroll for full history</span>
   </div>
 </div>
 
@@ -649,9 +684,51 @@ function renderAll(data) {
         </div>
       </div>`;
     }).join('');
-}
-
-// ── Equity curve + drawdown charts ─────────────────────────────────────────
+  // ── Order History ────────────────────────────────────────────────────
+  const orders = S.get('order_history', []);
+  const tbEl   = document.getElementById('order-history-tb');
+  const cntEl  = document.getElementById('order-count');
+  const badgeEl= document.getElementById('trade-summary-badges');
+  if (orders && orders.length) {
+    const wins   = orders.filter(o => o.outcome === 'WIN').length;
+    const losses = orders.filter(o => o.outcome === 'LOSS').length;
+    const totPnl = orders.reduce((s, o) => s + (o.pnl || 0), 0);
+    const wr     = orders.length ? (wins / orders.length * 100).toFixed(0) : '—';
+    badgeEl.innerHTML = `
+      <span style="font-size:11px;font-family:var(--fm);color:var(--ghost)">${orders.length} trades</span>
+      <span class="otag-win">✅ ${wins}W</span>
+      <span class="otag-loss">❌ ${losses}L</span>
+      <span style="font-size:12px;font-weight:700;font-family:var(--fm);color:${totPnl>=0?'var(--green)':'var(--red)'}">${totPnl>=0?'+':''}$${totPnl.toFixed(2)}</span>
+      <span style="font-size:11px;color:var(--ghost);font-family:var(--fm)">${wr}% WR</span>`;
+    tbEl.innerHTML = orders.map(o => {
+      const pctCol  = o.pct >= 0 ? 'var(--green)' : 'var(--red)';
+      const pnlCol  = o.pnl >= 0 ? 'var(--green)' : 'var(--red)';
+      const outcomeTag = o.outcome === 'WIN'
+        ? `<span class="otag-win">WIN</span>`
+        : `<span class="otag-loss">LOSS</span>`;
+      const botTag = o.bot === 'equity'
+        ? `<span class="otag-eq">EQ</span>`
+        : `<span class="otag-cr">CR</span>`;
+      const regime = (o.regime || '—').replace(/_/g,' ').slice(0,16);
+      return `<tr>
+        <td>${o.date || '—'}</td>
+        <td style="font-weight:700;color:var(--white)">${o.symbol || '—'}</td>
+        <td>${botTag}</td>
+        <td>${o.entry ? f.dollar(o.entry) : '—'}</td>
+        <td>${o.exit  ? f.dollar(o.exit)  : '—'}</td>
+        <td style="color:${pnlCol};font-weight:700">${o.pnl >= 0?'+':''}${f.dollar(o.pnl)}</td>
+        <td style="color:${pctCol};font-weight:700">${o.pct >= 0?'+':''}${o.pct.toFixed(2)}%</td>
+        <td>${o.hold_days}d</td>
+        <td style="color:var(--ghost);font-size:10px">${regime}</td>
+        <td>${outcomeTag}</td>
+      </tr>`;
+    }).join('');
+    cntEl.textContent = `${orders.length} closed trades · Updated ${new Date().toLocaleDateString()}`;
+  } else {
+    tbEl.innerHTML = '<tr><td colspan="10" class="loading">No closed trades yet</td></tr>';
+    cntEl.textContent = 'Trade history builds as positions close';
+  }
+}  // ← end renderAll ─────────────────────────────────────────
 let _equityChart = null, _ddChart = null;
 
 function buildEquityAndDrawdown() {
