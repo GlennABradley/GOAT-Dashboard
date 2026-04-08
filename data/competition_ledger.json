@@ -1,24 +1,24 @@
 {
-  "last_updated": "2026-04-07T23:00:11.879496",
+  "last_updated": "2026-04-08T17:58:55.430317",
   "equity": {
-    "total_trades": 5,
-    "wins": 3,
+    "total_trades": 6,
+    "wins": 4,
     "losses": 2,
-    "win_rate": 0.6,
-    "sharpe_proxy": 0.26,
-    "current_streak": 1,
+    "win_rate": 0.667,
+    "sharpe_proxy": 0.5,
+    "current_streak": 2,
     "streak_type": "WIN",
-    "avg_roi": 0.572,
+    "avg_roi": 1.663,
     "best_trade": {
-      "symbol": "CME",
-      "roi": 4.17
+      "symbol": "PANW",
+      "roi": 7.12
     },
     "worst_trade": {
       "symbol": "ODFL",
       "roi": -1.82
     },
-    "last_30d_trades": 5,
-    "last_30d_win_rate": 0.6
+    "last_30d_trades": 6,
+    "last_30d_win_rate": 0.667
   },
   "crypto": {
     "total_trades": 2,
@@ -42,9 +42,9 @@
   },
   "competition": {
     "leader": "EQUITY",
-    "equity_score": 65.72,
+    "equity_score": 83.33,
     "crypto_score": 49.8,
-    "edge": "Equity GOAT leads: 66 vs 50"
+    "edge": "Equity GOAT leads: 83 vs 50"
   },
   "commissioner_decisions": [
     {
@@ -112,10 +112,22 @@
       "equity_weight": 0.7,
       "crypto_weight": 0.3,
       "leader": "CRYPTO"
+    },
+    {
+      "date": "2026-04-08",
+      "equity_weight": 0.8,
+      "crypto_weight": 0.2,
+      "leader": "EQUITY"
+    },
+    {
+      "date": "2026-04-08",
+      "equity_weight": 0.75,
+      "crypto_weight": 0.25,
+      "leader": "EQUITY"
     }
   ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-08T06:05:04.871049"
+    "generated_at": "2026-04-08T17:58:56.875119"
   }
 }

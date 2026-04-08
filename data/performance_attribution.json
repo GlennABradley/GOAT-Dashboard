@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07",
+  "generated_at": "2026-04-08",
   "total_trades": 2,
   "tribunal": {
     "tribunal_vetoes": 4,
@@ -28,7 +28,7 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-08T06:05:04.874237"
+    "generated_at": "2026-04-08T17:58:56.875796"
   },
   "top_insight": "Best regime: ACCUMULATION_EXTREME_FEAR | Tribunal veto rate: 29% | Total trades: 2"
 }

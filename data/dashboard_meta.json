@@ -1,5 +1,5 @@
 {
-  "last_push": "2026-04-08T06:05:04.897961",
+  "last_push": "2026-04-08T17:58:56.890251",
   "schema_version": 3,
   "files": [
     "portfolio_public.json",
@@ -8,6 +8,7 @@
     "shadow_summary.json",
     "multi_timeframe.json",
     "decisions_recent.json",
+    "order_history.json",
     "competition_ledger.json",
     "meta_learnings.json",
     "cross_asset.json",
