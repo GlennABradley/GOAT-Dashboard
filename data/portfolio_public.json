@@ -5,16 +5,16 @@
     "PANW"
   ],
   "regimes": [
-    "BEAR_HIGH_VOL",
-    "ACCUMULATION_EXTREME_FEAR"
+    "ACCUMULATION_EXTREME_FEAR",
+    "BEAR_HIGH_VOL"
   ],
   "strategies": [
     "swing",
     "cycle"
   ],
-  "last_updated": "2026-04-07",
+  "last_updated": "2026-04-08",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-07T23:00:11.910701"
+    "generated_at": "2026-04-08T00:05:01.452381"
   }
 }
