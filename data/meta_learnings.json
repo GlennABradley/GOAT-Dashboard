@@ -30,23 +30,23 @@
       "combo_str": "REGIME_ACCUMULATION",
       "win_rate": 0.571,
       "sample_size": 7,
-      "avg_pnl": 0.8976
+      "avg_pnl": 0.898
     },
     {
       "combo_str": "HIGH_CONFIDENCE",
       "win_rate": 0.571,
       "sample_size": 7,
-      "avg_pnl": 0.8976
+      "avg_pnl": 0.898
     },
     {
       "combo_str": "REGIME_ACCUMULATION + HIGH_CONFIDENCE",
       "win_rate": 0.571,
       "sample_size": 7,
-      "avg_pnl": 0.8976
+      "avg_pnl": 0.898
     }
   ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T02:59:39.099740"
+    "generated_at": "2026-04-09T03:07:11.826749"
   }
 }
