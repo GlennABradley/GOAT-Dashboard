@@ -17,32 +17,32 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-09T10:05:03.818402",
+  "last_updated": "2026-04-09T10:47:01.263220",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T10:05:03.818433"
+    "generated_at": "2026-04-09T10:47:01.263237"
   },
-  "equity_cash": 90998.95,
-  "equity_pos_value": 8325.58,
+  "equity_cash": 91236.44,
+  "equity_pos_value": 8335.77,
   "crypto_pos_value": 1248.4,
-  "combined_value": 100810.42,
+  "combined_value": 100820.61,
   "equity_positions": {
-    "PANW": {
-      "ticker": "PANW",
-      "shares": 49.5541,
-      "entry_price": 162.230043,
-      "entry_date": "2026-04-06",
+    "CSX": {
+      "ticker": "CSX",
+      "shares": 196.7143,
+      "entry_price": 42.423094,
+      "entry_date": "2026-04-09",
       "trade_type": "swing",
-      "stop_loss": 156.74,
-      "target": 175.0,
+      "stop_loss": 41.25,
+      "target": 44.19,
       "entry_vix": null,
-      "entry_regime": "BEAR_HIGH_VOL",
+      "entry_regime": null,
       "tp1_hit": false,
       "shares_sold": 0,
-      "invalidation_signal": "PANW breaks below $155 or RS drops below 5x SPY",
-      "symbol": "PANW",
-      "qty": 49.5541,
-      "live_price": 168.01
+      "invalidation_signal": null,
+      "symbol": "CSX",
+      "qty": 196.7143,
+      "live_price": 42.375
     }
   },
   "portfolio_snapshots": [
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-04-09",
-      "value": 100810.42,
+      "value": 100820.61,
       "sod": 99614.92
     }
   ]
