@@ -8,7 +8,7 @@
       "entry_price": 1.274769401,
       "entry_date": "2026-03-28",
       "trade_type": "cycle",
-      "stop_loss": 1.276044,
+      "stop_loss": 1.1412,
       "target": 2.5,
       "entry_regime": "ACCUMULATION_EXTREME_FEAR",
       "entry_fg": 12,
@@ -17,15 +17,15 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-09T12:06:59.518019",
+  "last_updated": "2026-04-09T12:14:07.890608",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T12:06:59.518032"
+    "generated_at": "2026-04-09T12:14:07.890623"
   },
   "equity_cash": 91236.44,
-  "equity_pos_value": 8394.78,
+  "equity_pos_value": 8408.55,
   "crypto_pos_value": 1248.4,
-  "combined_value": 100879.62,
+  "combined_value": 100893.39,
   "equity_positions": {
     "CSX": {
       "ticker": "CSX",
@@ -36,13 +36,13 @@
       "stop_loss": 41.25,
       "target": 44.19,
       "entry_vix": null,
-      "entry_regime": null,
+      "entry_regime": "BEAR_HIGH_VOL",
       "tp1_hit": false,
       "shares_sold": 0,
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.675
+      "live_price": 42.745
     }
   },
   "portfolio_snapshots": [
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-04-09",
-      "value": 100879.62,
+      "value": 100893.39,
       "sod": 99614.92
     }
   ]
