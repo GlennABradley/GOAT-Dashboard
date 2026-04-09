@@ -9,12 +9,12 @@
     "ACCUMULATION_EXTREME_FEAR"
   ],
   "strategies": [
-    "cycle",
-    "swing"
+    "swing",
+    "cycle"
   ],
   "last_updated": "2026-04-09",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T10:48:30.844916"
+    "generated_at": "2026-04-09T10:56:39.318272"
   }
 }
