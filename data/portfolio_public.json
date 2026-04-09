@@ -5,16 +5,16 @@
     "CSX"
   ],
   "regimes": [
-    "ACCUMULATION_EXTREME_FEAR",
-    null
+    null,
+    "ACCUMULATION_EXTREME_FEAR"
   ],
   "strategies": [
-    "swing",
-    "cycle"
+    "cycle",
+    "swing"
   ],
   "last_updated": "2026-04-09",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T11:07:47.509823"
+    "generated_at": "2026-04-09T11:17:13.949748"
   }
 }

@@ -17,15 +17,15 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-09T11:07:49.820246",
+  "last_updated": "2026-04-09T11:17:16.562639",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T11:07:49.820262"
+    "generated_at": "2026-04-09T11:17:16.562646"
   },
   "equity_cash": 91236.44,
-  "equity_pos_value": 8317.08,
+  "equity_pos_value": 8318.06,
   "crypto_pos_value": 1248.4,
-  "combined_value": 100801.92,
+  "combined_value": 100802.9,
   "equity_positions": {
     "CSX": {
       "ticker": "CSX",
@@ -42,7 +42,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.28
+      "live_price": 42.285
     }
   },
   "portfolio_snapshots": [
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-04-09",
-      "value": 100801.92,
+      "value": 100802.9,
       "sod": 99614.92
     }
   ]
