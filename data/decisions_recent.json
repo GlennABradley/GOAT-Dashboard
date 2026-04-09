@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-09T15:00",
+    "symbol": "ODFL",
+    "action": "SKIP",
+    "confidence": 0.75,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-08T16:52",
     "symbol": "CSX",
     "action": "BUY",
@@ -28,14 +36,6 @@
     "symbol": "PANW",
     "action": "BUY",
     "confidence": 0.78,
-    "regime": "BEAR_HIGH_VOL",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-03T09:01",
-    "symbol": null,
-    "action": "HOLD",
-    "confidence": 0.0,
     "regime": "BEAR_HIGH_VOL",
     "bot": "equity"
   },
