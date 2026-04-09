@@ -28,25 +28,25 @@
   "crypto": [
     {
       "combo_str": "REGIME_ACCUMULATION",
-      "win_rate": 0.571,
+      "win_rate": 0.857,
       "sample_size": 7,
-      "avg_pnl": 0.898
+      "avg_pnl": 0.8987
     },
     {
       "combo_str": "HIGH_CONFIDENCE",
-      "win_rate": 0.571,
+      "win_rate": 0.857,
       "sample_size": 7,
-      "avg_pnl": 0.898
+      "avg_pnl": 0.8987
     },
     {
       "combo_str": "REGIME_ACCUMULATION + HIGH_CONFIDENCE",
-      "win_rate": 0.571,
+      "win_rate": 0.857,
       "sample_size": 7,
-      "avg_pnl": 0.898
+      "avg_pnl": 0.8987
     }
   ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T03:37:26.995051"
+    "generated_at": "2026-04-09T10:05:03.831761"
   }
 }
