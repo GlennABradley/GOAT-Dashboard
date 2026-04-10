@@ -8,7 +8,7 @@
       "entry_price": 1.274769401,
       "entry_date": "2026-03-28",
       "trade_type": "cycle",
-      "stop_loss": 1.276044,
+      "stop_loss": 1.1412,
       "target": 2.5,
       "entry_regime": "ACCUMULATION_EXTREME_FEAR",
       "entry_fg": 12,
@@ -17,10 +17,10 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-09T18:22:29.883679",
+  "last_updated": "2026-04-10T03:32:04.370420",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-09T18:22:29.883695"
+    "generated_at": "2026-04-10T03:32:04.370432"
   },
   "equity_cash": 91236.44,
   "equity_pos_value": 8358.39,
@@ -108,6 +108,11 @@
     },
     {
       "date": "2026-04-09",
+      "value": 100843.23,
+      "sod": 99614.92
+    },
+    {
+      "date": "2026-04-10",
       "value": 100843.23,
       "sod": 99614.92
     }
