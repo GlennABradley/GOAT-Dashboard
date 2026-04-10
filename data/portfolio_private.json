@@ -1,6 +1,6 @@
 {
   "cash": 68313.64,
-  "start_of_day_value": 99584.984892,
+  "start_of_day_value": 100864.21,
   "positions": {
     "DOT/USD": {
       "symbol": "DOT/USD",
@@ -14,18 +14,19 @@
       "entry_fg": 12,
       "tier": 2,
       "tp1_hit": false,
-      "qty_sold": 0.0
+      "qty_sold": 0.0,
+      "live_price": 1.305
     }
   },
-  "last_updated": "2026-04-10T18:05:04.846813",
+  "last_updated": "2026-04-10T19:30:30.196799",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T18:05:04.846840"
+    "generated_at": "2026-04-10T19:30:30.196825"
   },
   "equity_cash": 68316.0,
-  "equity_pos_value": 31199.92,
-  "crypto_pos_value": 1248.4,
-  "combined_value": 100761.95,
+  "equity_pos_value": 31190.21,
+  "crypto_pos_value": 1278.0,
+  "combined_value": 100781.85,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -42,7 +43,7 @@
       "invalidation_signal": null,
       "symbol": "AMZN",
       "qty": 35.9057,
-      "live_price": 238.38
+      "live_price": 238.0
     },
     "CSX": {
       "ticker": "CSX",
@@ -59,7 +60,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.24
+      "live_price": 42.26
     },
     "CAT": {
       "shares": 18.126,
@@ -143,8 +144,8 @@
     },
     {
       "date": "2026-04-10",
-      "value": 100761.95,
-      "sod": 99584.98
+      "value": 100781.85,
+      "sod": 100864.21
     }
   ]
 }
