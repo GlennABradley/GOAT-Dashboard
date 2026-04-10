@@ -10,12 +10,12 @@
     "BEAR_HIGH_VOL"
   ],
   "strategies": [
-    "swing",
-    "cycle"
+    "cycle",
+    "swing"
   ],
   "last_updated": "2026-04-10",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T12:18:47.638743"
+    "generated_at": "2026-04-10T16:54:54.639569"
   }
 }

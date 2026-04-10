@@ -17,15 +17,15 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-10T12:18:50.259546",
+  "last_updated": "2026-04-10T16:54:57.408370",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T12:18:50.259555"
+    "generated_at": "2026-04-10T16:54:57.408381"
   },
   "equity_cash": 82733.96,
-  "equity_pos_value": 16878.12,
+  "equity_pos_value": 16868.41,
   "crypto_pos_value": 1248.4,
-  "combined_value": 100860.48,
+  "combined_value": 100850.77,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -42,7 +42,7 @@
       "invalidation_signal": null,
       "symbol": "AMZN",
       "qty": 35.9057,
-      "live_price": 238.13
+      "live_price": 238.38
     },
     "CSX": {
       "ticker": "CSX",
@@ -59,7 +59,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.335
+      "live_price": 42.24
     }
   },
   "portfolio_snapshots": [
@@ -130,7 +130,7 @@
     },
     {
       "date": "2026-04-10",
-      "value": 100860.48,
+      "value": 100850.77,
       "sod": 99584.98
     }
   ]
