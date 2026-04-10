@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-10T09:14",
+    "symbol": "AMZN",
+    "action": "BUY",
+    "confidence": 0.78,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-09T15:00",
     "symbol": "ODFL",
     "action": "SKIP",
@@ -28,14 +36,6 @@
     "symbol": "ODFL",
     "action": "BUY",
     "confidence": 0.75,
-    "regime": "BEAR_HIGH_VOL",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-06T08:28",
-    "symbol": "PANW",
-    "action": "BUY",
-    "confidence": 0.78,
     "regime": "BEAR_HIGH_VOL",
     "bot": "equity"
   },
