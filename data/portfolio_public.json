@@ -1,21 +1,23 @@
 {
-  "position_count": 3,
+  "position_count": 4,
   "symbols": [
     "DOT/USD",
     "AMZN",
-    "CSX"
+    "CSX",
+    "CAT"
   ],
   "regimes": [
     "ACCUMULATION_EXTREME_FEAR",
+    "CHOPPY_RANGING",
     "BEAR_HIGH_VOL"
   ],
   "strategies": [
-    "cycle",
-    "swing"
+    "swing",
+    "cycle"
   ],
   "last_updated": "2026-04-10",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T16:54:54.639569"
+    "generated_at": "2026-04-10T17:37:03.247395"
   }
 }
