@@ -1,5 +1,5 @@
 {
-  "cash": 82733.96,
+  "cash": 68313.64,
   "start_of_day_value": 99584.984892,
   "positions": {
     "DOT/USD": {
@@ -17,15 +17,15 @@
       "qty_sold": 0.0
     }
   },
-  "last_updated": "2026-04-10T17:37:06.720304",
+  "last_updated": "2026-04-10T18:05:04.846813",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T17:37:06.720315"
+    "generated_at": "2026-04-10T18:05:04.846840"
   },
   "equity_cash": 68316.0,
   "equity_pos_value": 31199.92,
   "crypto_pos_value": 1248.4,
-  "combined_value": 115182.27,
+  "combined_value": 100761.95,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -143,7 +143,7 @@
     },
     {
       "date": "2026-04-10",
-      "value": 115182.27,
+      "value": 100761.95,
       "sod": 99584.98
     }
   ]
