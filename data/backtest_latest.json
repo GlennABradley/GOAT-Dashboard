@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T03:16:12.291551",
+  "generated_at": "2026-04-10T04:43:45.364208",
   "config": {
     "lookback_days": 365,
     "train_window_days": 90,
@@ -483,7 +483,7 @@
           }
         }
       ],
-      "generated_at": "2026-04-10T03:16:14.225060",
+      "generated_at": "2026-04-10T04:43:47.583465",
       "monte_carlo": {
         "error": "Not enough trades for Monte Carlo",
         "n_trades": 9
@@ -936,7 +936,7 @@
           }
         }
       ],
-      "generated_at": "2026-04-10T03:16:15.212076",
+      "generated_at": "2026-04-10T04:43:48.607118",
       "monte_carlo": {
         "error": "Not enough trades for Monte Carlo",
         "n_trades": 9
@@ -1406,22 +1406,22 @@
           }
         }
       ],
-      "generated_at": "2026-04-10T03:16:16.261034",
+      "generated_at": "2026-04-10T04:43:49.625993",
       "monte_carlo": {
         "n_simulations": 500,
         "n_trades_base": 14,
         "final_capital": {
-          "p10": 52550.65,
+          "p10": 52013.07,
           "p25": 53667.21,
           "median": 55772.03,
           "p75": 58315.62,
           "p90": 63387.1,
-          "mean": 56629.08
+          "mean": 56554.13
         },
         "max_drawdown": {
           "p10": 39.03,
-          "p50": 44.58,
-          "p90": 47.45,
+          "p50": 44.78,
+          "p90": 47.99,
           "worst": 49.95
         },
         "sharpe": {
@@ -1897,26 +1897,26 @@
           }
         }
       ],
-      "generated_at": "2026-04-10T03:16:17.239310",
+      "generated_at": "2026-04-10T04:43:50.615786",
       "monte_carlo": {
         "n_simulations": 500,
         "n_trades_base": 12,
         "final_capital": {
-          "p10": 46276.5,
+          "p10": 47381.52,
           "p25": 48069.18,
           "median": 49217.01,
           "p75": 50359.74,
           "p90": 52310.61,
-          "mean": 49265.09
+          "mean": 49297.99
         },
         "max_drawdown": {
           "p10": 47.69,
           "p50": 50.78,
-          "p90": 53.72,
+          "p90": 52.62,
           "worst": 53.72
         },
         "sharpe": {
-          "p10": -7.181,
+          "p10": -6.952,
           "median": -6.721,
           "p90": -6.368
         },
@@ -1959,7 +1959,7 @@
             "max_drawdown": 0.53,
             "calmar": -27.803,
             "total_return": -14.74,
-            "final_capital": 85264.66,
+            "final_capital": 85264.65,
             "regime_stats": {
               "BULL_TREND": {
                 "win_rate": 0.5,
@@ -2153,7 +2153,7 @@
           }
         }
       ],
-      "generated_at": "2026-04-10T03:16:18.279464",
+      "generated_at": "2026-04-10T04:43:51.630234",
       "monte_carlo": {
         "error": "Not enough trades for Monte Carlo",
         "n_trades": 3

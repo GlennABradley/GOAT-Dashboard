@@ -5,10 +5,10 @@
   "issues": [
     "Daily drawdown HALTED: -8.41%"
   ],
-  "checked_at": "2026-04-10T04:40:22.055309",
+  "checked_at": "2026-04-10T05:03:31.213402",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T04:40:22.372053"
+    "generated_at": "2026-04-10T05:03:32.333230"
   },
   "halted_at": "2026-04-10T03:32:04.375178"
 }
