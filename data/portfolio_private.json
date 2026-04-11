@@ -15,18 +15,18 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 1.295
+      "live_price": 1.301
     }
   },
-  "last_updated": "2026-04-10T23:00:12.975826",
+  "last_updated": "2026-04-11T00:05:03.358408",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T23:00:12.975862"
+    "generated_at": "2026-04-11T00:05:03.358469"
   },
   "equity_cash": 68316.0,
   "equity_pos_value": 31199.91,
-  "crypto_pos_value": 1268.21,
-  "combined_value": 100781.77,
+  "crypto_pos_value": 1274.08,
+  "combined_value": 100787.64,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -145,6 +145,11 @@
     {
       "date": "2026-04-10",
       "value": 100781.77,
+      "sod": 100864.21
+    },
+    {
+      "date": "2026-04-11",
+      "value": 100787.64,
       "sod": 100864.21
     }
   ]

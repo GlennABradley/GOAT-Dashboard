@@ -1,9 +1,52 @@
 {
-  "equity": [],
-  "crypto": [],
+  "equity": [
+    {
+      "combo_str": "HIGH_CONFIDENCE",
+      "win_rate": 0.8,
+      "sample_size": 5,
+      "avg_pnl": 1.2725
+    },
+    {
+      "combo_str": "REGIME_BEAR + HIGH_CONFIDENCE",
+      "win_rate": 0.75,
+      "sample_size": 4,
+      "avg_pnl": 1.59
+    },
+    {
+      "combo_str": "REGIME_BEAR",
+      "win_rate": 0.667,
+      "sample_size": 6,
+      "avg_pnl": 1.6833
+    },
+    {
+      "combo_str": "MED_CONFIDENCE",
+      "win_rate": 0.667,
+      "sample_size": 3,
+      "avg_pnl": 1.3833
+    }
+  ],
+  "crypto": [
+    {
+      "combo_str": "REGIME_ACCUMULATION",
+      "win_rate": 0.857,
+      "sample_size": 7,
+      "avg_pnl": 0.9066
+    },
+    {
+      "combo_str": "HIGH_CONFIDENCE",
+      "win_rate": 0.857,
+      "sample_size": 7,
+      "avg_pnl": 0.9066
+    },
+    {
+      "combo_str": "REGIME_ACCUMULATION + HIGH_CONFIDENCE",
+      "win_rate": 0.857,
+      "sample_size": 7,
+      "avg_pnl": 0.9066
+    }
+  ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T23:00:12.982275"
-  },
-  "updated_at": "2026-04-10"
+    "generated_at": "2026-04-11T00:05:03.371529"
+  }
 }
