@@ -1,6 +1,6 @@
 {
   "cash": 68313.64,
-  "start_of_day_value": 100864.21,
+  "start_of_day_value": 100783.53,
   "positions": {
     "DOT/USD": {
       "symbol": "DOT/USD",
@@ -15,18 +15,18 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 1.301
+      "live_price": 1.2752
     }
   },
-  "last_updated": "2026-04-11T00:05:03.358408",
+  "last_updated": "2026-04-11T06:05:02.518883",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-11T00:05:03.358469"
+    "generated_at": "2026-04-11T06:05:02.518937"
   },
   "equity_cash": 68316.0,
   "equity_pos_value": 31199.91,
-  "crypto_pos_value": 1274.08,
-  "combined_value": 100787.64,
+  "crypto_pos_value": 1248.82,
+  "combined_value": 100762.38,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -149,8 +149,8 @@
     },
     {
       "date": "2026-04-11",
-      "value": 100787.64,
-      "sod": 100864.21
+      "value": 100762.38,
+      "sod": 100783.53
     }
   ]
 }
