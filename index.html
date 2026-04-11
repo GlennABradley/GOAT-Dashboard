@@ -168,7 +168,7 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
     background:linear-gradient(135deg,var(--white) 0%,var(--iris) 50%,var(--violet) 100%);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px">Sovereign</h1>
   <p style="font-size:clamp(14px,2vw,17px);color:var(--silver);max-width:600px;margin:0 auto 18px;line-height:1.7">
-    Two AI specialists — equities and crypto — compete for capital allocation every day. Every proposed trade faces a 4-judge AI Tribunal: Bear, Quant, Risk, and Regime. Each judge builds a live accuracy record. The most accurate judges earn more influence. Only high-conviction, regime-appropriate setups survive to execution.
+    Two AI specialists — equities and crypto — compete for their spot on the field every day. Playing time is earned. Capital follows conviction.<br><br>Every proposed trade runs the full gauntlet: the Devil&#8217;s Advocate debates bull vs. bear and runs a pre-mortem. Then a 4-judge AI Tribunal deliberates — Bear, Quant, Risk, and Regime. Each judge builds a live accuracy record. The most accurate earn more influence. Only setups that survive both make the cut.
   </p>
   <div style="font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px">Every trade earns its execution.</div>
   <div id="bot-mode-badge" style="display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:9px;font-weight:700;font-family:var(--fm);letter-spacing:1px;background:rgba(129,140,248,.1);color:var(--iris);border:1px solid rgba(129,140,248,.2)">⚡ DUAL BOT MODE</div>
@@ -354,26 +354,31 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
 
 <!-- ── How it works ── -->
 <div class="sec">Architecture</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:14px">
   <div class="card">
-    <div style="font-size:20px;margin-bottom:10px">🔍</div>
-    <div style="font-weight:700;color:var(--iris);margin-bottom:7px">Screener</div>
-    <div style="font-size:12px;color:var(--silver);line-height:1.65">Scans 500+ equities and 10+ crypto assets nightly. Multi-factor scoring — trend, momentum, relative strength, volume, ATR. Only the top 15 candidates reach analysis.</div>
+    <div style="font-size:20px;margin-bottom:10px">📊</div>
+    <div style="font-weight:700;color:var(--iris);margin-bottom:7px">AI Engine</div>
+    <div style="font-size:12px;color:var(--silver);line-height:1.65">The system&#8217;s opening read. Ingests regime data, sector rotation, macro pulse, on-chain signals, and multi-timeframe technicals. Generates a thesis, assigns confidence, and mandates an invalidation signal before anything else happens.</div>
+  </div>
+  <div class="card">
+    <div style="font-size:20px;margin-bottom:10px">🥊</div>
+    <div style="font-weight:700;color:var(--iris);margin-bottom:7px">Devil&#8217;s Advocate</div>
+    <div style="font-size:12px;color:var(--silver);line-height:1.65">Every BUY survives a live adversarial debate before the Tribunal sees it. Bull case vs. bear attack. A pre-mortem maps 5 concrete failure modes. An Opus judge renders a verdict. Only setups that survive pre-screening reach the panel.</div>
   </div>
   <div class="card">
     <div style="font-size:20px;margin-bottom:10px">⚖️</div>
     <div style="font-weight:700;color:var(--violet);margin-bottom:7px">The Tribunal</div>
-    <div style="font-size:12px;color:var(--silver);line-height:1.65">Every proposed BUY faces 4 specialist AI judges — Bear, Quant, Risk, and Regime. Bear runs first with hard-veto authority. Each judge builds a live accuracy record. Judges with better track records earn higher vote weight. The Tribunal governs both equity and crypto.</div>
+    <div style="font-size:12px;color:var(--silver);line-height:1.65">4-judge panel: Bear, Quant, Risk, and Regime. Each judge receives the DA debate results, regime win-rate calibration, and real failure history before deliberating. Bear holds hard-veto authority. Accuracy earns weight — every judge&#8217;s track record is live.</div>
   </div>
   <div class="card">
     <div style="font-size:20px;margin-bottom:10px">🎖️</div>
     <div style="font-weight:700;color:var(--gold);margin-bottom:7px">The Commissioner</div>
-    <div style="font-size:12px;color:var(--silver);line-height:1.65">Sovereign's meta-intelligence layer. Monitors both specialist bots in real-time and dynamically adjusts capital allocation between them based on live performance. When one bot is outperforming, it earns more capital. Operates in DUAL, EQUITY_ONLY, or CRYPTO_ONLY mode.</div>
+    <div style="font-size:12px;color:var(--silver);line-height:1.65">Capital allocator. Reviews both bots&#8217; live performance daily and shifts allocation toward the stronger performer — like a coach adjusting playing time. The leader earns more capital. Operates in DUAL, EQUITY ONLY, or CRYPTO ONLY mode.</div>
   </div>
   <div class="card">
-    <div style="font-size:20px;margin-bottom:10px">🧠</div>
-    <div style="font-weight:700;color:var(--green);margin-bottom:7px">Learning Loop</div>
-    <div style="font-size:12px;color:var(--silver);line-height:1.65" id="learning-desc">29-step nightly pipeline: grades every decision, updates signal weights, recalibrates regime edge, and synthesizes coaching notes from 10 active feedback loops. Each day the system knows more than it did the day before.</div>
+    <div style="font-size:20px;margin-bottom:10px">⚡</div>
+    <div style="font-weight:700;color:var(--green);margin-bottom:7px">Execution</div>
+    <div style="font-size:12px;color:var(--silver);line-height:1.65" id="learning-desc">Kelly-sized positions, ATR-calibrated stops, live Alpaca order routing. A <span id="ac-loops">29</span>-step nightly pipeline grades every decision, updates signal weights, and compounds institutional memory. Each day the system knows more than it did the day before.</div>
   </div>
 </div>
 
