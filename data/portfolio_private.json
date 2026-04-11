@@ -15,18 +15,18 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 1.305
+      "live_price": 1.295
     }
   },
-  "last_updated": "2026-04-10T19:30:30.196799",
+  "last_updated": "2026-04-10T23:00:12.975826",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-10T19:30:30.196825"
+    "generated_at": "2026-04-10T23:00:12.975862"
   },
   "equity_cash": 68316.0,
-  "equity_pos_value": 31190.21,
-  "crypto_pos_value": 1278.0,
-  "combined_value": 100781.85,
+  "equity_pos_value": 31199.91,
+  "crypto_pos_value": 1268.21,
+  "combined_value": 100781.77,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -43,7 +43,7 @@
       "invalidation_signal": null,
       "symbol": "AMZN",
       "qty": 35.9057,
-      "live_price": 238.0
+      "live_price": 238.38
     },
     "CSX": {
       "ticker": "CSX",
@@ -60,7 +60,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.26
+      "live_price": 42.24
     },
     "CAT": {
       "shares": 18.126,
@@ -144,7 +144,7 @@
     },
     {
       "date": "2026-04-10",
-      "value": 100781.85,
+      "value": 100781.77,
       "sod": 100864.21
     }
   ]
