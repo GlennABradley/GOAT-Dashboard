@@ -7,8 +7,8 @@
     "CAT"
   ],
   "regimes": [
-    "BEAR_HIGH_VOL",
     "CHOPPY_RANGING",
+    "BEAR_HIGH_VOL",
     "ACCUMULATION_EXTREME_FEAR"
   ],
   "strategies": [
@@ -18,6 +18,6 @@
   "last_updated": "2026-04-11",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-11T06:05:00.483556"
+    "generated_at": "2026-04-11T10:05:01.384096"
   }
 }
