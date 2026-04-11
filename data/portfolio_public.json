@@ -8,16 +8,16 @@
   ],
   "regimes": [
     "CHOPPY_RANGING",
-    "BEAR_HIGH_VOL",
-    "ACCUMULATION_EXTREME_FEAR"
+    "ACCUMULATION_EXTREME_FEAR",
+    "BEAR_HIGH_VOL"
   ],
   "strategies": [
-    "cycle",
-    "swing"
+    "swing",
+    "cycle"
   ],
   "last_updated": "2026-04-11",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-11T10:05:01.384096"
+    "generated_at": "2026-04-11T18:05:01.286857"
   }
 }
