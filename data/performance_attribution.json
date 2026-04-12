@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10",
+  "generated_at": "2026-04-11",
   "total_trades": 8,
   "tribunal": {
     "tribunal_vetoes": 4,
@@ -43,7 +43,7 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-11T18:05:03.156298"
+    "generated_at": "2026-04-11T23:00:19.851822"
   },
   "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 27% | Total trades: 8"
 }
