@@ -7,17 +7,17 @@
     "CAT"
   ],
   "regimes": [
+    "CHOPPY_RANGING",
     "BEAR_HIGH_VOL",
-    "ACCUMULATION_EXTREME_FEAR",
-    "CHOPPY_RANGING"
+    "ACCUMULATION_EXTREME_FEAR"
   ],
   "strategies": [
-    "cycle",
-    "swing"
+    "swing",
+    "cycle"
   ],
-  "last_updated": "2026-04-11",
+  "last_updated": "2026-04-12",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-11T23:00:19.455909"
+    "generated_at": "2026-04-12T00:05:01.329851"
   }
 }
