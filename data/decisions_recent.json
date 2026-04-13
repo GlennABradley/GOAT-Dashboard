@@ -1,41 +1,41 @@
 [
   {
+    "timestamp": "2026-04-13T15:23",
+    "symbol": null,
+    "action": "SKIP",
+    "confidence": 0.58,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
+    "timestamp": "2026-04-13T15:20",
+    "symbol": "CARR",
+    "action": "BUY",
+    "confidence": 0.86,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
+    "timestamp": "2026-04-13T15:20",
+    "symbol": "CARR",
+    "action": "VALIDATED_BLOCKED",
+    "confidence": 0.68,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
+    "timestamp": "2026-04-13T15:18",
+    "symbol": "CARR",
+    "action": "BUY",
+    "confidence": 0.89,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-13T09:45",
     "symbol": "CARR",
     "action": "BUY",
     "confidence": 0.83,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-10T15:00",
-    "symbol": "CAT",
-    "action": "BUY",
-    "confidence": 0.82,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-10T09:14",
-    "symbol": "AMZN",
-    "action": "BUY",
-    "confidence": 0.78,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-09T15:00",
-    "symbol": "ODFL",
-    "action": "SKIP",
-    "confidence": 0.75,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-08T16:52",
-    "symbol": "CSX",
-    "action": "BUY",
-    "confidence": 0.78,
     "regime": "CHOPPY_RANGING",
     "bot": "equity"
   },
