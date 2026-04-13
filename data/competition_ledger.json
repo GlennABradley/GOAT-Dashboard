@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11T23:00:17.530220",
+  "last_updated": "2026-04-13T08:55:11.218875",
   "equity": {
     "total_trades": 6,
     "wins": 4,
@@ -154,10 +154,16 @@
       "equity_weight": 0.85,
       "crypto_weight": 0.15,
       "leader": "EQUITY"
+    },
+    {
+      "date": "2026-04-13",
+      "equity_weight": 0.75,
+      "crypto_weight": 0.25,
+      "leader": "EQUITY"
     }
   ],
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-12T17:00:03.234892"
+    "generated_at": "2026-04-13T10:05:02.753889"
   }
 }
