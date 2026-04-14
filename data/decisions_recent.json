@@ -1,5 +1,21 @@
 [
   {
+    "timestamp": "2026-04-14T15:32",
+    "symbol": "ETH/USD",
+    "action": "BUY",
+    "confidence": 0.78,
+    "regime": "ACCUMULATION_FEAR",
+    "bot": "crypto"
+  },
+  {
+    "timestamp": "2026-04-14T15:00",
+    "symbol": null,
+    "action": "SKIP",
+    "confidence": 0.0,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-14T11:20",
     "symbol": "UNH",
     "action": "BUY",
@@ -32,14 +48,6 @@
     "bot": "equity"
   },
   {
-    "timestamp": "2026-04-13T15:20",
-    "symbol": "CARR",
-    "action": "VALIDATED_BLOCKED",
-    "confidence": 0.68,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
     "timestamp": "2026-04-02T00:00",
     "symbol": "SOL/USD",
     "action": "BUY",
@@ -65,14 +73,6 @@
   },
   {
     "timestamp": "2026-03-27T18:00",
-    "symbol": "ETH/USD",
-    "action": "BUY",
-    "confidence": 0.75,
-    "regime": "ACCUMULATION_EXTREME_FEAR",
-    "bot": "crypto"
-  },
-  {
-    "timestamp": "2026-03-27T10:00",
     "symbol": "ETH/USD",
     "action": "BUY",
     "confidence": 0.75,

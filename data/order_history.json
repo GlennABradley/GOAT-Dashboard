@@ -14,6 +14,20 @@
     "regime": "CHOPPY_RANGING"
   },
   {
+    "date": "2026-04-14",
+    "symbol": "DOT/USD",
+    "bot": "crypto",
+    "side": "SELL",
+    "entry": 1.2748,
+    "exit": 1.1558,
+    "pnl": -116.51,
+    "pct": -9.33,
+    "outcome": "LOSS",
+    "hold_days": 17,
+    "reason": "Stop loss hit: $1.1558 <= $1.276044",
+    "regime": "ACCUMULATION_FEAR"
+  },
+  {
     "date": "2026-04-08",
     "symbol": "PANW",
     "bot": "equity",
