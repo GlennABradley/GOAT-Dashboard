@@ -1,11 +1,14 @@
 {
-  "state": "HEALTHY",
-  "status_emoji": "\ud83d\udfe2",
-  "position_multiplier": 1.0,
-  "issues": [],
-  "checked_at": "2026-04-14T10:00:04.063087",
+  "state": "HALTED",
+  "status_emoji": "\ud83d\udd34",
+  "position_multiplier": 0.0,
+  "issues": [
+    "Daily drawdown HALTED: -27.44%"
+  ],
+  "checked_at": "2026-04-14T18:00:04.241519",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T16:30:21.703295"
-  }
+    "generated_at": "2026-04-14T18:05:06.083567"
+  },
+  "halted_at": "2026-04-14T18:00:04.241547"
 }

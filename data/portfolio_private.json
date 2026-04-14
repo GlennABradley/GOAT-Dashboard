@@ -18,15 +18,15 @@
       "live_price": 2318.61
     }
   },
-  "last_updated": "2026-04-14T16:30:21.702677",
+  "last_updated": "2026-04-14T18:05:06.081217",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T16:30:21.702697"
+    "generated_at": "2026-04-14T18:05:06.081240"
   },
   "equity_cash": 72419.75,
-  "equity_pos_value": 27533.15,
+  "equity_pos_value": 27471.75,
   "crypto_pos_value": 1058.64,
-  "combined_value": 102137.33,
+  "combined_value": 102075.93,
   "equity_positions": {
     "CAT": {
       "ticker": "CAT",
@@ -43,7 +43,7 @@
       "invalidation_signal": "Price breaks below $762 support level or Industrials sector (XLI) loses leadership momentum",
       "symbol": "CAT",
       "qty": 18.126,
-      "live_price": 795.56
+      "live_price": 794.25
     },
     "CSX": {
       "ticker": "CSX",
@@ -60,7 +60,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.423094
+      "live_price": 42.51
     },
     "UNH": {
       "ticker": "UNH",
@@ -77,7 +77,7 @@
       "invalidation_signal": null,
       "symbol": "UNH",
       "qty": 15.0,
-      "live_price": 317.84
+      "live_price": 314.19
     }
   },
   "portfolio_snapshots": [
@@ -188,7 +188,7 @@
     },
     {
       "date": "2026-04-14",
-      "value": 102137.33,
+      "value": 102075.93,
       "sod": 99803.47
     }
   ]
