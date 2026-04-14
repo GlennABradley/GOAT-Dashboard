@@ -7,17 +7,17 @@
     "CSX"
   ],
   "regimes": [
-    "BEAR_HIGH_VOL",
     "CHOPPY_RANGING",
+    "BEAR_HIGH_VOL",
     "ACCUMULATION_EXTREME_FEAR"
   ],
   "strategies": [
-    "swing",
-    "cycle"
+    "cycle",
+    "swing"
   ],
   "last_updated": "2026-04-14",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T00:05:01.267344"
+    "generated_at": "2026-04-14T06:05:01.279114"
   }
 }
