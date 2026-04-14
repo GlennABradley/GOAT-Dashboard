@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-14T09:01",
+    "symbol": null,
+    "action": "SKIP",
+    "confidence": 0.0,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-13T15:23",
     "symbol": null,
     "action": "SKIP",
@@ -28,14 +36,6 @@
     "symbol": "CARR",
     "action": "BUY",
     "confidence": 0.89,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-13T09:45",
-    "symbol": "CARR",
-    "action": "BUY",
-    "confidence": 0.83,
     "regime": "CHOPPY_RANGING",
     "bot": "equity"
   },

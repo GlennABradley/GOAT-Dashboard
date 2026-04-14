@@ -15,18 +15,18 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 1.1916
+      "live_price": 1.1802
     }
   },
-  "last_updated": "2026-04-14T06:05:03.465756",
+  "last_updated": "2026-04-14T10:05:02.467402",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T06:05:03.465822"
+    "generated_at": "2026-04-14T10:05:02.467458"
   },
   "equity_cash": 68313.64,
-  "equity_pos_value": 31426.81,
-  "crypto_pos_value": 1166.9,
-  "combined_value": 100907.34,
+  "equity_pos_value": 31505.24,
+  "crypto_pos_value": 1155.78,
+  "combined_value": 100974.67,
   "equity_positions": {
     "AMZN": {
       "ticker": "AMZN",
@@ -43,7 +43,7 @@
       "invalidation_signal": null,
       "symbol": "AMZN",
       "qty": 35.9057,
-      "live_price": 241.51
+      "live_price": 245.94
     },
     "CAT": {
       "ticker": "CAT",
@@ -60,7 +60,7 @@
       "invalidation_signal": "Price breaks below $762 support level or Industrials sector (XLI) loses leadership momentum",
       "symbol": "CAT",
       "qty": 18.126,
-      "live_price": 796.0
+      "live_price": 790.25
     },
     "CSX": {
       "ticker": "CSX",
@@ -77,7 +77,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.33
+      "live_price": 42.45
     }
   },
   "portfolio_snapshots": [
@@ -188,7 +188,7 @@
     },
     {
       "date": "2026-04-14",
-      "value": 100907.34,
+      "value": 100974.67,
       "sod": 100802.24
     }
   ]
