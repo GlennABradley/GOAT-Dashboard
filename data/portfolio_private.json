@@ -1,5 +1,5 @@
 {
-  "cash": 68313.64,
+  "cash": 72419.75,
   "start_of_day_value": 100802.24,
   "positions": {
     "DOT/USD": {
@@ -15,36 +15,19 @@
       "tier": 2,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 1.1802
+      "live_price": 1.165
     }
   },
-  "last_updated": "2026-04-14T10:05:02.467402",
+  "last_updated": "2026-04-14T14:22:42.181291",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T10:05:02.467458"
+    "generated_at": "2026-04-14T14:22:42.181320"
   },
-  "equity_cash": 68313.64,
-  "equity_pos_value": 31505.24,
-  "crypto_pos_value": 1155.78,
-  "combined_value": 100974.67,
+  "equity_cash": 72419.77,
+  "equity_pos_value": 27451.84,
+  "crypto_pos_value": 1140.9,
+  "combined_value": 101012.49,
   "equity_positions": {
-    "AMZN": {
-      "ticker": "AMZN",
-      "shares": 35.9057,
-      "entry_price": 236.8,
-      "entry_date": "2026-04-10",
-      "trade_type": "swing",
-      "stop_loss": 229.49,
-      "target": 248.61,
-      "entry_vix": null,
-      "entry_regime": "BEAR_HIGH_VOL",
-      "tp1_hit": false,
-      "shares_sold": 0,
-      "invalidation_signal": null,
-      "symbol": "AMZN",
-      "qty": 35.9057,
-      "live_price": 245.94
-    },
     "CAT": {
       "ticker": "CAT",
       "shares": 18.126,
@@ -60,7 +43,7 @@
       "invalidation_signal": "Price breaks below $762 support level or Industrials sector (XLI) loses leadership momentum",
       "symbol": "CAT",
       "qty": 18.126,
-      "live_price": 790.25
+      "live_price": 792.54
     },
     "CSX": {
       "ticker": "CSX",
@@ -77,7 +60,24 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.45
+      "live_price": 42.545
+    },
+    "UNH": {
+      "ticker": "UNH",
+      "shares": 15.0,
+      "entry_price": 317.84,
+      "entry_date": "2026-04-14",
+      "trade_type": "swing",
+      "stop_loss": 303.11,
+      "target": 328.37,
+      "entry_vix": null,
+      "entry_regime": "BEAR_HIGH_VOL",
+      "tp1_hit": false,
+      "shares_sold": 0,
+      "invalidation_signal": null,
+      "symbol": "UNH",
+      "qty": 15.0,
+      "live_price": 314.47
     }
   },
   "portfolio_snapshots": [
@@ -188,7 +188,7 @@
     },
     {
       "date": "2026-04-14",
-      "value": 100974.67,
+      "value": 101012.49,
       "sod": 100802.24
     }
   ]

@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-04-14",
+    "symbol": "AMZN",
+    "bot": "equity",
+    "side": "SELL",
+    "entry": 236.8,
+    "exit": 247.17,
+    "pnl": 372.34,
+    "pct": 4.38,
+    "outcome": "WIN",
+    "hold_days": 4,
+    "reason": "Take profit 2 hit: +4.4%",
+    "regime": "CHOPPY_RANGING"
+  },
+  {
     "date": "2026-04-08",
     "symbol": "PANW",
     "bot": "equity",
