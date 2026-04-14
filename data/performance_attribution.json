@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-11",
+  "generated_at": "2026-04-13",
   "total_trades": 8,
   "tribunal": {
     "tribunal_vetoes": 4,
-    "tribunal_approvals": 11,
+    "tribunal_approvals": 15,
     "live_win_rate": 0.625,
     "live_total_trades": 8,
-    "tribunal_veto_rate": 0.267,
+    "tribunal_veto_rate": 0.211,
     "insight": "Tribunal vetoed 4 trades. Live win rate: 62%"
   },
   "regime_performance": {
@@ -43,7 +43,7 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-13T18:05:02.705184"
+    "generated_at": "2026-04-13T23:00:20.011015"
   },
-  "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 27% | Total trades: 8"
+  "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 21% | Total trades: 8"
 }
