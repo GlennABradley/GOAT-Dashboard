@@ -11,7 +11,7 @@
         "1H_RSI_HEALTHY"
       ],
       "sizing_mult": 1.0,
-      "timestamp": "2026-04-15T00:00:06.857088"
+      "timestamp": "2026-04-15T06:00:07.207654"
     },
     "BTC/USD": {
       "symbol": "BTC/USD",
@@ -21,21 +21,22 @@
       "signals": [
         "4H_EMA20_ABOVE_EMA50",
         "4H_RSI_HEALTHY",
-        "1H_EMA20_ABOVE_EMA50"
+        "1H_RSI_HEALTHY"
       ],
       "sizing_mult": 1.0,
-      "timestamp": "2026-04-15T00:00:07.258537"
+      "timestamp": "2026-04-15T06:00:07.644173"
     },
     "SOL/USD": {
       "symbol": "SOL/USD",
-      "intraday_score": 1,
-      "score": 1,
+      "intraday_score": 2,
+      "score": 2,
       "max_score": 6,
       "signals": [
-        "4H_EMA20_ABOVE_EMA50"
+        "4H_RSI_HEALTHY",
+        "1H_RSI_HEALTHY"
       ],
-      "sizing_mult": 0.5,
-      "timestamp": "2026-04-15T00:00:07.676698"
+      "sizing_mult": 0.75,
+      "timestamp": "2026-04-15T06:00:07.968734"
     },
     "DOT/USD": {
       "symbol": "DOT/USD",
@@ -55,7 +56,7 @@
       "max_score": 6,
       "signals": [],
       "sizing_mult": 0.25,
-      "timestamp": "2026-04-15T00:00:07.991955"
+      "timestamp": "2026-04-15T06:00:08.284051"
     },
     "AVAX/USD": {
       "symbol": "AVAX/USD",
@@ -68,12 +69,12 @@
         "1H_RSI_HEALTHY"
       ],
       "sizing_mult": 1.0,
-      "timestamp": "2026-04-15T00:00:08.340423"
+      "timestamp": "2026-04-15T06:00:08.583336"
     }
   },
-  "last_updated": "2026-04-15T00:05:01.579447",
+  "last_updated": "2026-04-15T06:05:02.470436",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-15T00:05:01.579474"
+    "generated_at": "2026-04-15T06:05:02.470464"
   }
 }

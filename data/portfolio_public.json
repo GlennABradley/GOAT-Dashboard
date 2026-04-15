@@ -7,17 +7,17 @@
     "UNH"
   ],
   "regimes": [
-    "CHOPPY_RANGING",
     "ACCUMULATION_FEAR",
+    "CHOPPY_RANGING",
     "BEAR_HIGH_VOL"
   ],
   "strategies": [
-    "swing",
-    "cycle"
+    "cycle",
+    "swing"
   ],
   "last_updated": "2026-04-15",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-15T00:05:00.368023"
+    "generated_at": "2026-04-15T06:05:01.068923"
   }
 }

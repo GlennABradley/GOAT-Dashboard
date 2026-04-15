@@ -1,6 +1,6 @@
 {
-  "cash": 72484.24,
-  "start_of_day_value": 100802.24,
+  "cash": 72484.23,
+  "start_of_day_value": 101023.63,
   "positions": {
     "ETH/USD": {
       "symbol": "ETH/USD",
@@ -8,25 +8,25 @@
       "entry_price": 2318.61,
       "entry_date": "2026-04-14",
       "trade_type": "cycle",
-      "stop_loss": 2101.424135,
+      "stop_loss": 2161.324528,
       "target": 3200,
       "entry_regime": "ACCUMULATION_FEAR",
       "entry_fg": 21,
       "tier": 1,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 2332.255
+      "live_price": 2319.49
     }
   },
-  "last_updated": "2026-04-15T00:05:01.575421",
+  "last_updated": "2026-04-15T06:05:02.466435",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-15T00:05:01.575477"
+    "generated_at": "2026-04-15T06:05:02.466472"
   },
   "equity_cash": 72419.75,
-  "equity_pos_value": 27464.02,
-  "crypto_pos_value": 1064.87,
-  "combined_value": 101013.13,
+  "equity_pos_value": 27469.84,
+  "crypto_pos_value": 1059.05,
+  "combined_value": 101013.11,
   "equity_positions": {
     "CAT": {
       "ticker": "CAT",
@@ -43,7 +43,7 @@
       "invalidation_signal": "Price breaks below $762 support level or Industrials sector (XLI) loses leadership momentum",
       "symbol": "CAT",
       "qty": 18.126,
-      "live_price": 794.25
+      "live_price": 795.0
     },
     "CSX": {
       "ticker": "CSX",
@@ -60,7 +60,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.46
+      "live_price": 42.406
     },
     "UNH": {
       "ticker": "UNH",
@@ -77,7 +77,7 @@
       "invalidation_signal": null,
       "symbol": "UNH",
       "qty": 15.0,
-      "live_price": 314.33
+      "live_price": 314.52
     }
   },
   "portfolio_snapshots": [
@@ -193,8 +193,8 @@
     },
     {
       "date": "2026-04-15",
-      "value": 101013.13,
-      "sod": 100802.24
+      "value": 101013.11,
+      "sod": 101023.63
     }
   ]
 }
