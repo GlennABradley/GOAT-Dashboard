@@ -15,18 +15,18 @@
       "tier": 1,
       "tp1_hit": false,
       "qty_sold": 0.0,
-      "live_price": 2321.823
+      "live_price": 2329.711
     }
   },
-  "last_updated": "2026-04-15T07:13:36.329155",
+  "last_updated": "2026-04-15T09:08:08.287804",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-15T07:13:36.329197"
+    "generated_at": "2026-04-15T09:08:08.287823"
   },
-  "equity_cash": 72419.75,
-  "equity_pos_value": 27426.21,
-  "crypto_pos_value": 1060.11,
-  "combined_value": 100970.54,
+  "equity_cash": 72484.23,
+  "equity_pos_value": 27369.54,
+  "crypto_pos_value": 1063.71,
+  "combined_value": 100917.47,
   "equity_positions": {
     "CAT": {
       "ticker": "CAT",
@@ -43,7 +43,7 @@
       "invalidation_signal": "Price breaks below $762 support level or Industrials sector (XLI) loses leadership momentum",
       "symbol": "CAT",
       "qty": 18.126,
-      "live_price": 792.75
+      "live_price": 790.55
     },
     "CSX": {
       "ticker": "CSX",
@@ -60,7 +60,7 @@
       "invalidation_signal": null,
       "symbol": "CSX",
       "qty": 196.7143,
-      "live_price": 42.406
+      "live_price": 42.26
     },
     "UNH": {
       "ticker": "UNH",
@@ -77,7 +77,7 @@
       "invalidation_signal": null,
       "symbol": "UNH",
       "qty": 15.0,
-      "live_price": 314.33
+      "live_price": 315.125
     }
   },
   "portfolio_snapshots": [
@@ -193,7 +193,7 @@
     },
     {
       "date": "2026-04-15",
-      "value": 100970.54,
+      "value": 100917.47,
       "sod": 101023.63
     }
   ]

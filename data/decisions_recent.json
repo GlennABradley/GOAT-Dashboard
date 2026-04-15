@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-15T09:05",
+    "symbol": "ANET",
+    "action": "BUY",
+    "confidence": 0.85,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity"
+  },
+  {
     "timestamp": "2026-04-15T06:00",
     "symbol": "?",
     "action": "SKIP",
@@ -52,14 +60,6 @@
     "symbol": null,
     "action": "SKIP",
     "confidence": 0.0,
-    "regime": "CHOPPY_RANGING",
-    "bot": "equity"
-  },
-  {
-    "timestamp": "2026-04-13T15:23",
-    "symbol": null,
-    "action": "SKIP",
-    "confidence": 0.58,
     "regime": "CHOPPY_RANGING",
     "bot": "equity"
   },
