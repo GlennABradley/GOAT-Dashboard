@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-13",
-  "total_trades": 8,
+  "generated_at": "2026-04-14",
+  "total_trades": 10,
   "tribunal": {
     "tribunal_vetoes": 4,
-    "tribunal_approvals": 15,
-    "live_win_rate": 0.625,
-    "live_total_trades": 8,
-    "tribunal_veto_rate": 0.211,
-    "insight": "Tribunal vetoed 4 trades. Live win rate: 62%"
+    "tribunal_approvals": 18,
+    "live_win_rate": 0.6,
+    "live_total_trades": 10,
+    "tribunal_veto_rate": 0.182,
+    "insight": "Tribunal vetoed 4 trades. Live win rate: 60%"
   },
   "regime_performance": {
     "best_regime": "CHOPPY_RANGING",
@@ -17,6 +17,11 @@
         "win_rate": 0.5,
         "avg_pnl": -0.02,
         "n": 2
+      },
+      "ACCUMULATION_FEAR": {
+        "win_rate": 0.0,
+        "avg_pnl": -9.33,
+        "n": 1
       },
       "BEAR_HIGH_VOL": {
         "win_rate": 0.75,
@@ -30,20 +35,20 @@
       },
       "CHOPPY_RANGING": {
         "win_rate": 1.0,
-        "avg_pnl": 7.12,
-        "n": 1
+        "avg_pnl": 5.75,
+        "n": 2
       }
     }
   },
   "kelly_performance": {
     "small": {
-      "win_rate": 0.625,
-      "n": 8
+      "win_rate": 0.6,
+      "n": 10
     }
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T18:05:06.094021"
+    "generated_at": "2026-04-14T20:36:55.470048"
   },
-  "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 21% | Total trades: 8"
+  "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 18% | Total trades: 10"
 }
