@@ -7,9 +7,9 @@
     "UNH"
   ],
   "regimes": [
+    "BEAR_HIGH_VOL",
     "CHOPPY_RANGING",
-    "ACCUMULATION_FEAR",
-    "BEAR_HIGH_VOL"
+    "ACCUMULATION_FEAR"
   ],
   "strategies": [
     "cycle",
@@ -18,6 +18,6 @@
   "last_updated": "2026-04-15",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-15T09:08:07.864503"
+    "generated_at": "2026-04-15T10:05:00.633593"
   }
 }
