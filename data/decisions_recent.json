@@ -1,5 +1,13 @@
 [
   {
+    "timestamp": "2026-04-15T00:00",
+    "symbol": "?",
+    "action": "SKIP",
+    "confidence": 0.0,
+    "regime": "ACCUMULATION_FEAR",
+    "bot": "crypto"
+  },
+  {
     "timestamp": "2026-04-14T15:32",
     "symbol": "ETH/USD",
     "action": "BUY",
@@ -66,14 +74,6 @@
   {
     "timestamp": "2026-03-28T00:00",
     "symbol": "DOT/USD",
-    "action": "BUY",
-    "confidence": 0.75,
-    "regime": "ACCUMULATION_EXTREME_FEAR",
-    "bot": "crypto"
-  },
-  {
-    "timestamp": "2026-03-27T18:00",
-    "symbol": "ETH/USD",
     "action": "BUY",
     "confidence": 0.75,
     "regime": "ACCUMULATION_EXTREME_FEAR",

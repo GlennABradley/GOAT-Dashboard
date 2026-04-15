@@ -1,11 +1,11 @@
 {
-  "state": "RECOVERING",
-  "status_emoji": "\ud83d\udfe0",
-  "position_multiplier": 0.25,
+  "state": "HEALTHY",
+  "status_emoji": "\ud83d\udfe2",
+  "position_multiplier": 1.0,
   "issues": [],
-  "checked_at": "2026-04-14T23:00:14.284751",
+  "checked_at": "2026-04-15T00:00:03.095111",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T23:00:14.661333"
+    "generated_at": "2026-04-15T00:05:01.576774"
   }
 }
