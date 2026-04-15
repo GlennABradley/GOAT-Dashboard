@@ -1,14 +1,12 @@
 {
-  "position_count": 4,
+  "position_count": 3,
   "symbols": [
     "ETH/USD",
-    "CAT",
-    "CSX",
-    "UNH"
+    "ANET",
+    "CSX"
   ],
   "regimes": [
     "BEAR_HIGH_VOL",
-    "CHOPPY_RANGING",
     "ACCUMULATION_FEAR"
   ],
   "strategies": [
@@ -18,6 +16,6 @@
   "last_updated": "2026-04-15",
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-15T10:05:00.633593"
+    "generated_at": "2026-04-15T14:35:38.511535"
   }
 }

@@ -1,5 +1,33 @@
 [
   {
+    "date": "2026-04-15",
+    "symbol": "CAT",
+    "bot": "equity",
+    "side": "SELL",
+    "entry": 795.56,
+    "exit": 778.15,
+    "pnl": -315.57,
+    "pct": -2.19,
+    "outcome": "LOSS",
+    "hold_days": 2,
+    "reason": "Stop loss triggered",
+    "regime": "CHECK"
+  },
+  {
+    "date": "2026-04-15",
+    "symbol": "UNH",
+    "bot": "equity",
+    "side": "SELL",
+    "entry": 317.84,
+    "exit": 311.515,
+    "pnl": -94.87,
+    "pct": -1.99,
+    "outcome": "LOSS",
+    "hold_days": 1,
+    "reason": "Stop loss triggered",
+    "regime": "CHECK"
+  },
+  {
     "date": "2026-04-14",
     "symbol": "AMZN",
     "bot": "equity",
