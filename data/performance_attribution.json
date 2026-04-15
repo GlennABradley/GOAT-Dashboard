@@ -3,10 +3,10 @@
   "total_trades": 10,
   "tribunal": {
     "tribunal_vetoes": 4,
-    "tribunal_approvals": 18,
+    "tribunal_approvals": 22,
     "live_win_rate": 0.6,
     "live_total_trades": 10,
-    "tribunal_veto_rate": 0.182,
+    "tribunal_veto_rate": 0.154,
     "insight": "Tribunal vetoed 4 trades. Live win rate: 60%"
   },
   "regime_performance": {
@@ -48,7 +48,7 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-04-14T20:46:54.852750"
+    "generated_at": "2026-04-14T23:00:14.667923"
   },
-  "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 18% | Total trades: 10"
+  "top_insight": "Best regime: CHOPPY_RANGING | Tribunal veto rate: 15% | Total trades: 10"
 }
