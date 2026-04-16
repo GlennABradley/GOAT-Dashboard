@@ -1,38 +1,38 @@
 {
-  "ts": "2026-04-16T09:45:01.024956",
-  "generated": "09:45:01 AM",
+  "ts": "2026-04-16T09:50:00.936657",
+  "generated": "09:50:00 AM",
   "paper": {
-    "equity": 100663.61,
+    "equity": 100684.14,
     "cash": 85685.18,
-    "day_pnl": 67.73,
-    "day_pnl_pct": 0.067,
+    "day_pnl": 88.26,
+    "day_pnl_pct": 0.088,
     "positions": [
       {
         "sym": "ANET",
         "qty": 36.0,
-        "price": 154.77,
+        "price": 155.03,
         "entry": 154.398056,
-        "pnl_pct": 0.24,
-        "pnl": 13.39,
-        "mkt_val": 5571.72
+        "pnl_pct": 0.41,
+        "pnl": 22.75,
+        "mkt_val": 5581.08
       },
       {
         "sym": "CSX",
         "qty": 196.7143,
-        "price": 42.4,
+        "price": 42.4654,
         "entry": 42.423094,
-        "pnl_pct": -0.05,
-        "pnl": -4.54,
-        "mkt_val": 8340.69
+        "pnl_pct": 0.1,
+        "pnl": 8.32,
+        "mkt_val": 8353.55
       },
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2334.772,
+        "price": 2331.05,
         "entry": 2318.61,
-        "pnl_pct": 0.7,
-        "pnl": 7.38,
-        "mkt_val": 1066.02
+        "pnl_pct": 0.54,
+        "pnl": 5.68,
+        "mkt_val": 1064.32
       }
     ]
   },
