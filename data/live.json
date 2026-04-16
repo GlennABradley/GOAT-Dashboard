@@ -1,11 +1,11 @@
 {
-  "ts": "2026-04-16T16:25:00.991877",
-  "generated": "04:25:00 PM",
+  "ts": "2026-04-16T16:30:01.268944",
+  "generated": "04:30:01 PM",
   "paper": {
-    "equity": 100900.53,
+    "equity": 100901.45,
     "cash": 89974.12,
-    "day_pnl": 304.65,
-    "day_pnl_pct": 0.303,
+    "day_pnl": 305.57,
+    "day_pnl_pct": 0.304,
     "positions": [
       {
         "sym": "ANET",
@@ -28,11 +28,11 @@
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2351.95,
+        "price": 2353.97,
         "entry": 2318.61,
-        "pnl_pct": 1.44,
-        "pnl": 15.22,
-        "mkt_val": 1073.87
+        "pnl_pct": 1.52,
+        "pnl": 16.14,
+        "mkt_val": 1074.79
       }
     ]
   },
