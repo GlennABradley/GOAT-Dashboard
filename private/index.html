@@ -884,7 +884,12 @@ if(decEl && decs.length){
       <div class="dec-head">
         <span class="badge ${d.action||'HOLD'}">${d.action||'HOLD'}</span>
         ${botBadge}
-        ${(d.symbol&&d.symbol!=='?')?`<span style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--white)">${d.symbol}</span>`:d.action==='SKIP'?`<span style="font-size:10px;color:var(--ghost);font-family:var(--fm)">no candidate</span>`:''}
+        ${botBadge}
+        ${(d.symbol&&d.symbol!=='?')
+          ? (d._skip_candidate
+              ? `<span style="font-size:12px;font-weight:700;font-family:var(--fm);color:var(--ghost);text-decoration:line-through">${d.symbol}</span><span style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-left:5px">passed</span>`
+              : `<span style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--white)">${d.symbol}</span>`)
+          : d.action==='SKIP'?`<span style="font-size:10px;color:var(--ghost);font-family:var(--fm)">no candidate</span>`:''}
         ${d.regime?`<span class="rb ${d.regime}" style="font-size:8px">${d.regime.replace(/_/g,' ').replace('ACCUMULATION EXTREME FEAR','ACC XF')}</span>`:''}
         ${d.confidence?`<span style="font-size:10px;font-family:var(--fm);color:${confClr};margin-left:auto">${(d.confidence*100).toFixed(0)}%</span>`:''}
         <span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${d.timestamp||''}</span>
