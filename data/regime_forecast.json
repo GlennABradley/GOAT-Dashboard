@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-04-16T17:19:08.777358",
+  "signal_snapshot": {
+    "vix_current": 18.74,
+    "vix_3d_change": 0.5899999999999999,
+    "vix_compressing": false,
+    "vix_expanding": false,
+    "vix_above_30": false,
+    "vix_below_18": false,
+    "vix_low": false,
+    "recent_regimes": [
+      "CHOPPY_RANGING",
+      "CHOPPY_RANGING",
+      "CHOPPY_RANGING",
+      "CHOPPY_RANGING",
+      "CHOPPY_RANGING"
+    ],
+    "credit_signal": "NEUTRAL",
+    "credit_neutral": true,
+    "credit_widening": false,
+    "put_call_ratio": 1.0,
+    "put_call_low": false
+  },
+  "sequence_matches": [],
+  "top_prediction": null,
+  "probability": 0.0,
+  "window_hours": 48,
+  "regime_trajectory": "STABLE",
+  "positioning_guidance": "No regime change predicted \u2014 maintain current positioning",
+  "pre_position": false,
+  "context_block": "\n=== REGIME FORECAST (24-48h ahead) ===\n  Trajectory: STABLE\n  Probability: 0% | Window: 48h | Action: Monitor\n  Guidance: No regime change predicted \u2014 maintain current positioning\n=== END FORECAST ==="
+}
