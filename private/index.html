@@ -881,7 +881,7 @@ if(decEl && decs.length){
       <div class="dec-head">
         <span class="badge ${d.action||'HOLD'}">${d.action||'HOLD'}</span>
         ${botBadge}
-        ${d.symbol?`<span style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--white)">${d.symbol}</span>`:''}
+        ${(d.symbol&&d.symbol!=='?')?`<span style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--white)">${d.symbol}</span>`:d.action==='SKIP'?`<span style="font-size:10px;color:var(--ghost);font-family:var(--fm)">no candidate</span>`:''}
         ${d.regime?`<span class="rb ${d.regime}" style="font-size:8px">${d.regime.replace(/_/g,' ').replace('ACCUMULATION EXTREME FEAR','ACC XF')}</span>`:''}
         ${d.confidence?`<span style="font-size:10px;font-family:var(--fm);color:${confClr};margin-left:auto">${(d.confidence*100).toFixed(0)}%</span>`:''}
         <span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${d.timestamp||''}</span>
@@ -990,9 +990,12 @@ function _fallbackCopy(txt){
 }
 function bcpHover(mode){}
 
+// Block 5 — new sections need their own SD reference (D is declared in Block 4)
+const _D = window.__SD__ || {};
+
 // ── Challenger Account ──
 (function(){
-  const ch=D.challenger||{};
+  const ch=_D.challenger||{};
   const val=ch.current_value||100, ret=ch.total_return_pct||0, mult=ch.total_return_x||1;
   const s=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
   s('ch-val','$'+val.toFixed(2));
@@ -1010,7 +1013,7 @@ function bcpHover(mode){}
 
 // ── Shadow Bots ──
 (function(){
-  const sh=D.shadow_summary||{};
+  const sh=_D.shadow_summary||{};
   const names={'AGGRESSIVE':'⚡ Aggressive','CONSERVATIVE':'🛡 Conservative','EXPERIMENTAL':'🧪 Experimental'};
   const colors={'AGGRESSIVE':'rgba(239,68,68,.15)','CONSERVATIVE':'rgba(34,197,94,.1)','EXPERIMENTAL':'rgba(124,58,237,.12)'};
   const grid=document.getElementById('shadow-grid');
@@ -1030,7 +1033,7 @@ function bcpHover(mode){}
 
 // ── Cross-Asset Intelligence ──
 (function(){
-  const ca=D.cross_asset||{};
+  const ca=_D.cross_asset||{};
   const s=(id,v,col)=>{const e=document.getElementById(id);if(e){e.textContent=v;if(col)e.style.color=col;}};
   const sigCol={'BULLISH':'var(--green)','BEARISH':'var(--red)','NEUTRAL':'var(--silver)','RISK_OFF':'var(--red)'}[ca.signal]||'var(--silver)';
   s('ca-signal',ca.signal||'NEUTRAL',sigCol);
@@ -1045,7 +1048,7 @@ function bcpHover(mode){}
 
 // ── Multi-Timeframe Alignment ──
 (function(){
-  const mt=D.multi_timeframe||{};
+  const mt=_D.multi_timeframe||{};
   const syms=mt.symbols||{};
   const grid=document.getElementById('mtf-grid');
   if(!grid||!Object.keys(syms).length)return;
