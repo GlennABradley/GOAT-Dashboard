@@ -649,6 +649,34 @@ footer{border-top:1px solid var(--border);padding:16px 28px;display:flex;justify
   </div>
 </div>
 
+<!-- ── Daily Job Schedule ─────────────────────────────────────── -->
+<div style="max-width:980px;margin:0 auto 24px;padding:0 16px">
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div>
+        <div style="font-size:13px;font-weight:800;color:var(--fg)">AUTONOMOUS DAILY SCHEDULE</div>
+        <div style="font-size:11px;color:var(--ghost);margin-top:3px">All times ET · <span id="sched-count">14</span> automated jobs · zero manual intervention</div>
+      </div>
+      <div style="font-size:22px">🤖</div>
+    </div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse" id="schedule-table">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="padding:7px 10px;text-align:left;color:var(--ghost);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;width:80px">Time ET</th>
+            <th style="padding:7px 10px;text-align:left;color:var(--ghost);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;width:120px">Job</th>
+            <th style="padding:7px 10px;text-align:left;color:var(--ghost);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase">Description</th>
+            <th style="padding:7px 10px;text-align:right;color:var(--ghost);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;width:65px">Days</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body">
+          <tr><td colspan="4" style="padding:14px;color:var(--ghost);text-align:center;font-size:12px">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div>⚜ SOVEREIGN PRIVATE · <span id="ft-health" style="color:var(--green)">HEALTHY</span></div>
   <div id="ft-updated" style="color:var(--ghost)">—</div>
@@ -1114,6 +1142,40 @@ const _D = window.__SD__ || {};
       <div style="font-size:8px;color:var(--ghost);font-family:var(--fm)">${signals||'No signals'}</div>
     </div>`;
   }).join('');
+})();
+
+// ── Daily Job Schedule ────────────────────────────────────────────
+(function(){
+  const sched=(_D.system_config&&_D.system_config.daily_schedule)||[];
+  const tbody=document.getElementById('schedule-body');
+  if(!tbody)return;
+  if(!sched.length){
+    tbody.innerHTML='<tr><td colspan="4" style="padding:14px;color:var(--ghost);text-align:center;font-size:12px">Schedule loads after next 7AM proactive fetch</td></tr>';
+    return;
+  }
+  const cEl=document.getElementById('sched-count');if(cEl)cEl.textContent=sched.length;
+  try{
+    const now=new Date();
+    const etStr=now.toLocaleString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false});
+    const [eh,em]=etStr.split(':').map(Number);
+    const nowMins=eh*60+(em||0);
+    const toMins=t=>{if(!t||t.includes('*'))return -1;const m=t.match(/(\d+):(\d+)\s*(AM|PM)/i);if(!m)return -1;let h=parseInt(m[1]);if(m[3].toUpperCase()==='PM'&&h!==12)h+=12;if(m[3].toUpperCase()==='AM'&&h===12)h=0;return h*60+parseInt(m[2]);};
+    let nextIdx=-1;
+    for(let i=0;i<sched.length;i++){if(toMins(sched[i].time)>nowMins){nextIdx=i;break;}}
+    tbody.innerHTML=sched.map((j,i)=>{
+      const jm=toMins(j.time);
+      const isNext=i===nextIdx;
+      const isPast=jm>0&&jm<=nowMins;
+      const rowBg=isNext?'background:rgba(201,168,76,.08);border-left:2px solid var(--gold)':isPast?'opacity:.48':'';
+      const timeCol=isNext?'var(--gold)':isPast?'var(--ghost)':'var(--silver)';
+      return `<tr style="border-bottom:1px solid var(--border);${rowBg}">
+        <td style="padding:7px 10px;font-family:var(--fm);color:${timeCol};white-space:nowrap;font-size:11px">${j.time}</td>
+        <td style="padding:7px 10px;font-weight:700;color:var(--fg);white-space:nowrap;font-size:12px">${j.job}${isNext?' <span style="font-size:9px;background:var(--gold);color:#000;border-radius:3px;padding:1px 5px;margin-left:5px;font-weight:800">NEXT</span>':''}</td>
+        <td style="padding:7px 10px;color:var(--silver);line-height:1.5;font-size:11px">${j.desc}</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--ghost);white-space:nowrap;font-size:11px">${j.days}</td>
+      </tr>`;
+    }).join('');
+  }catch(e){tbody.innerHTML='<tr><td colspan="4" style="padding:10px;color:var(--red);font-size:11px">Schedule render error: '+e.message+'</td></tr>';}
 })();
 
 </script>
