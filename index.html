@@ -293,155 +293,147 @@ footer{border-top:1px solid var(--border);padding:18px 32px;
 
 <script>
 (function(){
-const D    = window.__SD__ || {};
-const priv = D.portfolio_chart    || {};   // public: % returns only, no dollar amounts
-const pub  = D.portfolio_public   || {};
-const comp = D.competition_ledger || {};
-const rdy  = D.live_readiness     || {};
-const trib = D.tribunal_accuracy  || {};
-const attr = D.performance_attribution || {};
-const decs = D.decisions_recent   || [];
-const sconf= D.system_config      || {};
-const rules= D.rule_proposals     || {};
-const bio  = D.sovereign_autobiography || {};
-const reg  = D.regime_forecast    || {};
-const live = D.live_account       || {};
+const D     = window.__SD__ || {};
+const priv  = D.portfolio_chart    || {};  // % returns only — no dollar amounts
+const pub   = D.portfolio_public   || {};
+const comp  = D.competition_ledger || {};
+const rdy   = D.live_readiness     || {};
+const trib  = D.tribunal_accuracy  || {};
+const attr  = D.performance_attribution || {};
+const decs  = D.decisions_recent   || [];
+const sconf = D.system_config      || {};
+const rules = D.rule_proposals     || {};
+const bio   = D.sovereign_autobiography || {};
+const reg   = D.regime_forecast    || {};
+const live  = D.live_account       || {};
 
-const $ = id => document.getElementById(id);
-const set = (id, v, col) => { const e=$(id); if(e){e.textContent=v; if(col)e.style.color=col;} };
-const fmtPct = (n, d=2) => ((+n||0) >= 0 ? '+' : '') + ((+n)||0).toFixed(d) + '%';
+const $      = id => document.getElementById(id);
+const set    = (id, v, col) => { const e=$(id); if(e){e.textContent=v; if(col)e.style.color=col;} };
+const pct    = (n, d=2) => ((+n||0) >= 0 ? '+' : '') + ((+n)||0).toFixed(d) + '%';
+const fmt1   = (n, d=2) => (+n||0).toFixed(d);  // plain number formatting, no $ symbol
 
-// Hero stats — % returns only, no dollar amounts
+// ── Hero stats — % returns only ──────────────────────────────────────────
 const totalRet = priv.total_return_pct || 0;
 const dayPnl   = priv.day_pnl_pct     || 0;
-set('h-val', fmtPct(totalRet, 2), totalRet >= 0 ? 'var(--green)' : 'var(--red)');
-set('h-pnl', fmtPct(dayPnl,   2), dayPnl  >= 0 ? 'var(--green)' : 'var(--red)');
-const eq=comp.equity||{}, cr=comp.crypto||{};
-const totalT=(eq.total_trades||0)+(cr.total_trades||0);
-const totalW=(eq.wins||0)+(cr.wins||0);
-const wr=totalT>0?totalW/totalT:0;
-set('h-wr',(wr*100).toFixed(0)+'%', wr>=0.55?'var(--green)':wr>=0.45?'var(--amber)':'var(--red)');
+set('h-val', pct(totalRet, 2), totalRet >= 0 ? 'var(--green)' : 'var(--red)');
+set('h-pnl', pct(dayPnl,   2), dayPnl  >= 0 ? 'var(--green)' : 'var(--red)');
+const eq = comp.equity || {}, cr = comp.crypto || {};
+const totalT = (eq.total_trades||0) + (cr.total_trades||0);
+const totalW = (eq.wins||0) + (cr.wins||0);
+const wr = totalT > 0 ? totalW / totalT : 0;
+set('h-wr',     (wr*100).toFixed(0)+'%', wr>=0.55?'var(--green)':wr>=0.45?'var(--amber)':'var(--red)');
 set('h-trades', totalT);
-const days = rdy.gates?.paper_days?.pass !== undefined
-  ? (rdy.gates?.paper_days?.required || '90') : 0;
-set('h-days', (rdy.gates_passed||0) + '/7 gates');
+set('h-days',   (rdy.gates_passed||0) + '/7 gates');
 
-// Equity curve — % return, no dollar axis
+// ── Equity curve — % return, no dollar axis ──────────────────────────────
 try{
   const snaps = priv.snapshots_pct || [];
   if(snaps.length > 1 && typeof Chart !== 'undefined'){
     const labels = snaps.map(s => s.date?.slice(5) || '');
     const vals   = snaps.map(s => s.pct || 0);
-    const last   = vals[vals.length - 1] || 0;
-    set('curve-sub',  (rdy.gates_passed||0) + '/7 live-readiness gates · Paper trading');
-    set('curve-gain', fmtPct(last, 2) + ' total return', last >= 0 ? 'var(--green)' : 'var(--red)');
+    const last   = vals[vals.length-1] || 0;
+    set('curve-sub',  (rdy.gates_passed||0)+'/7 live-readiness gates · Paper trading');
+    set('curve-gain', pct(last,2)+' total return', last>=0?'var(--green)':'var(--red)');
     const ctx = $('equity-chart')?.getContext('2d');
     if(ctx){
       const grad = ctx.createLinearGradient(0, 0, 0, 180);
       grad.addColorStop(0, 'rgba(129,140,248,.25)');
       grad.addColorStop(1, 'rgba(129,140,248,.01)');
-      new Chart(ctx, {type:'line', data:{labels, datasets:[{data:vals, fill:true,
-        backgroundColor:grad, borderColor:'rgba(129,140,248,.9)', borderWidth:2,
-        pointRadius:0, tension:0.4}]},
-        options:{responsive:true, plugins:{legend:{display:false},
-          tooltip:{callbacks:{label: c => fmtPct(c.raw)}}},
+      new Chart(ctx, {
+        type: 'line',
+        data: {labels, datasets:[{data:vals, fill:true, backgroundColor:grad,
+          borderColor:'rgba(129,140,248,.9)', borderWidth:2, pointRadius:0, tension:0.4}]},
+        options:{
+          responsive: true,
+          plugins:{legend:{display:false}, tooltip:{callbacks:{label: c => pct(c.raw)}}},
           scales:{
             x:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9}, maxTicksLimit:8}},
-            y:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9},
-               callback: v => fmtPct(v, 1)}}
-          }}
-      });
-    }
-  }
-} catch(e){}
-        borderColor:'rgba(129,140,248,.9)',borderWidth:2,pointRadius:0,tension:0.4}]},
-        options:{responsive:true,plugins:{legend:{display:false},
-          tooltip:{callbacks:{label:c=>'$'+fmt(c.raw)}}},
-          scales:{
-            x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},maxTicksLimit:8}},
-            y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},callback:v=>'$'+(v/1000).toFixed(0)+'K'}}
-          }}
+            y:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9}, callback: v => pct(v,1)}}
+          }
+        }
       });
     }
   }
 }catch(e){}
 
-// Consciousness Stack live data
+// ── Consciousness Stack live data ─────────────────────────────────────────
 if(reg.regime_trajectory) set('cs-l2', reg.regime_trajectory+' · p='+(reg.probability*100).toFixed(0)+'%');
-const liveEq=live.equity||0;
-set('cs-l3','Live: $'+fmt(liveEq,2)+' / $1,000 threshold', liveEq>=1000?'var(--green)':'var(--ghost)');
-if(liveEq>=1000&&$('cs-l3-badge')){$('cs-l3-badge').textContent='ACTIVE';$('cs-l3-badge').className='badge b-g';}
-set('cs-l4',(rules.total||0)+' proposals · '+(rules.adopted||0)+' adopted · nightly run');
-// autobiography — public bundle sends counts directly; private sends full arrays
-const chaps  = typeof bio.chapters       === 'number' ? bio.chapters       : (bio.chapters||[]).length;
-const wis    = typeof bio.wisdom_entries === 'number' ? bio.wisdom_entries  : (bio.wisdom_entries||[]).length;
-const traits = typeof bio.character_traits=== 'number'? bio.character_traits: (bio.character_traits||[]).length;
+const swarmProgress = live.swarm_progress || 0;
+set('cs-l3', swarmProgress.toFixed(1)+'% of $1K threshold', live.swarm_active?'var(--green)':'var(--ghost)');
+if(live.swarm_active && $('cs-l3-badge')){$('cs-l3-badge').textContent='ACTIVE';$('cs-l3-badge').className='badge b-g';}
+set('cs-l4', (rules.total||0)+' proposals · '+(rules.adopted||0)+' adopted · nightly run');
+const chaps  = typeof bio.chapters        === 'number' ? bio.chapters        : (bio.chapters||[]).length;
+const wis    = typeof bio.wisdom_entries  === 'number' ? bio.wisdom_entries  : (bio.wisdom_entries||[]).length;
+const traits = typeof bio.character_traits=== 'number' ? bio.character_traits: (bio.character_traits||[]).length;
 set('cs-l6', chaps+' chapters · '+wis+' wisdom entries · '+traits+' traits');
 
-// Performance
-set('eq-wr',(eq.win_rate*100||0).toFixed(0)+'%',(eq.win_rate||0)>=0.55?'var(--green)':'var(--amber)');
-set('eq-detail',(eq.total_trades||0)+' trades · avg '+(eq.avg_roi||0).toFixed(2)+'%');
-set('cr-wr',(cr.win_rate*100||0).toFixed(0)+'%',(cr.win_rate||0)>=0.55?'var(--gold)':'var(--amber)');
-set('cr-detail',(cr.total_trades||0)+' trades · avg '+(cr.avg_roi||0).toFixed(2)+'%');
-set('ac-vetoes', attr.tribunal?.tribunal_vetoes||0);
-set('ac-proposals', rules.total||0);
-set('ac-sub',(rules.adopted||0)+' adopted · '+(rules.validating||0)+' validating');
+// ── Performance ───────────────────────────────────────────────────────────
+set('eq-wr',     (eq.win_rate*100||0).toFixed(0)+'%', (eq.win_rate||0)>=0.55?'var(--green)':'var(--amber)');
+set('eq-detail', (eq.total_trades||0)+' trades');
+set('cr-wr',     (cr.win_rate*100||0).toFixed(0)+'%', (cr.win_rate||0)>=0.55?'var(--gold)':'var(--amber)');
+set('cr-detail', (cr.total_trades||0)+' trades');
+set('ac-vetoes',   attr.tribunal?.tribunal_vetoes || 0);
+set('ac-proposals', rules.total || 0);
+set('ac-sub',      (rules.adopted||0)+' adopted · '+(rules.validating||0)+' validating');
 
-// Gates
-const gatesDef=[
-  {key:'paper_days',label:'Paper Days',req:'90'},
-  {key:'min_trades',label:'Min Trades',req:'20'},
-  {key:'min_win_rate',label:'Win Rate',req:'≥55%'},
-  {key:'max_drawdown',label:'Max Drawdown',req:'<15%'},
-  {key:'min_sharpe',label:'Sharpe',req:'≥1.0'},
-  {key:'no_consecutive_losses',label:'No 5× Losses',req:'streak'},
-  {key:'tribunal_veto_rate',label:'Veto Rate',req:'<40%'},
+// ── Live readiness gates — pass/fail + threshold only ────────────────────
+const gatesDef = [
+  {key:'paper_days',           label:'Paper Days',    req:'90 days'},
+  {key:'min_trades',           label:'Min Trades',    req:'20 trades'},
+  {key:'min_win_rate',         label:'Win Rate',      req:'≥55%'},
+  {key:'max_drawdown',         label:'Max Drawdown',  req:'<15%'},
+  {key:'min_sharpe',           label:'Sharpe Ratio',  req:'≥1.0'},
+  {key:'no_consecutive_losses',label:'No 5× Losses',  req:'no streak'},
+  {key:'tribunal_veto_rate',   label:'Veto Rate',     req:'<40%'},
 ];
-const gts=rdy.gates||{}, gP=rdy.gates_passed||0;
-set('rd-passed',gP); set('rd-pct',Math.round(gP/7*100)+'%');
-if($('rd-bar'))$('rd-bar').style.width=Math.round(gP/7*100)+'%';
-const gList=$('gates-list');
-if(gList){gList.innerHTML=gatesDef.map(g=>{
-  const pass=(gts[g.key]||{}).pass;
-  // Public: pass/fail + requirement threshold only — no current metric values
-  return `<div class="gate-row"><span style="color:var(--silver)">${g.label}</span>
-    <span style="display:flex;align-items:center;gap:8px;font-size:11px;font-family:var(--fm)">
-      <span style="color:var(--ghost)">${g.req}</span>
-      <span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800">${pass?'✓':'✗'}</span>
-    </span></div>`;
-}).join('');}
+const gts = rdy.gates || {}, gP = rdy.gates_passed || 0;
+set('rd-passed', gP);
+set('rd-pct', Math.round(gP/7*100)+'%');
+if($('rd-bar')) $('rd-bar').style.width = Math.round(gP/7*100)+'%';
+const gList = $('gates-list');
+if(gList){
+  gList.innerHTML = gatesDef.map(g => {
+    const pass = (gts[g.key]||{}).pass;
+    return `<div class="gate-row">
+      <span style="color:var(--silver)">${g.label}</span>
+      <span style="display:flex;align-items:center;gap:8px;font-size:11px;font-family:var(--fm)">
+        <span style="color:var(--ghost)">${g.req}</span>
+        <span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800">${pass?'✓':'✗'}</span>
+      </span>
+    </div>`;
+  }).join('');
+}
 
-// Bot win rates
+// ── Recent decisions — action/regime/bot only, no tickers or confidence ──
+const dList = $('decisions-list');
+if(dList && decs.length){
+  dList.innerHTML = decs.slice(0,8).map(d => {
+    const act   = d.action || '?';
+    const col   = act==='BUY'?'var(--green)':act==='SELL'?'var(--red)':act==='VALIDATED_BLOCKED'?'var(--amber)':'var(--ghost)';
+    const label = act==='VALIDATED_BLOCKED'?'BLOCKED':act;
+    const bot   = (d.bot||'').toUpperCase();
+    const regime= (d.regime||'').replace(/_/g,' ');
+    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="color:${col};font-weight:700;font-family:var(--fm);width:54px">${label}</span>
+        <span style="font-size:9px;color:var(--ghost);font-family:var(--fm);width:44px">${bot}</span>
+        <span class="rb ${d.regime||'UNKNOWN'}" style="font-size:8px">${regime||'—'}</span>
+      </div>
+      <span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${d.timestamp||''}</span>
+    </div>`;
+  }).join('');
+}
 
-// Recent decisions — clean, no duplicates
-// Recent decisions — action/regime/bot only, no tickers or confidence (stripped in public bundle)
-const dList=$('decisions-list');
-if(dList&&decs.length){dList.innerHTML=decs.slice(0,8).map(d=>{
-  const act=d.action||'?';
-  const col=act==='BUY'?'var(--green)':act==='SELL'?'var(--red)':act==='VALIDATED_BLOCKED'?'var(--amber)':'var(--ghost)';
-  const label=act==='VALIDATED_BLOCKED'?'BLOCKED':act;
-  const bot=(d.bot||'').toUpperCase();
-  const reg=(d.regime||'').replace(/_/g,' ');
-  return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px">
-    <div style="display:flex;align-items:center;gap:8px">
-      <span style="color:${col};font-weight:700;font-family:var(--fm);width:54px">${label}</span>
-      <span style="font-size:9px;color:var(--ghost);font-family:var(--fm);width:44px">${bot}</span>
-      <span class="rb ${d.regime||'UNKNOWN'}" style="font-size:8px">${reg||'—'}</span>
-    </div>
-    <span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${d.timestamp||''}</span>
-  </div>`;
-}).join('');}
-
-// Tribunal
-['BEAR','REGIME','QUANT','RISK'].forEach(j=>{
-  const jd=(trib.judges||{})[j]||{};
-  const acc=((jd.accuracy||0)*100).toFixed(0)+'%';
-  const col=(jd.accuracy||0)>=0.80?'var(--green)':(jd.accuracy||0)>=0.65?'var(--amber)':'var(--red)';
-  set('trib-'+j+'-val',acc,col);
-  set('trib-'+j+'-sub',(jd.total_graded||0)+' graded · '+fmt(jd.weight||1,2)+'x weight');
+// ── Tribunal accuracy ─────────────────────────────────────────────────────
+['BEAR','REGIME','QUANT','RISK'].forEach(j => {
+  const jd  = (trib.judges||{})[j] || {};
+  const acc = ((jd.accuracy||0)*100).toFixed(0)+'%';
+  const col = (jd.accuracy||0)>=0.80?'var(--green)':(jd.accuracy||0)>=0.65?'var(--amber)':'var(--red)';
+  set('trib-'+j+'-val', acc, col);
+  set('trib-'+j+'-sub', fmt1(jd.weight||1,2)+'x weight');
 });
 
-set('ft-updated','Last push: '+(pub.last_updated||'—'));
+set('ft-updated', 'Last push: '+(pub.last_updated || pub._meta?.generated_at?.slice(0,10) || '—'));
 })();
 </script>
 </body>
