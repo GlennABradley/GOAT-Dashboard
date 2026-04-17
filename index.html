@@ -134,8 +134,8 @@ footer{border-top:1px solid var(--border);padding:18px 32px;
   <div class="hero-tagline">Every trade earns its execution.</div>
   <div class="hero-stats">
     <div style="text-align:center">
-      <div class="hstat-val" id="h-val" style="color:var(--white)">$—</div>
-      <div class="hstat-lbl">Portfolio</div>
+      <div class="hstat-val" id="h-val" style="color:var(--green)">—%</div>
+      <div class="hstat-lbl">Total Return</div>
     </div>
     <div style="width:1px;height:40px;background:var(--border)"></div>
     <div style="text-align:center">
@@ -150,7 +150,7 @@ footer{border-top:1px solid var(--border);padding:18px 32px;
     <div style="width:1px;height:40px;background:var(--border)"></div>
     <div style="text-align:center">
       <div class="hstat-val" id="h-days" style="color:var(--gold)">—</div>
-      <div class="hstat-lbl">Paper Days</div>
+      <div class="hstat-lbl">Live Gates</div>
     </div>
     <div style="width:1px;height:40px;background:var(--border)"></div>
     <div style="text-align:center">
@@ -292,7 +292,7 @@ footer{border-top:1px solid var(--border);padding:18px 32px;
 <script>
 (function(){
 const D    = window.__SD__ || {};
-const priv = D.portfolio_chart    || {};   // public: aggregate only, no positions/cash
+const priv = D.portfolio_chart    || {};   // public: % returns only, no dollar amounts
 const pub  = D.portfolio_public   || {};
 const comp = D.competition_ledger || {};
 const rdy  = D.live_readiness     || {};
@@ -307,40 +307,51 @@ const live = D.live_account       || {};
 
 const $ = id => document.getElementById(id);
 const set = (id, v, col) => { const e=$(id); if(e){e.textContent=v; if(col)e.style.color=col;} };
-const fmt = (n,d=2) => (+n||0).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmtPct = (n, d=2) => ((+n||0) >= 0 ? '+' : '') + ((+n)||0).toFixed(d) + '%';
 
-// Hero stats
-const combined = priv.combined_value || 0;
-const sod      = priv.start_of_day_value || 0;
-const pnl      = combined - sod;
-const pnlPct   = sod > 0 ? (pnl/sod*100) : 0;
-set('h-val', '$'+fmt(combined,0));
-set('h-pnl', (pnlPct>=0?'+':'')+pnlPct.toFixed(2)+'%', pnlPct>=0?'var(--green)':'var(--red)');
+// Hero stats — % returns only, no dollar amounts
+const totalRet = priv.total_return_pct || 0;
+const dayPnl   = priv.day_pnl_pct     || 0;
+set('h-val', fmtPct(totalRet, 2), totalRet >= 0 ? 'var(--green)' : 'var(--red)');
+set('h-pnl', fmtPct(dayPnl,   2), dayPnl  >= 0 ? 'var(--green)' : 'var(--red)');
 const eq=comp.equity||{}, cr=comp.crypto||{};
 const totalT=(eq.total_trades||0)+(cr.total_trades||0);
 const totalW=(eq.wins||0)+(cr.wins||0);
 const wr=totalT>0?totalW/totalT:0;
 set('h-wr',(wr*100).toFixed(0)+'%', wr>=0.55?'var(--green)':wr>=0.45?'var(--amber)':'var(--red)');
 set('h-trades', totalT);
-const days = rdy.gates?.paper_days?.value || 0;
-set('h-days', days);
+const days = rdy.gates?.paper_days?.pass !== undefined
+  ? (rdy.gates?.paper_days?.required || '90') : 0;
+set('h-days', (rdy.gates_passed||0) + '/7 gates');
 
-// Equity curve
+// Equity curve — % return, no dollar axis
 try{
-  const snaps=priv.portfolio_snapshots||[];
-  if(snaps.length>1&&typeof Chart!=='undefined'){
-    const labels=snaps.map(s=>s.date?.slice(5)||'');
-    const vals=snaps.map(s=>s.value||0);
-    const start=vals[0]||100000, last=vals[vals.length-1]||start;
-    const gain=((last-start)/start*100);
-    const sob = snaps[snaps.length-1]?.sod || start;
-    set('curve-sub', days+' paper days · Started $'+fmt(start,0));
-    set('curve-gain',(gain>=0?'+':'')+gain.toFixed(2)+'% total return', gain>=0?'var(--green)':'var(--red)');
-    const ctx=$('equity-chart')?.getContext('2d');
+  const snaps = priv.snapshots_pct || [];
+  if(snaps.length > 1 && typeof Chart !== 'undefined'){
+    const labels = snaps.map(s => s.date?.slice(5) || '');
+    const vals   = snaps.map(s => s.pct || 0);
+    const last   = vals[vals.length - 1] || 0;
+    set('curve-sub',  (rdy.gates_passed||0) + '/7 live-readiness gates · Paper trading');
+    set('curve-gain', fmtPct(last, 2) + ' total return', last >= 0 ? 'var(--green)' : 'var(--red)');
+    const ctx = $('equity-chart')?.getContext('2d');
     if(ctx){
-      const grad=ctx.createLinearGradient(0,0,0,180);
-      grad.addColorStop(0,'rgba(129,140,248,.25)');grad.addColorStop(1,'rgba(129,140,248,.01)');
-      new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,fill:true,backgroundColor:grad,
+      const grad = ctx.createLinearGradient(0, 0, 0, 180);
+      grad.addColorStop(0, 'rgba(129,140,248,.25)');
+      grad.addColorStop(1, 'rgba(129,140,248,.01)');
+      new Chart(ctx, {type:'line', data:{labels, datasets:[{data:vals, fill:true,
+        backgroundColor:grad, borderColor:'rgba(129,140,248,.9)', borderWidth:2,
+        pointRadius:0, tension:0.4}]},
+        options:{responsive:true, plugins:{legend:{display:false},
+          tooltip:{callbacks:{label: c => fmtPct(c.raw)}}},
+          scales:{
+            x:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9}, maxTicksLimit:8}},
+            y:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9},
+               callback: v => fmtPct(v, 1)}}
+          }}
+      });
+    }
+  }
+} catch(e){}
         borderColor:'rgba(129,140,248,.9)',borderWidth:2,pointRadius:0,tension:0.4}]},
         options:{responsive:true,plugins:{legend:{display:false},
           tooltip:{callbacks:{label:c=>'$'+fmt(c.raw)}}},
@@ -389,22 +400,16 @@ set('rd-passed',gP); set('rd-pct',Math.round(gP/7*100)+'%');
 if($('rd-bar'))$('rd-bar').style.width=Math.round(gP/7*100)+'%';
 const gList=$('gates-list');
 if(gList){gList.innerHTML=gatesDef.map(g=>{
-  const gd=gts[g.key]||{};const pass=gd.pass;let v='—';
-  const val=gd.value;
-  if(val!==undefined){
-    if(typeof val==='number')
-      v=g.key==='min_win_rate'?(val*100).toFixed(0)+'%':
-        g.key==='max_drawdown'?(val*100).toFixed(1)+'%':
-        g.key==='min_sharpe'?val.toFixed(2):
-        g.key==='tribunal_veto_rate'?(val*100).toFixed(0)+'%':String(val);
-    else v=String(val);
-  }
+  const pass=(gts[g.key]||{}).pass;
+  // Public: pass/fail + requirement threshold only — no current metric values
   return `<div class="gate-row"><span style="color:var(--silver)">${g.label}</span>
     <span style="display:flex;align-items:center;gap:8px;font-size:11px;font-family:var(--fm)">
-      <span style="color:var(--ghost)">${v}</span>
+      <span style="color:var(--ghost)">${g.req}</span>
       <span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800">${pass?'✓':'✗'}</span>
     </span></div>`;
 }).join('');}
+
+// Bot win rates
 
 // Recent decisions — clean, no duplicates
 // Recent decisions — action/regime/bot only, no tickers or confidence (stripped in public bundle)
