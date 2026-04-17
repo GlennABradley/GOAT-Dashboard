@@ -288,7 +288,7 @@ footer{border-top:1px solid var(--border);padding:18px 32px;
 <script>
 (function(){
 const D    = window.__SD__ || {};
-const priv = D.portfolio_private  || {};
+const priv = D.portfolio_chart    || {};   // public: aggregate only, no positions/cash
 const pub  = D.portfolio_public   || {};
 const comp = D.competition_ledger || {};
 const rdy  = D.live_readiness     || {};
@@ -355,7 +355,10 @@ const liveEq=live.equity||0;
 set('cs-l3','Live: $'+fmt(liveEq,2)+' / $1,000 threshold', liveEq>=1000?'var(--green)':'var(--ghost)');
 if(liveEq>=1000&&$('cs-l3-badge')){$('cs-l3-badge').textContent='ACTIVE';$('cs-l3-badge').className='badge b-g';}
 set('cs-l4',(rules.total||0)+' proposals · '+(rules.adopted||0)+' adopted · nightly run');
-const chaps=(bio.chapters||[]).length, wis=(bio.wisdom_entries||[]).length, traits=(bio.character_traits||[]).length;
+// autobiography — public bundle sends counts directly; private sends full arrays
+const chaps  = typeof bio.chapters       === 'number' ? bio.chapters       : (bio.chapters||[]).length;
+const wis    = typeof bio.wisdom_entries === 'number' ? bio.wisdom_entries  : (bio.wisdom_entries||[]).length;
+const traits = typeof bio.character_traits=== 'number'? bio.character_traits: (bio.character_traits||[]).length;
 set('cs-l6', chaps+' chapters · '+wis+' wisdom entries · '+traits+' traits');
 
 // Performance
@@ -400,20 +403,21 @@ if(gList){gList.innerHTML=gatesDef.map(g=>{
 }).join('');}
 
 // Recent decisions — clean, no duplicates
+// Recent decisions — action/regime/bot only, no tickers or confidence (stripped in public bundle)
 const dList=$('decisions-list');
 if(dList&&decs.length){dList.innerHTML=decs.slice(0,8).map(d=>{
   const act=d.action||'?';
   const col=act==='BUY'?'var(--green)':act==='SELL'?'var(--red)':act==='VALIDATED_BLOCKED'?'var(--amber)':'var(--ghost)';
   const label=act==='VALIDATED_BLOCKED'?'BLOCKED':act;
-  const sym=d.symbol&&d.symbol!=='?'?d.symbol:d.action==='SKIP'?'—':'?';
+  const bot=(d.bot||'').toUpperCase();
   const reg=(d.regime||'').replace(/_/g,' ');
   return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px">
     <div style="display:flex;align-items:center;gap:8px">
-      <span style="color:${col};font-weight:700;font-family:var(--fm);width:50px">${label}</span>
-      <span style="font-weight:700;color:var(--white);min-width:50px">${sym}</span>
+      <span style="color:${col};font-weight:700;font-family:var(--fm);width:54px">${label}</span>
+      <span style="font-size:9px;color:var(--ghost);font-family:var(--fm);width:44px">${bot}</span>
       <span class="rb ${d.regime||'UNKNOWN'}" style="font-size:8px">${reg||'—'}</span>
     </div>
-    <span style="color:var(--ghost);font-family:var(--fm)">${d.confidence?(d.confidence*100).toFixed(0)+'%':''}</span>
+    <span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${d.timestamp||''}</span>
   </div>`;
 }).join('');}
 
