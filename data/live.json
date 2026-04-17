@@ -1,11 +1,11 @@
 {
-  "ts": "2026-04-17T16:00:01.347145",
-  "generated": "04:00:01 PM",
+  "ts": "2026-04-17T16:05:00.992424",
+  "generated": "04:05:00 PM",
   "paper": {
-    "equity": 101060.41,
+    "equity": 101058.32,
     "cash": 85887.58,
-    "day_pnl": 166.82,
-    "day_pnl_pct": 0.165,
+    "day_pnl": 164.73,
+    "day_pnl_pct": 0.163,
     "positions": [
       {
         "sym": "CSX",
@@ -19,20 +19,20 @@
       {
         "sym": "DELL",
         "qty": 49.7826,
-        "price": 196.59,
+        "price": 196.5,
         "entry": 196.93,
-        "pnl_pct": -0.17,
-        "pnl": -16.93,
-        "mkt_val": 9786.76
+        "pnl_pct": -0.22,
+        "pnl": -21.41,
+        "mkt_val": 9782.28
       },
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2430.563,
+        "price": 2435.819,
         "entry": 2318.61,
-        "pnl_pct": 4.83,
-        "pnl": 51.12,
-        "mkt_val": 1109.76
+        "pnl_pct": 5.05,
+        "pnl": 53.52,
+        "mkt_val": 1112.16
       }
     ]
   },
