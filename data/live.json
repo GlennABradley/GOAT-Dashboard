@@ -1,29 +1,29 @@
 {
-  "ts": "2026-04-17T09:35:00.746653",
-  "generated": "09:35:00 AM",
+  "ts": "2026-04-17T09:40:00.604270",
+  "generated": "09:40:00 AM",
   "paper": {
-    "equity": 100999.87,
+    "equity": 100986.58,
     "cash": 91430.23,
-    "day_pnl": 106.28,
-    "day_pnl_pct": 0.105,
+    "day_pnl": 92.99,
+    "day_pnl_pct": 0.092,
     "positions": [
       {
         "sym": "CSX",
         "qty": 196.7143,
-        "price": 43.075,
+        "price": 42.985,
         "entry": 42.423094,
-        "pnl_pct": 1.54,
-        "pnl": 128.24,
-        "mkt_val": 8473.47
+        "pnl_pct": 1.32,
+        "pnl": 110.53,
+        "mkt_val": 8455.76
       },
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2400.8,
+        "price": 2410.47,
         "entry": 2318.61,
-        "pnl_pct": 3.55,
-        "pnl": 37.53,
-        "mkt_val": 1096.17
+        "pnl_pct": 3.96,
+        "pnl": 41.94,
+        "mkt_val": 1100.59
       }
     ]
   },
