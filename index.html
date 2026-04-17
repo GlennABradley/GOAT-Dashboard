@@ -321,8 +321,11 @@ set('h-val', pct(totalRet, 2), totalRet >= 0 ? 'var(--green)' : 'var(--red)');
 set('h-pnl', pct(dayPnl,   2), dayPnl  >= 0 ? 'var(--green)' : 'var(--red)');
 const eq = comp.equity || {}, cr = comp.crypto || {};
 const totalT = (eq.total_trades||0) + (cr.total_trades||0);
-const totalW = (eq.wins||0) + (cr.wins||0);
-const wr = totalT > 0 ? totalW / totalT : 0;
+// public bundle sends win_rate directly — no wins/losses counts
+const eqWr = eq.win_rate || 0, crWr = cr.win_rate || 0;
+const wr = totalT > 0
+  ? ((eqWr*(eq.total_trades||0)) + (crWr*(cr.total_trades||0))) / totalT
+  : 0;
 set('h-wr',     (wr*100).toFixed(0)+'%', wr>=0.55?'var(--green)':wr>=0.45?'var(--amber)':'var(--red)');
 set('h-trades', totalT);
 set('h-days',   (rdy.gates_passed||0) + '/7 gates');
