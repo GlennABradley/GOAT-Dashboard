@@ -1,11 +1,1 @@
-{
-  "state": "HEALTHY",
-  "status_emoji": "\ud83d\udfe2",
-  "position_multiplier": 1.0,
-  "issues": [],
-  "checked_at": "2026-04-15T10:00:03.008598",
-  "_meta": {
-    "schema_version": 2,
-    "generated_at": "2026-04-15T14:35:39.603743"
-  }
-}
+true
