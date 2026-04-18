@@ -5,474 +5,243 @@
 <title>Sovereign — Every Trade Earns Its Execution</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --void:#06060F;--deep:#0D0D1F;--surface:#141428;
-  --border:#1E1A3D;--violet:#7C3AED;--gold:#C9A84C;--iris:#818CF8;
-  --white:#F0EDFF;--silver:#9B94C5;--ghost:#4A4670;
-  --green:#10B981;--red:#EF4444;--amber:#F59E0B;
-  --fn:'Space Grotesk',sans-serif;--fm:'JetBrains Mono',monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--white);font-family:var(--fn);font-size:14px;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 10% -5%,rgba(124,58,237,.09) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 40% at 90% 110%,rgba(201,168,76,.05) 0%,transparent 60%);}
-header{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:58px;
-  background:rgba(10,10,28,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(24px);
-  position:sticky;top:0;z-index:100}
+:root{--void:#06060F;--deep:#0D0D1F;--surface:#141428;--border:#1E1A3D;--violet:#7C3AED;--gold:#C9A84C;--iris:#818CF8;--white:#F0EDFF;--silver:#9B94C5;--ghost:#4A4670;--green:#10B981;--red:#EF4444;--amber:#F59E0B;--fn:'Space Grotesk',sans-serif;--fm:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--white);font-family:var(--fn);font-size:14px;background-image:radial-gradient(ellipse 80% 50% at 10% -5%,rgba(124,58,237,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 90% 110%,rgba(201,168,76,.05) 0%,transparent 60%)}
+header{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:58px;background:rgba(10,10,28,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(24px);position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,var(--violet),var(--iris));
-  border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;
-  box-shadow:0 0 18px rgba(124,58,237,.4)}
-.logo-text{font-size:17px;font-weight:800;letter-spacing:4px;
-  background:linear-gradient(135deg,var(--iris),var(--violet));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,var(--violet),var(--iris));border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 18px rgba(124,58,237,.4)}
+.logo-text{font-size:17px;font-weight:800;letter-spacing:4px;background:linear-gradient(135deg,var(--iris),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hdr-r{display:flex;align-items:center;gap:18px}
 .live-pip{display:flex;align-items:center;gap:6px;font-size:10px;font-family:var(--fm);color:var(--green);letter-spacing:1px}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:glow 2s ease-in-out infinite}
 @keyframes glow{0%,100%{opacity:1;box-shadow:0 0 10px var(--green)}50%{opacity:.3;box-shadow:0 0 3px var(--green)}}
-.priv-link{font-size:10px;font-family:var(--fm);color:var(--ghost);text-decoration:none;
-  padding:4px 10px;border:1px solid var(--border);border-radius:6px;transition:all .2s}
+.priv-link{font-size:10px;font-family:var(--fm);color:var(--ghost);text-decoration:none;padding:4px 10px;border:1px solid var(--border);border-radius:6px;transition:all .2s}
 .priv-link:hover{color:var(--iris);border-color:var(--iris)}
-.page{max-width:1200px;margin:0 auto;padding:0 22px 80px}
-
-/* Hero */
-.hero{padding:72px 0 56px;text-align:center;position:relative}
-.hero-eyebrow{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--violet);
-  text-transform:uppercase;font-family:var(--fm);margin-bottom:20px}
-.hero-title{font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.1;margin-bottom:20px;
-  background:linear-gradient(135deg,var(--white) 0%,var(--iris) 50%,var(--violet) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:16px;color:var(--silver);line-height:1.7;max-width:620px;margin:0 auto 32px}
-.hero-tagline{font-size:13px;font-weight:700;font-family:var(--fm);color:var(--gold);
-  letter-spacing:2px;text-transform:uppercase}
-.hero-stats{display:flex;align-items:center;justify-content:center;gap:40px;margin-top:40px;
-  padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap}
-.hstat-val{font-size:28px;font-weight:800;font-family:var(--fm)}
-.hstat-lbl{font-size:9px;letter-spacing:2px;color:var(--ghost);text-transform:uppercase;margin-top:3px}
-
-/* Grid layouts */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.page{max-width:1100px;margin:0 auto;padding:0 22px 80px}
+.hero{padding:80px 0 60px;text-align:center}
+.hero-eyebrow{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--violet);text-transform:uppercase;font-family:var(--fm);margin-bottom:20px}
+.hero-title{font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.1;margin-bottom:22px;background:linear-gradient(135deg,var(--white) 0%,var(--iris) 50%,var(--violet) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--silver);line-height:1.75;max-width:600px;margin:0 auto 32px}
+.hero-tagline{font-size:12px;font-weight:700;font-family:var(--fm);color:var(--gold);letter-spacing:2.5px;text-transform:uppercase}
+.hero-stats{display:flex;align-items:center;justify-content:center;gap:44px;margin-top:44px;padding-top:36px;border-top:1px solid var(--border);flex-wrap:wrap}
+.hstat-val{font-size:30px;font-weight:800;font-family:var(--fm)}
+.hstat-lbl{font-size:9px;letter-spacing:2px;color:var(--ghost);text-transform:uppercase;margin-top:4px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
 .g21{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
-@media(max-width:1000px){.g4,.g3{grid-template-columns:1fr 1fr}.g21{grid-template-columns:1fr}}
-@media(max-width:640px){.g2,.g3,.g4,.g21{grid-template-columns:1fr}.page{padding:0 12px 48px}
-  .hero{padding:40px 0 32px}.hero-stats{gap:20px}}
-
-/* Cards */
+@media(max-width:1000px){.g4{grid-template-columns:1fr 1fr}.g21{grid-template-columns:1fr}}
+@media(max-width:640px){.g4,.g21{grid-template-columns:1fr}.page{padding:0 12px 48px}.hero{padding:44px 0 36px}.hero-stats{gap:22px}}
 .card{background:var(--deep);border:1px solid var(--border);border-radius:13px;padding:18px;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(129,140,248,.14),transparent);pointer-events:none}
-.card-v{border-color:rgba(124,58,237,.22)}.card-g{border-color:rgba(16,185,129,.18)}
-.card-gold{border-color:rgba(201,168,76,.2)}.card-iris{border-color:rgba(129,140,248,.2)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,.14),transparent);pointer-events:none}
+.card-v{border-color:rgba(124,58,237,.22)}.card-g{border-color:rgba(16,185,129,.18)}.card-gold{border-color:rgba(201,168,76,.2)}.card-iris{border-color:rgba(129,140,248,.2)}
 .ct{font-size:8px;letter-spacing:2px;color:var(--ghost);text-transform:uppercase;font-weight:700;margin-bottom:10px}
 .cval{font-size:26px;font-weight:800;font-family:var(--fm);line-height:1.1}
 .csub{font-size:10px;color:var(--silver);margin-top:4px;font-family:var(--fm)}
-.sec{font-size:8px;font-weight:700;letter-spacing:3px;color:var(--ghost);text-transform:uppercase;
-  margin:32px 0 14px;display:flex;align-items:center;gap:10px}
+.sec{font-size:8px;font-weight:700;letter-spacing:3px;color:var(--ghost);text-transform:uppercase;margin:36px 0 16px;display:flex;align-items:center;gap:10px}
 .sec::after{content:'';flex:1;height:1px;background:var(--border)}
 .pbar{height:5px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden}
 .pfill{height:100%;border-radius:5px;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
-.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:9px;font-weight:700;font-family:var(--fm)}
-.b-g{background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.25)}
-.b-ghost{background:rgba(74,70,112,.15);color:var(--ghost);border:1px solid rgba(74,70,112,.25)}
-.rb{display:inline-block;padding:2px 8px;border-radius:4px;font-size:9px;font-weight:700;font-family:var(--fm)}
-.BEAR_HIGH_VOL{background:rgba(239,68,68,.1);color:#F87171}
-.CHOPPY_RANGING{background:rgba(245,158,11,.1);color:var(--amber)}
-.ACCUMULATION_EXTREME_FEAR,.ACCUMULATION_FEAR{background:rgba(129,140,248,.1);color:var(--iris)}
-.BULL_LOW_VOL,.BULL_TREND{background:rgba(16,185,129,.1);color:var(--green)}
-.UNKNOWN,.NEUTRAL,.CHECK{background:rgba(74,70,112,.1);color:var(--ghost)}
-.gate-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px}
+.gate-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px}
 .gate-row:last-child{border-bottom:none}
-
-/* Stack layer cards */
-.layer-card{background:var(--deep);border-radius:13px;padding:18px;border:1px solid var(--border);
-  position:relative;overflow:hidden;transition:border-color .2s}
-.layer-card:hover{border-color:rgba(129,140,248,.35)}
-.layer-num{font-size:9px;font-weight:800;letter-spacing:2px;font-family:var(--fm);margin-bottom:10px}
-.layer-name{font-size:15px;font-weight:800;margin-bottom:7px}
-.layer-desc{font-size:11px;color:var(--silver);line-height:1.65}
-.layer-status{position:absolute;top:14px;right:14px}
-.layer-meta{font-size:9px;font-family:var(--fm);color:var(--ghost);margin-top:10px}
-
-footer{border-top:1px solid var(--border);padding:18px 32px;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:8px;font-size:10px;color:var(--ghost)}
+.principle{background:var(--deep);border:1px solid var(--border);border-radius:13px;padding:22px;position:relative;overflow:hidden;transition:border-color .2s}
+.principle:hover{border-color:rgba(129,140,248,.3)}
+.principle-num{font-size:9px;font-weight:800;letter-spacing:2px;font-family:var(--fm);margin-bottom:10px}
+.principle-name{font-size:15px;font-weight:800;margin-bottom:8px}
+.principle-desc{font-size:11px;color:var(--silver);line-height:1.7}
+footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:10px;color:var(--ghost)}
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- __SD_START__ -->
-<script id="__sovereign_data__">window.__SD__={"system_health":{"state":"HEALTHY","status_emoji":"\ud83d\udfe2","checked_at":"2026-04-18T06:02:03.637781"},"bot_config":{"active_bots":["equity","crypto"],"equity_active":true,"crypto_active":true,"mode":"dual"},"portfolio_public":{"position_count":3,"symbols":["ETH/USD","CSX","DELL"],"last_updated":"2026-04-18"},"live_readiness":{"gates_passed":3,"gates_total":7,"readiness_pct":43,"gates":{"paper_days":{"pass":false},"min_trades":{"pass":false},"min_win_rate":{"pass":false},"max_drawdown":{"pass":true},"min_sharpe":{"pass":true},"no_consecutive_losses":{"pass":true},"tribunal_veto_rate":{"pass":false}}},"performance_summary":{"equity_win_rate":0.6,"crypto_win_rate":0.333,"total_trades":13,"combined_win_rate":0.538,"leader":"EQUITY"},"portfolio_chart":{"total_return_pct":0.9591,"day_pnl_pct":-0.0276,"position_count":3,"snapshots_pct":[{"date":"2026-03-24","pct":0.0},{"date":"2026-03-25","pct":-0.0283},{"date":"2026-03-26","pct":0.0508},{"date":"2026-03-27","pct":-0.0133},{"date":"2026-03-28","pct":-0.0133},{"date":"2026-03-29","pct":-0.0133},{"date":"2026-03-30","pct":0.0058},{"date":"2026-03-31","pct":0.0216},{"date":"2026-04-01","pct":0.0638},{"date":"2026-04-02","pct":0.0809},{"date":"2026-04-03","pct":0.0802},{"date":"2026-04-04","pct":0.0802},{"date":"2026-04-05","pct":0.0802},{"date":"2026-04-06","pct":0.106},{"date":"2026-04-07","pct":0.5986},{"date":"2026-04-08","pct":0.7923},{"date":"2026-04-09","pct":0.7766},{"date":"2026-04-10","pct":0.7152},{"date":"2026-04-11","pct":0.6694},{"date":"2026-04-12","pct":0.6614},{"date":"2026-04-13","pct":0.8285},{"date":"2026-04-14","pct":0.9428},{"date":"2026-04-15","pct":0.6494},{"date":"2026-04-16","pct":0.7773},{"date":"2026-04-17","pct":0.9875},{"date":"2026-04-18","pct":0.9591}],"last_updated":"2026-04-18T07:07:30.575023"},"sector_leadership":{"date":"2026-04-18","top_sector":"XLY","bottom_sector":"XLE","neutral_mkt":false,"spread":5.121,"ranked":[{"rank":1,"etf":"XLY","name":"Consumer Disc","chg":2.363,"gate":"ENTER"},{"rank":2,"etf":"XLI","name":"Industrials","chg":1.867,"gate":"ENTER"},{"rank":3,"etf":"XLK","name":"Technology","chg":1.533,"gate":"ENTER"},{"rank":4,"etf":"XLRE","name":"Real Estate","chg":1.529,"gate":"ENTER"},{"rank":5,"etf":"XLV","name":"Health Care","chg":1.494,"gate":"ENTER"},{"rank":6,"etf":"XLP","name":"Consumer Staples","chg":1.265,"gate":"AVOID"},{"rank":7,"etf":"XLF","name":"Financials","chg":0.769,"gate":"AVOID"},{"rank":8,"etf":"XLB","name":"Materials","chg":0.251,"gate":"AVOID"},{"rank":9,"etf":"XLC","name":"Communication","chg":0.227,"gate":"AVOID"},{"rank":10,"etf":"XLU","name":"Utilities","chg":-0.41,"gate":"AVOID"},{"rank":11,"etf":"XLE","name":"Energy","chg":-2.757,"gate":"AVOID"}]},"live_account":{"status":"FUNDED","swarm_active":false,"swarm_progress":5.0},"decisions_recent":[{"action":"PASSED","bot":"crypto","timestamp":"2026-04-17"},{"action":"ENTERED","bot":"equity","timestamp":"2026-04-17"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-17"},{"action":"PASSED","bot":"equity","timestamp":"2026-04-17"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-17"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-17"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-16"},{"action":"PASSED","bot":"equity","timestamp":"2026-04-16"}]};</script>
+<script id="__sovereign_data__">window.__SD__={};</script>
 <!-- __SD_END__ -->
 </head>
 <body>
-
 <header>
-  <a class="logo" href="#">
-    <div class="logo-icon">⚜</div>
-    <div class="logo-text">SOVEREIGN</div>
-  </a>
+  <a class="logo" href="#"><div class="logo-icon">⚜</div><div class="logo-text">SOVEREIGN</div></a>
   <div class="hdr-r">
     <div class="live-pip"><div class="dot"></div> PAPER ACTIVE</div>
     <a class="priv-link" href="private/" target="_blank">Private →</a>
   </div>
 </header>
-
-<!-- ── HERO ──────────────────────────────────────────────────── -->
 <div class="page">
+
+<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Autonomous AI Trading System</div>
-  <div class="hero-title">The AI That Debates<br>Every Trade</div>
-  <div class="hero-sub">Sovereign runs two autonomous bots — equity and crypto — that cannot execute a BUY without first running a mandatory 4-round adversarial debate. Bull argues. Bear attacks. An Opus judge decides. Every single trade.</div>
+  <div class="hero-title">The AI That Debates<br>Before It Trades</div>
+  <div class="hero-sub">Sovereign is a fully autonomous dual-bot trading system — equity and crypto — that uses an adversarial AI process to decide every trade. No emotion. No override. Every position is argued for and against before a single dollar moves.</div>
   <div class="hero-tagline">Every trade earns its execution.</div>
   <div class="hero-stats">
-    <div style="text-align:center">
-      <div class="hstat-val" id="h-val" style="color:var(--green)">—%</div>
-      <div class="hstat-lbl">Total Return</div>
-    </div>
-    <div style="width:1px;height:40px;background:var(--border)"></div>
-    <div style="text-align:center">
-      <div class="hstat-val" id="h-wr" style="color:var(--green)">—%</div>
-      <div class="hstat-lbl">Win Rate</div>
-    </div>
-    <div style="width:1px;height:40px;background:var(--border)"></div>
-    <div style="text-align:center">
-      <div class="hstat-val" id="h-trades" style="color:var(--iris)">—</div>
-      <div class="hstat-lbl">Trades</div>
-    </div>
-    <div style="width:1px;height:40px;background:var(--border)"></div>
-    <div style="text-align:center">
-      <div class="hstat-val" id="h-days" style="color:var(--gold)">—</div>
-      <div class="hstat-lbl">Live Gates</div>
-    </div>
-    <div style="width:1px;height:40px;background:var(--border)"></div>
-    <div style="text-align:center">
-      <div class="hstat-val" id="h-pnl" style="color:var(--green)">—</div>
-      <div class="hstat-lbl">Day P&L</div>
-    </div>
+    <div style="text-align:center"><div class="hstat-val" id="h-val" style="color:var(--green)">—</div><div class="hstat-lbl">Total Return</div></div>
+    <div style="width:1px;height:44px;background:var(--border)"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-wr" style="color:var(--green)">—</div><div class="hstat-lbl">Win Rate</div></div>
+    <div style="width:1px;height:44px;background:var(--border)"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-trades" style="color:var(--iris)">—</div><div class="hstat-lbl">Trades Closed</div></div>
+    <div style="width:1px;height:44px;background:var(--border)"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-gates" style="color:var(--gold)">—</div><div class="hstat-lbl">Live-Ready Gates</div></div>
+    <div style="width:1px;height:44px;background:var(--border)"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-pnl" style="color:var(--green)">—</div><div class="hstat-lbl">Today</div></div>
   </div>
 </div>
 
-<!-- ── EQUITY CURVE ───────────────────────────────────────────── -->
+<!-- EQUITY CURVE -->
 <div class="card" style="margin-bottom:14px">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
     <div>
       <div class="ct" style="margin:0">Equity Curve — Paper Account</div>
-      <div style="font-size:11px;color:var(--ghost);margin-top:3px" id="curve-sub">Loading…</div>
+      <div style="font-size:11px;color:var(--ghost);margin-top:3px">Cumulative return since inception · Paper trading</div>
     </div>
-    <div id="curve-gain" style="font-size:13px;font-weight:700;font-family:var(--fm);color:var(--green)"></div>
+    <div id="curve-gain" style="font-size:14px;font-weight:700;font-family:var(--fm);color:var(--green)"></div>
   </div>
   <canvas id="equity-chart" height="65"></canvas>
 </div>
 
-<!-- ── CONSCIOUSNESS STACK ────────────────────────────────────── -->
-<div class="sec">The Consciousness Stack · How Every Decision Is Made</div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
-
-  <div class="layer-card" style="border-color:rgba(124,58,237,.25)">
-    <div class="layer-status"><span class="badge b-g" style="font-size:8px">ACTIVE</span></div>
-    <div class="layer-num" style="color:var(--violet)">L1 · DELIBERATION</div>
-    <div class="layer-name">The Debate</div>
-    <div class="layer-desc">Before any BUY executes, four adversarial rounds play out. Bull builds the case. Bear destroys it. Bull rebuts. Bear delivers a final assault on every unresolved weakness. Then an Opus model reads the full transcript and delivers a verdict.</div>
-    <div class="layer-meta">PROCEED · PROCEED_CAUTIOUS · ABORT</div>
-  </div>
-
-  <div class="layer-card" style="border-color:rgba(129,140,248,.2)">
-    <div class="layer-status"><span class="badge b-g" style="font-size:8px">ACTIVE</span></div>
-    <div class="layer-num" style="color:var(--iris)">L2 · PREDICTION</div>
-    <div class="layer-name">Regime Forecasting</div>
-    <div class="layer-desc">Most systems detect what the market IS. Sovereign predicts what it WILL BE. Five signal-sequence patterns — VIX compression, F&G shifts, credit spreads, options flow — are matched daily to forecast regime transitions 24-48 hours early.</div>
-    <div class="layer-meta" id="cs-l2">Runs 7AM daily · Opus synthesis at p≥60%</div>
-  </div>
-
-  <div class="layer-card" style="border-color:rgba(74,70,112,.3)">
-    <div class="layer-status"><span class="badge b-ghost" id="cs-l3-badge" style="font-size:8px">LOCKED</span></div>
-    <div class="layer-num" style="color:var(--ghost)">L3 · SWARM</div>
-    <div class="layer-name">Competing Variants</div>
-    <div class="layer-desc">Three bot variants — AGGRESSIVE, CONSERVATIVE, EXPERIMENTAL — run in parallel on real micro-capital. The best performers influence live decisions. Auto-activates when live account reaches $1,000.</div>
-    <div class="layer-meta" id="cs-l3">Loading…</div>
-  </div>
-
-  <div class="layer-card" style="border-color:rgba(201,168,76,.2)">
-    <div class="layer-status"><span class="badge b-g" style="font-size:8px">ACTIVE</span></div>
-    <div class="layer-num" style="color:var(--gold)">L4 · ADAPTIVE RULES</div>
-    <div class="layer-name">Self-Writing Intelligence</div>
-    <div class="layer-desc">Every night, Sovereign analyzes all its outcomes, identifies statistically significant patterns, and proposes changes to its own behavior. Rules auto-adopt at 72% win rate over 6+ trades. Every Sunday, an Opus model writes a Strategic Letter for the coming week.</div>
-    <div class="layer-meta" id="cs-l4">Loading…</div>
-  </div>
-
-  <div class="layer-card" style="border-color:rgba(129,140,248,.18)">
-    <div class="layer-status"><span class="badge b-g" style="font-size:8px">ACTIVE</span></div>
-    <div class="layer-num" style="color:var(--iris)">L5 · NARRATIVE INTELLIGENCE</div>
-    <div class="layer-name">Causal Market Reasoning</div>
-    <div class="layer-desc">Algorithms find correlations. Sovereign finds causes. Every morning it scans live market narratives and builds a causal chain from macro events to individual positions — tariff → freight → CSX — before price reflects it.</div>
-    <div class="layer-meta">DIRECT · INDIRECT · MACRO impact levels</div>
-  </div>
-
-  <div class="layer-card" style="border-color:rgba(201,168,76,.12)">
-    <div class="layer-status"><span class="badge b-g" style="font-size:8px">ACTIVE</span></div>
-    <div class="layer-num" style="color:var(--gold)">L6 · AUTOBIOGRAPHY</div>
-    <div class="layer-name">Compounding Self-Knowledge</div>
-    <div class="layer-desc">Sovereign writes its own biography. Daily chapters become weekly wisdom entries. Monthly, Opus synthesizes character traits — persistent behavioral patterns, identified biases, documented blind spots. The longer it runs, the harder it is to fool.</div>
-    <div class="layer-meta" id="cs-l6">Loading…</div>
-  </div>
-
+<!-- PERFORMANCE -->
+<div class="sec">Performance</div>
+<div class="g4">
+  <div class="card card-v"><div class="ct">Equity Bot</div><div class="cval" id="eq-wr" style="color:var(--green)">—</div><div class="csub" id="eq-trades">—</div></div>
+  <div class="card card-gold"><div class="ct">Crypto Bot</div><div class="cval" id="cr-wr" style="color:var(--gold)">—</div><div class="csub" id="cr-trades">—</div></div>
+  <div class="card card-iris"><div class="ct">Open Positions</div><div class="cval" id="pos-count" style="color:var(--iris)">—</div><div class="csub">active right now</div></div>
+  <div class="card"><div class="ct">Live Account</div><div class="cval" id="live-status" style="color:var(--amber)">—</div><div class="csub" id="live-sub">Paper → Live journey</div></div>
 </div>
 
-<!-- ── PERFORMANCE ────────────────────────────────────────────── -->
-<div class="sec">Live Performance</div>
-<div class="g4" style="margin-bottom:14px">
-  <div class="card card-v">
-    <div class="ct">Equity Bot</div>
-    <div class="cval" id="eq-wr" style="color:var(--green)">—%</div>
-    <div class="csub" id="eq-detail">—</div>
-  </div>
-  <div class="card card-gold">
-    <div class="ct">Crypto Bot</div>
-    <div class="cval" id="cr-wr" style="color:var(--gold)">—%</div>
-    <div class="csub" id="cr-detail">—</div>
-  </div>
-  <div class="card card-iris">
-    <div class="ct">Tribunal Vetoes</div>
-    <div class="cval" id="ac-vetoes" style="color:var(--amber)">—</div>
-    <div class="csub">bad trades blocked</div>
-  </div>
+<!-- LIVE READINESS -->
+<div class="sec">Live-Readiness Progress</div>
+<div class="g21">
   <div class="card">
-    <div class="ct">Adaptive Proposals</div>
-    <div class="cval" id="ac-proposals" style="color:var(--violet)">—</div>
-    <div class="csub" id="ac-sub">L4 rule candidates</div>
-  </div>
-</div>
-
-<!-- ── LIVE READINESS ─────────────────────────────────────────── -->
-<div class="sec">Live Readiness Gates</div>
-<div class="g21" style="margin-bottom:14px">
-  <div class="card">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-      <div class="ct" style="margin:0">Path to Live Capital</div>
-      <div style="font-size:10px;font-family:var(--fm);color:var(--silver)"><span id="rd-passed" style="color:var(--gold)">—</span>/7 gates</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div><div class="ct" style="margin:0">Path to Live Capital</div><div style="font-size:11px;color:var(--ghost);margin-top:3px">All 7 gates must pass before real capital scales</div></div>
+      <div style="font-size:22px;font-weight:800;font-family:var(--fm);color:var(--gold)"><span id="rd-passed">—</span><span style="font-size:13px;color:var(--ghost)">/7</span></div>
     </div>
     <div id="gates-list"></div>
-    <div style="margin-top:14px">
-      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--ghost);font-family:var(--fm);margin-bottom:6px">
-        <span>Readiness</span><span id="rd-pct">—</span>
-      </div>
+    <div style="margin-top:16px">
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--ghost);font-family:var(--fm);margin-bottom:6px"><span>Overall readiness</span><span id="rd-pct">—</span></div>
       <div class="pbar"><div class="pfill" id="rd-bar" style="background:var(--gold);width:0%"></div></div>
     </div>
   </div>
-  <div class="card">
-    <div class="ct" style="margin-bottom:12px">Recent Decisions</div>
-    <div id="decisions-list"></div>
+  <div class="card"><div class="ct" style="margin-bottom:14px">Recent Activity</div><div id="decisions-list"></div></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="sec">How It Works</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
+  <div class="principle" style="border-color:rgba(124,58,237,.25)">
+    <div class="principle-num" style="color:var(--violet)">01 · DEBATE FIRST</div>
+    <div class="principle-name">Every Trade Is Argued</div>
+    <div class="principle-desc">No position enters without an adversarial review. The system builds the case for and against every trade before committing. The stronger the pushback, the higher the bar to proceed.</div>
+  </div>
+  <div class="principle" style="border-color:rgba(129,140,248,.2)">
+    <div class="principle-num" style="color:var(--iris)">02 · ANTICIPATE, DON'T REACT</div>
+    <div class="principle-name">Market Regime Intelligence</div>
+    <div class="principle-desc">Most systems detect what the market is. Sovereign tries to forecast what it will be — reading macro signals, sentiment shifts, and cross-asset flows to position ahead of transitions, not after.</div>
+  </div>
+  <div class="principle" style="border-color:rgba(201,168,76,.2)">
+    <div class="principle-num" style="color:var(--gold)">03 · GET SMARTER EVERY NIGHT</div>
+    <div class="principle-name">Autonomous Learning Loop</div>
+    <div class="principle-desc">Every night the system reviews every decision it made, identifies patterns in what worked and what didn't, and proposes changes to its own behavior. It compounds intelligence, not just capital.</div>
+  </div>
+  <div class="principle" style="border-color:rgba(16,185,129,.18)">
+    <div class="principle-num" style="color:var(--green)">04 · NO EMOTIONAL OVERRIDE</div>
+    <div class="principle-name">Fully Autonomous Execution</div>
+    <div class="principle-desc">There is no dashboard for humans to intervene mid-trade. The system makes its own decisions, executes its own orders, monitors its own positions, and closes on its own terms.</div>
+  </div>
+  <div class="principle" style="border-color:rgba(129,140,248,.15)">
+    <div class="principle-num" style="color:var(--iris)">05 · CAUSE, NOT CORRELATION</div>
+    <div class="principle-name">Causal Market Reasoning</div>
+    <div class="principle-desc">The system reads live narratives and builds causal chains from macro events to individual positions — tracing how a policy decision flows through sectors and into specific stocks before price reflects it.</div>
+  </div>
+  <div class="principle" style="border-color:rgba(74,70,112,.3)">
+    <div class="principle-num" style="color:var(--ghost)">06 · COMPETE FOR CAPITAL</div>
+    <div class="principle-name">Bot vs. Bot Allocation</div>
+    <div class="principle-desc">The equity bot and crypto bot compete for capital based on performance. The one proving better risk-adjusted results gets the larger allocation. Every dollar flows toward the edge that's earning it.</div>
   </div>
 </div>
 
-<!-- ── TRIBUNAL ───────────────────────────────────────────────── -->
-<div class="sec">Tribunal Judge Accuracy</div>
-<div class="g4" style="margin-bottom:14px">
-  <div class="card"><div class="ct">Bear Judge</div><div class="cval" id="trib-BEAR-val">—%</div><div class="csub" id="trib-BEAR-sub">—</div></div>
-  <div class="card"><div class="ct">Regime Judge</div><div class="cval" id="trib-REGIME-val">—%</div><div class="csub" id="trib-REGIME-sub">—</div></div>
-  <div class="card"><div class="ct">Quant Judge</div><div class="cval" id="trib-QUANT-val">—%</div><div class="csub" id="trib-QUANT-sub">—</div></div>
-  <div class="card"><div class="ct">Risk Judge</div><div class="cval" id="trib-RISK-val">—%</div><div class="csub" id="trib-RISK-sub">—</div></div>
+<!-- SECTOR LEADERSHIP -->
+<div class="sec">Sector Leadership Today</div>
+<div class="card" style="margin-bottom:14px">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+    <div><div class="ct" style="margin:0">S&amp;P 500 Sector Rankings</div><div style="font-size:11px;color:var(--ghost);margin-top:3px">Live sector momentum · Updated daily</div></div>
+    <div style="display:flex;gap:16px;font-size:11px;font-family:var(--fm)">
+      <span>Leading: <span id="top-sector" style="color:var(--green);font-weight:700">—</span></span>
+      <span>Lagging: <span id="bot-sector" style="color:var(--red);font-weight:700">—</span></span>
+    </div>
+  </div>
+  <div id="sector-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px"></div>
 </div>
 
-</div><!-- end .page -->
-
+</div>
 <footer>
-  <div>⚜ SOVEREIGN · Autonomous AI Trading · Paper Active · Not financial advice</div>
+  <div>⚜ SOVEREIGN · Autonomous AI Trading System · Paper Active · Not financial advice</div>
   <div id="ft-updated" style="color:var(--ghost)">—</div>
 </footer>
-
 <script>
 (function(){
-const D     = window.__SD__ || {};
-const priv  = D.portfolio_chart    || {};  // % returns only — no dollar amounts
-const pub   = D.portfolio_public   || {};
-const comp  = D.competition_ledger || {};
-const rdy   = D.live_readiness     || {};
-const trib  = D.tribunal_accuracy  || {};
-const attr  = D.performance_attribution || {};
-const decs  = D.decisions_recent   || [];
-const sconf = D.system_config      || {};
-const rules = D.rule_proposals     || {};
-const bio   = D.sovereign_autobiography || {};
-const reg   = D.regime_forecast    || {};
-const live  = D.live_account       || {};
-
-const $      = id => document.getElementById(id);
-const set    = (id, v, col) => { const e=$(id); if(e){e.textContent=v; if(col)e.style.color=col;} };
-const pct    = (n, d=2) => ((+n||0) >= 0 ? '+' : '') + ((+n)||0).toFixed(d) + '%';
-const fmt1   = (n, d=2) => (+n||0).toFixed(d);  // plain number formatting, no $ symbol
-
-// ── Hero stats — % returns only ──────────────────────────────────────────
-const totalRet = priv.total_return_pct || 0;
-const dayPnl   = priv.day_pnl_pct     || 0;
-set('h-val', pct(totalRet, 2), totalRet >= 0 ? 'var(--green)' : 'var(--red)');
-set('h-pnl', pct(dayPnl,   2), dayPnl  >= 0 ? 'var(--green)' : 'var(--red)');
-const eq = comp.equity || {}, cr = comp.crypto || {};
-const totalT = (eq.total_trades||0) + (cr.total_trades||0);
-// public bundle sends win_rate directly — no wins/losses counts
-const eqWr = eq.win_rate || 0, crWr = cr.win_rate || 0;
-const wr = totalT > 0
-  ? ((eqWr*(eq.total_trades||0)) + (crWr*(cr.total_trades||0))) / totalT
-  : 0;
-set('h-wr',     (wr*100).toFixed(0)+'%', wr>=0.55?'var(--green)':wr>=0.45?'var(--amber)':'var(--red)');
-set('h-trades', totalT);
-set('h-days',   (rdy.gates_passed||0) + '/7 gates');
-
-// ── Equity curve — % return, no dollar axis ──────────────────────────────
+const D=window.__SD__||{},priv=D.portfolio_chart||{},pub=D.portfolio_public||{},
+      perf=D.performance_summary||{},rdy=D.live_readiness||{},
+      decs=D.decisions_recent||[],sect=D.sector_leadership||{},live=D.live_account||{};
+const $=id=>document.getElementById(id);
+const set=(id,v,col)=>{const e=$(id);if(e){e.textContent=v;if(col)e.style.color=col;}};
+const pct=(n,d=1)=>((+n||0)>=0?'+':'')+((+n)||0).toFixed(d)+'%';
+const totalRet=priv.total_return_pct||0,dayPnl=priv.day_pnl_pct||0;
+set('h-val',pct(totalRet,2),totalRet>=0?'var(--green)':'var(--red)');
+set('h-pnl',pct(dayPnl,2),dayPnl>=0?'var(--green)':'var(--red)');
+set('h-wr',((perf.combined_win_rate||0)*100).toFixed(0)+'%',(perf.combined_win_rate||0)>=0.55?'var(--green)':'var(--amber)');
+set('h-trades',perf.total_trades||0);
+set('h-gates',(rdy.gates_passed||0)+'/7');
 try{
-  const snaps = priv.snapshots_pct || [];
-  if(snaps.length > 1 && typeof Chart !== 'undefined'){
-    const labels = snaps.map(s => s.date?.slice(5) || '');
-    const vals   = snaps.map(s => s.pct || 0);
-    const last   = vals[vals.length-1] || 0;
-    set('curve-sub',  (rdy.gates_passed||0)+'/7 live-readiness gates · Paper trading');
-    set('curve-gain', pct(last,2)+' total return', last>=0?'var(--green)':'var(--red)');
-    const ctx = $('equity-chart')?.getContext('2d');
+  const snaps=priv.snapshots_pct||[],last=snaps.length?snaps[snaps.length-1].pct:0;
+  set('curve-gain',pct(last,2)+' since inception',last>=0?'var(--green)':'var(--red)');
+  if(snaps.length>1&&typeof Chart!=='undefined'){
+    const ctx=$('equity-chart')?.getContext('2d');
     if(ctx){
-      const grad = ctx.createLinearGradient(0, 0, 0, 180);
-      grad.addColorStop(0, 'rgba(129,140,248,.25)');
-      grad.addColorStop(1, 'rgba(129,140,248,.01)');
-      new Chart(ctx, {
-        type: 'line',
-        data: {labels, datasets:[{data:vals, fill:true, backgroundColor:grad,
-          borderColor:'rgba(129,140,248,.9)', borderWidth:2, pointRadius:0, tension:0.4}]},
-        options:{
-          responsive: true,
-          plugins:{legend:{display:false}, tooltip:{callbacks:{label: c => pct(c.raw)}}},
-          scales:{
-            x:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9}, maxTicksLimit:8}},
-            y:{grid:{color:'rgba(255,255,255,.04)'}, ticks:{color:'#4A4670', font:{family:'JetBrains Mono',size:9}, callback: v => pct(v,1)}}
-          }
-        }
-      });
+      const g=ctx.createLinearGradient(0,0,0,180);
+      g.addColorStop(0,'rgba(129,140,248,.22)');g.addColorStop(1,'rgba(129,140,248,.01)');
+      new Chart(ctx,{type:'line',data:{labels:snaps.map(s=>s.date?.slice(5)||''),
+        datasets:[{data:snaps.map(s=>s.pct||0),fill:true,backgroundColor:g,
+          borderColor:'rgba(129,140,248,.9)',borderWidth:2,pointRadius:0,tension:0.4}]},
+        options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>pct(c.raw,2)}}},
+          scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},maxTicksLimit:8}},
+                  y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},callback:v=>pct(v,1)}}}}});
     }
   }
 }catch(e){}
-
-// ── Consciousness Stack live data ─────────────────────────────────────────
-if(reg.regime_trajectory) set('cs-l2', reg.regime_trajectory+' · p='+(reg.probability*100).toFixed(0)+'%');
-const swarmProgress = live.swarm_progress || 0;
-set('cs-l3', swarmProgress.toFixed(1)+'% of $1K threshold', live.swarm_active?'var(--green)':'var(--ghost)');
-if(live.swarm_active && $('cs-l3-badge')){$('cs-l3-badge').textContent='ACTIVE';$('cs-l3-badge').className='badge b-g';}
-set('cs-l4', (rules.total||0)+' proposals · '+(rules.adopted||0)+' adopted · nightly run');
-const chaps  = typeof bio.chapters        === 'number' ? bio.chapters        : (bio.chapters||[]).length;
-const wis    = typeof bio.wisdom_entries  === 'number' ? bio.wisdom_entries  : (bio.wisdom_entries||[]).length;
-const traits = typeof bio.character_traits=== 'number' ? bio.character_traits: (bio.character_traits||[]).length;
-set('cs-l6', chaps+' chapters · '+wis+' wisdom entries · '+traits+' traits');
-
-// ── Performance ───────────────────────────────────────────────────────────
-set('eq-wr',     (eq.win_rate*100||0).toFixed(0)+'%', (eq.win_rate||0)>=0.55?'var(--green)':'var(--amber)');
-set('eq-detail', (eq.total_trades||0)+' trades');
-set('cr-wr',     (cr.win_rate*100||0).toFixed(0)+'%', (cr.win_rate||0)>=0.55?'var(--gold)':'var(--amber)');
-set('cr-detail', (cr.total_trades||0)+' trades');
-set('ac-vetoes',   attr.tribunal?.tribunal_vetoes || 0);
-set('ac-proposals', rules.total || 0);
-set('ac-sub',      (rules.adopted||0)+' adopted · '+(rules.validating||0)+' validating');
-
-// ── Live readiness gates — pass/fail + threshold only ────────────────────
-const gatesDef = [
-  {key:'paper_days',           label:'Paper Days',    req:'90 days'},
-  {key:'min_trades',           label:'Min Trades',    req:'20 trades'},
-  {key:'min_win_rate',         label:'Win Rate',      req:'≥55%'},
-  {key:'max_drawdown',         label:'Max Drawdown',  req:'<15%'},
-  {key:'min_sharpe',           label:'Sharpe Ratio',  req:'≥1.0'},
-  {key:'no_consecutive_losses',label:'No 5× Losses',  req:'no streak'},
-  {key:'tribunal_veto_rate',   label:'Veto Rate',     req:'<40%'},
-];
-const gts = rdy.gates || {}, gP = rdy.gates_passed || 0;
-set('rd-passed', gP);
-set('rd-pct', Math.round(gP/7*100)+'%');
-if($('rd-bar')) $('rd-bar').style.width = Math.round(gP/7*100)+'%';
-const gList = $('gates-list');
-if(gList){
-  gList.innerHTML = gatesDef.map(g => {
-    const pass = (gts[g.key]||{}).pass;
-    return `<div class="gate-row">
-      <span style="color:var(--silver)">${g.label}</span>
-      <span style="display:flex;align-items:center;gap:8px;font-size:11px;font-family:var(--fm)">
-        <span style="color:var(--ghost)">${g.req}</span>
-        <span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800">${pass?'✓':'✗'}</span>
-      </span>
-    </div>`;
-  }).join('');
-}
-
-// ── Recent decisions — action/regime/bot only, no tickers or confidence ──
-const dList = $('decisions-list');
-if(dList && decs.length){
-  dList.innerHTML = decs.slice(0,8).map(d => {
-    const act   = d.action || '?';
-    const col   = act==='BUY'?'var(--green)':act==='SELL'?'var(--red)':act==='VALIDATED_BLOCKED'?'var(--amber)':'var(--ghost)';
-    const label = act==='VALIDATED_BLOCKED'?'BLOCKED':act;
-    const bot   = (d.bot||'').toUpperCase();
-    const regime= (d.regime||'').replace(/_/g,' ');
-    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px">
-      <div style="display:flex;align-items:center;gap:8px">
-        <span style="color:${col};font-weight:700;font-family:var(--fm);width:54px">${label}</span>
-        <span style="font-size:9px;color:var(--ghost);font-family:var(--fm);width:44px">${bot}</span>
-        <span class="rb ${d.regime||'UNKNOWN'}" style="font-size:8px">${regime||'—'}</span>
-      </div>
-      <span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${d.timestamp||''}</span>
-    </div>`;
-  }).join('');
-}
-
-// ── Tribunal accuracy ─────────────────────────────────────────────────────
-['BEAR','REGIME','QUANT','RISK'].forEach(j => {
-  const jd  = (trib.judges||{})[j] || {};
-  const acc = ((jd.accuracy||0)*100).toFixed(0)+'%';
-  const col = (jd.accuracy||0)>=0.80?'var(--green)':(jd.accuracy||0)>=0.65?'var(--amber)':'var(--red)';
-  set('trib-'+j+'-val', acc, col);
-  set('trib-'+j+'-sub', fmt1(jd.weight||1,2)+'x weight');
-});
-
-set('ft-updated', 'Last push: '+(pub.last_updated || pub._meta?.generated_at?.slice(0,10) || '—'));
+set('eq-wr',((perf.equity_win_rate||0)*100).toFixed(0)+'%',(perf.equity_win_rate||0)>=0.55?'var(--green)':'var(--amber)');
+set('eq-trades',(perf.total_trades||0)+' closed trades');
+set('cr-wr',((perf.crypto_win_rate||0)*100).toFixed(0)+'%',(perf.crypto_win_rate||0)>=0.55?'var(--gold)':'var(--amber)');
+set('cr-trades','');
+set('pos-count',priv.position_count||pub.position_count||0);
+set('live-status',live.status||'PAPER');
+set('live-sub',live.swarm_active?'Live · Swarm active':live.swarm_progress?'Live funded · Scaling':'Paper → Live journey');
+const gateLabels={paper_days:'Paper Trading Days',min_trades:'Minimum Closed Trades',min_win_rate:'Win Rate Target',max_drawdown:'Drawdown Control',min_sharpe:'Risk-Adjusted Returns',no_consecutive_losses:'No Losing Streak',tribunal_veto_rate:'Decision Quality Gate'};
+const gts=rdy.gates||{},gP=rdy.gates_passed||0;
+set('rd-passed',gP);set('rd-pct',Math.round(gP/7*100)+'%');
+if($('rd-bar'))$('rd-bar').style.width=Math.round(gP/7*100)+'%';
+const gl=$('gates-list');
+if(gl){gl.innerHTML=Object.entries(gateLabels).map(([k,label])=>{
+  const pass=(gts[k]||{}).pass;
+  return`<div class="gate-row"><span style="color:var(--silver)">${label}</span><span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800;font-family:var(--fm);font-size:13px">${pass?'✓':'✗'}</span></div>`;
+}).join('');}
+const dl=$('decisions-list');
+if(dl&&decs.length){dl.innerHTML=decs.slice(0,8).map(d=>{
+  const act=d.action||'?',col=act==='ENTERED'?'var(--green)':act==='EXITED'?'var(--red)':'var(--ghost)';
+  return`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:11px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="color:${col};font-weight:700;font-family:var(--fm);min-width:60px">${act}</span>
+      <span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${(d.bot||'').toUpperCase()}</span>
+    </div>
+    <span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${(d.timestamp||'').slice(5)}</span>
+  </div>`;}).join('');}
+if(sect.ranked){
+  set('top-sector',sect.top_sector||'—');set('bot-sector',sect.bottom_sector||'—');
+  const sg=$('sector-grid');
+  if(sg){sg.innerHTML=sect.ranked.map(s=>{const up=s.chg>=0;
+    return`<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px;display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-size:10px;font-weight:700;font-family:var(--fm)">${s.etf}</div><div style="font-size:9px;color:var(--ghost);margin-top:2px">${s.name}</div></div>
+      <div style="text-align:right"><div style="font-size:11px;font-weight:700;font-family:var(--fm);color:${up?'var(--green)':'var(--red)'}">${up?'+':''}${s.chg.toFixed(2)}%</div>
+      <div style="font-size:8px;margin-top:2px;color:${s.gate==='ENTER'?'var(--green)':'var(--ghost)'}">${s.gate}</div></div>
+    </div>`;}).join('');}}
+set('ft-updated','Updated: '+(pub.last_updated||priv.last_updated||'—').slice(0,10));
 })();
 </script>
 </body>
