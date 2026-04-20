@@ -1,20 +1,20 @@
 {
-  "ts": "2026-04-20T10:30:00.627361",
-  "generated": "10:30:00 AM",
+  "ts": "2026-04-20T10:35:01.247622",
+  "generated": "10:35:01 AM",
   "paper": {
-    "equity": 101307.66,
+    "equity": 101307.92,
     "cash": 95030.84,
-    "day_pnl": 253.98,
-    "day_pnl_pct": 0.251,
+    "day_pnl": 254.24,
+    "day_pnl_pct": 0.252,
     "positions": [
       {
         "sym": "DELL",
         "qty": 25.7826,
-        "price": 202.43,
+        "price": 202.44,
         "entry": 196.93,
-        "pnl_pct": 2.79,
-        "pnl": 141.8,
-        "mkt_val": 5219.17
+        "pnl_pct": 2.8,
+        "pnl": 142.06,
+        "mkt_val": 5219.43
       },
       {
         "sym": "ETHUSD",
