@@ -1,38 +1,38 @@
 {
-  "ts": "2026-04-20T16:20:00.505992",
-  "generated": "04:20:00 PM",
+  "ts": "2026-04-20T16:25:00.308861",
+  "generated": "04:25:00 PM",
   "paper": {
-    "equity": 101432.34,
+    "equity": 101451.45,
     "cash": 85202.37,
-    "day_pnl": 378.66,
-    "day_pnl_pct": 0.375,
+    "day_pnl": 397.77,
+    "day_pnl_pct": 0.394,
     "positions": [
       {
         "sym": "DELL",
         "qty": 25.7826,
-        "price": 204.278,
+        "price": 204.3744,
         "entry": 196.93,
-        "pnl_pct": 3.73,
-        "pnl": 189.45,
-        "mkt_val": 5266.82
+        "pnl_pct": 3.78,
+        "pnl": 191.94,
+        "mkt_val": 5269.3
       },
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2334.13,
+        "price": 2340.1,
         "entry": 2318.61,
-        "pnl_pct": 0.67,
-        "pnl": 7.09,
-        "mkt_val": 1065.73
+        "pnl_pct": 0.93,
+        "pnl": 9.81,
+        "mkt_val": 1068.46
       },
       {
         "sym": "ORCL",
         "qty": 55.6035,
-        "price": 178.0,
+        "price": 178.25,
         "entry": 176.76,
-        "pnl_pct": 0.7,
-        "pnl": 68.95,
-        "mkt_val": 9897.42
+        "pnl_pct": 0.84,
+        "pnl": 82.85,
+        "mkt_val": 9911.32
       }
     ]
   },
