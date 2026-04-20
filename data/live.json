@@ -1,11 +1,11 @@
 {
-  "ts": "2026-04-20T16:05:00.916852",
-  "generated": "04:05:00 PM",
+  "ts": "2026-04-20T16:10:00.640702",
+  "generated": "04:10:00 PM",
   "paper": {
-    "equity": 101426.31,
+    "equity": 101408.51,
     "cash": 85202.37,
-    "day_pnl": 372.63,
-    "day_pnl_pct": 0.369,
+    "day_pnl": 354.83,
+    "day_pnl_pct": 0.351,
     "positions": [
       {
         "sym": "DELL",
@@ -28,11 +28,11 @@
       {
         "sym": "ORCL",
         "qty": 55.6035,
-        "price": 177.9,
+        "price": 177.58,
         "entry": 176.76,
-        "pnl_pct": 0.65,
-        "pnl": 63.39,
-        "mkt_val": 9891.86
+        "pnl_pct": 0.46,
+        "pnl": 45.59,
+        "mkt_val": 9874.07
       }
     ]
   },
