@@ -1452,6 +1452,26 @@ const _D = window.__SD__ || {};
   // Fire immediately on load, then every 30 seconds
   refreshLive();
   setInterval(refreshLive, 30000);
+
+  // ── Snap-refresh when tab becomes visible again ────────────────────────
+  // Without this: returning to the tab mid-interval means up to 30s of stale data.
+  // With this: any tab switch back = instant refresh.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refreshLive();
+  });
+
+  // ── Manual refresh button next to the LIVE badge ───────────────────────
+  const badge = document.getElementById('live-feed-badge');
+  if (badge) {
+    const btn = document.createElement('span');
+    btn.textContent = '↺';
+    btn.title = 'Refresh now';
+    btn.style.cssText = 'cursor:pointer;color:var(--ghost);font-size:11px;margin-left:6px;user-select:none;transition:color .2s';
+    btn.onmouseenter = () => btn.style.color = 'var(--violet)';
+    btn.onmouseleave = () => btn.style.color = 'var(--ghost)';
+    btn.onclick = () => { btn.style.color = 'var(--green)'; refreshLive(); setTimeout(() => btn.style.color = 'var(--ghost)', 800); };
+    badge.appendChild(btn);
+  }
 })();
 
 </script>
