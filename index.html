@@ -301,6 +301,37 @@ if(sect.ranked){
     </div>`;}).join('');}}
 set('ft-updated','Updated: '+(pub.last_updated||priv.last_updated||'—').slice(0,10));
 })();
+
+// ── Public Live Feed (live.json — safe fields only, no dollar values) ─────
+(function(){
+  async function refreshPublicLive(){
+    try {
+      const resp = await fetch('data/live.json?t=' + Date.now());
+      if(!resp.ok) return;
+      const data = await resp.json();
+      const paper = data.paper || {};
+      const positions = Array.isArray(paper.positions) ? paper.positions : [];
+      const dayPct = paper.day_pnl_pct || 0;
+      // position count — safe to show
+      const pc = document.getElementById('pub-pos-count');
+      if(pc) pc.textContent = positions.length;
+      // day % — safe to show
+      const dayEl = document.getElementById('pub-day-pct');
+      if(dayEl){
+        dayEl.textContent = (dayPct >= 0 ? '+' : '') + dayPct.toFixed(2) + '% today';
+        dayEl.style.color = dayPct >= 0 ? 'var(--green)' : 'var(--red)';
+      }
+      // Timestamp
+      const ft = document.getElementById('ft-updated');
+      if(ft && data.generated) ft.textContent = '⬤ Live · data as of ' + data.generated;
+    } catch(e){}
+  }
+  refreshPublicLive();
+  setInterval(refreshPublicLive, 60000);
+  document.addEventListener('visibilitychange', () => {
+    if(document.visibilityState === 'visible') refreshPublicLive();
+  });
+})();
 </script>
 </body>
 </html>

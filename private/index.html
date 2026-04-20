@@ -1337,13 +1337,12 @@ const _D = window.__SD__ || {};
   }catch(e){tbody.innerHTML='<tr><td colspan="4" style="padding:10px;color:var(--red);font-size:11px">Schedule render error: '+e.message+'</td></tr>';}
 })();
 
-// ── Real-Time Alpaca Live Feed ─────────────────────────────────────────────
-// Polls Alpaca paper API directly — no git/CDN lag. Same source as Alpaca browser.
+// ── Real-Time Live Feed (live.json — same-origin, no CORS, cache-busted) ──────
+// Primary source: data/live.json pushed every 5 min by push_live_data.py.
+// Same-origin GitHub Pages fetch — no CORS headers needed. Always works.
+// Badge shows Alpaca data age (when live.json was generated), not fetch time.
 (function(){
-  const AK  = 'PKMO4JLVJ6QLZK3DW4N2UHXQLR';
-  const AS  = 'BnAAX6U2aUtUm4tYDYthUhcYU9gXFnD6UKYbpQZ8rC1f';
-  const URL = 'https://paper-api.alpaca.markets';
-  const HDR = {'APCA-API-KEY-ID': AK, 'APCA-API-SECRET-KEY': AS};
+  const LIVE_URL = '../data/live.json';  // same-origin, no CORS
 
   // Inject live badge next to port-val
   const portCard = document.getElementById('port-val');
@@ -1392,16 +1391,16 @@ const _D = window.__SD__ || {};
 
   async function refreshLive(){
     try {
-      const [acct, positions] = await Promise.all([
-        fetch(URL+'/v2/account',{method:'GET',mode:'cors',headers:HDR}).then(r=>r.json()),
-        fetch(URL+'/v2/positions',{method:'GET',mode:'cors',headers:HDR}).then(r=>r.json()).catch(()=>[]),
-      ]);
+      const resp = await fetch(LIVE_URL + '?t=' + Date.now());
+      if(!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      const paper = data.paper || {};
 
-      const equity  = parseFloat(acct.equity  || 0);
-      const cash    = parseFloat(acct.cash    || 0);
-      const lastEq  = parseFloat(acct.last_equity || equity);
-      const dayPnl  = equity - lastEq;
-      const dayPct  = lastEq ? (dayPnl / lastEq * 100) : 0;
+      const equity   = paper.equity   || 0;
+      const cash     = paper.cash     || 0;
+      const dayPnl   = paper.day_pnl  || 0;
+      const dayPct   = paper.day_pnl_pct || 0;
+      const positions = Array.isArray(paper.positions) ? paper.positions : [];
 
       // ── Update header numbers ──
       const pv = document.getElementById('port-val');
@@ -1413,42 +1412,43 @@ const _D = window.__SD__ || {};
       const cv = document.getElementById('cash-val');
       if(cv) cv.textContent = fmt(cash);
       const pc = document.getElementById('pos-count');
-      if(pc) pc.textContent = Array.isArray(positions) ? positions.length : 0;
+      if(pc) pc.textContent = positions.length;
 
-      // ── Rebuild positions list with Alpaca live prices ──
+      // ── Rebuild positions list ──
       const posEl = document.getElementById('positions-list');
-      if(posEl && Array.isArray(positions) && positions.length > 0){
-        // Merge Alpaca live data with local state (stop/target/regime/invalidation)
+      if(posEl && positions.length > 0){
         const localEq = priv.equity_positions || {};
         const localCr = priv.positions || {};
         posEl.innerHTML = positions.map(p => {
-          const sym   = p.symbol;
-          const lp    = parseFloat(p.current_price || 0);
-          const ep    = parseFloat(p.avg_entry_price || 0);
-          const qty   = parseFloat(p.qty || 0);
-          const isCr  = sym.includes('USD') && sym.length <= 7;
-          const bot   = isCr ? 'CR' : 'EQ';
-          // Pull stop/target/regime from local state — Alpaca doesn't store these
-          const local = isCr ? (localCr[sym.replace('USD','/')] || localCr[sym] || {})
-                              : (localEq[sym] || {});
-          return buildPosCard(
-            sym, lp, ep, qty,
+          const rawSym = p.sym || '';
+          // Normalize: Alpaca returns ETHUSD, local state uses ETH/USD
+          const sym = rawSym.replace(/([A-Z]{2,4})USD$/, '$1/USD');
+          const lp  = p.price || 0;
+          const ep  = p.entry || 0;
+          const qty = p.qty   || 0;
+          const pnlPct = p.pnl_pct || (ep ? ((lp-ep)/ep*100) : 0);
+          const mv  = p.mkt_val || (lp * qty);
+          const isCr = sym.includes('/');
+          const bot  = isCr ? 'CR' : 'EQ';
+          const local = isCr ? (localCr[sym] || localCr[rawSym] || {})
+                              : (localEq[sym] || localEq[rawSym] || {});
+          return buildPosCard(sym, lp, ep, qty,
             local.stop_loss, local.target,
             local.entry_regime, local.invalidation_signal,
-            bot, local.entry_date
-          );
+            bot, local.entry_date);
         }).join('');
-      } else if(posEl && (!Array.isArray(positions) || positions.length === 0)){
+      } else if(posEl){
         posEl.innerHTML = '<div style="color:var(--ghost);font-size:11px;font-family:var(--fm);padding:12px 0;text-align:center">No open positions</div>';
       }
 
-      const ts = new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour12:true,hour:'numeric',minute:'2-digit',second:'2-digit'});
-      setLiveBadge(true, ts);
+      // Badge shows Alpaca data age, not browser time
+      const genTime = data.generated || '—';
+      setLiveBadge(true, genTime);
 
     } catch(e){
-      console.warn('Alpaca live feed error:', e.message);
-      const ts = new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour12:true,hour:'numeric',minute:'2-digit',second:'2-digit'});
-      setLiveBadge(true, ts);
+      console.error('Live feed error:', e.message);
+      const ts = new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour12:true,hour:'numeric',minute:'2-digit'});
+      setLiveBadge(false, ts);  // RED on real failure — stops masking errors
     }
   }
 
