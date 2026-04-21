@@ -1,29 +1,29 @@
 {
-  "ts": "2026-04-21T10:05:00.538797",
-  "generated": "10:05:00 AM",
+  "ts": "2026-04-21T10:10:01.245360",
+  "generated": "10:10:01 AM",
   "paper": {
-    "equity": 101528.66,
+    "equity": 101597.81,
     "cash": 90491.64,
-    "day_pnl": 130.42,
-    "day_pnl_pct": 0.129,
+    "day_pnl": 199.57,
+    "day_pnl_pct": 0.197,
     "positions": [
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2315.05,
+        "price": 2305.154,
         "entry": 2318.61,
-        "pnl_pct": -0.15,
-        "pnl": -1.63,
-        "mkt_val": 1057.02
+        "pnl_pct": -0.58,
+        "pnl": -6.14,
+        "mkt_val": 1052.5
       },
       {
         "sym": "ORCL",
         "qty": 55.6035,
-        "price": 179.51,
+        "price": 180.81,
         "entry": 176.76,
-        "pnl_pct": 1.56,
-        "pnl": 152.91,
-        "mkt_val": 9981.38
+        "pnl_pct": 2.29,
+        "pnl": 225.19,
+        "mkt_val": 10053.67
       }
     ]
   },
