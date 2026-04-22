@@ -1,29 +1,29 @@
 {
-  "ts": "2026-04-22T09:55:01.102198",
-  "generated": "09:55:01 AM",
+  "ts": "2026-04-22T10:00:01.257195",
+  "generated": "10:00:01 AM",
   "paper": {
-    "equity": 101904.44,
+    "equity": 101904.54,
     "cash": 88557.73,
-    "day_pnl": 240.67,
+    "day_pnl": 240.77,
     "day_pnl_pct": 0.237,
     "positions": [
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2415.4,
+        "price": 2420.127,
         "entry": 2318.61,
-        "pnl_pct": 4.17,
-        "pnl": 44.19,
-        "mkt_val": 1102.84
+        "pnl_pct": 4.38,
+        "pnl": 46.35,
+        "mkt_val": 1105.0
       },
       {
         "sym": "SNPS",
         "qty": 25.7595,
-        "price": 475.315,
+        "price": 475.235,
         "entry": 471.09,
-        "pnl_pct": 0.9,
-        "pnl": 108.83,
-        "mkt_val": 12243.88
+        "pnl_pct": 0.88,
+        "pnl": 106.77,
+        "mkt_val": 12241.82
       }
     ]
   },
