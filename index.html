@@ -335,16 +335,7 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
     <div class="j-item" data-done="false">
       <div class="j-dot" style="background:var(--ghost)"></div>
       <div class="j-content">
-        <div class="j-title" style="color:var(--ghost)">$1K Live · Swarm Activates</div>
-        <div class="j-desc">At $1,000 live equity, competing strategy variants activate — capital flows to the strongest performer.</div>
-        <div class="j-date" style="color:var(--ghost)">Phase 2</div>
-      </div>
-    </div>
-
-    <div class="j-item" data-done="false">
-      <div class="j-dot" style="background:var(--ghost)"></div>
-      <div class="j-content">
-        <div class="j-title" style="color:var(--ghost)">Sovereign AI — SaaS Launch</div>
+        <div class="j-title" style="color:var(--ghost)">Sovereign AI — Public Launch</div>
         <div class="j-desc">Open access to the platform. Pro, Elite, and institutional tiers. Public track record leads the funnel.</div>
         <div class="j-date" style="color:var(--ghost)">Phase 3</div>
       </div>
@@ -377,8 +368,8 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
   <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
   <div style="font-size:22px;font-weight:800;margin-bottom:10px">Get Early Access</div>
   <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">
-    Sovereign is in paper trading. When the 90-day track record clears and live capital deploys,
-    the platform opens. Be first in line.
+    Sovereign is building its track record in paper trading. When we're ready to open access,
+    waitlist members hear first — no spam, no hard date promises, just a heads-up when the time comes.
   </div>
   <a href="mailto:sovereign.ai.waitlist@gmail.com?subject=Early Access Request"
      style="display:inline-block;background:linear-gradient(135deg,var(--violet),var(--iris));color:#fff;font-weight:700;font-size:13px;padding:12px 28px;border-radius:8px;text-decoration:none;letter-spacing:.5px;font-family:var(--fn)">
@@ -438,9 +429,9 @@ try{
   }
 }catch(e){}
 set('eq-wr',((perf.equity_win_rate||0)*100).toFixed(0)+'%',(perf.equity_win_rate||0)>=0.55?'var(--green)':'var(--amber)');
-set('eq-trades',(perf.total_trades||0)+' closed trades');
+set('eq-trades',(perf.equity_trades||0)+' closed trades');
 set('cr-wr',((perf.crypto_win_rate||0)*100).toFixed(0)+'%',(perf.crypto_win_rate||0)>=0.55?'var(--gold)':'var(--amber)');
-set('cr-trades','');
+set('cr-trades',(perf.crypto_trades||0)+' closed trades');
 set('pos-count',priv.position_count||pub.position_count||0);
 set('live-status',live.status||'PAPER');
 set('live-sub',live.swarm_active?'Live · Swarm active':live.swarm_progress?'Live funded · Scaling':'Paper → Live journey');
