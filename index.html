@@ -50,6 +50,13 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 3
 .principle-name{font-size:15px;font-weight:800;margin-bottom:8px}
 .principle-desc{font-size:11px;color:var(--silver);line-height:1.7}
 footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:10px;color:var(--ghost)}
+
+.j-item{display:flex;gap:14px;margin-bottom:18px;position:relative}
+.j-dot{width:14px;height:14px;border-radius:50%;background:var(--ghost);flex-shrink:0;margin-top:3px;position:relative;z-index:1}
+.j-title{font-size:13px;font-weight:800;margin-bottom:4px}
+.j-desc{font-size:11px;color:var(--silver);line-height:1.65;margin-bottom:4px}
+.j-date{font-size:9px;color:var(--ghost);font-family:var(--fm);letter-spacing:1px}
+
 </style>
 
 
@@ -227,59 +234,155 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
   <div class="card"><div class="ct" style="margin-bottom:14px">Recent Activity</div><div id="decisions-list"></div></div>
 </div>
 
-<!-- THE CONSCIOUSNESS STACK -->
-<div class="sec">The Consciousness Stack</div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
-
-  <div class="principle" style="border-color:rgba(124,58,237,.3);grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start">
-    <div style="background:linear-gradient(135deg,var(--violet),var(--iris));border-radius:10px;padding:14px 18px;text-align:center;min-width:64px">
-      <div style="font-size:22px;font-weight:800;font-family:var(--fm);color:#fff">L1</div>
-      <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,.7);margin-top:2px">LAYER ONE</div>
-    </div>
+<!-- THIS WEEK'S DEBATE -->
+<div class="sec">This Week's Debate</div>
+<div class="card card-v" style="margin-bottom:14px" id="debate-card">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
     <div>
-      <div class="principle-num" style="color:var(--violet)">THE DEBATE</div>
-      <div class="principle-name">Every Trade Is Cross-Examined</div>
-      <div class="principle-desc">Before any position opens, Sovereign runs a structured 4-round adversarial debate. A bull model builds the strongest possible case. A bear model dismantles every assumption. They exchange rebuttals. An independent AI judge cites specific exchanges and rules on net conviction. Trades that can't survive cross-examination never reach execution. The strength of the pushback directly determines the size of the position.</div>
-      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-        <span style="font-size:9px;font-family:var(--fm);color:var(--violet);background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.2);border-radius:5px;padding:3px 8px">R1: Bull Case</span>
-        <span style="font-size:9px;font-family:var(--fm);color:var(--red);background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.18);border-radius:5px;padding:3px 8px">R2: Bear Attack</span>
-        <span style="font-size:9px;font-family:var(--fm);color:var(--iris);background:rgba(129,140,248,.1);border:1px solid rgba(129,140,248,.2);border-radius:5px;padding:3px 8px">R3: Rebuttal</span>
-        <span style="font-size:9px;font-family:var(--fm);color:var(--red);background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.12);border-radius:5px;padding:3px 8px">R4: Final Bear</span>
-        <span style="font-size:9px;font-family:var(--fm);color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.22);border-radius:5px;padding:3px 8px">⚖ AI Judge</span>
+      <div class="ct" style="margin:0">Inside a Real Decision</div>
+      <div style="font-size:11px;color:var(--ghost);margin-top:3px;font-family:var(--fm)">
+        Before any capital moves, the AI council argues both sides.
+        This is what that looks like.
+      </div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--iris)" id="deb-ticker">—</div>
+      <div style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-top:2px" id="deb-date">—</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+    <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:14px">
+      <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--violet);margin-bottom:8px">THE CASE FOR</div>
+      <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-bull">Loading…</div>
+    </div>
+    <div style="background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.18);border-radius:10px;padding:14px">
+      <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--red);margin-bottom:8px">THE CASE AGAINST</div>
+      <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-bear">Loading…</div>
+    </div>
+  </div>
+  <div style="background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--gold);margin-bottom:8px">COUNCIL VERDICT</div>
+    <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-verdict">—</div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div style="display:flex;gap:8px;align-items:center">
+      <span style="font-size:9px;font-family:var(--fm);color:var(--ghost)">COUNCIL VOTE</span>
+      <span style="font-size:11px;font-weight:800;font-family:var(--fm);color:var(--green)" id="deb-approve">—</span>
+      <span style="font-size:9px;color:var(--ghost)">approve</span>
+      <span style="font-size:11px;font-weight:800;font-family:var(--fm);color:var(--red)" id="deb-reject">—</span>
+      <span style="font-size:9px;color:var(--ghost)">reject</span>
+    </div>
+    <div style="font-size:11px;font-family:var(--fm)">
+      Outcome: <span style="font-weight:800" id="deb-outcome">—</span>
+    </div>
+  </div>
+</div>
+
+<!-- SOVEREIGN'S JOURNEY -->
+<div class="sec">Sovereign's Journey</div>
+<div class="card" style="margin-bottom:14px">
+  <div class="ct" style="margin-bottom:14px">Paper → Live · Day <span id="j-day">29</span> of 90</div>
+  <div style="position:relative;padding-left:24px">
+    <div style="position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--border)"></div>
+
+    <div class="j-item" data-done="true">
+      <div class="j-dot" style="background:var(--green)"></div>
+      <div class="j-content">
+        <div class="j-title">System Built</div>
+        <div class="j-desc">Dual-bot architecture live. Equity + crypto running 24/7 with full adversarial decision pipeline.</div>
+        <div class="j-date">March 2026</div>
+      </div>
+    </div>
+
+    <div class="j-item" data-done="true">
+      <div class="j-dot" style="background:var(--green)"></div>
+      <div class="j-content">
+        <div class="j-title">First Closed Trade — Win</div>
+        <div class="j-desc">The council ran its first live debate. Trade entered, target hit, position closed.</div>
+        <div class="j-date">March 2026</div>
+      </div>
+    </div>
+
+    <div class="j-item" data-done="true">
+      <div class="j-dot" style="background:var(--green)"></div>
+      <div class="j-content">
+        <div class="j-title">Live Capital Seeded — $50</div>
+        <div class="j-desc">Real money deployed. Proof of concept account tracking live alongside paper.</div>
+        <div class="j-date">April 2026</div>
+      </div>
+    </div>
+
+    <div class="j-item" data-done="true">
+      <div class="j-dot" style="background:var(--green)"></div>
+      <div class="j-content">
+        <div class="j-title">5 of 7 Live-Ready Gates Passed</div>
+        <div class="j-desc">Win rate, drawdown control, risk-adjusted returns, no losing streak, decision quality — all cleared. Two gates remain: trade count and paper trading days.</div>
+        <div class="j-date">April 2026</div>
+      </div>
+    </div>
+
+    <div class="j-item" data-done="false">
+      <div class="j-dot" style="background:var(--amber);box-shadow:0 0 8px var(--amber)"></div>
+      <div class="j-content">
+        <div class="j-title" style="color:var(--amber)">Day 90 — Full Live Deployment</div>
+        <div class="j-desc">90 paper days + 20 closed trades required. Currently Day <span id="j-day2">29</span>/90 · <span id="j-trades">16</span>/20 trades. On track.</div>
+        <div class="j-date" style="color:var(--amber)">~61 days out</div>
+      </div>
+    </div>
+
+    <div class="j-item" data-done="false">
+      <div class="j-dot" style="background:var(--ghost)"></div>
+      <div class="j-content">
+        <div class="j-title" style="color:var(--ghost)">$1K Live · Swarm Activates</div>
+        <div class="j-desc">At $1,000 live equity, competing strategy variants activate — capital flows to the strongest performer.</div>
+        <div class="j-date" style="color:var(--ghost)">Phase 2</div>
+      </div>
+    </div>
+
+    <div class="j-item" data-done="false">
+      <div class="j-dot" style="background:var(--ghost)"></div>
+      <div class="j-content">
+        <div class="j-title" style="color:var(--ghost)">Sovereign AI — SaaS Launch</div>
+        <div class="j-desc">Open access to the platform. Pro, Elite, and institutional tiers. Public track record leads the funnel.</div>
+        <div class="j-date" style="color:var(--ghost)">Phase 3</div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="principle" style="border-color:rgba(129,140,248,.22)">
-    <div class="principle-num" style="color:var(--iris)">L2 · REGIME FORECASTING</div>
-    <div class="principle-name">What Is the Market Going to Do?</div>
-    <div class="principle-desc">Most systems detect what the market <em>is</em>. Sovereign tries to predict what it <em>will be</em> — classifying regime state and sub-variant in real time, tracking historical win rates per regime, and adjusting thresholds before the next shift. Each regime has its own playbook. The same setup that's high-conviction in a trending bull market is a pass in choppy compression.</div>
+<!-- THE PHILOSOPHY -->
+<div class="sec">The Philosophy</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
+  <div class="principle">
+    <div class="principle-num" style="color:var(--violet)">"Every trade earns its execution."</div>
+    <div class="principle-name">No Free Passes</div>
+    <div class="principle-desc">A strong chart pattern isn't enough. A good earnings beat isn't enough. Every proposed trade has to survive a structured argument from both sides before capital moves. The ones that can't hold up under pressure don't get in.</div>
   </div>
-
-  <div class="principle" style="border-color:rgba(201,168,76,.22)">
-    <div class="principle-num" style="color:var(--gold)">L3 · COMPETING VARIANTS</div>
-    <div class="principle-name">Two Bots. One Allocation. Winner Takes More.</div>
-    <div class="principle-desc">The equity bot and crypto bot don't get equal budgets — they compete for capital based on live risk-adjusted performance. The Commissioner allocates more to whichever bot is earning it. The losing bot trades smaller until it proves its edge again. Every dollar flows toward the strategy currently doing the most work.</div>
+  <div class="principle">
+    <div class="principle-num" style="color:var(--iris)">"The system that ran today is smarter than the one that ran yesterday."</div>
+    <div class="principle-name">Compounding Intelligence</div>
+    <div class="principle-desc">Every night, Sovereign reviews what it did, what worked, and what didn't. It updates its own behavior based on outcomes — not fixed rules set once and left alone. The intelligence accumulates alongside the capital.</div>
   </div>
-
-  <div class="principle" style="border-color:rgba(16,185,129,.18)">
-    <div class="principle-num" style="color:var(--green)">L4 · SELF-WRITING</div>
-    <div class="principle-name">The System Rewrites Its Own Rules</div>
-    <div class="principle-desc">A 19-step nightly pipeline reviews every decision made that day — entries, skips, exits, and blocked trades. It recalibrates signal weights, updates judge accuracy, identifies regime-specific blind spots, and proposes changes to its own behavior. Intelligence compounds every night. The system running today is always smarter than the system that ran yesterday.</div>
+  <div class="principle">
+    <div class="principle-num" style="color:var(--gold)">"Fix the intelligence, not just the trade."</div>
+    <div class="principle-name">Cause Over Correlation</div>
+    <div class="principle-desc">When a position loses, the first question isn't "was the signal wrong?" It's "what did the system not know?" Every loss that traces back to missing context gets that context built in permanently. The system gets harder to fool.</div>
   </div>
+</div>
 
-  <div class="principle" style="border-color:rgba(129,140,248,.15)">
-    <div class="principle-num" style="color:var(--iris)">L5 · CAUSAL MARKET</div>
-    <div class="principle-name">Acting on the Cause, Not the Effect</div>
-    <div class="principle-desc">Sovereign connects macro events to individual positions before the broader market has priced in the relationship. Credit spread direction, tariff sensitivity, earnings flow, and cross-asset momentum are read as causal signals — not lagging indicators. The system acts when the reason is clear, not when everyone else has already moved.</div>
+<!-- NOTIFY ME -->
+<div class="card card-gold" style="margin-bottom:14px;text-align:center;padding:32px 24px">
+  <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
+  <div style="font-size:22px;font-weight:800;margin-bottom:10px">Get Early Access</div>
+  <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">
+    Sovereign is in paper trading. When the 90-day track record clears and live capital deploys,
+    the platform opens. Be first in line.
   </div>
-
-  <div class="principle" style="border-color:rgba(74,70,112,.3)">
-    <div class="principle-num" style="color:var(--ghost)">L6 · COMPOUNDING SELF-KNOWLEDGE</div>
-    <div class="principle-name">The System Knows What It's Good At</div>
-    <div class="principle-desc">Sovereign tracks its own behavioral patterns — which regimes it trades well in, which signals have the highest predictive power, where it has been overconfident. This isn't just P&amp;L tracking. It's a running record of the system's own edge, updated continuously, so capital flows toward setups where Sovereign has demonstrated a real statistical advantage.</div>
-  </div>
-
+  <a href="mailto:sovereign.ai.waitlist@gmail.com?subject=Early Access Request"
+     style="display:inline-block;background:linear-gradient(135deg,var(--violet),var(--iris));color:#fff;font-weight:700;font-size:13px;padding:12px 28px;border-radius:8px;text-decoration:none;letter-spacing:.5px;font-family:var(--fn)">
+    Join the Waitlist →
+  </a>
+  <div style="font-size:9px;color:var(--ghost);margin-top:12px;font-family:var(--fm)">No spam. One email when we go live.</div>
 </div>
 
 <!-- SECTOR LEADERSHIP -->
@@ -400,6 +503,35 @@ set('ft-updated','Updated: '+(pub.last_updated||priv.last_updated||'—').slice(
     if(document.visibilityState === 'visible') refreshPublicLive();
   });
 })();
+
+// ── Journey day counts from live readiness data ──────────────────────────
+(function(){
+  const rd = (window.__SD__||{}).live_readiness || {};
+  const gates = rd.gates || {};
+  const paperDays = (gates.paper_days||{}).value || 29;
+  const trades = (window.__SD__||{}).performance_summary?.total_trades || 16;
+  ['j-day','j-day2'].forEach(id=>{ const e=document.getElementById(id); if(e) e.textContent=paperDays; });
+  const jt = document.getElementById('j-trades'); if(jt) jt.textContent = trades;
+})();
+
+// ── Debate card from window.__SD__.debate_summary ────────────────────────
+(function(){
+  const deb = (window.__SD__||{}).debate_summary || {};
+  if(!deb.ticker) return;
+  const set = (id,v,col) => { const e=document.getElementById(id); if(e){e.textContent=v; if(col) e.style.color=col;} };
+  set('deb-ticker', deb.ticker);
+  set('deb-date', deb.date||'');
+  set('deb-bull', deb.bull_case||'—');
+  set('deb-bear', deb.bear_case||'—');
+  set('deb-verdict', deb.verdict||'—');
+  set('deb-approve', (deb.vote_approve||0)+' of '+(deb.total_judges||4), 'var(--green)');
+  const rej = deb.vote_reject||0;
+  set('deb-reject', rej, rej>0?'var(--red)':'var(--ghost)');
+  const out = deb.outcome||'open';
+  const outEl = document.getElementById('deb-outcome');
+  if(outEl){ outEl.textContent=out; outEl.style.color=out.includes('+')?'var(--green)':out==='currently open'?'var(--amber)':'var(--red)'; }
+})();
+
 </script>
 </body>
 </html>
