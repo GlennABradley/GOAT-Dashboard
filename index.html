@@ -379,10 +379,22 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
     Sovereign is building its track record in paper trading. When we're ready to open access,
     waitlist members hear first — no spam, no hard date promises, just a heads-up when the time comes.
   </div>
-  <a href="mailto:sovereign.ai.waitlist@gmail.com?subject=Early Access Request"
-     style="display:inline-block;background:linear-gradient(135deg,var(--violet),var(--iris));color:#fff;font-weight:700;font-size:13px;padding:12px 28px;border-radius:8px;text-decoration:none;letter-spacing:.5px;font-family:var(--fn)">
-    Join the Waitlist →
-  </a>
+  <form action="https://formspree.io/f/xwpbogpn" method="POST"
+        style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:440px;margin:0 auto"
+        onsubmit="this.querySelector('button').textContent='✓ You're on the list';this.querySelector('button').disabled=true;this.querySelector('input').disabled=true;">
+    <input type="email" name="email" required placeholder="your@email.com"
+           style="flex:1;min-width:200px;padding:12px 16px;border-radius:8px;border:1px solid rgba(124,58,237,.4);
+                  background:rgba(10,10,28,.8);color:#F0EDFF;font-family:var(--fm);font-size:13px;
+                  outline:none;letter-spacing:.3px"/>
+    <input type="hidden" name="_subject" value="Sovereign AI — Waitlist Signup"/>
+    <button type="submit"
+            style="background:linear-gradient(135deg,var(--violet),var(--iris));color:#fff;
+                   font-weight:700;font-size:13px;padding:12px 22px;border-radius:8px;
+                   border:none;cursor:pointer;letter-spacing:.5px;font-family:var(--fn);
+                   white-space:nowrap">
+      Join the Waitlist →
+    </button>
+  </form>
   <div style="font-size:9px;color:var(--ghost);margin-top:12px;font-family:var(--fm)">No spam. One email when we go live.</div>
 </div>
 
