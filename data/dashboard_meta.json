@@ -1,6 +1,6 @@
 {
-  "last_push": "2026-04-22T23:00:19.829791",
-  "pushed_at": "2026-04-22T23:00:19.829800",
+  "last_push": "2026-04-22T23:13:51.527405",
+  "pushed_at": "2026-04-22T23:13:51.527409",
   "schema_version": 3,
   "files": [
     "portfolio_public.json",
@@ -12,6 +12,7 @@
     "order_history.json",
     "debate_summary.json",
     "debate_history.json",
+    "regime_heatmap.json",
     "competition_ledger.json",
     "meta_learnings.json",
     "cross_asset.json",
