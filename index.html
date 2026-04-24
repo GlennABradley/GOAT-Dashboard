@@ -8,10 +8,11 @@
 <style>
 :root{--void:#06060F;--deep:#0D0D1F;--surface:#141428;--border:#1E1A3D;--violet:#7C3AED;--gold:#C9A84C;--iris:#818CF8;--white:#F0EDFF;--silver:#9B94C5;--ghost:#4A4670;--green:#10B981;--red:#EF4444;--amber:#F59E0B;--fn:'Space Grotesk',sans-serif;--fm:'JetBrains Mono',monospace}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:var(--void);color:var(--white);font-family:var(--fn);font-size:14px;background-image:radial-gradient(ellipse 80% 50% at 10% -5%,rgba(124,58,237,.09) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 90% 110%,rgba(201,168,76,.05) 0%,transparent 60%)}
+body{background:var(--void);color:var(--white);font-family:var(--fn);font-size:14px;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
+body::after{content:'';position:fixed;top:-20%;left:-10%;width:65%;height:65%;background:radial-gradient(ellipse,rgba(124,58,237,.055) 0%,transparent 70%);pointer-events:none;z-index:0}
 header{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:58px;background:rgba(10,10,28,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(24px);position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-icon{width:28px;height:28px;background:linear-gradient(135deg,var(--violet),var(--iris));border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 18px rgba(124,58,237,.4)}
 .logo-text{font-size:16px;font-weight:500;letter-spacing:.18em;color:#fff}
 .hdr-r{display:flex;align-items:center;gap:18px}
 .live-pip{display:flex;align-items:center;gap:6px;font-size:10px;font-family:var(--fm);color:var(--green);letter-spacing:1px}
@@ -19,7 +20,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 3
 @keyframes glow{0%,100%{opacity:1;box-shadow:0 0 10px var(--green)}50%{opacity:.3;box-shadow:0 0 3px var(--green)}}
 .priv-link{font-size:10px;font-family:var(--fm);color:var(--ghost);text-decoration:none;padding:4px 10px;border:1px solid var(--border);border-radius:6px;transition:all .2s}
 .priv-link:hover{color:var(--iris);border-color:var(--iris)}
-.page{max-width:1100px;margin:0 auto;padding:0 22px 80px}
+.page{max-width:1100px;margin:0 auto;padding:0 22px 80px;position:relative;z-index:1}
 .hero{padding:80px 0 60px;text-align:center}
 .hero-eyebrow{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--violet);text-transform:uppercase;font-family:var(--fm);margin-bottom:20px}
 .hero-title{font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.1;margin-bottom:22px;background:linear-gradient(135deg,var(--white) 0%,var(--iris) 50%,var(--violet) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -28,454 +29,283 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 3
 .hero-stats{display:flex;align-items:center;justify-content:center;gap:44px;margin-top:44px;padding-top:36px;border-top:1px solid var(--border);flex-wrap:wrap}
 .hstat-val{font-size:30px;font-weight:800;font-family:var(--fm)}
 .hstat-lbl{font-size:9px;letter-spacing:2px;color:var(--ghost);text-transform:uppercase;margin-top:4px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
-.g21{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
-@media(max-width:1000px){.g4{grid-template-columns:1fr 1fr}.g21{grid-template-columns:1fr}}
-@media(max-width:640px){.g4,.g21{grid-template-columns:1fr}.page{padding:0 12px 48px}.hero{padding:44px 0 36px}.hero-stats{gap:22px}}
+.hstat-divider{width:1px;height:44px;background:var(--border)}
+.sec{font-size:8px;font-weight:700;letter-spacing:3px;color:var(--ghost);text-transform:uppercase;margin:40px 0 16px;display:flex;align-items:center;gap:10px}
+.sec::after{content:'';flex:1;height:1px;background:var(--border)}
 .card{background:var(--deep);border:1px solid var(--border);border-radius:13px;padding:18px;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(129,140,248,.14),transparent);pointer-events:none}
 .card-v{border-color:rgba(124,58,237,.22)}.card-g{border-color:rgba(16,185,129,.18)}.card-gold{border-color:rgba(201,168,76,.2)}.card-iris{border-color:rgba(129,140,248,.2)}
 .ct{font-size:8px;letter-spacing:2px;color:var(--ghost);text-transform:uppercase;font-weight:700;margin-bottom:10px}
 .cval{font-size:26px;font-weight:800;font-family:var(--fm);line-height:1.1}
 .csub{font-size:10px;color:var(--silver);margin-top:4px;font-family:var(--fm)}
-.sec{font-size:8px;font-weight:700;letter-spacing:3px;color:var(--ghost);text-transform:uppercase;margin:36px 0 16px;display:flex;align-items:center;gap:10px}
-.sec::after{content:'';flex:1;height:1px;background:var(--border)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.g21{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:1000px){.g4{grid-template-columns:1fr 1fr}.g21{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.g4,.g21,.g3{grid-template-columns:1fr}.page{padding:0 12px 48px}.hero{padding:44px 0 36px}.hero-stats{gap:22px}.hstat-divider{display:none}}
 .pbar{height:5px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden}
 .pfill{height:100%;border-radius:5px;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
 .gate-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px}
 .gate-row:last-child{border-bottom:none}
-.principle{background:var(--deep);border:1px solid var(--border);border-radius:13px;padding:22px;position:relative;overflow:hidden;transition:border-color .2s}
-.principle:hover{border-color:rgba(129,140,248,.3)}
-.principle-num{font-size:9px;font-weight:800;letter-spacing:2px;font-family:var(--fm);margin-bottom:10px}
-.principle-name{font-size:15px;font-weight:800;margin-bottom:8px}
-.principle-desc{font-size:11px;color:var(--silver);line-height:1.7}
-footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:10px;color:var(--ghost)}
-
-.j-item{display:flex;gap:14px;margin-bottom:18px;position:relative}
-.j-dot{width:14px;height:14px;border-radius:50%;background:var(--ghost);flex-shrink:0;margin-top:3px;position:relative;z-index:1}
+.j-item{display:flex;gap:14px;margin-bottom:18px}
+.j-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:3px;position:relative;z-index:1}
 .j-title{font-size:13px;font-weight:800;margin-bottom:4px}
 .j-desc{font-size:11px;color:var(--silver);line-height:1.65;margin-bottom:4px}
 .j-date{font-size:9px;color:var(--ghost);font-family:var(--fm);letter-spacing:1px}
-
+.principle{background:var(--deep);border:1px solid var(--border);border-radius:13px;padding:22px;transition:border-color .2s,transform .15s}
+.principle:hover{border-color:rgba(129,140,248,.3);transform:translateY(-2px)}
+.principle-num{font-size:9px;font-weight:800;letter-spacing:2px;font-family:var(--fm);margin-bottom:10px}
+.principle-name{font-size:15px;font-weight:800;margin-bottom:8px}
+.principle-desc{font-size:11px;color:var(--silver);line-height:1.7}
+.process-strip{display:flex;align-items:stretch;border:1px solid var(--border);border-radius:13px;overflow:hidden;background:var(--deep);margin-bottom:14px}
+.process-step{flex:1;padding:24px 20px;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--border)}
+.process-step:last-child{border-right:none}
+.process-num{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--ghost);font-family:var(--fm)}
+.process-title{font-size:15px;font-weight:800}
+.process-desc{font-size:11px;color:var(--silver);line-height:1.65;flex:1}
+.process-tag{display:inline-block;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--fm);padding:3px 8px;border-radius:20px;margin-top:8px}
+@media(max-width:640px){.process-strip{flex-direction:column}.process-step{border-right:none;border-bottom:1px solid var(--border)}.process-step:last-child{border-bottom:none}}
+.vote-track{height:7px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;margin-top:5px}
+.vote-fill-green{height:100%;background:linear-gradient(90deg,#059669,var(--green));border-radius:4px;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.vote-fill-red{height:100%;background:linear-gradient(90deg,#dc2626,var(--red));border-radius:4px;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.d-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:11px}
+.d-row:last-child{border-bottom:none}
+.d-badge{font-size:8px;font-weight:800;letter-spacing:1.5px;font-family:var(--fm);padding:2px 8px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+.sector-item{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:11px 12px}
+.sector-bar-track{height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-top:5px;overflow:hidden}
+.sector-bar-fill{height:100%;border-radius:2px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.chal-bar-track{height:9px;background:rgba(255,255,255,.06);border-radius:5px;overflow:hidden}
+.chal-bar-fill{height:100%;background:linear-gradient(90deg,var(--violet),var(--iris));border-radius:5px;transition:width 2s cubic-bezier(.4,0,.2,1)}
+.stat-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.stat-box-val{font-size:22px;font-weight:800;font-family:var(--fm)}
+.stat-box-lbl{font-size:9px;letter-spacing:2px;color:var(--ghost);text-transform:uppercase;margin-top:4px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.cta-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:440px;margin:0 auto}
+.cta-input{flex:1;min-width:200px;padding:12px 16px;border-radius:8px;border:1px solid rgba(124,58,237,.4);background:rgba(10,10,28,.8);color:#F0EDFF;font-family:var(--fm);font-size:13px;outline:none}
+.cta-input:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(124,58,237,.15)}
+.cta-btn{background:linear-gradient(135deg,var(--violet),var(--iris));color:#fff;font-weight:700;font-size:13px;padding:12px 22px;border-radius:8px;border:none;cursor:pointer;letter-spacing:.5px;font-family:var(--fn);transition:opacity .2s,transform .15s;white-space:nowrap}
+.cta-btn:hover{opacity:.9;transform:translateY(-1px)}
+footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:10px;color:var(--ghost);position:relative;z-index:1}
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- __SD_START__ -->
-<script id="__sovereign_data__">window.__SD__={"system_health":{"state":"HEALTHY","status_emoji":"\ud83d\udfe2","checked_at":"2026-04-23T18:00:02.924008"},"bot_config":{"active_bots":["equity","crypto"],"equity_active":true,"crypto_active":true,"mode":"dual"},"portfolio_public":{"position_count":1,"symbols":["ETH/USD"],"last_updated":"2026-04-23"},"live_readiness":{"gates_passed":5,"gates_total":7,"readiness_pct":71,"gates":{"paper_days":{"pass":false},"min_trades":{"pass":false},"min_win_rate":{"pass":true},"max_drawdown":{"pass":true},"min_sharpe":{"pass":true},"no_consecutive_losses":{"pass":true},"tribunal_veto_rate":{"pass":true}}},"performance_summary":{"equity_win_rate":0.692,"crypto_win_rate":0.333,"equity_trades":13,"crypto_trades":3,"total_trades":16,"combined_win_rate":0.625,"leader":"EQUITY"},"portfolio_chart":{"total_return_pct":1.2167,"day_pnl_pct":-0.6567,"position_count":1,"snapshots_pct":[{"date":"2026-03-24","pct":0.0},{"date":"2026-03-25","pct":-0.0283},{"date":"2026-03-26","pct":0.0508},{"date":"2026-03-27","pct":-0.0133},{"date":"2026-03-28","pct":-0.0133},{"date":"2026-03-29","pct":-0.0133},{"date":"2026-03-30","pct":0.0058},{"date":"2026-03-31","pct":0.0216},{"date":"2026-04-01","pct":0.0638},{"date":"2026-04-02","pct":0.0809},{"date":"2026-04-03","pct":0.0802},{"date":"2026-04-04","pct":0.0802},{"date":"2026-04-05","pct":0.0802},{"date":"2026-04-06","pct":0.106},{"date":"2026-04-07","pct":0.5986},{"date":"2026-04-08","pct":0.7923},{"date":"2026-04-09","pct":0.7766},{"date":"2026-04-10","pct":0.7152},{"date":"2026-04-11","pct":0.6694},{"date":"2026-04-12","pct":0.6614},{"date":"2026-04-13","pct":0.8285},{"date":"2026-04-14","pct":0.9428},{"date":"2026-04-15","pct":0.6494},{"date":"2026-04-16","pct":0.7773},{"date":"2026-04-17","pct":0.9875},{"date":"2026-04-18","pct":0.9494},{"date":"2026-04-19","pct":0.7932},{"date":"2026-04-20","pct":1.4067},{"date":"2026-04-21","pct":1.7329},{"date":"2026-04-22","pct":0.4309},{"date":"2026-04-23","pct":1.2167}],"last_updated":"2026-04-23T18:05:02.489874"},"debate_summary":{"ticker":"NTAP","date":"2026-04-22","vote_approve":2,"vote_reject":2,"total_judges":4,"bull_case":"This is institutional accumulation disguised as retail fear - the extreme call positioning and sector outperformance in a choppy market proves smart money is loading up. The 11.1% short interest actually amplifies upside potential as any break above ranging resistance triggers covering.","bear_case":"NetApp faces a classic value trap scenario where AI tailwinds mask underlying structural pressure from tariff-driven cost inflation hitting a leveraged balance sheet.","verdict":"This trade presents a genuine tension between compelling stock-specific signals and a hostile regime environment. The defense successfully neutralized the leverage fatal flaw \u2014 NTAP's 2.5x net debt/EBITDA is manageable and investment grade. However, the prosecution landed a decisive blow in cross-examination: if institutional accumulation were truly underway, NTAP would not be underperforming XLK by 8.2% over three months, and 11.1% short interest more plausibly reflects informed bearish conviction than fuel for a squeeze.","outcome":"open"},"sector_leadership":{"date":"2026-04-23","top_sector":"XLU","bottom_sector":"XLK","neutral_mkt":false,"spread":4.082,"ranked":[{"rank":1,"etf":"XLU","name":"Utilities","chg":2.396,"gate":"ENTER"},{"rank":2,"etf":"XLP","name":"Consumer Staples","chg":1.742,"gate":"ENTER"},{"rank":3,"etf":"XLI","name":"Industrials","chg":1.596,"gate":"ENTER"},{"rank":4,"etf":"XLRE","name":"Real Estate","chg":0.863,"gate":"ENTER"},{"rank":5,"etf":"XLE","name":"Energy","chg":0.716,"gate":"ENTER"},{"rank":6,"etf":"XLV","name":"Health Care","chg":-0.14,"gate":"AVOID"},{"rank":7,"etf":"XLC","name":"Communication","chg":-0.297,"gate":"AVOID"},{"rank":8,"etf":"XLB","name":"Materials","chg":-0.328,"gate":"AVOID"},{"rank":9,"etf":"XLF","name":"Financials","chg":-0.804,"gate":"AVOID"},{"rank":10,"etf":"XLY","name":"Consumer Disc","chg":-1.022,"gate":"AVOID"},{"rank":11,"etf":"XLK","name":"Technology","chg":-1.686,"gate":"AVOID"}]},"live_account":{"status":"FUNDED","swarm_active":false,"swarm_progress":5.0},"decisions_recent":[{"action":"PASSED","bot":"crypto","timestamp":"2026-04-23"},{"action":"PASSED","bot":"equity","timestamp":"2026-04-23"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-23"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-23"},{"action":"PASSED","bot":"crypto","timestamp":"2026-04-23"},{"action":"ENTERED","bot":"equity","timestamp":"2026-04-22"},{"action":"PASSED","bot":"equity","timestamp":"2026-04-22"},{"action":"PASSED","bot":"equity","timestamp":"2026-04-22"}]};</script>
+<script id="__sovereign_data__">window.__SD__={};</script>
 <!-- __SD_END__ -->
 </head>
 <body>
+
 <header>
   <a class="logo" href="#"><svg width="28" height="26" viewBox="0 0 100 85" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="27" width="13" height="50" rx="2" fill="#818CF8"/><rect x="22" y="41" width="13" height="36" rx="2" fill="#7C3AED"/><rect x="42" y="7" width="16" height="70" rx="2" fill="#C9A84C"/><rect x="65" y="41" width="13" height="36" rx="2" fill="#7C3AED"/><rect x="85" y="27" width="13" height="50" rx="2" fill="#818CF8"/><rect x="0" y="72" width="100" height="6" rx="2" fill="#C9A84C"/><circle cx="8.5" cy="27" r="4.5" fill="#C9A84C"/><circle cx="28.5" cy="41" r="3.5" fill="#C9A84C"/><circle cx="50" cy="7" r="5.5" fill="#C9A84C"/><circle cx="71.5" cy="41" r="3.5" fill="#C9A84C"/><circle cx="91.5" cy="27" r="4.5" fill="#C9A84C"/></svg><div class="logo-text">SOVEREIGN</div></a>
   <div class="hdr-r">
     <div class="live-pip"><div class="dot"></div> PAPER ACTIVE</div>
+    <a href="private/" class="priv-link">Pro Access &#x2192;</a>
   </div>
 </header>
+
 <div class="page">
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Autonomous AI Trading System</div>
+  <div class="hero-eyebrow">Autonomous AI Trading System &middot; Paper Active &middot; Day <span id="j-day">&#x2014;</span> of 90</div>
   <div class="hero-title">The AI That Debates<br>Before It Trades</div>
-  <div class="hero-sub">Sovereign runs equity and crypto autonomously, around the clock. Before any position opens, a multi-model AI council argues it from both sides — every reason to enter, every reason to walk away. Only high-conviction setups survive deliberation. Capital moves on merit, not impulse.</div>
+  <div class="hero-sub">Sovereign runs equity and crypto autonomously, around the clock. Before any position opens, a multi-model AI council argues it from both sides &#x2014; every reason to enter, every reason to walk away. Only high-conviction setups survive deliberation. Capital moves on merit, not impulse.</div>
   <div class="hero-tagline">Every trade earns its execution.</div>
   <div class="hero-stats">
-    <div style="text-align:center"><div class="hstat-val" id="h-val" style="color:var(--green)">—</div><div class="hstat-lbl">Total Return</div></div>
-    <div style="width:1px;height:44px;background:var(--border)"></div>
-    <div style="text-align:center"><div class="hstat-val" id="h-wr" style="color:var(--green)">—</div><div class="hstat-lbl">Win Rate</div></div>
-    <div style="width:1px;height:44px;background:var(--border)"></div>
-    <div style="text-align:center"><div class="hstat-val" id="h-trades" style="color:var(--iris)">—</div><div class="hstat-lbl">Trades Closed</div></div>
-    <div style="width:1px;height:44px;background:var(--border)"></div>
-    <div style="text-align:center"><div class="hstat-val" id="h-gates" style="color:var(--gold)">—</div><div class="hstat-lbl">Live-Ready Gates</div></div>
-    <div style="width:1px;height:44px;background:var(--border)"></div>
-    <div style="text-align:center"><div class="hstat-val" id="h-pnl" style="color:var(--green)">—</div><div class="hstat-lbl">Today</div></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-val" style="color:var(--green)">&#x2014;</div><div class="hstat-lbl">Total Return</div></div>
+    <div class="hstat-divider"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-wr" style="color:var(--green)">&#x2014;</div><div class="hstat-lbl">Win Rate</div></div>
+    <div class="hstat-divider"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-trades" style="color:var(--iris)">&#x2014;</div><div class="hstat-lbl">Trades Closed</div></div>
+    <div class="hstat-divider"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-gates" style="color:var(--gold)">&#x2014;</div><div class="hstat-lbl">Live-Ready Gates</div></div>
+    <div class="hstat-divider"></div>
+    <div style="text-align:center"><div class="hstat-val" id="h-pnl" style="color:var(--green)">&#x2014;</div><div class="hstat-lbl">Today</div></div>
   </div>
 </div>
 
 <!-- EQUITY CURVE -->
-<div class="card" style="margin-bottom:14px">
+<div class="card reveal" style="margin-bottom:14px">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
-    <div>
-      <div class="ct" style="margin:0">Equity Curve — Paper Account</div>
-      <div style="font-size:11px;color:var(--ghost);margin-top:3px">Cumulative return since inception · Paper trading</div>
-    </div>
+    <div><div class="ct" style="margin:0">Equity Curve &#x2014; Paper Account</div><div style="font-size:11px;color:var(--ghost);margin-top:3px">Cumulative return since inception &middot; Paper trading</div></div>
     <div id="curve-gain" style="font-size:14px;font-weight:700;font-family:var(--fm);color:var(--green)"></div>
   </div>
   <canvas id="equity-chart" style="width:100%;display:block"></canvas>
 </div>
 
-<!-- PERFORMANCE -->
-<div class="sec">Performance</div>
-<div class="g4">
-  <div class="card card-v"><div class="ct">Equity Bot</div><div class="cval" id="eq-wr" style="color:var(--green)">—</div><div class="csub" id="eq-trades">—</div></div>
-  <div class="card card-gold"><div class="ct">Crypto Bot</div><div class="cval" id="cr-wr" style="color:var(--gold)">—</div><div class="csub" id="cr-trades">—</div></div>
-  <div class="card card-iris"><div class="ct">Open Positions</div><div class="cval" id="pos-count" style="color:var(--iris)">—</div><div class="csub">active right now</div></div>
-  <div class="card"><div class="ct">Best Trade</div><div class="cval" style="color:var(--green)">+7.12%</div><div class="csub">PANW · Equity Bot</div></div>
+<!-- HOW SOVEREIGN THINKS -->
+<div class="sec">How Sovereign Thinks</div>
+<div class="process-strip reveal">
+  <div class="process-step">
+    <div class="process-num">01 / SCREEN</div>
+    <div style="font-size:24px;line-height:1;margin-bottom:2px">&#x1F52D;</div>
+    <div class="process-title">Hunt the Setup</div>
+    <div class="process-desc">Sovereign monitors markets continuously, evaluating candidates across every major sector. Most setups never make it past the initial filter &#x2014; only those that clear every threshold reach the next stage.</div>
+    <div class="process-tag" style="background:rgba(129,140,248,.1);color:var(--iris)">Continuous monitoring</div>
+  </div>
+  <div class="process-step">
+    <div class="process-num">02 / DEBATE</div>
+    <div style="font-size:24px;line-height:1;margin-bottom:2px">&#x2694;&#xFE0F;</div>
+    <div class="process-title">Argue Both Sides</div>
+    <div class="process-desc">Every candidate is argued adversarially. A prosecution builds the strongest case against; a defense builds the case for. The council votes. No conviction, no capital. Most setups are rejected here.</div>
+    <div class="process-tag" style="background:rgba(124,58,237,.1);color:var(--violet)">Adversarial deliberation</div>
+  </div>
+  <div class="process-step">
+    <div class="process-num">03 / EXECUTE</div>
+    <div style="font-size:24px;line-height:1;margin-bottom:2px">&#x1F3C6;</div>
+    <div class="process-title">Only Conviction Moves</div>
+    <div class="process-desc">Setups that survive every stage execute with precision-sized positions and pre-defined exits. No emotional overrides. No exceptions. The edge is in the process &#x2014; not the prediction.</div>
+    <div class="process-tag" style="background:rgba(201,168,76,.1);color:var(--gold)">Merit-based execution</div>
+  </div>
 </div>
 
-<!-- LIVE READINESS -->
+<!-- PERFORMANCE -->
+<div class="sec">Performance</div>
+<div class="g4 reveal">
+  <div class="card card-v"><div class="ct">Equity Bot</div><div class="cval" id="eq-wr" style="color:var(--green)">&#x2014;</div><div class="csub" id="eq-trades">&#x2014;</div></div>
+  <div class="card card-gold"><div class="ct">Crypto Bot</div><div class="cval" id="cr-wr" style="color:var(--gold)">&#x2014;</div><div class="csub" id="cr-trades">&#x2014;</div></div>
+  <div class="card card-iris"><div class="ct">Open Positions</div><div class="cval" id="pos-count" style="color:var(--iris)">&#x2014;</div><div class="csub">active right now</div></div>
+  <div class="card"><div class="ct">Best Trade</div><div class="cval" style="color:var(--green)">+7.12%</div><div class="csub">PANW &middot; Equity Bot</div></div>
+</div>
+
+<!-- THIS WEEK'S DEBATE -->
+<div class="sec">This Week's Debate</div>
+<div class="card card-v reveal" style="margin-bottom:14px">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+    <div><div class="ct" style="margin:0">Inside a Real Decision</div><div style="font-size:11px;color:var(--ghost);margin-top:3px;font-family:var(--fm)">Before any capital moves, the council argues both sides. This is what that looks like.</div></div>
+    <div style="text-align:right"><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--iris)" id="deb-ticker">&#x2014;</div><div style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-top:2px" id="deb-date">&#x2014;</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;align-items:start">
+    <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:14px">
+      <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--violet);margin-bottom:8px">THE CASE FOR</div>
+      <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-bull">Loading&#x2026;</div>
+    </div>
+    <div style="background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.18);border-radius:10px;padding:14px">
+      <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--red);margin-bottom:8px">THE CASE AGAINST</div>
+      <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-bear">Loading&#x2026;</div>
+    </div>
+  </div>
+  <div style="background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--gold);margin-bottom:8px">COUNCIL VERDICT</div>
+    <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-verdict">&#x2014;</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;font-family:var(--fm);margin-bottom:4px"><span style="color:var(--ghost)">APPROVED</span><span id="deb-approve" style="color:var(--green);font-weight:700">&#x2014;</span></div>
+      <div class="vote-track"><div class="vote-fill-green" id="vote-bar-approve" style="width:0%"></div></div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;font-family:var(--fm);margin-bottom:4px"><span style="color:var(--ghost)">REJECTED</span><span id="deb-reject" style="color:var(--red);font-weight:700">&#x2014;</span></div>
+      <div class="vote-track"><div class="vote-fill-red" id="vote-bar-reject" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:flex-end;margin-top:12px;font-size:11px;font-family:var(--fm)">Outcome: <span style="font-weight:800;margin-left:6px" id="deb-outcome">&#x2014;</span></div>
+</div>
+
+<!-- LIVE READINESS + DECISIONS -->
 <div class="sec">Live-Readiness Progress</div>
-<div class="g21">
+<div class="g21 reveal">
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
       <div><div class="ct" style="margin:0">Path to Live Capital</div><div style="font-size:11px;color:var(--ghost);margin-top:3px">Every performance milestone must clear before Sovereign deploys real capital</div></div>
-      <div style="font-size:22px;font-weight:800;font-family:var(--fm);color:var(--gold)"><span id="rd-passed">—</span><span style="font-size:13px;color:var(--ghost)">/7</span></div>
+      <div style="font-size:22px;font-weight:800;font-family:var(--fm);color:var(--gold)"><span id="rd-passed">&#x2014;</span><span style="font-size:13px;color:var(--ghost)">/7</span></div>
     </div>
     <div id="gates-list"></div>
     <div style="margin-top:16px">
-      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--ghost);font-family:var(--fm);margin-bottom:6px"><span>Overall readiness</span><span id="rd-pct">—</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--ghost);font-family:var(--fm);margin-bottom:6px"><span>Overall readiness</span><span id="rd-pct">&#x2014;</span></div>
       <div class="pbar"><div class="pfill" id="rd-bar" style="background:var(--gold);width:0%"></div></div>
     </div>
   </div>
   <div class="card"><div class="ct" style="margin-bottom:14px">Recent Activity</div><div id="decisions-list"></div></div>
 </div>
 
-<!-- THIS WEEK'S DEBATE -->
-<div class="sec">This Week's Debate</div>
-<div class="card card-v" style="margin-bottom:14px;overflow:visible" id="debate-card">
-  <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
-    <div>
-      <div class="ct" style="margin:0">Inside a Real Decision</div>
-      <div style="font-size:11px;color:var(--ghost);margin-top:3px;font-family:var(--fm)">
-        Before any capital moves, the AI council argues both sides.
-        This is what that looks like.
-      </div>
+<!-- THE CHALLENGER -->
+<div class="sec">The Challenger</div>
+<div class="card card-v reveal" style="margin-bottom:14px">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+    <div style="max-width:540px">
+      <div class="ct" style="margin:0">$100 Racing to $100,000</div>
+      <div style="font-size:13px;font-weight:600;margin:6px 0 6px">A stress test with real stakes.</div>
+      <div style="font-size:11px;color:var(--silver);line-height:1.65">A separate account tracking whether the methodology holds when it has to compound 1,000&#xD7;. Same market. Same adversarial process. No shortcuts.</div>
     </div>
-    <div style="text-align:right">
-      <div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--iris)" id="deb-ticker">—</div>
-      <div style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-top:2px" id="deb-date">—</div>
-    </div>
+    <div style="text-align:right;flex-shrink:0"><div style="font-size:9px;color:var(--ghost);font-family:var(--fm);margin-bottom:3px">SCORE</div><div style="font-size:26px;font-weight:800;font-family:var(--fm);color:var(--violet)" id="chal-score">&#x2014;</div></div>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;align-items:start">
-    <div style="background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:14px">
-      <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--violet);margin-bottom:8px">THE CASE FOR</div>
-      <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-bull">Loading…</div>
-    </div>
-    <div style="background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.18);border-radius:10px;padding:14px">
-      <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--red);margin-bottom:8px">THE CASE AGAINST</div>
-      <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-bear">Loading…</div>
-    </div>
+  <div style="margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;font-size:9px;font-family:var(--fm);color:var(--ghost);margin-bottom:6px"><span>$100 start</span><span id="chal-progress-label" style="color:var(--iris)">&#x2014;</span><span>$100,000 goal</span></div>
+    <div class="chal-bar-track"><div class="chal-bar-fill" id="chal-bar" style="width:0%"></div></div>
   </div>
-  <div style="background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:14px;margin-bottom:12px">
-    <div style="font-size:8px;font-weight:800;letter-spacing:2px;color:var(--gold);margin-bottom:8px">COUNCIL VERDICT</div>
-    <div style="font-size:11px;color:var(--silver);line-height:1.7" id="deb-verdict">—</div>
-  </div>
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-    <div style="display:flex;gap:8px;align-items:center">
-      <span style="font-size:9px;font-family:var(--fm);color:var(--ghost)">COUNCIL VOTE</span>
-      <span style="font-size:11px;font-weight:800;font-family:var(--fm);color:var(--green)" id="deb-approve">—</span>
-      <span style="font-size:9px;color:var(--ghost)">approve</span>
-      <span style="font-size:11px;font-weight:800;font-family:var(--fm);color:var(--red)" id="deb-reject">—</span>
-      <span style="font-size:9px;color:var(--ghost)">reject</span>
-    </div>
-    <div style="font-size:11px;font-family:var(--fm)">
-      Outcome: <span style="font-weight:800" id="deb-outcome">—</span>
-    </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div class="stat-box"><div class="stat-box-val" id="chal-wr" style="color:var(--green)">&#x2014;</div><div class="stat-box-lbl">Win Rate</div></div>
+    <div class="stat-box"><div class="stat-box-val" id="chal-trades" style="color:var(--iris)">&#x2014;</div><div class="stat-box-lbl">Closed Trades</div></div>
+    <div class="stat-box"><div class="stat-box-val" id="chal-return" style="color:var(--gold)">&#x2014;</div><div class="stat-box-lbl">Cumulative Return</div></div>
   </div>
 </div>
 
 <!-- SOVEREIGN'S JOURNEY -->
 <div class="sec">Sovereign's Journey</div>
-<div class="card" style="margin-bottom:14px">
-  <div class="ct" style="margin-bottom:14px">Paper → Live · Day <span id="j-day">29</span> of 90</div>
+<div class="card reveal" style="margin-bottom:14px">
+  <div class="ct" style="margin-bottom:14px">Paper &#x2192; Live &middot; Day <span id="j-day2">&#x2014;</span> of 90</div>
   <div style="position:relative;padding-left:24px">
     <div style="position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--border)"></div>
-
-    <div class="j-item" data-done="true">
-      <div class="j-dot" style="background:var(--green)"></div>
-      <div class="j-content">
-        <div class="j-title">System Built</div>
-        <div class="j-desc">Dual-bot architecture live. Equity + crypto running 24/7 with full adversarial decision pipeline.</div>
-        <div class="j-date">March 2026</div>
-      </div>
-    </div>
-
-    <div class="j-item" data-done="true">
-      <div class="j-dot" style="background:var(--green)"></div>
-      <div class="j-content">
-        <div class="j-title">First Closed Trade — Win</div>
-        <div class="j-desc">The council ran its first live debate. Trade entered, target hit, position closed.</div>
-        <div class="j-date">March 2026</div>
-      </div>
-    </div>
-
-    <div class="j-item" data-done="true">
-      <div class="j-dot" style="background:var(--green)"></div>
-      <div class="j-content">
-        <div class="j-title">Live Capital Seeded — $50</div>
-        <div class="j-desc">Real money deployed. Proof of concept account tracking live alongside paper.</div>
-        <div class="j-date">April 2026</div>
-      </div>
-    </div>
-
-    <div class="j-item" data-done="true">
-      <div class="j-dot" style="background:var(--green)"></div>
-      <div class="j-content">
-        <div class="j-title">5 of 7 Live-Ready Gates Passed</div>
-        <div class="j-desc">Win rate, drawdown control, risk-adjusted returns, no losing streak, decision quality — all cleared. Two gates remain: trade count and paper trading days.</div>
-        <div class="j-date">April 2026</div>
-      </div>
-    </div>
-
-    <div class="j-item" data-done="false">
-      <div class="j-dot" style="background:var(--amber);box-shadow:0 0 8px var(--amber)"></div>
-      <div class="j-content">
-        <div class="j-title" style="color:var(--amber)">Day 90 — Full Live Deployment</div>
-        <div class="j-desc">90 paper days + 20 closed trades required. Currently Day <span id="j-day2">29</span>/90 · <span id="j-trades">16</span>/20 trades. On track.</div>
-        <div class="j-date" style="color:var(--amber)">~61 days out</div>
-      </div>
-    </div>
-
-    <div class="j-item" data-done="false">
-      <div class="j-dot" style="background:var(--ghost)"></div>
-      <div class="j-content">
-        <div class="j-title" style="color:var(--ghost)">Sovereign AI — Public Launch</div>
-        <div class="j-desc">Open access to the platform. Pro, Elite, and institutional tiers. Public track record leads the funnel.</div>
-        <div class="j-date" style="color:var(--ghost)">Phase 3</div>
-      </div>
-    </div>
+    <div class="j-item"><div class="j-dot" style="background:var(--green)"></div><div><div class="j-title">System Built</div><div class="j-desc">Dual-bot architecture live. Equity + crypto running 24/7 with full adversarial decision pipeline.</div><div class="j-date">March 2026</div></div></div>
+    <div class="j-item"><div class="j-dot" style="background:var(--green)"></div><div><div class="j-title">First Closed Trade &#x2014; Win</div><div class="j-desc">The council ran its first live debate. Trade entered, target hit, position closed.</div><div class="j-date">March 2026</div></div></div>
+    <div class="j-item"><div class="j-dot" style="background:var(--green)"></div><div><div class="j-title">Live Capital Seeded &#x2014; $50</div><div class="j-desc">Real money deployed. Proof of concept account tracking live alongside paper.</div><div class="j-date">April 2026</div></div></div>
+    <div class="j-item"><div class="j-dot" style="background:var(--green)"></div><div><div class="j-title">5 of 7 Live-Ready Gates Passed</div><div class="j-desc">Win rate, drawdown control, risk-adjusted returns, no losing streak, decision quality &#x2014; all cleared. Two gates remain: trade count and paper trading days.</div><div class="j-date">April 2026</div></div></div>
+    <div class="j-item"><div class="j-dot" style="background:var(--amber);box-shadow:0 0 8px var(--amber)"></div><div><div class="j-title" style="color:var(--amber)">Day 90 &#x2014; Full Live Deployment</div><div class="j-desc">90 paper days + 20 closed trades required. Currently Day <span id="j-day3">&#x2014;</span>/90 &middot; <span id="j-trades">&#x2014;</span>/20 trades. On track.</div><div class="j-date" style="color:var(--amber)">~61 days out</div></div></div>
+    <div class="j-item" style="margin-bottom:0"><div class="j-dot" style="background:var(--ghost)"></div><div><div class="j-title" style="color:var(--ghost)">Sovereign AI &#x2014; Public Launch</div><div class="j-desc">Open access to the platform. Pro, Elite, and institutional tiers. Public track record leads the funnel.</div><div class="j-date" style="color:var(--ghost)">Phase 3</div></div></div>
   </div>
-</div>
-
-<!-- THE PHILOSOPHY -->
-<div class="sec">The Philosophy</div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
-  <div class="principle">
-    <div class="principle-num" style="color:var(--violet)">"Every trade earns its execution."</div>
-    <div class="principle-name">No Free Passes</div>
-    <div class="principle-desc">A strong chart pattern isn't enough. A good earnings beat isn't enough. Every proposed trade has to survive a structured argument from both sides before capital moves. The ones that can't hold up under pressure don't get in.</div>
-  </div>
-  <div class="principle">
-    <div class="principle-num" style="color:var(--iris)">"The system that ran today is smarter than the one that ran yesterday."</div>
-    <div class="principle-name">Compounding Intelligence</div>
-    <div class="principle-desc">Every night, Sovereign reviews what it did, what worked, and what didn't. It updates its own behavior based on outcomes — not fixed rules set once and left alone. The intelligence accumulates alongside the capital.</div>
-  </div>
-  <div class="principle">
-    <div class="principle-num" style="color:var(--gold)">"Fix the intelligence, not just the trade."</div>
-    <div class="principle-name">Cause Over Correlation</div>
-    <div class="principle-desc">When a position loses, the first question isn't "was the signal wrong?" It's "what did the system not know?" Every loss that traces back to missing context gets that context built in permanently. The system gets harder to fool.</div>
-  </div>
-</div>
-
-<!-- NOTIFY ME -->
-<div class="card card-gold" style="margin-bottom:14px;text-align:center;padding:32px 24px">
-  <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
-  <div style="font-size:22px;font-weight:800;margin-bottom:10px">Get Early Access</div>
-  <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">
-    Sovereign is building its track record in paper trading. When we're ready to open access,
-    waitlist members hear first — no spam, no hard date promises, just a heads-up when the time comes.
-  </div>
-  <form action="https://formspree.io/f/xwpbogpn" method="POST"
-        style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:440px;margin:0 auto"
-        onsubmit="this.querySelector('button').textContent='✓ You're on the list';this.querySelector('button').disabled=true;this.querySelector('input').disabled=true;">
-    <input type="email" name="email" required placeholder="your@email.com"
-           style="flex:1;min-width:200px;padding:12px 16px;border-radius:8px;border:1px solid rgba(124,58,237,.4);
-                  background:rgba(10,10,28,.8);color:#F0EDFF;font-family:var(--fm);font-size:13px;
-                  outline:none;letter-spacing:.3px"/>
-    <input type="hidden" name="_subject" value="Sovereign AI — Waitlist Signup"/>
-    <button type="submit"
-            style="background:linear-gradient(135deg,var(--violet),var(--iris));color:#fff;
-                   font-weight:700;font-size:13px;padding:12px 22px;border-radius:8px;
-                   border:none;cursor:pointer;letter-spacing:.5px;font-family:var(--fn);
-                   white-space:nowrap">
-      Join the Waitlist →
-    </button>
-  </form>
-  <div style="font-size:9px;color:var(--ghost);margin-top:12px;font-family:var(--fm)">No spam. One email when we go live.</div>
 </div>
 
 <!-- SECTOR LEADERSHIP -->
 <div class="sec">Sector Leadership Today</div>
-<div class="card" style="margin-bottom:14px">
+<div class="card reveal" style="margin-bottom:14px">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-    <div><div class="ct" style="margin:0">S&amp;P 500 Sector Rankings</div><div style="font-size:11px;color:var(--ghost);margin-top:3px">Live sector momentum · Updated daily</div></div>
-    <div style="display:flex;gap:16px;font-size:11px;font-family:var(--fm)">
-      <span>Leading: <span id="top-sector" style="color:var(--green);font-weight:700">—</span></span>
-      <span>Lagging: <span id="bot-sector" style="color:var(--red);font-weight:700">—</span></span>
-    </div>
+    <div><div class="ct" style="margin:0">S&amp;P 500 Sector Rankings</div><div style="font-size:11px;color:var(--ghost);margin-top:3px">Live sector momentum &middot; Updated daily</div></div>
+    <div style="display:flex;gap:16px;font-size:11px;font-family:var(--fm)"><span>Leading: <span id="top-sector" style="color:var(--green);font-weight:700">&#x2014;</span></span><span>Lagging: <span id="bot-sector" style="color:var(--red);font-weight:700">&#x2014;</span></span></div>
   </div>
-  <div id="sector-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px"></div>
+  <div id="sector-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px"></div>
+</div>
+
+<!-- THE PHILOSOPHY -->
+<div class="sec">The Philosophy</div>
+<div class="g3 reveal" style="margin-bottom:14px">
+  <div class="principle"><div class="principle-num" style="color:var(--violet)">"Every trade earns its execution."</div><div class="principle-name">No Free Passes</div><div class="principle-desc">A strong chart pattern isn&#x27;t enough. A good earnings beat isn&#x27;t enough. Every proposed trade has to survive a structured argument from both sides before capital moves. The ones that can&#x27;t hold up under pressure don&#x27;t get in.</div></div>
+  <div class="principle"><div class="principle-num" style="color:var(--iris)">"The system that ran today is smarter than the one that ran yesterday."</div><div class="principle-name">Compounding Intelligence</div><div class="principle-desc">Every night, Sovereign reviews what it did, what worked, and what didn&#x27;t. It updates its own behavior based on outcomes &#x2014; not fixed rules set once and left alone. The intelligence accumulates alongside the capital.</div></div>
+  <div class="principle"><div class="principle-num" style="color:var(--gold)">"Fix the intelligence, not just the trade."</div><div class="principle-name">Cause Over Correlation</div><div class="principle-desc">When a position loses, the first question isn&#x27;t "was the signal wrong?" It&#x27;s "what did the system not know?" Every loss that traces back to missing context gets that context built in permanently. The system gets harder to fool.</div></div>
+</div>
+
+<!-- WAITLIST CTA -->
+<div class="card card-gold reveal" style="margin-bottom:14px;text-align:center;padding:40px 24px">
+  <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
+  <div style="font-size:26px;font-weight:800;margin-bottom:10px">Get Early Access</div>
+  <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">Sovereign is building its track record in paper trading. When we&#x27;re ready to open access, waitlist members hear first &#x2014; no spam, no hard date promises, just a heads-up when the time comes.</div>
+  <form action="https://formspree.io/f/xwpbogpn" method="POST" class="cta-row" onsubmit="this.querySelector('.cta-btn').textContent='&#x2713; You\'re on the list';this.querySelector('.cta-btn').disabled=true;this.querySelector('input[type=email]').disabled=true;">
+    <input type="email" name="email" required placeholder="your@email.com" class="cta-input"/>
+    <input type="hidden" name="_subject" value="Sovereign AI &#x2014; Waitlist Signup"/>
+    <button type="submit" class="cta-btn">Join the Waitlist &#x2192;</button>
+  </form>
+  <div style="font-size:9px;color:var(--ghost);margin-top:12px;font-family:var(--fm)">No spam. One email when we go live.</div>
 </div>
 
 </div>
+
 <footer>
-  <div style="display:flex;align-items:center;gap:8px"><svg width="14" height="13" viewBox="0 0 100 85" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="27" width="13" height="50" rx="2" fill="#818CF8"/><rect x="22" y="41" width="13" height="36" rx="2" fill="#7C3AED"/><rect x="42" y="7" width="16" height="70" rx="2" fill="#C9A84C"/><rect x="65" y="41" width="13" height="36" rx="2" fill="#7C3AED"/><rect x="85" y="27" width="13" height="50" rx="2" fill="#818CF8"/><rect x="0" y="72" width="100" height="6" rx="2" fill="#C9A84C"/><circle cx="8.5" cy="27" r="4.5" fill="#C9A84C"/><circle cx="28.5" cy="41" r="3.5" fill="#C9A84C"/><circle cx="50" cy="7" r="5.5" fill="#C9A84C"/><circle cx="71.5" cy="41" r="3.5" fill="#C9A84C"/><circle cx="91.5" cy="27" r="4.5" fill="#C9A84C"/></svg> SOVEREIGN · Autonomous AI Trading System · Paper Active · Not financial advice</div>
-  <div id="ft-updated" style="color:var(--ghost)">—</div>
+  <div style="display:flex;align-items:center;gap:8px"><svg width="14" height="13" viewBox="0 0 100 85" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="27" width="13" height="50" rx="2" fill="#818CF8"/><rect x="22" y="41" width="13" height="36" rx="2" fill="#7C3AED"/><rect x="42" y="7" width="16" height="70" rx="2" fill="#C9A84C"/><rect x="65" y="41" width="13" height="36" rx="2" fill="#7C3AED"/><rect x="85" y="27" width="13" height="50" rx="2" fill="#818CF8"/><rect x="0" y="72" width="100" height="6" rx="2" fill="#C9A84C"/><circle cx="8.5" cy="27" r="4.5" fill="#C9A84C"/><circle cx="28.5" cy="41" r="3.5" fill="#C9A84C"/><circle cx="50" cy="7" r="5.5" fill="#C9A84C"/><circle cx="71.5" cy="41" r="3.5" fill="#C9A84C"/><circle cx="91.5" cy="27" r="4.5" fill="#C9A84C"/></svg> SOVEREIGN &middot; Autonomous AI Trading System &middot; Paper Active &middot; Not financial advice</div>
+  <div id="ft-updated">&#x2014;</div>
 </footer>
 <script>
 (function(){
-const D=window.__SD__||{},priv=D.portfolio_chart||{},pub=D.portfolio_public||{},
-      perf=D.performance_summary||{},rdy=D.live_readiness||{},
-      decs=D.decisions_recent||[],sect=D.sector_leadership||{},live=D.live_account||{};
+const D=window.__SD__||{};
+const priv=D.portfolio_chart||{},pub=D.portfolio_public||{},perf=D.performance_summary||{},
+      rdy=D.live_readiness||{},decs=D.decisions_recent||[],sect=D.sector_leadership||{},
+      deb=D.debate_summary||{};
 const $=id=>document.getElementById(id);
 const set=(id,v,col)=>{const e=$(id);if(e){e.textContent=v;if(col)e.style.color=col;}};
 const pct=(n,d=1)=>((+n||0)>=0?'+':'')+((+n)||0).toFixed(d)+'%';
 const totalRet=priv.total_return_pct||0,dayPnl=priv.day_pnl_pct||0;
 set('h-val',pct(totalRet,2),totalRet>=0?'var(--green)':'var(--red)');
 set('h-pnl',pct(dayPnl,2),dayPnl>=0?'var(--green)':'var(--red)');
-set('h-wr',((perf.combined_win_rate||0)*100).toFixed(0)+'%',(perf.combined_win_rate||0)>=0.55?'var(--green)':'var(--amber)');
+set('h-wr',((perf.combined_win_rate||0)*100).toFixed(0)+'%',(perf.combined_win_rate||0)>=.55?'var(--green)':'var(--amber)');
 set('h-trades',perf.total_trades||0);
 set('h-gates',(rdy.gates_passed||0)+'/7');
 try{
@@ -486,113 +316,104 @@ try{
     if(ctx){
       const g=ctx.createLinearGradient(0,0,0,180);
       g.addColorStop(0,'rgba(129,140,248,.22)');g.addColorStop(1,'rgba(129,140,248,.01)');
-      const _pv=snaps.map(s=>s.pct||0);const _pm=Math.min(..._pv);const _px=Math.max(..._pv);const _pp=Math.max((_px-_pm)*0.4,0.05);const _yMin=_pm-_pp;const _yMax=_px+_pp;
+      const pv=snaps.map(s=>s.pct||0),pm=Math.min(...pv),px=Math.max(...pv),pp=Math.max((px-pm)*.4,.05);
       new Chart(ctx,{type:'line',data:{labels:snaps.map(s=>s.date?.slice(5)||''),
-        datasets:[{data:snaps.map(s=>s.pct||0),fill:true,backgroundColor:g,
-          borderColor:'rgba(129,140,248,.9)',borderWidth:2,pointRadius:0,tension:0.4}]},
+        datasets:[{data:pv,fill:true,backgroundColor:g,borderColor:'rgba(129,140,248,.9)',borderWidth:2,pointRadius:0,tension:.4}]},
         options:{responsive:true,aspectRatio:3,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>pct(c.raw,2)}}},
           scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},maxTicksLimit:8}},
-                  y:{min:_yMin,max:_yMax,grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},callback:v=>pct(v,1)}}}}});
+                  y:{min:pm-pp,max:px+pp,grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4A4670',font:{family:'JetBrains Mono',size:9},callback:v=>pct(v,1)}}}}});
     }
   }
 }catch(e){}
-set('eq-wr',((perf.equity_win_rate||0)*100).toFixed(0)+'%',(perf.equity_win_rate||0)>=0.55?'var(--green)':'var(--amber)');
+set('eq-wr',((perf.equity_win_rate||0)*100).toFixed(0)+'%',(perf.equity_win_rate||0)>=.55?'var(--green)':'var(--amber)');
 set('eq-trades',(perf.equity_trades||0)+' closed trades');
-set('cr-wr',((perf.crypto_win_rate||0)*100).toFixed(0)+'%',(perf.crypto_win_rate||0)>=0.55?'var(--gold)':'var(--amber)');
+set('cr-wr',((perf.crypto_win_rate||0)*100).toFixed(0)+'%',(perf.crypto_win_rate||0)>=.55?'var(--gold)':'var(--amber)');
 set('cr-trades',(perf.crypto_trades||0)+' closed trades');
 set('pos-count',priv.position_count||pub.position_count||0);
-set('live-status',live.status||'PAPER');
-set('live-sub',live.swarm_active?'Live · Swarm active':live.swarm_progress?'Live funded · Scaling':'Paper → Live journey');
+if(deb.ticker){
+  set('deb-ticker',deb.ticker);set('deb-date',deb.date||'');
+  set('deb-bull',deb.bull_case||'&#x2014;');set('deb-bear',deb.bear_case||'&#x2014;');
+  set('deb-verdict',deb.verdict||'&#x2014;');
+  const approve=deb.vote_approve||0,reject=deb.vote_reject||0,total=deb.total_judges||4;
+  set('deb-approve',approve,approve>0?'var(--green)':'var(--ghost)');
+  set('deb-reject',reject,reject>0?'var(--red)':'var(--ghost)');
+  setTimeout(()=>{
+    const ba=$('vote-bar-approve'),br=$('vote-bar-reject');
+    if(ba)ba.style.width=Math.round(approve/total*100)+'%';
+    if(br)br.style.width=Math.round(reject/total*100)+'%';
+  },700);
+  const out=deb.outcome||'open',outEl=$('deb-outcome');
+  if(outEl){outEl.textContent=out;outEl.style.color=out.includes('+')?'var(--green)':(out==='currently open'||out==='open')?'var(--amber)':'var(--red)';}
+}
 const gateLabels={paper_days:'Paper Trading Days',min_trades:'Minimum Closed Trades',min_win_rate:'Win Rate Target',max_drawdown:'Drawdown Control',min_sharpe:'Risk-Adjusted Returns',no_consecutive_losses:'No Losing Streak',tribunal_veto_rate:'Decision Quality Gate'};
 const gts=rdy.gates||{},gP=rdy.gates_passed||0;
 set('rd-passed',gP);set('rd-pct',Math.round(gP/7*100)+'%');
 if($('rd-bar'))$('rd-bar').style.width=Math.round(gP/7*100)+'%';
 const gl=$('gates-list');
-if(gl){gl.innerHTML=Object.entries(gateLabels).map(([k,label])=>{
+if(gl)gl.innerHTML=Object.entries(gateLabels).map(([k,label])=>{
   const pass=(gts[k]||{}).pass;
-  return`<div class="gate-row"><span style="color:var(--silver)">${label}</span><span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800;font-family:var(--fm);font-size:13px">${pass?'✓':'✗'}</span></div>`;
-}).join('');}
+  return`<div class="gate-row"><span style="color:var(--silver)">${label}</span><span style="color:${pass?'var(--green)':'var(--red)'};font-weight:800;font-family:var(--fm);font-size:13px">${pass?'&#x2713;':'&#x2717;'}</span></div>`;
+}).join('');
 const dl=$('decisions-list');
-if(dl&&decs.length){dl.innerHTML=decs.slice(0,8).map(d=>{
-  const act=d.action||'?',col=act==='ENTERED'?'var(--green)':act==='EXITED'?'var(--red)':'var(--ghost)';
-  return`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);font-size:11px">
-    <div style="display:flex;align-items:center;gap:10px">
-      <span style="color:${col};font-weight:700;font-family:var(--fm);min-width:60px">${act}</span>
-      <span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${(d.bot||'').toUpperCase()}</span>
-    </div>
-    <span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${(d.timestamp||'').slice(5)}</span>
-  </div>`;}).join('');}
-if(sect.ranked){
-  set('top-sector',sect.top_sector||'—');set('bot-sector',sect.bottom_sector||'—');
-  const sg=$('sector-grid');
-  if(sg){sg.innerHTML=sect.ranked.map(s=>{const up=s.chg>=0;
-    return`<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px;display:flex;justify-content:space-between;align-items:center">
-      <div><div style="font-size:10px;font-weight:700;font-family:var(--fm)">${s.etf}</div><div style="font-size:9px;color:var(--ghost);margin-top:2px">${s.name}</div></div>
-      <div style="text-align:right"><div style="font-size:11px;font-weight:700;font-family:var(--fm);color:${up?'var(--green)':'var(--red)'}">${up?'+':''}${s.chg.toFixed(2)}%</div>
-      <div style="font-size:8px;margin-top:2px;color:${s.gate==='ENTER'?'var(--green)':'var(--ghost)'}">${s.gate}</div></div>
-    </div>`;}).join('');}}
-set('ft-updated','Updated: '+(pub.last_updated||priv.last_updated||'—').slice(0,10));
+if(dl&&decs.length)dl.innerHTML=decs.slice(0,8).map(d=>{
+  const act=d.action||'?';
+  const bg=act==='ENTERED'?'rgba(16,185,129,.15)':act==='EXITED'?'rgba(239,68,68,.15)':'rgba(74,70,112,.2)';
+  const tc=act==='ENTERED'?'var(--green)':act==='EXITED'?'var(--red)':'var(--ghost)';
+  return`<div class="d-row"><div style="display:flex;align-items:center;gap:10px"><span class="d-badge" style="background:${bg};color:${tc}">${act}</span><span style="font-size:9px;color:var(--ghost);font-family:var(--fm)">${(d.bot||'').toUpperCase()}</span></div><span style="color:var(--ghost);font-family:var(--fm);font-size:9px">${(d.timestamp||'').slice(5)}</span></div>`;
+}).join('');
+(function(){
+  const chal=D.challenger||{};
+  const wr=chal.win_rate,trades=chal.total_trades,ret=chal.total_return,bal=chal.balance||100,score=chal.score;
+  if(wr!=null)set('chal-wr',((wr)*100).toFixed(0)+'%',wr>=.55?'var(--green)':'var(--amber)');
+  if(trades!=null)set('chal-trades',trades);else set('chal-trades','0');
+  if(ret!=null)set('chal-return',pct(ret,1),ret>=0?'var(--gold)':'var(--red)');
+  if(score!=null)set('chal-score',typeof score==='number'?score.toFixed(1):score);
+  const logPct=Math.min(Math.max(Math.log10(Math.max(bal,100))/Math.log10(100000)*100,.2),100);
+  set('chal-progress-label','$'+Math.round(bal).toLocaleString()+' balance','var(--iris)');
+  setTimeout(()=>{const cb=$('chal-bar');if(cb)cb.style.width=logPct.toFixed(1)+'%';},900);
 })();
-
-// ── Public Live Feed (live.json — safe fields only, no dollar values) ─────
+const paperDays=((rdy.gates||{}).paper_days||{}).value||29;
+['j-day','j-day2','j-day3'].forEach(id=>set(id,paperDays));
+set('j-trades',perf.total_trades||0);
+if(sect.ranked){
+  set('top-sector',sect.top_sector||'&#x2014;');set('bot-sector',sect.bottom_sector||'&#x2014;');
+  const sg=$('sector-grid');
+  if(sg){
+    const maxChg=Math.max(...sect.ranked.map(s=>Math.abs(s.chg)),.01);
+    sg.innerHTML=sect.ranked.map(s=>{
+      const up=s.chg>=0,barPct=Math.round(Math.abs(s.chg)/maxChg*100);
+      return`<div class="sector-item"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:10px;font-weight:700;font-family:var(--fm)">${s.etf}</div><div style="font-size:11px;font-weight:700;font-family:var(--fm);color:${up?'var(--green)':'var(--red)'}">${up?'+':''}${s.chg.toFixed(2)}%</div></div><div style="display:flex;justify-content:space-between;font-size:9px;color:var(--ghost);margin-top:2px"><span>${s.name}</span><span style="color:${s.gate==='ENTER'?'var(--green)':'var(--ghost)'}">${s.gate}</span></div><div class="sector-bar-track"><div class="sector-bar-fill" style="width:${barPct}%;background:${up?'var(--green)':'var(--red)'}"></div></div></div>`;
+    }).join('');
+  }
+}
+set('ft-updated','Updated: '+(pub.last_updated||priv.last_updated||'&#x2014;').slice(0,10));
+})();
 (function(){
   async function refreshPublicLive(){
-    try {
-      const resp = await fetch('data/live.json?t=' + Date.now());
-      if(!resp.ok) return;
-      const data = await resp.json();
-      const paper = data.paper || {};
-      const positions = Array.isArray(paper.positions) ? paper.positions : [];
-      const dayPct = paper.day_pnl_pct || 0;
-      // position count — safe to show
-      const pc = document.getElementById('pub-pos-count');
-      if(pc) pc.textContent = positions.length;
-      // day % — safe to show
-      const dayEl = document.getElementById('pub-day-pct');
-      if(dayEl){
-        dayEl.textContent = (dayPct >= 0 ? '+' : '') + dayPct.toFixed(2) + '% today';
-        dayEl.style.color = dayPct >= 0 ? 'var(--green)' : 'var(--red)';
-      }
-      // Timestamp
-      const ft = document.getElementById('ft-updated');
-      if(ft && data.generated) ft.textContent = '⬤ Live · data as of ' + data.generated;
-    } catch(e){}
+    try{
+      const resp=await fetch('data/live.json?t='+Date.now());
+      if(!resp.ok)return;
+      const data=await resp.json();
+      const paper=data.paper||{};
+      const dayPct=paper.day_pnl_pct||0;
+      const pc=document.getElementById('pub-pos-count');
+      if(pc)pc.textContent=(Array.isArray(paper.positions)?paper.positions:[]).length;
+      const dayEl=document.getElementById('pub-day-pct');
+      if(dayEl){dayEl.textContent=(dayPct>=0?'+':'')+dayPct.toFixed(2)+'% today';dayEl.style.color=dayPct>=0?'var(--green)':'var(--red)';}
+      const ft=document.getElementById('ft-updated');
+      if(ft&&data.generated)ft.textContent='&#x25CF; Live \u00b7 data as of '+data.generated;
+    }catch(e){}
   }
   refreshPublicLive();
-  setInterval(refreshPublicLive, 60000);
-  document.addEventListener('visibilitychange', () => {
-    if(document.visibilityState === 'visible') refreshPublicLive();
-  });
+  setInterval(refreshPublicLive,60000);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshPublicLive();});
 })();
-
-// ── Journey day counts from live readiness data ──────────────────────────
 (function(){
-  const rd = (window.__SD__||{}).live_readiness || {};
-  const gates = rd.gates || {};
-  const paperDays = (gates.paper_days||{}).value || 29;
-  const trades = (window.__SD__||{}).performance_summary?.total_trades || 16;
-  ['j-day','j-day2'].forEach(id=>{ const e=document.getElementById(id); if(e) e.textContent=paperDays; });
-  const jt = document.getElementById('j-trades'); if(jt) jt.textContent = trades;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 })();
-
-// ── Debate card from window.__SD__.debate_summary ────────────────────────
-(function(){
-  const deb = (window.__SD__||{}).debate_summary || {};
-  if(!deb.ticker) return;
-  const set = (id,v,col) => { const e=document.getElementById(id); if(e){e.textContent=v; if(col) e.style.color=col;} };
-  set('deb-ticker', deb.ticker);
-  set('deb-date', deb.date||'');
-  set('deb-bull', deb.bull_case||'—');
-  set('deb-bear', deb.bear_case||'—');
-  set('deb-verdict', deb.verdict||'—');
-  set('deb-approve', (deb.vote_approve||0)+' of '+(deb.total_judges||4), 'var(--green)');
-  const rej = deb.vote_reject||0;
-  set('deb-reject', rej, rej>0?'var(--red)':'var(--ghost)');
-  const out = deb.outcome||'open';
-  const outEl = document.getElementById('deb-outcome');
-  if(outEl){ outEl.textContent=out; outEl.style.color=out.includes('+')?'var(--green)':out==='currently open'?'var(--amber)':'var(--red)'; }
-})();
-
 </script>
 </body>
 </html>
