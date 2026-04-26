@@ -396,13 +396,19 @@ QUOTES.forEach(q=>{
   <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
   <div style="font-size:26px;font-weight:800;margin-bottom:10px">Get Early Access</div>
   <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">Sovereign is building its track record in paper trading. When we&#x27;re ready to open access, waitlist members hear first &#x2014; no spam, no hard date promises, just a heads-up when the time comes.</div>
-  <form action="https://formspree.io/f/xwpbogpn" method="POST" class="cta-row" onsubmit="this.querySelector('.cta-btn').textContent='&#x2713; You\'re on the list';this.querySelector('.cta-btn').disabled=true;this.querySelector('input[type=email]').disabled=true;">
-    <input type="email" name="email" required placeholder="your@email.com" class="cta-input"/>
-    <input type="hidden" name="_subject" value="Sovereign AI &#x2014; Waitlist Signup"/>
-    <button type="submit" class="cta-btn">Join the Waitlist &#x2192;</button>
+  <div data-fs-success style="display:none;color:var(--green);font-size:14px;font-weight:600;padding:12px 0">&#x2713; You&#x27;re on the list &#x2014; we&#x27;ll reach out when we go live.</div>
+  <div data-fs-error style="display:none;color:#EF4444;font-size:12px;padding:8px 0"></div>
+  <form id="sovereign-waitlist" class="cta-row">
+    <input type="email" id="wl-email" name="email" required placeholder="your@email.com" class="cta-input" data-fs-field/>
+    <button type="submit" class="cta-btn" data-fs-submit-btn>Join the Waitlist &#x2192;</button>
   </form>
   <div style="font-size:9px;color:var(--ghost);margin-top:12px;font-family:var(--fm)">No spam. One email when we go live.</div>
 </div>
+<script>
+  window.formspree=window.formspree||function(){(formspree.q=formspree.q||[]).push(arguments);};
+  formspree('initForm',{formElement:'#sovereign-waitlist',formId:'xwvazdgn'});
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </div>
 
