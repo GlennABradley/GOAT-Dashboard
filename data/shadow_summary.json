@@ -1,1 +1,20 @@
-true
+{
+  "_meta": {
+    "generated_at": "2026-04-25T23:00:17.120200"
+  },
+  "AGGRESSIVE": {
+    "total_trades": 22,
+    "win_rate": 0.682,
+    "max_drawdown": 0
+  },
+  "CONSERVATIVE": {
+    "total_trades": 0,
+    "win_rate": 0.0,
+    "max_drawdown": 0.0
+  },
+  "EXPERIMENTAL": {
+    "total_trades": 22,
+    "win_rate": 0.682,
+    "max_drawdown": 0
+  }
+}
