@@ -346,69 +346,63 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
 </style>
 
 
-<!-- MASTERS QUOTES -->
-<div class="sec">In Their Own Words</div>
-<div style="font-size:12px;color:var(--ghost);margin:-8px 0 16px;letter-spacing:.3px">The minds Sovereign was built to embody.</div>
-<div id="masters-quotes" style="margin-bottom:14px"></div>
-<style>
-.quote-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
-.quote-card:hover{border-color:rgba(129,140,248,.25);transform:translateY(-2px)}
-.quote-text{font-size:14px;line-height:1.7;color:var(--silver);font-style:italic}
-.quote-author{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-family:var(--fm)}
-.quote-role{font-size:10px;color:var(--ghost);margin-top:1px}
-.quote-tag{display:inline-block;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--fm);padding:3px 8px;border-radius:20px;margin-top:4px}
-</style>
-<script>
-(function(){
-const QUOTES=[
-  {q:"It never was my thinking that made the big money for me. It always was my sitting. Men who can both be right and sit tight are uncommon.",author:"Jesse Livermore",role:"Reminiscences of a Stock Operator",color:"var(--green)",tag:"HOLD WINNERS",tagbg:"rgba(16,185,129,.12)"},
-  {q:"The elements of good trading are: cut losses, ride winners, keep bets small, and follow the rules without question.",author:"Ed Seykota",role:"Market Wizard",color:"var(--violet)",tag:"RISK DISCIPLINE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"The most important rule of trading is to play great defense, not great offense.",author:"Paul Tudor Jones",role:"Tudor Investment Corp",color:"var(--iris)",tag:"CAPITAL FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"The whole secret to winning in the stock market is to lose the least amount possible when you are not right.",author:"William O’Neil",role:"Investor’s Business Daily",color:"var(--gold)",tag:"QUALITY ENTRIES",tagbg:"rgba(201,168,76,.12)"},
-  {q:"The way to build superior long-term returns is through preservation of capital and home runs. When you have tremendous conviction, you have to go for the jugular.",author:"Stan Druckenmiller",role:"Duquesne Capital",color:"var(--gold)",tag:"CONCENTRATION",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Successful investing is about managing risk, not avoiding it.",author:"Mark Minervini",role:"U.S. Investing Champion",color:"var(--green)",tag:"SEPA METHOD",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Bitcoin bear markets are caused by monetary tightening, not halving cycles. Watch the Fed, not the calendar.",author:"Arthur Hayes",role:"BitMEX / Maelstrom",color:"var(--iris)",tag:"MACRO FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"Price is the emotional signal. On-chain data is the fundamental signal. Never confuse the two.",author:"Willy Woo",role:"Woobull.com",color:"var(--violet)",tag:"ON-CHAIN EDGE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"Crypto is the highest-beta expression of global liquidity expansion. When the tide comes in, everything rises — but crypto rises first and fastest.",author:"Raoul Pal",role:"Real Vision",color:"var(--iris)",tag:"LIQUIDITY CYCLE",tagbg:"rgba(129,140,248,.12)"},
-  {q:"I never bought at the bottom and I always sold too late. But I made a lot of money just the same.",author:"Nicolas Darvas",role:"Box Theory",color:"var(--green)",tag:"PATIENCE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Financial markets generally are unpredictable. So one has to have different scenarios. The idea that you can predict what’s going to happen contradicts my way of looking at the market.",author:"George Soros",role:"Soros Fund Management",color:"var(--violet)",tag:"REFLEXIVITY",tagbg:"rgba(124,58,237,.12)"},
-  {q:"The biggest investing errors come not from factors that are informational or analytical, but from those that are psychological.",author:"Ray Dalio",role:"Bridgewater Associates",color:"var(--gold)",tag:"ALL WEATHER",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Bitcoin is the first money that is not someone else’s liability. Volatility is the price you pay for scarcity.",author:"Michael Saylor",role:"MicroStrategy",color:"var(--iris)",tag:"SOUND MONEY",tagbg:"rgba(129,140,248,.12)"},
-  {q:"Know what you own, and know why you own it.",author:"Peter Lynch",role:"Fidelity Magellan Fund",color:"var(--green)",tag:"KNOW YOUR EDGE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Invert, always invert. It is in the nature of things that many hard problems are best solved when they are addressed backwards.",author:"Charlie Munger",role:"Berkshire Hathaway",color:"var(--gold)",tag:"INVERSION",tagbg:"rgba(201,168,76,.12)"},
-];
-const grid=document.getElementById('masters-quotes');
-if(!grid)return;
-grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px';
-QUOTES.forEach(q=>{
-  const d=document.createElement('div');
-  d.className='quote-card reveal';
-  d.innerHTML='“'+q.q+'” <br><b style="color:'+q.color+'">— '+q.author+'</b> <span style="color:var(--ghost);font-size:11px">'+q.role+'</span>';
-  d.innerHTML='<div class="quote-text">“'+q.q+'”</div><div><div class="quote-author" style="color:'+q.color+'">— '+q.author+'</div><div class="quote-role">'+q.role+'</div><span class="quote-tag" style="color:'+q.color+';background:'+q.tagbg+'"> '+q.tag+' </span></div>';
-  grid.appendChild(d);
-});
-})();
-</script>
-
 <!-- WAITLIST CTA -->
 <div class="card card-gold reveal" style="margin-bottom:14px;text-align:center;padding:40px 24px">
   <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
   <div style="font-size:26px;font-weight:800;margin-bottom:10px">Get Early Access</div>
   <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">Sovereign is building its track record in paper trading. When we&#x27;re ready to open access, waitlist members hear first &#x2014; no spam, no hard date promises, just a heads-up when the time comes.</div>
-  <div data-fs-success style="display:none;color:var(--green);font-size:14px;font-weight:600;padding:12px 0">&#x2713; You&#x27;re on the list &#x2014; we&#x27;ll reach out when we go live.</div>
-  <div data-fs-error style="display:none;color:#EF4444;font-size:12px;padding:8px 0"></div>
+  <div id="wl-success" style="display:none;padding:20px 0">
+    <div style="font-size:28px;margin-bottom:8px">🙏</div>
+    <div style="font-size:18px;font-weight:700;color:var(--green);margin-bottom:6px">Thank you for your support.</div>
+    <div style="font-size:13px;color:var(--silver);line-height:1.6">You&#x27;re on the list. We&#x27;ll reach out personally when Sovereign is ready for you&#x2014;no spam, just the heads-up you deserve.</div>
+  </div>
   <form id="sovereign-waitlist" class="cta-row">
-    <input type="email" id="wl-email" name="email" required placeholder="your@email.com" class="cta-input" data-fs-field/>
-    <button type="submit" class="cta-btn" data-fs-submit-btn>Join the Waitlist &#x2192;</button>
+    <input type="email" id="wl-email" name="email" required placeholder="your@email.com" class="cta-input"/>
+    <button type="submit" id="wl-btn" class="cta-btn">Join the Waitlist &#x2192;</button>
   </form>
+  <div id="wl-error" style="display:none;font-size:12px;color:#EF4444;margin-top:8px"></div>
   <div style="font-size:9px;color:var(--ghost);margin-top:12px;font-family:var(--fm)">No spam. One email when we go live.</div>
 </div>
 <script>
-  window.formspree=window.formspree||function(){(formspree.q=formspree.q||[]).push(arguments);};
-  formspree('initForm',{formElement:'#sovereign-waitlist',formId:'xwvazdgn'});
+(function(){
+  var form=document.getElementById('sovereign-waitlist');
+  var btn=document.getElementById('wl-btn');
+  var success=document.getElementById('wl-success');
+  var error=document.getElementById('wl-error');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    btn.textContent='Sending…';
+    btn.disabled=true;
+    error.style.display='none';
+    fetch('https://formspree.io/f/xwvazdgn',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({email:document.getElementById('wl-email').value})
+    }).then(function(r){
+      if(r.ok){
+        form.style.display='none';
+        success.style.display='block';
+      } else {
+        r.json().then(function(d){
+          error.textContent=d.errors?d.errors[0].message:'Something went wrong—please try again.';
+          error.style.display='block';
+        }).catch(function(){
+          error.textContent='Something went wrong—please try again.';
+          error.style.display='block';
+        });
+        btn.textContent='Join the Waitlist →';
+        btn.disabled=false;
+      }
+    }).catch(function(){
+      error.textContent='Network error—please check your connection and try again.';
+      error.style.display='block';
+      btn.textContent='Join the Waitlist →';
+      btn.disabled=false;
+    });
+  });
+})();
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
 </div>
 
 <footer>
