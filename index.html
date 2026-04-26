@@ -338,32 +338,7 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
 .quote-role{font-size:10px;color:var(--ghost);margin-top:1px}
 .quote-tag{display:inline-block;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--fm);padding:3px 8px;border-radius:20px;margin-top:4px}
 </style>
-<script>
-(function(){
-const QUOTES=[
-  {q:"It never was my thinking that made the big money for me. It always was my sitting. Men who can both be right and sit tight are uncommon.",author:"Jesse Livermore",role:"Reminiscences of a Stock Operator",color:"var(--green)",tag:"HOLD WINNERS",tagbg:"rgba(16,185,129,.12)"},
-  {q:"The elements of good trading are: cut losses, ride winners, keep bets small, and follow the rules without question.",author:"Ed Seykota",role:"Market Wizard",color:"var(--violet)",tag:"RISK DISCIPLINE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"The most important rule of trading is to play great defense, not great offense.",author:"Paul Tudor Jones",role:"Tudor Investment Corp",color:"var(--iris)",tag:"CAPITAL FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"The whole secret to winning in the stock market is to lose the least amount possible when you are not right.",author:"William O\u2019Neil",role:"Investor\u2019s Business Daily",color:"var(--gold)",tag:"QUALITY ENTRIES",tagbg:"rgba(201,168,76,.12)"},
-  {q:"The way to build superior long-term returns is through preservation of capital and home runs. When you have tremendous conviction, you have to go for the jugular.",author:"Stan Druckenmiller",role:"Duquesne Capital",color:"var(--gold)",tag:"CONCENTRATION",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Successful investing is about managing risk, not avoiding it.",author:"Mark Minervini",role:"U.S. Investing Champion",color:"var(--green)",tag:"SEPA METHOD",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Bitcoin bear markets are caused by monetary tightening, not halving cycles. Watch the Fed, not the calendar.",author:"Arthur Hayes",role:"BitMEX / Maelstrom",color:"var(--iris)",tag:"MACRO FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"Price is the emotional signal. On-chain data is the fundamental signal. Never confuse the two.",author:"Willy Woo",role:"Woobull.com",color:"var(--violet)",tag:"ON-CHAIN EDGE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"Crypto is the highest-beta expression of global liquidity expansion. When the tide comes in, everything rises \u2014 but crypto rises first and fastest.",author:"Raoul Pal",role:"Real Vision",color:"var(--iris)",tag:"LIQUIDITY CYCLE",tagbg:"rgba(129,140,248,.12)"},
-  {q:"I never bought at the bottom and I always sold too late. But I made a lot of money just the same.",author:"Nicolas Darvas",role:"Box Theory",color:"var(--green)",tag:"PATIENCE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Don\u2019t focus on making money; focus on protecting what you have.",author:"Paul Tudor Jones",role:"Tudor Investment Corp",color:"var(--iris)",tag:"DEFENSE WINS",tagbg:"rgba(129,140,248,.12)"},
-];
-const grid=document.getElementById('masters-quotes');
-if(!grid)return;
-grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px';
-QUOTES.forEach(q=>{
-  const d=document.createElement('div');
-  d.className='quote-card reveal';
-  d.innerHTML='<div class="quote-text">\u201C'+q.q+'\u201D</div><div><div class="quote-author" style="color:'+q.color+'">\u2014 '+q.author+'</div><div class="quote-role">'+q.role+'</div><span class="quote-tag" style="color:'+q.color+';background:'+q.tagbg+'">\u2009'+q.tag+'\u2009</span></div>';
-  grid.appendChild(d);
-});
-})();
-</script>
+
 
 <!-- MASTERS QUOTES -->
 <div class="sec">In Their Own Words</div>
@@ -515,10 +490,8 @@ if(dl&&decs.length)dl.innerHTML=decs.slice(0,8).map(d=>{
 const paperDays=((rdy.gates||{}).paper_days||{}).value||Math.floor((Date.now()-new Date('2026-03-24').getTime())/86400000);
 ['j-day','j-day2','j-day3'].forEach(id=>set(id,paperDays));
 set('j-days-remaining','~'+Math.max(0,90-paperDays));
-const daysRemaining=Math.max(0,90-paperDays);
-set('j-days-remaining','~'+daysRemaining);
-const daysRemaining=Math.max(0,90-paperDays);
-set('j-days-remaining','~'+daysRemaining);
+set('j-days-remaining','~'+Math.max(0,90-paperDays));
+set('j-days-remaining','~'+Math.max(0,90-paperDays));
 set('j-trades',perf.total_trades||0);
 if(sect.ranked){
   set('top-sector',sect.top_sector||'&#x2014;');set('bot-sector',sect.bottom_sector||'&#x2014;');
