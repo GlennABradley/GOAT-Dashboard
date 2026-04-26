@@ -385,6 +385,9 @@ QUOTES.forEach(q=>{
   <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-family:var(--fm);margin-bottom:12px">Coming Soon</div>
   <div style="font-size:26px;font-weight:800;margin-bottom:10px">Get Early Access</div>
   <div style="font-size:13px;color:var(--silver);max-width:480px;margin:0 auto 22px;line-height:1.7">Sovereign is building its track record in paper trading. When we&#x27;re ready to open access, waitlist members hear first &#x2014; no spam, no hard date promises, just a heads-up when the time comes.</div>
+  <div id="wl-social-proof" style="display:none;font-size:12px;color:var(--ghost);margin-bottom:16px;font-family:var(--fm);letter-spacing:.3px">
+    <span id="wl-count-num" style="color:var(--gold);font-weight:700"></span> traders already on the list
+  </div>
   <div id="wl-success" style="display:none;padding:20px 0">
     <div style="font-size:28px;margin-bottom:8px">🙏</div>
     <div style="font-size:18px;font-weight:700;color:var(--green);margin-bottom:6px">Thank you for your support.</div>
@@ -525,13 +528,17 @@ if(dl&&decs.length)dl.innerHTML=decs.slice(0,8).map(d=>{
 const paperDays=((rdy.gates||{}).paper_days||{}).value||Math.floor((Date.now()-new Date('2026-03-24').getTime())/86400000);
 ['j-day','j-day2','j-day3'].forEach(id=>set(id,paperDays));
 set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
-set('j-days-remaining','~'+Math.max(0,90-paperDays));
+// Waitlist social proof — show count when ≥10 signups, rounded down to nearest 5
+(function(){
+  var wls=D.waitlist_stats||{};
+  var n=parseInt(wls.count)||0;
+  if(n>=10){
+    var rounded=Math.floor(n/5)*5;
+    var sp=document.getElementById('wl-social-proof');
+    var num=document.getElementById('wl-count-num');
+    if(sp&&num){num.textContent=rounded+'+';sp.style.display='block';}
+  }
+})();
 set('j-trades',perf.total_trades||0);
 if(sect.ranked){
   set('top-sector',sect.top_sector||'&#x2014;');set('bot-sector',sect.bottom_sector||'&#x2014;');
