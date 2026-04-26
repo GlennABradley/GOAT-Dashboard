@@ -362,24 +362,18 @@ const QUOTES=[
   {q:"It never was my thinking that made the big money for me. It always was my sitting. Men who can both be right and sit tight are uncommon.",author:"Jesse Livermore",role:"Reminiscences of a Stock Operator",color:"var(--green)",tag:"HOLD WINNERS",tagbg:"rgba(16,185,129,.12)"},
   {q:"The elements of good trading are: cut losses, ride winners, keep bets small, and follow the rules without question.",author:"Ed Seykota",role:"Market Wizard",color:"var(--violet)",tag:"RISK DISCIPLINE",tagbg:"rgba(124,58,237,.12)"},
   {q:"The most important rule of trading is to play great defense, not great offense.",author:"Paul Tudor Jones",role:"Tudor Investment Corp",color:"var(--iris)",tag:"CAPITAL FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"The whole secret to winning in the stock market is to lose the least amount possible when you are not right.",author:"William O\u2019Neil",role:"Investor\u2019s Business Daily",color:"var(--gold)",tag:"QUALITY ENTRIES",tagbg:"rgba(201,168,76,.12)"},
+  {q:"The whole secret to winning in the stock market is to lose the least amount possible when you are not right.",author:"William O’Neil",role:"Investor’s Business Daily",color:"var(--gold)",tag:"QUALITY ENTRIES",tagbg:"rgba(201,168,76,.12)"},
   {q:"The way to build superior long-term returns is through preservation of capital and home runs. When you have tremendous conviction, you have to go for the jugular.",author:"Stan Druckenmiller",role:"Duquesne Capital",color:"var(--gold)",tag:"CONCENTRATION",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Every great trade I\u2019ve been involved in, the theme was so clear and obvious that it was almost embarrassing.",author:"Stan Druckenmiller",role:"Duquesne Capital",color:"var(--gold)",tag:"CONVICTION",tagbg:"rgba(201,168,76,.12)"},
   {q:"Successful investing is about managing risk, not avoiding it.",author:"Mark Minervini",role:"U.S. Investing Champion",color:"var(--green)",tag:"SEPA METHOD",tagbg:"rgba(16,185,129,.12)"},
   {q:"Bitcoin bear markets are caused by monetary tightening, not halving cycles. Watch the Fed, not the calendar.",author:"Arthur Hayes",role:"BitMEX / Maelstrom",color:"var(--iris)",tag:"MACRO FIRST",tagbg:"rgba(129,140,248,.12)"},
   {q:"Price is the emotional signal. On-chain data is the fundamental signal. Never confuse the two.",author:"Willy Woo",role:"Woobull.com",color:"var(--violet)",tag:"ON-CHAIN EDGE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"Crypto is the highest-beta expression of global liquidity expansion. When the tide comes in, everything rises \u2014 but crypto rises first and fastest.",author:"Raoul Pal",role:"Real Vision",color:"var(--iris)",tag:"LIQUIDITY CYCLE",tagbg:"rgba(129,140,248,.12)"},
+  {q:"Crypto is the highest-beta expression of global liquidity expansion. When the tide comes in, everything rises — but crypto rises first and fastest.",author:"Raoul Pal",role:"Real Vision",color:"var(--iris)",tag:"LIQUIDITY CYCLE",tagbg:"rgba(129,140,248,.12)"},
   {q:"I never bought at the bottom and I always sold too late. But I made a lot of money just the same.",author:"Nicolas Darvas",role:"Box Theory",color:"var(--green)",tag:"PATIENCE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Don\u2019t focus on making money; focus on protecting what you have.",author:"Paul Tudor Jones",role:"Tudor Investment Corp",color:"var(--iris)",tag:"DEFENSE WINS",tagbg:"rgba(129,140,248,.12)"},
-  {q:"Financial markets generally are unpredictable. So one has to have different scenarios. The idea that you can predict what\u2019s going to happen contradicts my way of looking at the market.",author:"George Soros",role:"Soros Fund Management",color:"var(--violet)",tag:"REFLEXIVITY",tagbg:"rgba(124,58,237,.12)"},
-  {q:"It\u2019s not whether you\u2019re right or wrong, but how much money you make when you\u2019re right and how much you lose when you\u2019re wrong.",author:"George Soros",role:"Soros Fund Management",color:"var(--violet)",tag:"ASYMMETRY",tagbg:"rgba(124,58,237,.12)"},
+  {q:"Financial markets generally are unpredictable. So one has to have different scenarios. The idea that you can predict what’s going to happen contradicts my way of looking at the market.",author:"George Soros",role:"Soros Fund Management",color:"var(--violet)",tag:"REFLEXIVITY",tagbg:"rgba(124,58,237,.12)"},
   {q:"The biggest investing errors come not from factors that are informational or analytical, but from those that are psychological.",author:"Ray Dalio",role:"Bridgewater Associates",color:"var(--gold)",tag:"ALL WEATHER",tagbg:"rgba(201,168,76,.12)"},
-  {q:"He who lives by the crystal ball will eat shattered glass.",author:"Ray Dalio",role:"Bridgewater Associates",color:"var(--gold)",tag:"PRINCIPLES",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Bitcoin is the first money that is not someone else\u2019s liability. Volatility is the price you pay for scarcity.",author:"Michael Saylor",role:"MicroStrategy",color:"var(--iris)",tag:"SOUND MONEY",tagbg:"rgba(129,140,248,.12)"},
+  {q:"Bitcoin is the first money that is not someone else’s liability. Volatility is the price you pay for scarcity.",author:"Michael Saylor",role:"MicroStrategy",color:"var(--iris)",tag:"SOUND MONEY",tagbg:"rgba(129,140,248,.12)"},
   {q:"Know what you own, and know why you own it.",author:"Peter Lynch",role:"Fidelity Magellan Fund",color:"var(--green)",tag:"KNOW YOUR EDGE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Behind every stock is a company. Find out what it\u2019s doing.",author:"Peter Lynch",role:"Fidelity Magellan Fund",color:"var(--green)",tag:"FUNDAMENTALS",tagbg:"rgba(16,185,129,.12)"},
   {q:"Invert, always invert. It is in the nature of things that many hard problems are best solved when they are addressed backwards.",author:"Charlie Munger",role:"Berkshire Hathaway",color:"var(--gold)",tag:"INVERSION",tagbg:"rgba(201,168,76,.12)"},
-  {q:"It is not supposed to be easy. Anyone who finds it easy is stupid.",author:"Charlie Munger",role:"Berkshire Hathaway",color:"var(--gold)",tag:"MENTAL MODELS",tagbg:"rgba(201,168,76,.12)"},
 ];
 const grid=document.getElementById('masters-quotes');
 if(!grid)return;
@@ -387,7 +381,8 @@ grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(2
 QUOTES.forEach(q=>{
   const d=document.createElement('div');
   d.className='quote-card reveal';
-  d.innerHTML='<div class="quote-text">\u201C'+q.q+'\u201D</div><div><div class="quote-author" style="color:'+q.color+'">\u2014 '+q.author+'</div><div class="quote-role">'+q.role+'</div><span class="quote-tag" style="color:'+q.color+';background:'+q.tagbg+'">\u2009'+q.tag+'\u2009</span></div>';
+  d.innerHTML='“'+q.q+'” <br><b style="color:'+q.color+'">— '+q.author+'</b> <span style="color:var(--ghost);font-size:11px">'+q.role+'</span>';
+  d.innerHTML='<div class="quote-text">“'+q.q+'”</div><div><div class="quote-author" style="color:'+q.color+'">— '+q.author+'</div><div class="quote-role">'+q.role+'</div><span class="quote-tag" style="color:'+q.color+';background:'+q.tagbg+'"> '+q.tag+' </span></div>';
   grid.appendChild(d);
 });
 })();
