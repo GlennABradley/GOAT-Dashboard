@@ -1,28 +1,37 @@
 {
-  "ts": "2026-04-27T15:10:00.539151",
-  "generated": "03:10:00 PM",
+  "ts": "2026-04-27T15:15:00.314274",
+  "generated": "03:15:00 PM",
   "paper": {
-    "equity": 101265.19,
-    "cash": 100220.23,
-    "day_pnl": -13.86,
-    "day_pnl_pct": -0.014,
+    "equity": 101252.0,
+    "cash": 85072.5,
+    "day_pnl": -27.05,
+    "day_pnl_pct": -0.027,
     "positions": [
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2288.647,
+        "price": 2290.6,
         "entry": 2318.61,
-        "pnl_pct": -1.29,
-        "pnl": -13.68,
-        "mkt_val": 1044.96
+        "pnl_pct": -1.21,
+        "pnl": -12.79,
+        "mkt_val": 1045.86
+      },
+      {
+        "sym": "PANW",
+        "qty": 82.8605,
+        "price": 182.64,
+        "entry": 182.81,
+        "pnl_pct": -0.09,
+        "pnl": -14.09,
+        "mkt_val": 15133.64
       }
     ]
   },
   "live": {
-    "equity": 50.0,
-    "cash": 50.0,
-    "day_pnl": 0.0,
-    "status": "FUNDED",
+    "equity": 0.0,
+    "cash": 0.0,
+    "day_pnl": -50.0,
+    "status": "PENDING_DEPOSIT",
     "positions": []
   },
   "challenger": {
