@@ -216,6 +216,44 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
   </div>
 </div>
 
+<!-- MARKET CONDITIONS STRIP -->
+<div id="mkt-conditions-strip" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px;align-items:center;justify-content:space-between">
+  <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+    <div style="display:flex;align-items:center;gap:6px"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ghost);font-family:var(--fm);text-transform:uppercase">Fear &amp; Greed</span><span id="mc-fg-val" style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--gold)">&#x2014;</span><span id="mc-fg-lbl" style="font-size:9px;color:var(--ghost);font-family:var(--fm)">&#x2014;</span></div>
+    <div style="width:1px;height:16px;background:var(--border)"></div>
+    <div style="display:flex;align-items:center;gap:6px"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ghost);font-family:var(--fm);text-transform:uppercase">System</span><span id="mc-status" style="font-size:9px;font-weight:700;font-family:var(--fm)">&#x2014;</span></div>
+    <div style="width:1px;height:16px;background:var(--border)"></div>
+    <div style="display:flex;align-items:center;gap:6px"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ghost);font-family:var(--fm);text-transform:uppercase">Return</span><span id="mc-ret" style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--green)">&#x2014;</span></div>
+    <div style="width:1px;height:16px;background:var(--border)"></div>
+    <div style="display:flex;align-items:center;gap:6px"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ghost);font-family:var(--fm);text-transform:uppercase">Bots</span><span id="mc-bots" style="font-size:9px;font-weight:700;font-family:var(--fm);color:var(--iris)">&#x2014;</span></div>
+  </div>
+  <div style="font-size:9px;color:var(--ghost);font-family:var(--fm)" id="mc-updated">&#x2014;</div>
+</div>
+<script>
+(function(){
+  const D=window.__SD__||{};
+  const mp=(D.macro_pulse||{});
+  const fg=mp.fg_latest||{};
+  const chart=D.portfolio_chart||{};
+  const health=D.system_health||{};
+  const cfg=D.bot_config||{};
+  const _set=(id,v,col)=>{const e=document.getElementById(id);if(e){e.textContent=v;if(col)e.style.color=col;}};
+  const fgVal=fg.value||0;
+  const fgColor=fgVal>=60?'var(--green)':fgVal>=40?'var(--gold)':'var(--red)';
+  _set('mc-fg-val',fgVal?String(fgVal):'--',fgColor);
+  _set('mc-fg-lbl',fg.label||'--');
+  const stateMap={'HEALTHY':'&#x1F7E2; LIVE','DEGRADED':'&#x1F7E1; DEGRADED','DOWN':'&#x1F534; DOWN'};
+  const colMap={'HEALTHY':'var(--green)','DEGRADED':'var(--amber)','DOWN':'var(--red)'};
+  const st=health.state||'';
+  _set('mc-status',stateMap[st]||'--',colMap[st]||'var(--ghost)');
+  const ret=chart.total_return_pct||0;
+  _set('mc-ret',(ret>=0?'+':'')+ret.toFixed(2)+'%',ret>=0?'var(--green)':'var(--red)');
+  const bots=(cfg.active_bots||[]).map(b=>b.charAt(0).toUpperCase()+b.slice(1)).join(' · ')||'--';
+  _set('mc-bots',bots+' Active');
+  _set('mc-updated',fg.date?'as of '+fg.date:'');
+})();
+</script>
+
 <!-- EQUITY CURVE -->
 <div class="card reveal" style="margin-bottom:14px">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
@@ -365,50 +403,6 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
   <div class="principle"><div class="principle-num" style="color:var(--iris)">"The system that ran today is smarter than the one that ran yesterday."</div><div class="principle-name">Compounding Intelligence</div><div class="principle-desc">Every night, Sovereign reviews what it did, what worked, and what didn&#x27;t. It updates its own behavior based on outcomes &#x2014; not fixed rules set once and left alone. The intelligence accumulates alongside the capital.</div></div>
   <div class="principle"><div class="principle-num" style="color:var(--gold)">"Fix the intelligence, not just the trade."</div><div class="principle-name">Cause Over Correlation</div><div class="principle-desc">When a position loses, the first question isn&#x27;t "was the signal wrong?" It&#x27;s "what did the system not know?" Every loss that traces back to missing context gets that context built in permanently. The system gets harder to fool.</div></div>
 </div>
-
-<!-- MASTERS QUOTES -->
-<div class="sec">In Their Own Words</div>
-<div style="font-size:12px;color:var(--ghost);margin:-8px 0 16px;letter-spacing:.3px">The minds Sovereign was built to embody.</div>
-<div id="masters-quotes" style="margin-bottom:14px"></div>
-<style>
-.quote-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
-.quote-card:hover{border-color:rgba(129,140,248,.25);transform:translateY(-2px)}
-.quote-text{font-size:14px;line-height:1.7;color:var(--silver);font-style:italic}
-.quote-author{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-family:var(--fm)}
-.quote-role{font-size:10px;color:var(--ghost);margin-top:1px}
-.quote-tag{display:inline-block;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--fm);padding:3px 8px;border-radius:20px;margin-top:4px}
-</style>
-<script>
-(function(){
-const QUOTES=[
-  {q:"It never was my thinking that made the big money for me. It always was my sitting. Men who can both be right and sit tight are uncommon.",author:"Jesse Livermore",role:"Reminiscences of a Stock Operator",color:"var(--green)",tag:"HOLD WINNERS",tagbg:"rgba(16,185,129,.12)"},
-  {q:"The elements of good trading are: cut losses, ride winners, keep bets small, and follow the rules without question.",author:"Ed Seykota",role:"Market Wizard",color:"var(--violet)",tag:"RISK DISCIPLINE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"The most important rule of trading is to play great defense, not great offense.",author:"Paul Tudor Jones",role:"Tudor Investment Corp",color:"var(--iris)",tag:"CAPITAL FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"The whole secret to winning in the stock market is to lose the least amount possible when you are not right.",author:"William O’Neil",role:"Investor’s Business Daily",color:"var(--gold)",tag:"QUALITY ENTRIES",tagbg:"rgba(201,168,76,.12)"},
-  {q:"The way to build superior long-term returns is through preservation of capital and home runs. When you have tremendous conviction, you have to go for the jugular.",author:"Stan Druckenmiller",role:"Duquesne Capital",color:"var(--gold)",tag:"CONCENTRATION",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Successful investing is about managing risk, not avoiding it.",author:"Mark Minervini",role:"U.S. Investing Champion",color:"var(--green)",tag:"SEPA METHOD",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Bitcoin bear markets are caused by monetary tightening, not halving cycles. Watch the Fed, not the calendar.",author:"Arthur Hayes",role:"BitMEX / Maelstrom",color:"var(--iris)",tag:"MACRO FIRST",tagbg:"rgba(129,140,248,.12)"},
-  {q:"Price is the emotional signal. On-chain data is the fundamental signal. Never confuse the two.",author:"Willy Woo",role:"Woobull.com",color:"var(--violet)",tag:"ON-CHAIN EDGE",tagbg:"rgba(124,58,237,.12)"},
-  {q:"Crypto is the highest-beta expression of global liquidity expansion. When the tide comes in, everything rises — but crypto rises first and fastest.",author:"Raoul Pal",role:"Real Vision",color:"var(--iris)",tag:"LIQUIDITY CYCLE",tagbg:"rgba(129,140,248,.12)"},
-  {q:"I never bought at the bottom and I always sold too late. But I made a lot of money just the same.",author:"Nicolas Darvas",role:"Box Theory",color:"var(--green)",tag:"PATIENCE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Financial markets generally are unpredictable. So one has to have different scenarios. The idea that you can predict what’s going to happen contradicts my way of looking at the market.",author:"George Soros",role:"Soros Fund Management",color:"var(--violet)",tag:"REFLEXIVITY",tagbg:"rgba(124,58,237,.12)"},
-  {q:"The biggest investing errors come not from factors that are informational or analytical, but from those that are psychological.",author:"Ray Dalio",role:"Bridgewater Associates",color:"var(--gold)",tag:"ALL WEATHER",tagbg:"rgba(201,168,76,.12)"},
-  {q:"Bitcoin is the first money that is not someone else’s liability. Volatility is the price you pay for scarcity.",author:"Michael Saylor",role:"MicroStrategy",color:"var(--iris)",tag:"SOUND MONEY",tagbg:"rgba(129,140,248,.12)"},
-  {q:"Know what you own, and know why you own it.",author:"Peter Lynch",role:"Fidelity Magellan Fund",color:"var(--green)",tag:"KNOW YOUR EDGE",tagbg:"rgba(16,185,129,.12)"},
-  {q:"Invert, always invert. It is in the nature of things that many hard problems are best solved when they are addressed backwards.",author:"Charlie Munger",role:"Berkshire Hathaway",color:"var(--gold)",tag:"INVERSION",tagbg:"rgba(201,168,76,.12)"},
-];
-const grid=document.getElementById('masters-quotes');
-if(!grid)return;
-grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px';
-QUOTES.forEach(q=>{
-  const d=document.createElement('div');
-  d.className='quote-card reveal';
-  d.innerHTML='<div class="quote-text">“'+q.q+'”</div><div><div class="quote-author" style="color:'+q.color+'">— '+q.author+'</div><div class="quote-role">'+q.role+'</div><span class="quote-tag" style="color:'+q.color+';background:'+q.tagbg+'"> '+q.tag+' </span></div>';
-  grid.appendChild(d);
-});
-})();
-</script>
-
 
 <!-- MASTERS QUOTES -->
 <div class="sec">In Their Own Words</div>
