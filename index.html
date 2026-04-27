@@ -244,10 +244,10 @@ footer{border-top:1px solid var(--border);padding:18px 32px;display:flex;justify
   const fgColor=fgVal>=60?'var(--green)':fgVal>=40?'var(--gold)':'var(--red)';
   _set('mc-fg-val',fgVal?String(fgVal):'--',fgColor);
   _set('mc-fg-lbl',fg.label||'--');
-  const stateMap={'HEALTHY':'&#x1F7E2; LIVE','DEGRADED':'&#x1F7E1; DEGRADED','DOWN':'&#x1F534; DOWN'};
   const colMap={'HEALTHY':'var(--green)','DEGRADED':'var(--amber)','DOWN':'var(--red)'};
   const st=health.state||'';
-  _set('mc-status',stateMap[st]||'--',colMap[st]||'var(--ghost)');
+  const statusEl=document.getElementById('mc-status');
+  if(statusEl){const dot={'HEALTHY':'\uD83D\uDFE2','DEGRADED':'\uD83D\uDFE1','DOWN':'\uD83D\uDD34'}[st]||'\u25CF';const lbl={'HEALTHY':'LIVE','DEGRADED':'DEGRADED','DOWN':'DOWN'}[st]||'--';statusEl.textContent=dot+' '+lbl;if(colMap[st])statusEl.style.color=colMap[st];}
   const ret=chart.total_return_pct||0;
   _set('mc-ret',(ret>=0?'+':'')+ret.toFixed(2)+'%',ret>=0?'var(--green)':'var(--red)');
   const bots=(cfg.active_bots||[]).map(b=>b.charAt(0).toUpperCase()+b.slice(1)).join(' · ')||'--';
