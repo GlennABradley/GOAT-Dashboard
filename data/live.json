@@ -1,20 +1,20 @@
 {
-  "ts": "2026-04-27T10:15:01.197107",
-  "generated": "10:15:01 AM",
+  "ts": "2026-04-27T10:20:00.715379",
+  "generated": "10:20:00 AM",
   "paper": {
-    "equity": 101277.5,
+    "equity": 101277.0,
     "cash": 100220.23,
-    "day_pnl": -1.55,
+    "day_pnl": -2.05,
     "day_pnl_pct": -0.002,
     "positions": [
       {
         "sym": "ETHUSD",
         "qty": 0.456585675,
-        "price": 2315.61,
+        "price": 2314.5,
         "entry": 2318.61,
-        "pnl_pct": -0.13,
-        "pnl": -1.37,
-        "mkt_val": 1057.27
+        "pnl_pct": -0.18,
+        "pnl": -1.88,
+        "mkt_val": 1056.77
       }
     ]
   },
