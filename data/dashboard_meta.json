@@ -1,6 +1,6 @@
 {
-  "last_push": "2026-04-28T13:53:57.476032",
-  "pushed_at": "2026-04-28T13:53:57.476038",
+  "last_push": "2026-04-28T15:17:34.926176",
+  "pushed_at": "2026-04-28T15:17:34.926183",
   "schema_version": 3,
   "files": [
     "portfolio_public.json",
@@ -24,6 +24,7 @@
     "rule_proposals.json",
     "sovereign_rules.json",
     "regime_forecast.json",
+    "narrative_causal_map.json",
     "sovereign_autobiography.json"
   ]
 }
