@@ -1,29 +1,14 @@
 {
-  "ts": "2026-04-28T09:55:00.780377",
-  "generated": "09:55:00 AM",
+  "ts": "2026-04-28T10:20:01.483203",
+  "generated": "10:20:01 AM",
   "paper": {
-    "equity": 101355.41,
-    "cash": 86101.2,
-    "day_pnl": 77.44,
-    "day_pnl_pct": 0.076,
-    "positions": [
-      {
-        "sym": "PANW",
-        "qty": 82.8605,
-        "price": 184.095,
-        "entry": 182.81,
-        "pnl_pct": 0.7,
-        "pnl": 106.48,
-        "mkt_val": 15254.2
-      }
-    ]
+    "equity": 0,
+    "error": "HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exce"
   },
   "live": {
-    "equity": 0.0,
-    "cash": 0.0,
-    "day_pnl": -50.0,
-    "status": "PENDING_DEPOSIT",
-    "positions": []
+    "status": "ERROR",
+    "equity": 0,
+    "error": "HTTPSConnectionPool(host='api.alpaca.markets', port=443): Max retries exceeded w"
   },
   "challenger": {
     "value": 100.0,
