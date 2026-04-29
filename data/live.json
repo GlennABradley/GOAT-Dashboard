@@ -1,17 +1,17 @@
 {
-  "ts": "2026-04-28T15:55:00.505504",
-  "generated": "03:55:00 PM",
+  "ts": "2026-04-29T09:00:01.100629",
+  "generated": "09:00:01 AM",
   "paper": {
-    "equity": 101321.84,
-    "cash": 101321.84,
-    "day_pnl": 43.87,
-    "day_pnl_pct": 0.043,
+    "equity": 101321.81,
+    "cash": 101321.81,
+    "day_pnl": 0.0,
+    "day_pnl_pct": 0.0,
     "positions": []
   },
   "live": {
     "equity": 0.0,
     "cash": 0.0,
-    "day_pnl": -50.0,
+    "day_pnl": 0.0,
     "status": "PENDING_DEPOSIT",
     "positions": []
   },
