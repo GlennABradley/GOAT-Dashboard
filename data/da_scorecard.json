@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "total_graded": 11,
+  "proceed": {
+    "n": 0,
+    "accuracy": null,
+    "avg_pnl": null
+  },
+  "cautious": {
+    "n": 11,
+    "accuracy": 0.636,
+    "avg_pnl": 1.853
+  },
+  "aborted": {
+    "n": 0,
+    "accuracy": null,
+    "avg_pnl": null
+  },
+  "overall_accuracy": 0.636,
+  "generated_at": "2026-04-29T23:01:23.565290",
+  "insights": [
+    "DA CAUTIOUS accuracy: 64% (11 trades) \u2014 caution may be over-applied"
+  ]
+}

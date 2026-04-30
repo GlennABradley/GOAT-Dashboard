@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-04-29T23:00:21.766663",
+  "total_trades": 19,
+  "regime_stats": {
+    "BEAR_HIGH_VOL": {
+      "wins": 3,
+      "losses": 1,
+      "total_pnl": 4.68,
+      "n": 4,
+      "win_rate": 0.75,
+      "avg_pnl": 1.17
+    },
+    "CHECK": {
+      "wins": 0,
+      "losses": 3,
+      "total_pnl": -6.0,
+      "n": 3,
+      "win_rate": 0.0,
+      "avg_pnl": -2.0
+    },
+    "CHOPPY_RANGING": {
+      "wins": 7,
+      "losses": 2,
+      "total_pnl": 23.3,
+      "n": 9,
+      "win_rate": 0.778,
+      "avg_pnl": 2.589
+    },
+    "ACCUMULATION_EXTREME_FEAR": {
+      "wins": 1,
+      "losses": 1,
+      "total_pnl": -0.040000000000000036,
+      "n": 2,
+      "win_rate": 0.5,
+      "avg_pnl": -0.02
+    },
+    "ACCUMULATION_FEAR": {
+      "wins": 0,
+      "losses": 1,
+      "total_pnl": -9.33,
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_pnl": -9.33
+    }
+  },
+  "sector_stats": {
+    "Utilities": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 0.41,
+      "n": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 0.41
+    },
+    "Energy": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 0.53,
+      "n": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 0.53
+    },
+    "Industrials": {
+      "wins": 1,
+      "losses": 3,
+      "total_pnl": -1.9399999999999995,
+      "n": 4,
+      "win_rate": 0.25,
+      "avg_pnl": -0.485
+    },
+    "Financials": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 4.17,
+      "n": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 4.17
+    },
+    "Technology": {
+      "wins": 4,
+      "losses": 1,
+      "total_pnl": 17.580000000000002,
+      "n": 5,
+      "win_rate": 0.8,
+      "avg_pnl": 3.516
+    },
+    "Consumer Cyclical": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 4.38,
+      "n": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 4.38
+    },
+    "Healthcare": {
+      "wins": 0,
+      "losses": 1,
+      "total_pnl": -1.99,
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_pnl": -1.99
+    },
+    "Information Technology": {
+      "wins": 0,
+      "losses": 1,
+      "total_pnl": -1.72,
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_pnl": -1.72
+    },
+    "null": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 0.56,
+      "n": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 0.56
+    }
+  },
+  "best_regime": "CHOPPY_RANGING",
+  "worst_regime": "CHECK",
+  "best_sector": "Utilities",
+  "worst_sector": "Healthcare",
+  "recent_momentum": "POSITIVE",
+  "recent_record": "3W/2L (last 5)",
+  "da_vetoes_saved": 0
+}

@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-04-29T23:03:59.515672",
+  "total_trades": 19,
+  "confluence_stats": {
+    "4": {
+      "win_rate": 1.0,
+      "n": 2.0
+    },
+    "5": {
+      "win_rate": 0.6,
+      "n": 5.0
+    }
+  },
+  "regime_stats": {
+    "BEAR_HIGH_VOL": {
+      "win_rate": 0.75,
+      "n": 4.0,
+      "live_weighted": false
+    },
+    "CHECK": {
+      "win_rate": 0.0,
+      "n": 3.0,
+      "live_weighted": false
+    },
+    "CHOPPY_RANGING": {
+      "win_rate": 0.778,
+      "n": 9.0,
+      "live_weighted": false
+    },
+    "ACCUMULATION_EXTREME_FEAR": {
+      "win_rate": 0.5,
+      "n": 2
+    },
+    "ACCUMULATION_FEAR": {
+      "win_rate": 0,
+      "n": 1
+    }
+  },
+  "hold_time_stats": {
+    "1d": {
+      "win_rate": 0.5,
+      "n": 8
+    },
+    "6-14d": {
+      "win_rate": 1,
+      "n": 3
+    },
+    "2-5d": {
+      "win_rate": 0.571,
+      "n": 7
+    },
+    "15d+": {
+      "win_rate": 0,
+      "n": 1
+    }
+  },
+  "multipliers": {
+    "high_confluence": 1.3,
+    "low_confluence": 0.7,
+    "best_regime": "CHOPPY_RANGING",
+    "best_regime_mult": 1.172
+  },
+  "insights": [
+    "5/5 confluence \u2192 60% WR (n=5)",
+    "4/5 confluence \u2192 100% WR (n=2)",
+    "CHOPPY_RANGING regime \u2192 78% WR (n=9)",
+    "BEAR_HIGH_VOL regime \u2192 75% WR (n=4)",
+    "ACCUMULATION_EXTREME_FEAR regime \u2192 50% WR (n=2)",
+    "CHECK regime \u2192 0% WR (n=3)",
+    "ACCUMULATION_FEAR regime \u2192 0% WR (n=1)",
+    "Hold 6-14d \u2192 100% WR (n=3)"
+  ],
+  "last_synthesis": "2026-04-29T23:03:59.515681"
+}
