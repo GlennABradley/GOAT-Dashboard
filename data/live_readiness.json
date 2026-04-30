@@ -1,1 +1,64 @@
-true
+{
+  "checked_at": "2026-04-29T23:00:17.646868",
+  "gates_passed": 5,
+  "gates_total": 7,
+  "all_pass": false,
+  "readiness_pct": 71,
+  "gates": {
+    "paper_days": {
+      "value": 37,
+      "required": 90,
+      "pass": false
+    },
+    "min_trades": {
+      "value": 19,
+      "required": 20,
+      "pass": false
+    },
+    "min_win_rate": {
+      "value": 0.579,
+      "required": 0.55,
+      "pass": true
+    },
+    "max_drawdown": {
+      "value": 0.113,
+      "required": 0.15,
+      "pass": true
+    },
+    "min_sharpe": {
+      "value": 7.3,
+      "required": 1.0,
+      "pass": true
+    },
+    "no_consecutive_losses": {
+      "value": "ok",
+      "required": "no 5+ streak",
+      "pass": true
+    },
+    "tribunal_veto_rate": {
+      "value": 0.385,
+      "required": 0.4,
+      "pass": true
+    }
+  },
+  "equity_stats": {
+    "trades": 16,
+    "win_rate": 0.625,
+    "max_drawdown": 0.04136419000000005,
+    "sharpe": 7.298940231647195,
+    "streak": 1,
+    "streak_type": "WIN"
+  },
+  "crypto_stats": {
+    "trades": 3,
+    "win_rate": 0.3333333333333333,
+    "max_drawdown": 0.11279404999999994,
+    "sharpe": -10.502748755743399,
+    "streak": 2,
+    "streak_type": "LOSS"
+  },
+  "_meta": {
+    "schema_version": 2,
+    "generated_at": "2026-04-30T15:59:30.082232"
+  }
+}

@@ -1,1 +1,7 @@
-true
+{
+  "count": 1,
+  "source": "manual_seed",
+  "form_id": "xwvazdgn",
+  "updated_at": "2026-04-26T12:00:17.904012",
+  "note": "Seeded with 1 \u2014 Glenn test submission 2026-04-26. Add FORMSPREE_API_KEY to .env for auto-sync."
+}

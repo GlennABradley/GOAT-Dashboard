@@ -1,1 +1,116 @@
-true
+{
+  "symbols": {
+    "ETH/USD": {
+      "symbol": "ETH/USD",
+      "intraday_score": 3,
+      "score": 3,
+      "max_score": 6,
+      "signals": [
+        "4H_ABOVE_EMA20",
+        "4H_RSI_HEALTHY",
+        "1H_ABOVE_EMA20"
+      ],
+      "sizing_mult": 1.0,
+      "timestamp": "2026-04-30T10:02:11.140874"
+    },
+    "BTC/USD": {
+      "symbol": "BTC/USD",
+      "intraday_score": 3,
+      "score": 3,
+      "max_score": 6,
+      "signals": [
+        "4H_ABOVE_EMA20",
+        "4H_RSI_HEALTHY",
+        "1H_ABOVE_EMA20"
+      ],
+      "sizing_mult": 1.0,
+      "timestamp": "2026-04-30T10:02:07.265655"
+    },
+    "SOL/USD": {
+      "symbol": "SOL/USD",
+      "intraday_score": 3,
+      "score": 3,
+      "max_score": 6,
+      "signals": [
+        "4H_ABOVE_EMA20",
+        "4H_RSI_HEALTHY",
+        "1H_ABOVE_EMA20"
+      ],
+      "sizing_mult": 1.0,
+      "timestamp": "2026-04-30T10:02:14.877334"
+    },
+    "DOT/USD": {
+      "symbol": "DOT/USD",
+      "intraday_score": 1,
+      "score": 1,
+      "max_score": 6,
+      "signals": [
+        "4H_EMA20_ABOVE_EMA50"
+      ],
+      "sizing_mult": 0.5,
+      "timestamp": "2026-04-09T03:39:57.016507"
+    },
+    "ARB/USD": {
+      "symbol": "ARB/USD",
+      "intraday_score": 0,
+      "score": 0,
+      "max_score": 6,
+      "signals": [],
+      "sizing_mult": 0.25,
+      "timestamp": "2026-04-24T18:00:19.245908"
+    },
+    "AVAX/USD": {
+      "symbol": "AVAX/USD",
+      "intraday_score": 3,
+      "score": 3,
+      "max_score": 6,
+      "signals": [
+        "4H_ABOVE_EMA20",
+        "4H_EMA20_ABOVE_EMA50",
+        "1H_ABOVE_EMA20"
+      ],
+      "sizing_mult": 1.0,
+      "timestamp": "2026-04-15T18:02:11.229695"
+    },
+    "XRP/USD": {
+      "symbol": "XRP/USD",
+      "intraday_score": 3,
+      "score": 3,
+      "max_score": 6,
+      "signals": [
+        "4H_ABOVE_EMA20",
+        "4H_EMA20_ABOVE_EMA50",
+        "1H_ABOVE_EMA20"
+      ],
+      "sizing_mult": 1.0,
+      "timestamp": "2026-04-24T18:00:26.161876"
+    },
+    "POL/USD": {
+      "symbol": "POL/USD",
+      "intraday_score": 0,
+      "score": 0,
+      "max_score": 6,
+      "signals": [],
+      "sizing_mult": 0.25,
+      "timestamp": "2026-04-30T10:02:21.373017"
+    },
+    "ONDO/USD": {
+      "symbol": "ONDO/USD",
+      "intraday_score": 3,
+      "score": 3,
+      "max_score": 6,
+      "signals": [
+        "4H_ABOVE_EMA20",
+        "4H_RSI_HEALTHY",
+        "1H_ABOVE_EMA20"
+      ],
+      "sizing_mult": 1.0,
+      "timestamp": "2026-04-30T10:02:17.915561"
+    }
+  },
+  "last_updated": "2026-04-30T15:59:30.073706",
+  "_meta": {
+    "schema_version": 2,
+    "generated_at": "2026-04-30T15:59:30.073717"
+  }
+}

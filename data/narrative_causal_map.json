@@ -1,1 +1,89 @@
-true
+{
+  "generated_at": "2026-04-28T15:14:08.442436",
+  "status": "ok",
+  "narratives": [
+    {
+      "headline": "WSJ Report: OpenAI Missed Revenue & User Targets, CFO Flags Compute Contract Risk \u2014 AI Infrastructure Basket Sells Off",
+      "narrative_type": "SECTOR",
+      "affected_sectors": [
+        "Technology",
+        "Semiconductors",
+        "Cloud Infrastructure",
+        "Crypto (AI-correlated tokens)"
+      ],
+      "urgency": "IMMEDIATE",
+      "summary": "OpenAI's internal growth miss triggers a confidence crisis in the entire AI capex supercycle thesis \u2014 directly hammering AI infrastructure dependents (Oracle -7.5%, CoreWeave, AMD, Nvidia) and threatening hyperscaler earnings guidance from MSFT, AMZN, META, and GOOG reporting tomorrow night, with spillover pressure on Bitcoin as risk appetite contracts."
+    },
+    {
+      "headline": "Strait of Hormuz Remains Disrupted as U.S.-Iran War Enters Month Two \u2014 Brent Tops $111, WTI Breaches $100",
+      "narrative_type": "GEOPOLITICAL",
+      "affected_sectors": [
+        "Energy",
+        "Airlines",
+        "Consumer Staples",
+        "Industrials",
+        "Shipping & Logistics"
+      ],
+      "urgency": "IMMEDIATE",
+      "summary": "Ongoing Hormuz disruption has Brent crude at $111.50 and WTI at $100, reigniting stagflation fears that keep the Fed on hold, compress margins for energy-intensive sectors, and force a defensive rotation \u2014 with Trump's rejection of Iran's ceasefire proposal extending the duration risk premium in oil and suppressing risk assets including Bitcoin."
+    },
+    {
+      "headline": "Hyperscaler Earnings Gauntlet Begins Tomorrow: Microsoft, Amazon, Meta, Alphabet All Report on Same Night",
+      "narrative_type": "EARNINGS",
+      "affected_sectors": [
+        "Technology",
+        "Digital Advertising",
+        "Cloud Computing",
+        "AI Infrastructure",
+        "Crypto"
+      ],
+      "urgency": "IMMEDIATE",
+      "summary": "The simultaneous Q1 reporting by all four mega-cap AI spenders creates a binary event risk for the entire equity market \u2014 strong AI monetization data could reverse today's OpenAI-driven selloff and re-rate the Nasdaq, while any guidance cut or capex pullback would validate the AI overspend narrative and trigger a broad tech de-rating cascade."
+    },
+    {
+      "headline": "UAE Announces OPEC Exit Effective May 1, Reshaping Global Oil Supply Dynamics",
+      "narrative_type": "GEOPOLITICAL",
+      "affected_sectors": [
+        "Energy",
+        "Commodities",
+        "Emerging Markets",
+        "Utilities",
+        "Fixed Income"
+      ],
+      "urgency": "SHORT",
+      "summary": "The UAE's departure from OPEC beginning May 1 fractures cartel coordination at the worst possible time \u2014 potentially unleashing unilateral UAE production increases or, conversely, removing a moderating voice, injecting structural uncertainty into oil price formation that ripples into inflation expectations, central bank policy paths, and energy equity valuations globally."
+    },
+    {
+      "headline": "Fed Decision Tomorrow: Powell Faces Stagflation Squeeze as Oil-Driven Inflation Collides With Slowing Growth Signals",
+      "narrative_type": "MACRO",
+      "affected_sectors": [
+        "Financials",
+        "Real Estate",
+        "Utilities",
+        "Growth Equities",
+        "Crypto"
+      ],
+      "urgency": "IMMEDIATE",
+      "summary": "With rates widely expected on hold but energy-driven CPI re-accelerating and the BoJ simultaneously cutting its GDP forecast to 0.5% while raising inflation to 2.8%, Powell's press conference tone on the rate cut timeline is the single most rate-sensitive event of the week \u2014 a hawkish signal would spike yields, punish duration and growth equities, and pressure Bitcoin below key $76K support."
+    }
+  ],
+  "impact_map": {
+    "PANW": {
+      "impact_level": "INDIRECT",
+      "urgency": "IMMEDIATE",
+      "transmission": "OpenAI revenue miss triggers broad AI infrastructure selloff \u2192 risk-off rotation compresses valuation multiples across high-growth tech \u2192 PANW, trading at elevated forward P/E as a cybersecurity growth name with AI-platformization thesis, faces multiple compression and sentiment-driven selling despite no direct AI capex exposure, compounded by hawkish Fed hold signaling higher-for-longer rates that disproportionately discount long-duration growth equities like PANW",
+      "net_bias": "BEARISH",
+      "hops": 3,
+      "key_narrative": "WSJ Report: OpenAI Missed Revenue & User Targets, CFO Flags Compute Contract Risk \u2014 AI Infrastructure Basket Sells Off"
+    }
+  },
+  "summary": {
+    "total_narratives": 5,
+    "symbols_analyzed": 1,
+    "direct_impacts": 0,
+    "indirect_impacts": 1,
+    "bullish_signals": 0,
+    "bearish_signals": 1
+  },
+  "context_block": "\n=== NARRATIVE CAUSAL INTELLIGENCE ===\n  Active Narratives:\n    [IMMEDIATE|SECTOR] WSJ Report: OpenAI Missed Revenue & User Targets, CFO Flags Compute Contract Ris\n      \u2192 OpenAI's internal growth miss triggers a confidence crisis in the entire AI capex supercycle thesis \n    [IMMEDIATE|GEOPOLITICAL] Strait of Hormuz Remains Disrupted as U.S.-Iran War Enters Month Two \u2014 Brent Top\n      \u2192 Ongoing Hormuz disruption has Brent crude at $111.50 and WTI at $100, reigniting stagflation fears t\n    [IMMEDIATE|EARNINGS] Hyperscaler Earnings Gauntlet Begins Tomorrow: Microsoft, Amazon, Meta, Alphabet\n      \u2192 The simultaneous Q1 reporting by all four mega-cap AI spenders creates a binary event risk for the e\n    [SHORT|GEOPOLITICAL] UAE Announces OPEC Exit Effective May 1, Reshaping Global Oil Supply Dynamics\n      \u2192 The UAE's departure from OPEC beginning May 1 fractures cartel coordination at the worst possible ti\n    [IMMEDIATE|MACRO] Fed Decision Tomorrow: Powell Faces Stagflation Squeeze as Oil-Driven Inflation \n      \u2192 With rates widely expected on hold but energy-driven CPI re-accelerating and the BoJ simultaneously \n  Causal Impact on Positions/Watchlist:\n    PANW     [INDIRECT|IMMEDIATE|BEARISH] OpenAI revenue miss triggers broad AI infrastructure selloff \u2192 risk-off rotation compresses valuatio\n=== END NARRATIVE INTELLIGENCE ==="
+}

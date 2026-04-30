@@ -1,1 +1,38 @@
-true
+[
+  {
+    "ticker": "NTAP",
+    "date": "2026-04-22",
+    "vote_approve": 2,
+    "vote_reject": 2,
+    "total_judges": 4,
+    "bull_case": "This is institutional accumulation disguised as retail fear - the extreme call positioning and sector outperformance in a choppy market proves smart money is loading up. The 11.1% short interest actually amplifies upside potential as any break above ranging resistance triggers covering. With earning",
+    "bear_case": "NetApp faces a classic value trap scenario where AI tailwinds mask underlying structural pressure from tariff-driven cost inflation hitting a leveraged balance sheet. The institutional data shows conflicting signals - bullish sentiment and options positioning versus elevated short interest - typical",
+    "verdict": "This trade presents a genuine tension between compelling stock-specific signals and a hostile regime environment. The defense successfully neutralized the leverage fatal flaw \u2014 NTAP's 2.5x net debt/EBITDA is manageable and investment grade. However, the prosecution landed a decisive blow in cross-examination: if institutional accumulation were truly underway, NTAP would not be underperforming XLK by 8.2% over three months, and 11.1% short interest more plausibly reflects informed bearish convict",
+    "confidence": 0.81,
+    "regime": "CHOPPY_RANGING"
+  },
+  {
+    "ticker": "SNPS",
+    "date": "2026-04-21",
+    "vote_approve": 3,
+    "vote_reject": 1,
+    "total_judges": 4,
+    "bull_case": "SNPS sits at the epicenter of an AI-driven semiconductor design boom where its EDA tools become increasingly mission-critical as chip complexity explodes. The convergence of institutional call positioning, optimal RSI entry, and powerful relative strength against a fearful backdrop creates asymmetri",
+    "bear_case": "This trade represents the classic 'picking up pennies in front of a steamroller' scenario where technical momentum meets binary geopolitical risk. SNPS already lost 16% of revenue when China EDA sales were halted, and any tightening of restrictions could trigger an immediate 15-25% gap down that obl",
+    "verdict": "Both sides landed strong blows, creating genuine ambiguity. Defense successfully reframed the China exposure narrative \u2014 institutional accumulation at 2.13x RS during fear conditions is a legitimate pattern, not momentum chasing. However, prosecution's cross-examination was decisive in breaking the 'optimal inflection point' thesis: relative strength metrics collapse during broad risk-off events, and a $470+ entry in a CHOPPY_RANGING regime with VIX at ~20 offers poor risk/reward if macro deteri",
+    "confidence": 0.82,
+    "regime": "CHOPPY_RANGING"
+  },
+  {
+    "ticker": "ORCL",
+    "date": "2026-04-20",
+    "vote_approve": 2,
+    "vote_reject": 2,
+    "total_judges": 4,
+    "bull_case": "ORCL exhibits rare technical perfection during market uncertainty, with 2.42x relative strength signaling institutional preference for defensive growth. The fear environment creates asymmetric upside for quality enterprise names, while consistent earnings outperformance provides fundamental backstop",
+    "bear_case": "ORCL represents the textbook 'growth story with balance sheet cancer' that has destroyed countless momentum traders. The company is burning $13B+ annually while committing to $50B in capex, creating a execution tightrope where any RPO conversion disappointment triggers massive delevering. In choppy ",
+    "verdict": "This is a genuinely contested case with no clear winner. Defense successfully rebutted the debt 'time bomb' characterization \u2014 Oracle's long-dated, low-cost debt structure is not the imminent liquidity crisis prosecution portrayed, and the negative FCF likely reflects capex investment cycles, not structural cash burn. However, prosecution landed a decisive blow in cross-examination: the 2.42x relative strength thesis, which was defense's cornerstone, was materially undermined by the valid point ",
+    "confidence": 0.82,
+    "regime": "CHOPPY_RANGING"
+  }
+]

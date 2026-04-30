@@ -1,1 +1,102 @@
-true
+[
+  {
+    "timestamp": "2026-04-30T15:09",
+    "ticker": "SLB",
+    "symbol": "SLB",
+    "action": "BUY",
+    "confidence": 0.81,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-30T09:03",
+    "ticker": "ALL_CANDIDATES",
+    "symbol": "ALL_CANDIDATES",
+    "action": "SKIP",
+    "confidence": 0.0,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-29T15:08",
+    "ticker": "SBUX",
+    "symbol": "SBUX",
+    "action": "SKIP",
+    "confidence": 0.0,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-29T09:03",
+    "ticker": "ADM",
+    "symbol": "ADM",
+    "action": "SKIP",
+    "confidence": 0.74,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-28T09:02",
+    "ticker": "\u2014",
+    "symbol": "\u2014",
+    "action": "HOLD",
+    "confidence": 0.68,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-27T15:10",
+    "ticker": "PANW",
+    "symbol": "PANW",
+    "action": "BUY",
+    "confidence": 0.8,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-27T10:16",
+    "ticker": "CEG",
+    "symbol": "CEG",
+    "action": "SKIP",
+    "confidence": 0.71,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-27T09:36",
+    "ticker": "CEG",
+    "symbol": "CEG",
+    "action": "SKIP",
+    "confidence": 0.69,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-27T09:15",
+    "ticker": "CEG",
+    "symbol": "CEG",
+    "action": "SKIP",
+    "confidence": 0.51,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  },
+  {
+    "timestamp": "2026-04-26T19:10",
+    "ticker": "TXN",
+    "symbol": "TXN",
+    "action": "SKIP",
+    "confidence": 0.0,
+    "regime": "CHOPPY_RANGING",
+    "bot": "equity",
+    "_skip_candidate": false
+  }
+]

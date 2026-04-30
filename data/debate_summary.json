@@ -1,1 +1,11 @@
-true
+{
+  "ticker": "SLB",
+  "date": "2026-04-30",
+  "vote_approve": 3,
+  "vote_reject": 1,
+  "total_judges": 4,
+  "bull_case": "SLB is the only viable candidate after mandatory earnings-risk elimination: ORLY, UDR, and QCOM all report 2026-04-29 (tomorrow \u2014 cannot carry). VTR already reported but sits in laggard Real Estate (XLRE momentum DETERIORATING) with RS of only 1.16x, disqualifying it on sector leadership. SLB presents 4/5 confluence, RS 3.89x (genuine institutional sponsorship), and sits in Energy (XLE, rank-2 leader, momentum +3.",
+  "bear_case": "The primary risk is thesis invalidation: Stop triggers at $54.05 (1.5\u00d7 ATR below entry, -4.5% risk). Thesis breaks immediately if: (1) Energy sector (XLE) loses rank-2 leadership position or XLE momentum drops below +2.0 (sector rotation reversal), (2) RS decelerates below 2.5x SPY (institutional distribution signal), or (3) SLB closes below its 5-day post-earnings low \u2014 any of these conditions, not just the price level, constitute thesis invalidation requiring immediate exit regardless of P&L.",
+  "verdict": "Approved at 81% confidence. SLB is the only viable candidate after mandatory earnings-risk elimination: ORLY, UDR, and QCOM all report 2026-04-29 (tomorrow \u2014 cannot carry).",
+  "outcome": "+0.5%"
+}

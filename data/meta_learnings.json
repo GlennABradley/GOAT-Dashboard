@@ -1,1 +1,9 @@
-true
+{
+  "equity": [],
+  "crypto": [],
+  "_meta": {
+    "schema_version": 2,
+    "generated_at": "2026-04-30T15:59:30.081662"
+  },
+  "updated_at": "2026-04-29"
+}

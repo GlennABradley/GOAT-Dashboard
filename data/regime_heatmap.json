@@ -1,1 +1,458 @@
-true
+{
+  "cells": [
+    {
+      "date": "2026-03-27",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 29.6,
+      "fear_greed": 13,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "SLB",
+          "outcome": "WIN",
+          "pnl_pct": 0.53
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-03-29",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-03-30",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 29.7,
+      "fear_greed": 8,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-03-31",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 28.1,
+      "fear_greed": 11,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-01",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 24.6,
+      "fear_greed": 8,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-02",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 27.6,
+      "fear_greed": 12,
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "trade_list": [
+        {
+          "ticker": "FAST",
+          "outcome": "LOSS",
+          "pnl_pct": -0.43
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 23.9,
+      "fear_greed": 9,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-04",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-05",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-06",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 24.9,
+      "fear_greed": 13,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-07",
+      "regime": "BEAR_HIGH_VOL",
+      "vix": 25.5,
+      "fear_greed": 11,
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "trade_list": [
+        {
+          "ticker": "ODFL",
+          "outcome": "LOSS",
+          "pnl_pct": -1.82
+        },
+        {
+          "ticker": "CME",
+          "outcome": "WIN",
+          "pnl_pct": 4.17
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "regime": "CHOPPY_RANGING",
+      "vix": 21.0,
+      "fear_greed": 17,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "PANW",
+          "outcome": "WIN",
+          "pnl_pct": 7.12
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "regime": "CHOPPY_RANGING",
+      "vix": 21.2,
+      "fear_greed": 14,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-10",
+      "regime": "CHOPPY_RANGING",
+      "vix": 19.2,
+      "fear_greed": 16,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-11",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-12",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-13",
+      "regime": "CHOPPY_RANGING",
+      "vix": 19.4,
+      "fear_greed": 12,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-14",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.4,
+      "fear_greed": 21,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "AMZN",
+          "outcome": "WIN",
+          "pnl_pct": 4.38
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.1,
+      "fear_greed": 23,
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "trade_list": [
+        {
+          "ticker": "CAT",
+          "outcome": "LOSS",
+          "pnl_pct": -2.19
+        },
+        {
+          "ticker": "UNH",
+          "outcome": "LOSS",
+          "pnl_pct": -1.99
+        }
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.7,
+      "fear_greed": 23,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-17",
+      "regime": "CHOPPY_RANGING",
+      "vix": 17.7,
+      "fear_greed": 21,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "ANET",
+          "outcome": "WIN",
+          "pnl_pct": 3.36
+        }
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-19",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-20",
+      "regime": "CHOPPY_RANGING",
+      "vix": 19.2,
+      "fear_greed": 29,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "CSX",
+          "outcome": "WIN",
+          "pnl_pct": 2.5
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "regime": "CHOPPY_RANGING",
+      "vix": 20.0,
+      "fear_greed": 33,
+      "trades": 2,
+      "wins": 2,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "DELL",
+          "outcome": "WIN",
+          "pnl_pct": 5.34
+        },
+        {
+          "ticker": "ORCL",
+          "outcome": "WIN",
+          "pnl_pct": 4.21
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "regime": "CHOPPY_RANGING",
+      "vix": 19.0,
+      "fear_greed": 32,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-23",
+      "regime": "CHOPPY_RANGING",
+      "vix": 19.6,
+      "fear_greed": 46,
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "trade_list": [
+        {
+          "ticker": "SNPS",
+          "outcome": "LOSS",
+          "pnl_pct": -1.72
+        },
+        {
+          "ticker": "NTAP",
+          "outcome": "LOSS",
+          "pnl_pct": -2.45
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.8,
+      "fear_greed": 39,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-25",
+      "regime": "",
+      "vix": 0,
+      "fear_greed": 0,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-26",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.7,
+      "fear_greed": 33,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-27",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.9,
+      "fear_greed": 47,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-28",
+      "regime": "CHOPPY_RANGING",
+      "vix": 19.3,
+      "fear_greed": 33,
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "trade_list": [
+        {
+          "ticker": "PANW",
+          "outcome": "WIN",
+          "pnl_pct": 0.56
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "regime": "CHOPPY_RANGING",
+      "vix": 18.1,
+      "fear_greed": 26,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    },
+    {
+      "date": "2026-04-30",
+      "regime": "CHOPPY_RANGING",
+      "vix": 17.9,
+      "fear_greed": 29,
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "trade_list": []
+    }
+  ],
+  "regime_summary": {
+    "BEAR_HIGH_VOL": {
+      "days": 8,
+      "trades": 4,
+      "wins": 2,
+      "losses": 2,
+      "win_rate": 0.5
+    },
+    "CHOPPY_RANGING": {
+      "days": 18,
+      "trades": 11,
+      "wins": 7,
+      "losses": 4,
+      "win_rate": 0.636
+    }
+  },
+  "total_days": 35,
+  "generated_at": "2026-04-30T15:59:30.079811"
+}
