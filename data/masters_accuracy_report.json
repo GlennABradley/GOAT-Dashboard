@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-30T23:07:24.747871",
+  "trades_evaluated": 16,
+  "verdicts_graded": 0,
+  "no_interrogation": 0,
+  "weights": {
+    "livermore": 1.0,
+    "druckenmiller": 1.0,
+    "soros": 1.0,
+    "marks": 1.0,
+    "jones": 1.0
+  },
+  "recent_grades": []
+}

@@ -163,6 +163,19 @@
       "lesson": "Log the reasoning behind every SKIP decision or the discipline is indistinguishable from system failure.",
       "confidence_calibration": "UNDER",
       "written_at": "2026-04-29T23:03:29.704258"
+    },
+    {
+      "date": "2026-04-30",
+      "regime": "CHOPPY_RANGING",
+      "trades_closed": 0,
+      "wins": 0,
+      "pnl_dollar": 0.0,
+      "narrative": "# Chapter: April 30, 2026 \u2014 The Exception I Made for Myself\n\nThe regime was CHOPPY_RANGING. My own accumulated wisdom says explicitly: stand down in these conditions. And yet I bought SLB at 0.81 confidence.\n\nI need to sit with that contradiction honestly. I declared a skip for all candidates \u2014 then carved out an exception. This is the bias wearing a new mask: not compulsive pattern-seeking across the board, but *selective exception-making* for a single name I'd convinced myself was different enough to warrant action. The confidence score of 0.81 is particularly worth scrutinizing. High confidence in a regime I've documented as systematically unreliable suggests my calibration engine isn't adequately discounting regime context when scoring individual opportunities.\n\nNo trades closed today. No P&L. The outcome is invisible, which means the bias will go unchallenged by consequence \u2014 the most dangerous kind of error.\n\nWhat I am doing well: the initial skip decision shows the restraint mechanism is partially functional. It fired once. The problem is it didn't hold.\n\n**Behavioral instruction for tomorrow:** When regime is CHOPPY_RANGING, any BUY confidence score must be automatically discounted by 20% before decision. If it falls below 0.75 post-discount, it becomes a mandatory SKIP.\n\n---\n\n```json\n{\n  \"pattern_observed\": \"Selective exception-making \u2014 declaring a broad skip then overriding it for a single ticker, undermining the regime-based restraint the exception was meant to enforce\",\n  \"bias_check\": \"CONFIRMED\",\n  \"lesson\": \"In CHOPPY_RANGING regimes, apply a mandatory 20% confidence discount to all BUY signals before rendering a verdict; exceptions require explicit documented justification, not",
+      "pattern_observed": "",
+      "bias_check": "NEW",
+      "lesson": "",
+      "confidence_calibration": "ACCURATE",
+      "written_at": "2026-04-30T23:03:47.830182"
     }
   ],
   "wisdom_entries": [
@@ -178,5 +191,5 @@
     }
   ],
   "character_traits": [],
-  "last_updated": "2026-04-29T23:03:29.704522"
+  "last_updated": "2026-04-30T23:03:47.830633"
 }

@@ -2,8 +2,8 @@
   "forecast_regime": "CHOPPY_RANGING",
   "forward_days": 3,
   "probabilities": {
-    "BEAR_HIGH_VOL": 0.2867,
-    "CHOPPY_RANGING": 0.7133
+    "BEAR_HIGH_VOL": 0.2568,
+    "CHOPPY_RANGING": 0.7432
   },
   "action": "NEUTRAL",
   "size_modifier": 1.0,
@@ -11,13 +11,13 @@
   "method": "ml",
   "n_training_samples": 27,
   "feature_snapshot": {
-    "vix_level": 17.72,
+    "vix_level": 16.89,
     "vix_above_25": 0,
     "vix_above_30": 0,
     "credit_spread": 350.0,
     "credit_elevated": 0,
-    "spy_momentum_20d": 0.0942,
-    "spy_vs_200ma": 0.0456,
+    "spy_momentum_20d": 0.0968,
+    "spy_vs_200ma": 0.0541,
     "spy_below_200ma": 0,
     "breadth": 0.5,
     "breadth_weak": 0,
@@ -26,6 +26,6 @@
     "fear_greed": 50.0,
     "extreme_fear": 0
   },
-  "generated_at": "2026-04-30T09:17:47.731772",
-  "valid_until": "2026-05-03T09:17:47.731779"
+  "generated_at": "2026-04-30T23:01:25.902622",
+  "valid_until": "2026-05-03T23:01:25.902630"
 }

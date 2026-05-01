@@ -1,6 +1,6 @@
 {
-  "last_push": "2026-04-30T23:00:23.220856",
-  "pushed_at": "2026-04-30T23:00:23.220865",
+  "last_push": "2026-05-01T00:05:07.612699",
+  "pushed_at": "2026-05-01T00:05:07.612709",
   "schema_version": 3,
   "files": [
     "portfolio_public.json",
@@ -32,6 +32,7 @@
     "performance_feedback.json",
     "da_scorecard.json",
     "sovereign_loop_state.json",
+    "masters_accuracy_report.json",
     "wait_queue.json"
   ]
 }
