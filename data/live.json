@@ -1,6 +1,6 @@
 {
-  "ts": "2026-05-01T16:20:00.427898",
-  "generated": "04:20:00 PM",
+  "ts": "2026-05-01T16:25:00.904104",
+  "generated": "04:25:00 PM",
   "paper": {
     "equity": 101375.78,
     "cash": 94061.46,
@@ -19,9 +19,11 @@
     ]
   },
   "live": {
-    "status": "ERROR",
-    "equity": 0,
-    "error": "HTTPSConnectionPool(host='api.alpaca.markets', port=443): Max retries exceeded w"
+    "equity": 0.0,
+    "cash": 0.0,
+    "day_pnl": 0.0,
+    "status": "PENDING_DEPOSIT",
+    "positions": []
   },
   "challenger": {
     "value": 100.0,
