@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30",
+  "generated_at": "2026-05-01",
   "total_trades": 19,
   "tribunal": {
     "tribunal_vetoes": 7,
@@ -43,7 +43,7 @@
   },
   "_meta": {
     "schema_version": 2,
-    "generated_at": "2026-05-01T18:05:02.443060"
+    "generated_at": "2026-05-01T23:00:11.144111"
   },
   "top_insight": "Best regime: BEAR_HIGH_VOL | Tribunal veto rate: 21% | Total trades: 19"
 }
